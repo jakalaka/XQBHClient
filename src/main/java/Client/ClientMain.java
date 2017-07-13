@@ -7,6 +7,7 @@ import java.util.Map;
  */
 public class ClientMain {
     public static void main(String[] args) {
+            //aaa
             ClientInit.Init();
             Map In = new HashMap();
             Map Out = new HashMap();
