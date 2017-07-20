@@ -11,11 +11,10 @@ public class ClientMain {
             ClientInit.Init();
             Map In = new HashMap();
             Map Out = new HashMap();
-            In.put("ZDBH_U", "001");
             String []ERRMsg={""};
             if(false==ComCall.Call("ZDLogin", In, Out,ERRMsg))
                 Logger.log("ERR",ERRMsg[0]);
             else
-                Logger.log("DEBUG",Out.get("re").toString());
+                Logger.log("DEBUG",Out.get("re")+"");
     }
 }

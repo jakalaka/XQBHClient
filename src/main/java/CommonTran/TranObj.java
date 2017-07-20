@@ -29,8 +29,8 @@ import javax.xml.bind.annotation.XmlType;
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                           &lt;sequence>
- *                             &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
- *                             &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+ *                             &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                           &lt;/sequence>
  *                         &lt;/restriction>
  *                       &lt;/complexContent>
@@ -51,8 +51,8 @@ import javax.xml.bind.annotation.XmlType;
  *                       &lt;complexContent>
  *                         &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *                           &lt;sequence>
- *                             &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
- *                             &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+ *                             &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *                             &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *                           &lt;/sequence>
  *                         &lt;/restriction>
  *                       &lt;/complexContent>
@@ -222,8 +222,8 @@ public class TranObj {
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *                 &lt;sequence>
-     *                   &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
-     *                   &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+     *                   &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                 &lt;/sequence>
      *               &lt;/restriction>
      *             &lt;/complexContent>
@@ -285,8 +285,8 @@ public class TranObj {
          *   &lt;complexContent>
          *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
          *       &lt;sequence>
-         *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
-         *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+         *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *       &lt;/sequence>
          *     &lt;/restriction>
          *   &lt;/complexContent>
@@ -302,18 +302,18 @@ public class TranObj {
         })
         public static class Entry {
 
-            protected Object key;
-            protected Object value;
+            protected String key;
+            protected String value;
 
             /**
              * 获取key属性的值。
              * 
              * @return
              *     possible object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public Object getKey() {
+            public String getKey() {
                 return key;
             }
 
@@ -322,10 +322,10 @@ public class TranObj {
              * 
              * @param value
              *     allowed object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public void setKey(Object value) {
+            public void setKey(String value) {
                 this.key = value;
             }
 
@@ -334,10 +334,10 @@ public class TranObj {
              * 
              * @return
              *     possible object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public Object getValue() {
+            public String getValue() {
                 return value;
             }
 
@@ -346,10 +346,10 @@ public class TranObj {
              * 
              * @param value
              *     allowed object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public void setValue(Object value) {
+            public void setValue(String value) {
                 this.value = value;
             }
 
@@ -373,8 +373,8 @@ public class TranObj {
      *             &lt;complexContent>
      *               &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
      *                 &lt;sequence>
-     *                   &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
-     *                   &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+     *                   &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+     *                   &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
      *                 &lt;/sequence>
      *               &lt;/restriction>
      *             &lt;/complexContent>
@@ -436,8 +436,8 @@ public class TranObj {
          *   &lt;complexContent>
          *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
          *       &lt;sequence>
-         *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
-         *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}anyType" minOccurs="0"/>
+         *         &lt;element name="key" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+         *         &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
          *       &lt;/sequence>
          *     &lt;/restriction>
          *   &lt;/complexContent>
@@ -453,18 +453,18 @@ public class TranObj {
         })
         public static class Entry {
 
-            protected Object key;
-            protected Object value;
+            protected String key;
+            protected String value;
 
             /**
              * 获取key属性的值。
              * 
              * @return
              *     possible object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public Object getKey() {
+            public String getKey() {
                 return key;
             }
 
@@ -473,10 +473,10 @@ public class TranObj {
              * 
              * @param value
              *     allowed object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public void setKey(Object value) {
+            public void setKey(String value) {
                 this.key = value;
             }
 
@@ -485,10 +485,10 @@ public class TranObj {
              * 
              * @return
              *     possible object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public Object getValue() {
+            public String getValue() {
                 return value;
             }
 
@@ -497,10 +497,10 @@ public class TranObj {
              * 
              * @param value
              *     allowed object is
-             *     {@link Object }
+             *     {@link String }
              *     
              */
-            public void setValue(Object value) {
+            public void setValue(String value) {
                 this.value = value;
             }
 
