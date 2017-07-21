@@ -52,7 +52,9 @@ public class ComCall {
      */
     public static boolean addInfo(String JYM_UU,Map TranMapIn,Map XMLMapIn){
         Map head=new HashMap();
-        head.put("QTRQ_U",getDate()); //前台日期
+        String []date=getDate().split("-");
+        head.put("QTRQ_U",date[0]); //前台日期
+        head.put("QTSJ_U",date[1]); //前台时间
         head.put("QTLS_U",getQTLS()); //前台流水
         head.put("ZDBH_U", Com.ZDBH_U); //终端编号
         head.put("JYM_UU",JYM_UU); //交易码

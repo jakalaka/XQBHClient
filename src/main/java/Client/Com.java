@@ -44,10 +44,10 @@ public class Com {
      * @return
      */
     public static String getDate() {
-        String Date = "";
-        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//设置日期格式
-        Date = df.format(new Date());
-        return Date;
+        String date = "";
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd-HHmmss");//设置日期格式
+        date = df.format(new Date());
+        return date;
     }
 
     /**
