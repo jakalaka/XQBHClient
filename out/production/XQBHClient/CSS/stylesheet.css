@@ -1,0 +1,171 @@
+#mainbgImg {
+    -fx-background-image: url("../img/mainbg0.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.hbox_LEFT {
+    -fx-alignment: bottom-left;
+}
+
+.hbox_RIGHT {
+    -fx-alignment: bottom-right;
+}
+
+#title {
+    -fx-background-image: url("../img/title.png");
+    /*-fx-background-size: 100% 100%;*/
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+.Key_Home_release {
+
+    /*-fx-graphic: url("../img/Key_Home.png");*/
+    -fx-background-image: url("../img/Key_Home.png");
+    -fx-border-image-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-pref-height: 100px;
+    -fx-pref-width: 120px;
+    -fx-min-height: 100px;
+    -fx-min-width: 120px;
+    -fx-max-height: 100px;
+    -fx-max-width: 120px;
+    -fx-border-radius: 0 50% 0 0;
+    -fx-background-radius: 0 50% 0 0;
+    -fx-background-color: transparent;
+}
+
+.Key_Back_release {
+    /*-fx-graphic: url("../img/Key_Back.png");*/
+
+    -fx-background-image: url("../img/Key_Back.png");
+    -fx-border-image-repeat: no-repeat;
+    -fx-background-size: 100% 100%;
+    -fx-pref-height: 100px;
+    -fx-pref-width: 120px;
+    -fx-min-height: 100px;
+    -fx-min-width: 120px;
+    -fx-max-height: 100px;
+    -fx-max-width: 120px;
+    /*-fx-border-radius: 50% 0 0 50%;*/
+    /*-fx-background-radius:  50% 0 0 50%;*/
+    -fx-background-color: transparent;
+
+}
+
+.guideText {
+    -fx-font-size: 17;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.rootButton {
+    -fx-pref-height: 130px;
+    -fx-pref-width: 270px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 30px;
+}
+
+.hbox_CENTER {
+    -fx-alignment: center;
+    -fx-padding: 20px;
+
+}
+
+.hbox_Buy {
+    -fx-alignment: center-left;
+    -fx-padding: 10px 10px 10px 10px;
+
+}
+
+.thingsImg {
+    -fx-background-image: url("../img/mainbg0.jpg");
+    -fx-background-size: 100% 100%;
+}
+
+.buyButton {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-pref-width: 170px;
+    -fx-pref-height: 70px;
+    -fx-background-color: linear-gradient(to bottom, #fff722, #ff8f05);
+    -fx-font-size: 17px;
+    -fx-text-fill: black;
+}
+
+.infoHbox {
+    -fx-alignment: top-left;
+}
+
+.infoLabel {
+    -fx-font-size: 17px;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+    -fx-padding: 0px 0px 0px 10px;
+}
+
+.thingsName {
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    -fx-wrap-text: true;
+}
+
+.thingsPrice {
+    -fx-font-size: 27px;
+    -fx-text-fill: black;
+    -fx-font-weight: 900;
+    -fx-padding: 5px 5px 5px 5px;
+}
+
+.normalPane {
+    -fx-background-color: transparent;
+
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+
+}
+
+.orderContinue {
+    -fx-pref-height: 70px;
+    -fx-pref-width: 150px;
+    -fx-font-size: 23px;
+    -fx-font-weight: 800;
+    -fx-background-radius: 10px;
+}
+
+.orderCancel {
+    -fx-pref-height: 70px;
+    -fx-pref-width: 150px;
+    -fx-font-size: 23px;
+    -fx-font-weight: 800;
+    -fx-background-radius: 10px;
+}
+
+.orderTitle {
+    -fx-font-size: 37px;
+    -fx-font-weight: 500;
+}
+
+.orderdownHbox {
+    -fx-alignment: center;
+    -fx-padding: 20px 5px 20px 5px;
+}
+
+.orderAnchorpane {
+
+    -fx-border-color: black;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-width: 5px;
+}
+
+.ordertitleHbox{
+    -fx-alignment: center;
+}
+.orderInfo{
+    -fx-font-size: 17px;
+    -fx-font-weight: 500;
+}

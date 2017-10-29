@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientUI.scanningController">
+   <children>
+      <BorderPane layoutX="107.0" layoutY="100.0" prefHeight="300.0" prefWidth="307.0" style="-fx-border-color: black; -fx-border-width: 3px; -fx-background-radius: 5px; -fx-border-radius: 5px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Label text="请将二维码靠近扫描区" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
