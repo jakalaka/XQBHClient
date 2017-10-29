@@ -16,7 +16,7 @@ public class Com {
     /**
      * 日志等级
      */
-    static String LOGLV = "";
+    public static String LogLV = "";
     /**
      * 终端编号
      */

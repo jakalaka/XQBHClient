@@ -4,6 +4,8 @@ package Client;
 
 
 import CommonTran.*;
+import Utils.XML.XmlUtils;
+import Utils.log.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +27,7 @@ public class ComCall {
         Map XMLMapIn=new HashMap();//写方法，将TranMapIn添加报文头信息，变为XMLMapIn
         if(false==addInfo(JYM_UU,TranMapIn,XMLMapIn))
         {
-            Logger.log("ERR","组织报文头信息失败");
+            Logger.log("LOG_ERR","组织报文头信息失败");
             return false;
         }
 
@@ -78,14 +80,14 @@ public class ComCall {
         String CWDM_U=(String) ((Map)XMLMapOut.get("head")).get("CWDM_U");
         String CWXX_U=(String) ((Map)XMLMapOut.get("head")).get("CWXX_U");
 
-        Logger.log("ERR","CWDM_U="+CWDM_U);
+        Logger.log("LOG_ERR","CWDM_U="+CWDM_U);
         if (!"AAAAAA".equals(CWDM_U)) {
             /*
             这里做失败处理
              */
             ERRMsg[0]=CWXX_U;
             TranMapOut.clear();
-            Logger.log("ERR","调用失败");
+            Logger.log("LOG_ERR","调用失败");
             return false;
         }
         TranMapOut.putAll((Map)XMLMapOut.get("body"));

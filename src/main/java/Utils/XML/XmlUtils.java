@@ -1,7 +1,8 @@
-package Client; /**
+package Utils.XML; /**
  * Created by Administrator on 2017/7/2 0002.
  */
 
+import Utils.log.Logger;
 import org.apache.commons.lang3.*;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
@@ -73,7 +74,7 @@ public class XmlUtils {
         try {
             doc = DocumentHelper.parseText(xml);
         } catch (DocumentException e) {
-            Logger.log("ERR","XML转化成DOC时出错");
+            Logger.log("LOG_ERR","XML转化成DOC时出错");
             e.printStackTrace();
         }
         Element body = (Element) doc.selectSingleNode("/" + rootElement);

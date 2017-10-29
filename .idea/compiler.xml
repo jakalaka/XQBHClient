@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="XQBHClient" target="1.5" />
+      <module name="XQBHClient" target="1.8" />
       <module name="XQBHClient_" target="1.5" />
     </bytecodeTargetLevel>
   </component>

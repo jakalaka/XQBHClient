@@ -1,8 +1,11 @@
 package Client;
 
+import QRReader.QRReader;
+import Utils.log.Logger;
+
 import java.io.File;
 
-import static Client.PropertiesReader.readKeyFromXML;
+import static Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
 
 /**
  * Created by Administrator on 2017/7/1 0001.
@@ -20,10 +23,15 @@ public class ClientInit {
         if (!"".equals(ZDBH_U)&&ZDBH_U!=null)
             Com.ZDBH_U=ZDBH_U;
 
-        String LOGLV=readKeyFromXML(new File("src/main/resources/userInfo.properties") ,"LOGLV");
-        if (!"".equals(LOGLV)&&LOGLV!=null)
-            Com.LOGLV=LOGLV;
+        String LogLV=readKeyFromXML(new File("src/main/resources/userInfo.properties") ,"LogLV");
+        if (!"".equals(LogLV)&&LogLV!=null)
+            Com.LogLV =LogLV;
+
+
+
+
 
         return true;
     }
+
 }
