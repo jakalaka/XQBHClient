@@ -2,7 +2,6 @@
   <library name="jamod-1.2-SNAPSHOT">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/jamod-1.2-SNAPSHOT.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/QRReader.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
