@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="XQBHClient:jar">
+    <output-path>$PROJECT_DIR$/target/jar</output-path>
+    <root id="archive" name="XQBHClient.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/comm.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/commons-io-2.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/jamod-1.2-SNAPSHOT.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/jaxen/jaxen/1.1.6/jaxen-1.1.6.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/apache/commons/commons-lang3/3.6/commons-lang3-3.6.jar" path-in-jar="/" />
+      <element id="module-output" name="XQBHClient" />
+    </root>
+  </artifact>
+</component>
