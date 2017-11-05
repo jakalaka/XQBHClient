@@ -147,3 +147,13 @@
 2017/11/05 12:54:27.799-[XQBHClient.ClientTran.ZDLogin.exec:16]-[LOG_ERR]-公共初始化失败
 2017/11/05 01:42:07.398-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=AAAAAA
 2017/11/05 01:42:07.398-[XQBHClient.ClientTran.ZDLogin.exec:20]-[LOG_DEBUG]-null
+2017/11/05 07:48:27.211-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=AAAAAA
+2017/11/05 07:48:27.227-[XQBHClient.ClientTran.ZDLogin.exec:20]-[LOG_DEBUG]-null
+2017/11/05 08:20:31.394-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=AAAAAA
+2017/11/05 08:20:31.394-[XQBHClient.ClientTran.ZDLogin.exec:20]-[LOG_DEBUG]-null
+2017/11/05 08:49:50.465-[XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML:20]-[LOG_ERR]-file not found
+2017/11/05 08:50:21.917-[XQBHClient.ClientUI.ClientUIMain.Init:60]-[LOG_DEBUG]-timeOut=9000
+2017/11/05 08:50:21.919-[XQBHClient.ClientUI.ClientUIMain.Init:67]-[LOG_DEBUG]-frequency=500
+2017/11/05 08:50:21.919-[XQBHClient.ClientUI.ClientUIMain.Init:75]-[LOG_DEBUG]-relayIP=192.168.31.177
+2017/11/05 08:50:21.920-[XQBHClient.ClientUI.ClientUIMain.Init:83]-[LOG_DEBUG]-relayIP=8080
+2017/11/05 08:50:21.921-[XQBHClient.ClientUI.ClientUIMain.Init:91]-[LOG_DEBUG]-qrScanner=COM4

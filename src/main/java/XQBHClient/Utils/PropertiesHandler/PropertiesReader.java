@@ -2,29 +2,36 @@ package XQBHClient.Utils.PropertiesHandler;
 
 import XQBHClient.Utils.log.Logger;
 
-import java.io.*;
-import java.net.URI;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Properties;
 
 /**
  * Created by Administrator on 2017/7/1 0001.
  */
 public class PropertiesReader {
-    public static String readKeyFromXML(String path, String Key){
+    public static String readKeyFromXML(File file,String Key){
         Properties propertie;
-        InputStream inputStream=Class.class.getResourceAsStream(path);
-
+        FileInputStream inputFile;
+        if (!file.exists())
+        {
+            Logger.log("LOG_ERR","file"+file.getAbsolutePath()+" not found");
+            return  null;
+        }
 
         propertie = new Properties();
         try{
-            propertie.load(inputStream);
+            inputFile = new FileInputStream(file);
+            propertie.load(inputFile);
 //            propertie.loadFromXML(inputFile);//读取XML文件
-            inputStream.close();
+            inputFile.close();
         } catch (FileNotFoundException ex){
-            Logger.log("LOG_ERR","文件"+path+"无法找到");
+            Logger.log("LOG_ERR","文件无法找到");
             ex.printStackTrace();
         } catch (IOException ex) {
-            Logger.log("LOG_ERR","读取文件"+path+"失败");
+            Logger.log("LOG_ERR","读取文件失败");
             ex.printStackTrace();
         }
         return propertie.getProperty(Key);
