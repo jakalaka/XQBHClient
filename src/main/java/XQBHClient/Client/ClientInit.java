@@ -14,15 +14,15 @@ public class ClientInit {
         从userInfo中获取相关配置信息
          */
 
-        String ZDJYM_=readKeyFromXML(new File("/resources/Info/userInfo.properties"),"ZDJYM_");
+        String ZDJYM_=readKeyFromXML(new File("resources/Info/userInfo.properties"),"ZDJYM_");
         if (!"".equals(ZDJYM_)&&ZDJYM_!=null)
             Com.ZDJYM_=ZDJYM_;
 
-        String ZDBH_U=readKeyFromXML(new File("/resources/Info/userInfo.properties"),"ZDBH_U");
+        String ZDBH_U=readKeyFromXML(new File("resources/Info/userInfo.properties"),"ZDBH_U");
         if (!"".equals(ZDBH_U)&&ZDBH_U!=null)
             Com.ZDBH_U=ZDBH_U;
 
-        String LogLV=readKeyFromXML(new File("/resources/Info/userInfo.properties"),"LogLV");
+        String LogLV=readKeyFromXML(new File("resources/Info/userInfo.properties"),"LogLV");
         if (!"".equals(LogLV)&&LogLV!=null)
             Com.LogLV =LogLV;
 

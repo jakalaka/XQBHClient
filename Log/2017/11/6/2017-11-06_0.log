@@ -1,2 +1,15 @@
 2017/11/06 09:23:48.135-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=AAAAAA
 2017/11/06 09:23:48.135-[XQBHClient.ClientTran.ZDLogin.exec:20]-[LOG_DEBUG]-null
+2017/11/06 09:36:28.726-[XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML:20]-[LOG_ERR]-fileE:\resources\Info\userInfo.properties not found
+2017/11/06 09:36:28.726-[XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML:20]-[LOG_ERR]-fileE:\resources\Info\userInfo.properties not found
+2017/11/06 09:36:28.741-[XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML:20]-[LOG_ERR]-fileE:\resources\Info\userInfo.properties not found
+2017/11/06 09:36:29.163-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=ERR001
+2017/11/06 09:36:29.163-[XQBHClient.Client.ComCall.minusInfo:87]-[LOG_ERR]-调用失败
+2017/11/06 09:36:29.163-[XQBHClient.ClientTran.ZDLogin.exec:16]-[LOG_ERR]-公共初始化失败
+2017/11/06 09:37:43.933-[XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML:20]-[LOG_ERR]-fileE:\resources\Info\userInfo.properties not found
+2017/11/06 09:37:43.933-[XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML:20]-[LOG_ERR]-fileE:\resources\Info\userInfo.properties not found
+2017/11/06 09:37:44.401-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=ERR001
+2017/11/06 09:37:44.401-[XQBHClient.Client.ComCall.minusInfo:87]-[LOG_ERR]-调用失败
+2017/11/06 09:37:44.401-[XQBHClient.ClientTran.ZDLogin.exec:16]-[LOG_ERR]-公共初始化失败
+2017/11/06 09:37:58.479-[XQBHClient.Client.ComCall.minusInfo:80]-[LOG_ERR]-CWDM_U=AAAAAA
+2017/11/06 09:37:58.479-[XQBHClient.ClientTran.ZDLogin.exec:20]-[LOG_DEBUG]-null
