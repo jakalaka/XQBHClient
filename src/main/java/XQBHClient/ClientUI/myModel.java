@@ -50,7 +50,7 @@ public class myModel {
         /*
         读取配置文件，生成树对象
          */
-        String prop=path + "/model.properties";
+        File prop=new  File(path + "/model.properties");
         setModelType(readKeyFromXML(prop, "modelType"));
         String sPrice = readKeyFromXML(prop, "price");
         if (null == sPrice || "".equals(sPrice)) {

@@ -50,15 +50,16 @@ public class ClientUIMain extends Application {
         System.out.println("target propfile="+prop.getAbsolutePath());
 
         //读取配置文件
-        String sysinfo = "/resources/sysinfo/sysInfo.properties";
-        QRReader.timeOut = Integer.parseInt(readKeyFromXML(sysinfo, "timeOut"));
+        String sysinfo = "resources/Info/sysInfo.properties";
+        File sysprop = new File(sysinfo);
+        QRReader.timeOut = Integer.parseInt(readKeyFromXML(sysprop, "timeOut"));
         if (0 == QRReader.timeOut ) {
             Logger.log("LOG_ERR", "读取timeOut错误");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "timeOut=" + QRReader.timeOut);
         }
-        QRReader.frequency = Integer.parseInt(readKeyFromXML(sysinfo, "frequency"));
+        QRReader.frequency = Integer.parseInt(readKeyFromXML(sysprop, "frequency"));
         if (0 == QRReader.frequency ) {
             Logger.log("LOG_ERR", "读取frequency错误");
             return false;
@@ -66,7 +67,7 @@ public class ClientUIMain extends Application {
             Logger.log("LOG_DEBUG", "frequency=" +QRReader.frequency );
         }
 
-        ClientUIMain.relayIP = readKeyFromXML(sysinfo, "relayIP");
+        ClientUIMain.relayIP = readKeyFromXML(sysprop, "relayIP");
         if (null == ClientUIMain.relayIP || "".equals(ClientUIMain.relayIP)) {
             Logger.log("LOG_ERR", "读取继电器IP错误");
             return false;
@@ -74,7 +75,7 @@ public class ClientUIMain extends Application {
             Logger.log("LOG_DEBUG", "relayIP=" + ClientUIMain.relayIP);
         }
 
-        ClientUIMain.relayPort = Integer.parseInt(readKeyFromXML(sysinfo, "relayPort"));
+        ClientUIMain.relayPort = Integer.parseInt(readKeyFromXML(sysprop, "relayPort"));
         if (0 == ClientUIMain.relayPort) {
             Logger.log("LOG_ERR", "读取继电器port错误");
             return false;
@@ -82,7 +83,7 @@ public class ClientUIMain extends Application {
             Logger.log("LOG_DEBUG", "relayIP=" + ClientUIMain.relayPort);
         }
 
-        ClientUIMain.comName = readKeyFromXML(sysinfo, "comName");
+        ClientUIMain.comName = readKeyFromXML(sysprop, "comName");
         if (null == ClientUIMain.comName || "".equals(ClientUIMain.comName)) {
             Logger.log("LOG_ERR", "读取qrScanner错误");
             return false;
