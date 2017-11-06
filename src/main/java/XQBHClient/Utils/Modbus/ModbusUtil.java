@@ -1,5 +1,6 @@
 package XQBHClient.Utils.Modbus;
 
+import XQBHClient.Utils.log.Logger;
 import net.wimpi.modbus.ModbusException;
 import net.wimpi.modbus.ModbusIOException;
 import net.wimpi.modbus.ModbusSlaveException;
@@ -227,14 +228,14 @@ public class ModbusUtil {
 			req.setUnitID(slaveId);
 			trans.setRequest(req);
 
-			System.out.println("ModbusSlave: FC" + req.getFunctionCode()
+			Logger.log("LOG_DEBUG","ModbusSlave: FC" + req.getFunctionCode()
 					+ " ref=" + req.getReference() + " value="
 					+ register.getValue());*/
             trans.execute();
 
             connection.close();
         } catch (Exception ex) {
-            System.out.println("Error in code");
+            Logger.log("LOG_ERR","Error in connection");
             ex.printStackTrace();
         }
     }

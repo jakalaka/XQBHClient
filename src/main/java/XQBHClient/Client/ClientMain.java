@@ -21,8 +21,9 @@ public class ClientMain  {
             return;
 
         //for (int i=0;i<1000;i++) {
-            ZDLogin.exec();
+         //   ZDLogin.exec();
         //}
+        ClientUIMain.main(args);
 
     }
 

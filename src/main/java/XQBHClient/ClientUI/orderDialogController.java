@@ -1,8 +1,10 @@
 package XQBHClient.ClientUI;
 
 
+import XQBHClient.ClientTran.ZDLogin;
 import XQBHClient.Utils.Modbus.ModbusUtil;
 import XQBHClient.Utils.QRReader.QRReader;
+import XQBHClient.Utils.log.Logger;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.Event;
@@ -31,7 +33,7 @@ public class orderDialogController {
 
     @FXML
     public void cancel() {
-        System.out.println("cancel");
+        Logger.log("LOG_DEBUG","cancel");
         Event.fireEvent(stage, new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
 
     }
@@ -64,10 +66,10 @@ public class orderDialogController {
         Task<Void> sleeper = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                System.out.println(ClientUIMain.comName);
+                Logger.log("LOG_DEBUG",ClientUIMain.comName);
                 QRReader qrReader=new QRReader(ClientUIMain.comName,9600,8,1,0);
                 Order.QRCODE=qrReader.getQRCode();
-                System.out.println( Order.QRCODE);
+                Logger.log("LOG_DEBUG", Order.QRCODE);
 
                 return null;
             }
@@ -81,13 +83,13 @@ public class orderDialogController {
                     //啥也没有，donothing
                 }else {
                     //发起收费动作
-                    System.out.println("出货了");
+                    Logger.log("LOG_DEBUG","出货了");
                     //出货
                     try {
                         ModbusUtil.writeDigitalOutput(ClientUIMain.relayIP, ClientUIMain.relayPort,254, Order.ADRESS,1);
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("执行出货第1步错误");
+                        Logger.log("LOG_ERR","执行出货第1步错误");
                         return;
                     }
                     try {
@@ -103,7 +105,7 @@ public class orderDialogController {
                         ModbusUtil.writeDigitalOutput(ClientUIMain.relayIP, ClientUIMain.relayPort,254, Order.ADRESS,0);
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("执行出货第2步错误");
+                        Logger.log("LOG_DEBUG","执行出货第2步错误");
                         return;
                     }
                 }

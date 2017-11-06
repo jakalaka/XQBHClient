@@ -1,6 +1,8 @@
 package XQBHClient.Client;
 
 
+import XQBHClient.Utils.log.Logger;
+
 import java.io.File;
 
 import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
@@ -10,6 +12,7 @@ import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML
  */
 public class ClientInit {
     public static boolean Init(){
+        Logger.log("LOG_IO", Com.getIn);
         /*
         从userInfo中获取相关配置信息
          */
@@ -28,7 +31,7 @@ public class ClientInit {
 
 
 
-
+        Logger.log("LOG_IO", Com.getOut);
 
         return true;
     }

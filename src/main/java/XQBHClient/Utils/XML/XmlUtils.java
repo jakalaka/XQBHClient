@@ -131,9 +131,9 @@ public class XmlUtils {
         head.put("JYM_UU","1231");
         a.put("head",head);
         String re= map2XML(a,"root");
-        System.out.println(re);
+        Logger.log("LOG_DEBUG",re);
         Map out=null;
         out= XML2map(re,"root");
-        System.out.println(((Map)out.get("head")).get("JYM_UU"));
+        Logger.log("LOG_DEBUG",((Map)out.get("head")).get("JYM_UU").toString());
     }
 }

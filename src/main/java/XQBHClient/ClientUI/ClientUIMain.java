@@ -47,7 +47,7 @@ public class ClientUIMain extends Application {
 
 
         File prop=new File(System.getProperty("java.home")+"/lib/");
-        System.out.println("target propfile="+prop.getAbsolutePath());
+        Logger.log("LOG_DEBUG","target propfile="+prop.getAbsolutePath());
 
         //读取配置文件
         String sysinfo = "resources/Info/sysInfo.properties";

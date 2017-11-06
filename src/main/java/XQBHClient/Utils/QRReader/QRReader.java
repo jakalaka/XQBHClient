@@ -1,5 +1,6 @@
 package XQBHClient.Utils.QRReader;
 
+import XQBHClient.Utils.log.Logger;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 
@@ -33,7 +34,7 @@ public class QRReader {
         String properties = "javax.comm.properties";
 
         File prop = new File(System.getProperty("java.home") + "/lib/" + properties);
-        System.out.println("target propfile=" + prop.getAbsolutePath());
+        Logger.log("LOG_DEBUG","target propfile=" + prop.getAbsolutePath());
         if (!prop.exists()) {
             try {
                 // have to use a stream
@@ -89,7 +90,7 @@ public class QRReader {
 
     public static void main(String[] args) {
         QRReader qrReader = new QRReader("COM3", 9600, 8, 1, 0);
-        System.out.println(qrReader.getQRCode());
+        Logger.log("LOG_DEBUG",qrReader.getQRCode());
     }
 
     private void loadLib(String LIB_BIN, String win32com) {

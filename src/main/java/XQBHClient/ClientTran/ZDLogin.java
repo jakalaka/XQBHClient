@@ -1,5 +1,6 @@
 package XQBHClient.ClientTran;
 
+import XQBHClient.Client.Com;
 import XQBHClient.Client.ComCall;
 import XQBHClient.Utils.log.Logger;
 
@@ -8,6 +9,7 @@ import java.util.Map;
 
 public class ZDLogin {
     public static boolean exec(){
+        Logger.log("LOG_IO", Com.getIn);
         Map In = new HashMap();
         Map Out = new HashMap();
         String[] ERRMsg = {""};
@@ -19,7 +21,8 @@ public class ZDLogin {
         else
             Logger.log("LOG_DEBUG", Out.get("re") + "");
         long endTime=System.currentTimeMillis();
-        System.out.println((endTime-startTime));
+        Logger.log("LOG_DEBUG","spand "+(endTime-startTime)+"ms");
+        Logger.log("LOG_IO", Com.getOut);
         return true;
     }
 }

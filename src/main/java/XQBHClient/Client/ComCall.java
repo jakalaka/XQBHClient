@@ -77,7 +77,7 @@ public class ComCall {
         String CWDM_U=(String) ((Map)XMLMapOut.get("head")).get("CWDM_U");
         String CWXX_U=(String) ((Map)XMLMapOut.get("head")).get("CWXX_U");
 
-        Logger.log("LOG_ERR","CWDM_U="+CWDM_U);
+
         if (!"AAAAAA".equals(CWDM_U)) {
             /*
             这里做失败处理
@@ -85,8 +85,10 @@ public class ComCall {
             ERRMsg[0]=CWXX_U;
             TranMapOut.clear();
             Logger.log("LOG_ERR","调用失败");
+            Logger.log("LOG_ERR","CWDM_U="+CWDM_U);
             return false;
-        }
+        }else Logger.log("LOG_IO","CWDM_U="+CWDM_U);
+
         TranMapOut.putAll((Map)XMLMapOut.get("body"));
         return true;
     }

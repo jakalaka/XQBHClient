@@ -2,6 +2,7 @@ package XQBHClient.ClientUI;
 
 
 import XQBHClient.Utils.Model.modelHelper;
+import XQBHClient.Utils.log.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -47,7 +48,7 @@ public class Controller implements Initializable {
 
     @FXML
     public void  keyPressed(KeyEvent event){
-        //System.out.println(event);
+        //Logger.log("LOG_DEBUG",event);
         if (event.getCode() == KeyCode.ESCAPE)
         {
             System.exit(0);
@@ -56,27 +57,27 @@ public class Controller implements Initializable {
 
     @FXML
     public void  xxx(){
-        System.out.println("xxx");
+        Logger.log("LOG_DEBUG","xxx");
 
     }
 
     @FXML//感觉暂时没用
     public void  buttonPress(TouchEvent event){
-        //System.out.println(event);
+        //Logger.log("LOG_DEBUG",event);
 
     }
     @FXML
     public void  mousePress(MouseEvent event){
-//        System.out.println(((Button)event.getSource()).getId());
+//        Logger.log("LOG_DEBUG",((Button)event.getSource()).getId());
         if("Key_Back".equals(((Button)event.getSource()).getId()))
         {
-            //System.out.println("back press");
+            //Logger.log("LOG_DEBUG","back press");
 
             Key_Back.setStyle("-fx-effect: dropshadow(one-pass-box, black, 0px, 1px, 100, 100) ");
         }
         if("Key_Home".equals(((Button)event.getSource()).getId()))
         {
-            //System.out.println("home press");
+            //Logger.log("LOG_DEBUG","home press");
 
             Key_Home.setStyle("-fx-effect: dropshadow(one-pass-box, black, 0px, 1px, 100, 100)  ");
         }
@@ -85,16 +86,16 @@ public class Controller implements Initializable {
 
     @FXML
     public void  mouseRelease(MouseEvent event){
-//        System.out.println(((Button)event.getSource()).getId());
+//        Logger.log("LOG_DEBUG",((Button)event.getSource()).getId());
         if("Key_Back".equals(((Button)event.getSource()).getId()))
         {
-            //System.out.println("back release");
+            //Logger.log("LOG_DEBUG","back release");
             Key_Back.setStyle("-fx-background-color: transparent");
             modelHelper.goBack();
         }
         if("Key_Home".equals(((Button)event.getSource()).getId()))
         {
-            //System.out.println("home release");
+            //Logger.log("LOG_DEBUG","home release");
             Key_Home.setStyle("-fx-background-color: transparent");
             modelHelper.goHome();
         }

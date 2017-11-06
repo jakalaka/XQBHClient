@@ -1,5 +1,7 @@
 package XQBHClient.Client;
 
+import XQBHClient.Utils.log.Logger;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -26,6 +28,11 @@ public class Com {
      * 终端校验码
      */
     static String ZDJYM_ = "";
+
+
+    public static final String getIn =">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+
+    public static final String getOut ="<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
 
     /**
      * 获取前台流水=10位终端编号+6位交易时间
@@ -110,6 +117,6 @@ public class Com {
     }
 
     public static void main(String[] args) {
-        System.out.println(getIP());
+        Logger.log("LOG_DEBUG",getIP());
     }
 }

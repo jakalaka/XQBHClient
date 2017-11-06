@@ -1,6 +1,8 @@
 package XQBHClient.Utils.QRReader;
 
 
+import XQBHClient.Utils.log.Logger;
+
 import javax.comm.*;
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,7 +22,7 @@ public class QRReaderUtil implements Runnable {
         int count= QRReader.timeOut/ QRReader.frequency;
         int i=0;
         while (!finish) {
-            System.out.println("get");
+            Logger.log("LOG_DEBUG","get");
             try {
                 byte[] readBuffer = new byte[200];
 

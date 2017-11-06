@@ -38,6 +38,6 @@ public class PropertiesReader {
     }
 //
 //    public static void main(String[] args) {
-//        System.out.println(readKeyFromXML(new File("resources/userInfo.properties") ,"ZDJYM_"));
+//        Logger.log("LOG_DEBUG",readKeyFromXML(new File("resources/userInfo.properties") ,"ZDJYM_"));
 //    }
 }
