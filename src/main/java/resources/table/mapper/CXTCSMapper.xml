@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="XQBHClient.Client.Table.Mapper.CXTCSMapper" >
+  <resultMap id="BaseResultMap" type="XQBHClient.Client.Table.Model.CXTCS" >
+    <id column="FRDM_U" property="FRDM_U" jdbcType="VARCHAR" />
+    <id column="KEY_UU" property="KEY_UU" jdbcType="VARCHAR" />
+    <result column="VALUE_" property="VALUE_" jdbcType="VARCHAR" />
+    <result column="JLZT_U" property="JLZT_U" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    FRDM_U, KEY_UU, VALUE_, JLZT_U
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="XQBHClient.Client.Table.Model.CXTCSExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cxtcs
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="XQBHClient.Client.Table.Model.CXTCSKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from cxtcs
+    where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
+      and KEY_UU = #{KEY_UU,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="XQBHClient.Client.Table.Model.CXTCSKey" >
+    delete from cxtcs
+    where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
+      and KEY_UU = #{KEY_UU,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="XQBHClient.Client.Table.Model.CXTCSExample" >
+    delete from cxtcs
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="XQBHClient.Client.Table.Model.CXTCS" >
+    insert into cxtcs (FRDM_U, KEY_UU, VALUE_, 
+      JLZT_U)
+    values (#{FRDM_U,jdbcType=VARCHAR}, #{KEY_UU,jdbcType=VARCHAR}, #{VALUE_,jdbcType=VARCHAR}, 
+      #{JLZT_U,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="XQBHClient.Client.Table.Model.CXTCS" >
+    insert into cxtcs
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="FRDM_U != null" >
+        FRDM_U,
+      </if>
+      <if test="KEY_UU != null" >
+        KEY_UU,
+      </if>
+      <if test="VALUE_ != null" >
+        VALUE_,
+      </if>
+      <if test="JLZT_U != null" >
+        JLZT_U,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="FRDM_U != null" >
+        #{FRDM_U,jdbcType=VARCHAR},
+      </if>
+      <if test="KEY_UU != null" >
+        #{KEY_UU,jdbcType=VARCHAR},
+      </if>
+      <if test="VALUE_ != null" >
+        #{VALUE_,jdbcType=VARCHAR},
+      </if>
+      <if test="JLZT_U != null" >
+        #{JLZT_U,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="XQBHClient.Client.Table.Model.CXTCSExample" resultType="java.lang.Integer" >
+    select count(*) from cxtcs
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cxtcs
+    <set >
+      <if test="record.FRDM_U != null" >
+        FRDM_U = #{record.FRDM_U,jdbcType=VARCHAR},
+      </if>
+      <if test="record.KEY_UU != null" >
+        KEY_UU = #{record.KEY_UU,jdbcType=VARCHAR},
+      </if>
+      <if test="record.VALUE_ != null" >
+        VALUE_ = #{record.VALUE_,jdbcType=VARCHAR},
+      </if>
+      <if test="record.JLZT_U != null" >
+        JLZT_U = #{record.JLZT_U,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update cxtcs
+    set FRDM_U = #{record.FRDM_U,jdbcType=VARCHAR},
+      KEY_UU = #{record.KEY_UU,jdbcType=VARCHAR},
+      VALUE_ = #{record.VALUE_,jdbcType=VARCHAR},
+      JLZT_U = #{record.JLZT_U,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="XQBHClient.Client.Table.Model.CXTCS" >
+    update cxtcs
+    <set >
+      <if test="VALUE_ != null" >
+        VALUE_ = #{VALUE_,jdbcType=VARCHAR},
+      </if>
+      <if test="JLZT_U != null" >
+        JLZT_U = #{JLZT_U,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
+      and KEY_UU = #{KEY_UU,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="XQBHClient.Client.Table.Model.CXTCS" >
+    update cxtcs
+    set VALUE_ = #{VALUE_,jdbcType=VARCHAR},
+      JLZT_U = #{JLZT_U,jdbcType=VARCHAR}
+    where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
+      and KEY_UU = #{KEY_UU,jdbcType=VARCHAR}
+  </update>
+</mapper>

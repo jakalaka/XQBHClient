@@ -1,7 +1,13 @@
 package XQBHClient.Client;
 
+import XQBHClient.Client.Table.Mapper.CXTCSMapper;
+import XQBHClient.Client.Table.Model.CXTCS;
+import XQBHClient.Client.Table.Model.CXTCSKey;
+import XQBHClient.Client.Table.basic.DBAccess;
 import XQBHClient.Utils.log.Logger;
+import org.apache.ibatis.session.SqlSession;
 
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -30,9 +36,9 @@ public class Com {
     static String ZDJYM_ = "";
 
 
-    public static final String getIn =">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+    public static final String getIn = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 
-    public static final String getOut ="<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
+    public static final String getOut = "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
 
     /**
      * 获取前台流水=10位终端编号+6位交易时间
@@ -40,9 +46,53 @@ public class Com {
      * @return
      */
     public static String getQTLS() {
-        String QTLS_U = "";
-        QTLS_U = ZDBH_U + getTime();
-        return QTLS_U;
+        String sQTLS_U = "";
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//设置日期格式
+        String sGYLSGZ = "";
+        String sDate = df.format(new Date());
+        int XH = 0;
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlSession();
+        } catch (IOException e) {
+            Logger.log("LOG_SYS", "取流水号时查询数据库出错!!!");
+            e.printStackTrace();
+        }
+        CXTCSMapper cxtcsMapper = sqlSession.getMapper(CXTCSMapper.class);
+        CXTCSKey cxtcsKey = new CXTCSKey();
+        cxtcsKey.setFRDM_U("9999");
+        cxtcsKey.setKEY_UU("GYLSGZ");
+        CXTCS cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
+        if (null == cxtcs) {
+            //无数据，插入
+            cxtcs = new CXTCS();
+            cxtcs.setFRDM_U("9999");
+            cxtcs.setKEY_UU("GYLSGZ");
+            cxtcs.setVALUE_(sDate + "-" + 2);
+            cxtcs.setJLZT_U("0");
+            cxtcsMapper.insert(cxtcs);
+            XH = 1;
+        } else {
+            sGYLSGZ = cxtcs.getVALUE_();
+
+            if (sGYLSGZ.substring(0, 8).equals(sDate)) {
+                XH = Integer.parseInt(sGYLSGZ.substring(9, sGYLSGZ.length()));
+            } else {
+                XH = 1;
+            }
+            cxtcs.setVALUE_(sDate + "-" + (XH + 1));
+            cxtcsMapper.updateByPrimaryKey(cxtcs);
+        }
+
+        sqlSession.commit();
+        sqlSession.close();
+
+        sQTLS_U = "Q" + ZDBH_U + String.format("%05d", XH);
+        Logger.log("LOG_DEBUG", "前台流水:" + sQTLS_U);
+
+        return sQTLS_U;
     }
 
     /**
@@ -57,17 +107,6 @@ public class Com {
         return date;
     }
 
-    /**
-     * 获取前台机器时间
-     *
-     * @return
-     */
-    public static String getTime() {
-        String Time = "";
-        SimpleDateFormat df = new SimpleDateFormat("HHmmss");//设置日期格式
-        Time = df.format(new Date());
-        return Time;
-    }
 
     /**
      * 获取前台机器IP
@@ -117,6 +156,6 @@ public class Com {
     }
 
     public static void main(String[] args) {
-        Logger.log("LOG_DEBUG",getIP());
+        Logger.log("LOG_DEBUG", getIP());
     }
 }

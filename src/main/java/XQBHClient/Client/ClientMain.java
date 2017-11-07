@@ -20,10 +20,10 @@ public class ClientMain  {
         if (false ==  ClientInit.Init())
             return;
 
-        //for (int i=0;i<1000;i++) {
-         //   ZDLogin.exec();
-        //}
-        ClientUIMain.main(args);
+        for (int i=0;i<1000;i++) {
+            ZDLogin.exec();
+        }
+       // ClientUIMain.main(args);
 
     }
 

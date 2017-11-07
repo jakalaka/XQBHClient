@@ -1,0 +1,8 @@
+2017/11/07 11:11:12.879-[XQBHClient.Client.ClientInit.Init:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2017/11/07 11:11:12.879-[XQBHClient.Client.ClientInit.Init:34]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2017/11/07 11:11:12.895-[XQBHClient.ClientUI.ClientUIMain.Init:50]-[LOG_DEBUG]-target propfile=D:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib
+2017/11/07 11:11:12.895-[XQBHClient.ClientUI.ClientUIMain.Init:60]-[LOG_DEBUG]-timeOut=9000
+2017/11/07 11:11:12.895-[XQBHClient.ClientUI.ClientUIMain.Init:67]-[LOG_DEBUG]-frequency=500
+2017/11/07 11:11:12.895-[XQBHClient.ClientUI.ClientUIMain.Init:75]-[LOG_DEBUG]-relayIP=192.168.31.177
+2017/11/07 11:11:12.895-[XQBHClient.ClientUI.ClientUIMain.Init:83]-[LOG_DEBUG]-relayIP=8080
+2017/11/07 11:11:12.895-[XQBHClient.ClientUI.ClientUIMain.Init:91]-[LOG_DEBUG]-qrScanner=COM4
