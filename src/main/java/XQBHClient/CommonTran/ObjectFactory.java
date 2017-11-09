@@ -26,46 +26,12 @@ public class ObjectFactory {
 
     private final static QName _ComtranResponse_QNAME = new QName("http://ServerTran.XQBHServer/", "ComtranResponse");
     private final static QName _Comtran_QNAME = new QName("http://ServerTran.XQBHServer/", "Comtran");
-    private final static QName _GetOutResponse_QNAME = new QName("http://ServerTran.XQBHServer/", "getOutResponse");
-    private final static QName _GetOut_QNAME = new QName("http://ServerTran.XQBHServer/", "getOut");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: XQBHClient.CommonTran
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link TranObj }
-     * 
-     */
-    public TranObj createTranObj() {
-        return new TranObj();
-    }
-
-    /**
-     * Create an instance of {@link TranObj.TranMap }
-     * 
-     */
-    public TranObj.TranMap createTranObjTranMap() {
-        return new TranObj.TranMap();
-    }
-
-    /**
-     * Create an instance of {@link TranObj.HeadMap }
-     * 
-     */
-    public TranObj.HeadMap createTranObjHeadMap() {
-        return new TranObj.HeadMap();
-    }
-
-    /**
-     * Create an instance of {@link GetOut }
-     * 
-     */
-    public GetOut createGetOut() {
-        return new GetOut();
     }
 
     /**
@@ -85,30 +51,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetOutResponse }
-     * 
-     */
-    public GetOutResponse createGetOutResponse() {
-        return new GetOutResponse();
-    }
-
-    /**
-     * Create an instance of {@link TranObj.TranMap.Entry }
-     * 
-     */
-    public TranObj.TranMap.Entry createTranObjTranMapEntry() {
-        return new TranObj.TranMap.Entry();
-    }
-
-    /**
-     * Create an instance of {@link TranObj.HeadMap.Entry }
-     * 
-     */
-    public TranObj.HeadMap.Entry createTranObjHeadMapEntry() {
-        return new TranObj.HeadMap.Entry();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ComtranResponse }{@code >}}
      * 
      */
@@ -124,24 +66,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ServerTran.XQBHServer/", name = "Comtran")
     public JAXBElement<Comtran> createComtran(Comtran value) {
         return new JAXBElement<Comtran>(_Comtran_QNAME, Comtran.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetOutResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ServerTran.XQBHServer/", name = "getOutResponse")
-    public JAXBElement<GetOutResponse> createGetOutResponse(GetOutResponse value) {
-        return new JAXBElement<GetOutResponse>(_GetOutResponse_QNAME, GetOutResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetOut }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ServerTran.XQBHServer/", name = "getOut")
-    public JAXBElement<GetOut> createGetOut(GetOut value) {
-        return new JAXBElement<GetOut>(_GetOut_QNAME, GetOut.class, null, value);
     }
 
 }

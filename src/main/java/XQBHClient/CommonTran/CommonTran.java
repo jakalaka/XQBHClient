@@ -30,21 +30,6 @@ public interface CommonTran {
      * @return
      *     returns java.lang.String
      */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getOut", targetNamespace = "http://ServerTran.XQBHServer/", className = "XQBHClient.CommonTran.GetOut")
-    @ResponseWrapper(localName = "getOutResponse", targetNamespace = "http://ServerTran.XQBHServer/", className = "XQBHClient.CommonTran.GetOutResponse")
-    @Action(input = "http://ServerTran.XQBHServer/CommonTran/getOutRequest", output = "http://ServerTran.XQBHServer/CommonTran/getOutResponse")
-    public String getOut(
-        @WebParam(name = "arg0", targetNamespace = "")
-        TranObj arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns java.lang.String
-     */
     @WebMethod(operationName = "Comtran")
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "Comtran", targetNamespace = "http://ServerTran.XQBHServer/", className = "XQBHClient.CommonTran.Comtran")
