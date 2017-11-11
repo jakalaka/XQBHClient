@@ -2,6 +2,7 @@ package XQBHClient.Utils.Model;
 
 
 
+import XQBHClient.ClientAPI.getSPNum;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Controller;
 import XQBHClient.ClientUI.myModel;
@@ -22,6 +23,24 @@ public class modelHelper {
         }
     }
     public static void go(myModel model){
+
+        if (model.getModelType().equals("things"))
+        {
+            int irestNum=getSPNum.exec(model.getName());
+            model.restNumLable.setText("剩余库存："+irestNum);
+            if (irestNum<=0)
+            {
+                model.buy.setText("已售罄");
+                model.buy.getStyleClass().removeAll("buyButton_over","buyButton");
+                model.buy.getStyleClass().add("buyButton_over");
+
+            }else {
+                model.buy.setText("购买");
+                model.buy.getStyleClass().removeAll("buyButton_over","buyButton");
+                model.buy.getStyleClass().add("buyButton");
+            }
+        }
+
         setAllUHidden(Controller.model);
         model.getAnchorPane().setVisible(true);
         Controller.model.position.add(model);

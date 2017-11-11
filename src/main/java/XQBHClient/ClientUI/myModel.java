@@ -1,10 +1,18 @@
 package XQBHClient.ClientUI;
 
 
-
+import XQBHClient.Client.Table.Mapper.DSPXXMapper;
+import XQBHClient.Client.Table.Model.DSPXX;
+import XQBHClient.Client.Table.Model.DSPXXExample;
+import XQBHClient.Client.Table.Model.DSPXXKey;
+import XQBHClient.Client.Table.basic.DBAccess;
+import XQBHClient.ClientAPI.getSPNum;
+import XQBHClient.ClientAPI.initDSPXX;
+import XQBHClient.ClientAPI.warmingDialog;
 import XQBHClient.Utils.Model.modelHelper;
 import XQBHClient.Utils.log.Logger;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,6 +27,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
+import org.apache.ibatis.session.SqlSession;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,6 +49,8 @@ public class myModel {
     private AnchorPane anchorPane;
     private int controllerAdress;
     public Vector<myModel> position;
+    public Button buy;
+    public Label restNumLable=null;
 
     public myModel(String path, AnchorPane viewPane) {
         setElements(new HashMap<String, myModel>());
@@ -50,7 +61,7 @@ public class myModel {
         /*
         读取配置文件，生成树对象
          */
-        File prop=new  File(path + "/model.properties");
+        File prop = new File(path + "/model.properties");
         setModelType(readKeyFromXML(prop, "modelType"));
         String sPrice = readKeyFromXML(prop, "price");
         if (null == sPrice || "".equals(sPrice)) {
@@ -61,14 +72,11 @@ public class myModel {
         setPrice(price);
         setIntroduction(readKeyFromXML(prop, "introduction"));
         setImgs(readKeyFromXML(prop, "Img").split(";"));
-        String adress=readKeyFromXML(prop, "controllerAdress");
-        if (null==adress||"".equals(adress))
-            adress="9999";
+        String adress = readKeyFromXML(prop, "controllerAdress");
+        if (null == adress || "".equals(adress))
+            adress = "9999";
 
         setControllerAdress(Integer.parseInt(adress));
-
-
-
 
 
         if ("root".equals(getModelType())) {
@@ -167,8 +175,12 @@ public class myModel {
             ap.getChildren().add(scrollPane);
 
 
-        } else if ("things".equals(getModelType())||"bookThings".equals(getModelType())) {
+        } else if ("things".equals(getModelType()) || "bookThings".equals(getModelType())) {
+            int restNum=0;
             GridPane gridPane = new GridPane();
+            //创建数据库数据
+            initDSPXX.createData(getName());
+            restNum=getSPNum.exec(getName());
 
             /*
             开始生成图片区域
@@ -222,26 +234,32 @@ public class myModel {
              */
             GridPane priceAbuy = new GridPane();
             HBox hbPrice = new HBox();
-            hbPrice.getStyleClass().add("hbox_Buy");
+            HBox hbrestNum = new HBox();
+            hbPrice.getStyleClass().add("hbox_Price");
+            hbrestNum.getStyleClass().add("hbox_restNum");
             HBox hbBuy = new HBox();
             hbBuy.getStyleClass().add("hbox_Buy");
             DecimalFormat df = new DecimalFormat("######0.00");
             Label price = new Label("价格：￥" + df.format(getPrice()));
             price.setWrapText(true);
             price.getStyleClass().add("thingsPrice");
-            Button buy;
-            if ("bookThings".equals(getModelType()))
-            buy = new Button("预定");
-            else
+            if ("bookThings".equals(getModelType())) {
+                buy = new Button("预定");
+            } else {
                 buy = new Button("购买");
+                restNumLable= new Label("剩余库存："+restNum);
+                restNumLable.setWrapText(true);
+                restNumLable.getStyleClass().add("restNumLable");
+                hbrestNum.getChildren().add(restNumLable);
 
-
-            buy.getStyleClass().add("buyButton");
+            }
             hbPrice.getChildren().add(price);
+
             hbBuy.getChildren().add(buy);
-            priceAbuy.add(hbPrice, 0, 0);
-            priceAbuy.add(hbBuy, 1, 0);
-            ColumnConstraints column1 = new ColumnConstraints(0, 0, Double.MAX_VALUE);
+            priceAbuy.add(hbrestNum, 0, 0);
+            priceAbuy.add(hbPrice, 0, 1);
+            priceAbuy.add(hbBuy, 1, 1);
+            ColumnConstraints column1 = new ColumnConstraints(119, 119, Double.MAX_VALUE);
             ColumnConstraints column2 = new ColumnConstraints(0, 0, Double.MAX_VALUE);
             column1.setHgrow(Priority.ALWAYS);
             column2.setHgrow(Priority.ALWAYS);
@@ -252,14 +270,18 @@ public class myModel {
             添加购买点击事件
              */
             buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
-
+                if (getSPNum.exec(getName())<=0)
+                {
+                    warmingDialog.show("亲,售罄了,下次来吧~");
+                    return;
+                }
                 /*
                 创建订单
                  */
                 Order.Init();
-                Order.JYJE_U=getPrice();
-                Order.SPMC_U=getName();
-                Order.ADRESS=getControllerAdress();
+                Order.JYJE_U = getPrice();
+                Order.SPMC_U = getName();
+                Order.ADRESS = getControllerAdress();
 
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("orderDialog.fxml"));
@@ -283,9 +305,17 @@ public class myModel {
                 controller.setStage(stage_dialog);
                 controller.setScene(scene);
 
-                controller.orderInfo.setText("交易金额:" + Order.JYJE_U+"\n商品名称:"+ Order.SPMC_U);
+                controller.orderInfo.setText("交易金额:" + Order.JYJE_U + "\n商品名称:" + Order.SPMC_U);
                 stage_dialog.showAndWait();
             });
+
+            if (restNum <= 0) {
+                buy.setText("已售罄");
+                buy.getStyleClass().add("buyButton_over");
+
+            }else {
+                buy.getStyleClass().add("buyButton");
+            }
 
 
             AnchorPane.setTopAnchor(infoArea, 0.0);
@@ -319,6 +349,9 @@ public class myModel {
             AnchorPane.setLeftAnchor(gridPane, 0.0);
             AnchorPane.setRightAnchor(gridPane, 0.0);
             ap.getChildren().add(gridPane);
+
+
+
         } else {
             Logger.log("LOG_ERR", "model类型错误:" + getModelType() + ":" + file.getName());
         }
@@ -327,10 +360,10 @@ public class myModel {
 
         viewPane.getChildren().add(ap);
 
-
         buildSuccess = true;
 
     }
+
 
     public Map<String, myModel> getElements() {
         return Elements;

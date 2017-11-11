@@ -1,6 +1,11 @@
 package XQBHClient.ClientUI;
 
 
+import XQBHClient.Client.Table.Mapper.DSPXXMapper;
+import XQBHClient.Client.Table.Model.DSPXX;
+import XQBHClient.Client.Table.Model.DSPXXExample;
+import XQBHClient.Client.Table.basic.DBAccess;
+import XQBHClient.ClientAPI.initDSPXX;
 import XQBHClient.Utils.Model.modelHelper;
 import XQBHClient.Utils.log.Logger;
 import javafx.fxml.FXML;
@@ -13,7 +18,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import org.apache.ibatis.session.SqlSession;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -38,12 +45,36 @@ public class Controller implements Initializable {
     初始化
      */
     public void initialize(URL location, ResourceBundle resources) {
+        //更新商品数据库记录状态
+        if (true!= initDSPXX.initTable()) {
+            Logger.log("LOG_SYS","初始化数据库失败，请联系管理员");
+            return;
+        }
+
         //生成模型
         String rootPath = "resources/Model";
         model=new myModel(rootPath,viewPane);
 
         ClientUIMain.controller=this;
 
+    }
+
+
+    @FXML
+    public void  mouseRelease(MouseEvent event){
+//        Logger.log("LOG_DEBUG",((Button)event.getSource()).getId());
+        if("Key_Back".equals(((Button)event.getSource()).getId()))
+        {
+            //Logger.log("LOG_DEBUG","back release");
+            Key_Back.setStyle("-fx-background-color: transparent");
+            modelHelper.goBack();
+        }
+        if("Key_Home".equals(((Button)event.getSource()).getId()))
+        {
+            //Logger.log("LOG_DEBUG","home release");
+            Key_Home.setStyle("-fx-background-color: transparent");
+            modelHelper.goHome();
+        }
     }
 
     @FXML
@@ -85,7 +116,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    public void  mouseRelease(MouseEvent event){
+    public void  moDSPXXelease(MouseEvent event){
 //        Logger.log("LOG_DEBUG",((Button)event.getSource()).getId());
         if("Key_Back".equals(((Button)event.getSource()).getId()))
         {

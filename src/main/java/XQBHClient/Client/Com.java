@@ -89,7 +89,7 @@ public class Com {
         sqlSession.commit();
         sqlSession.close();
 
-        sQTLS_U = "Q" + ZDBH_U + String.format("%05d", XH);
+        sQTLS_U = "C" + ZDBH_U + String.format("%05d", XH);
         Logger.log("LOG_DEBUG", "前台流水:" + sQTLS_U);
 
         return sQTLS_U;

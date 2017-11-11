@@ -5,6 +5,8 @@ import XQBHClient.CommonTran.*;
 
 import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
+
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,9 +56,10 @@ public class ComCall {
         head.put("QTRQ_U",date[0]); //前台日期
         head.put("QTSJ_U",date[1]); //前台时间
         head.put("QTLS_U",Com.getQTLS()); //前台流水
+
         head.put("ZDBH_U", Com.ZDBH_U); //终端编号
         head.put("QTJYM_",QTJYM_); //交易码
-        head.put("HTJYM_",HTJYM_); //后台交易码
+        head.put("HTJYM_","ZDLogin"); //后台交易码
         head.put("ZDJYM_", Com.ZDJYM_); //终端校验码
         head.put("IP_UUU", Com.getIP()); //ip地址
         XMLMapIn.put("head",head);

@@ -78,7 +78,16 @@
     -fx-padding: 10px 10px 10px 10px;
 
 }
+.hbox_Price {
+    -fx-alignment: bottom-left;
+    -fx-padding: 10px 10px 10px 10px;
 
+}
+.hbox_restNum {
+    -fx-alignment: bottom-left;
+    -fx-padding: 10px 10px -35px 10px;
+
+}
 .thingsImg {
     -fx-background-image: url("../img/mainbg0.jpg");
     -fx-background-size: 100% 100%;
@@ -92,6 +101,15 @@
     -fx-background-color: linear-gradient(to bottom, #fff722, #ff8f05);
     -fx-font-size: 17px;
     -fx-text-fill: black;
+}
+.buyButton_over {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-pref-width: 170px;
+    -fx-pref-height: 70px;
+    -fx-background-color: linear-gradient(to bottom, rgba(139, 122, 105, 0.95), #917276);
+    -fx-font-size: 17px;
+    -fx-text-fill: white;
 }
 
 .infoHbox {
@@ -117,7 +135,12 @@
     -fx-font-weight: 900;
     -fx-padding: 5px 5px 5px 5px;
 }
-
+.restNumLable {
+    -fx-font-size: 17px;
+    -fx-text-fill: black;
+    -fx-font-weight: 900;
+    -fx-padding: 5px 5px 5px 5px;
+}
 .normalPane {
     -fx-background-color: transparent;
 
@@ -168,4 +191,16 @@
 .orderInfo{
     -fx-font-size: 17px;
     -fx-font-weight: 500;
+}
+
+.warmingTitle {
+    -fx-font-size: 37px;
+    -fx-font-weight: 500;
+}
+.warmingCancel {
+    -fx-pref-height: 70px;
+    -fx-pref-width: 150px;
+    -fx-font-size: 23px;
+    -fx-font-weight: 800;
+    -fx-background-radius: 10px;
 }
