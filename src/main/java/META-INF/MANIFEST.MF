@@ -1,5 +1,4 @@
 Manifest-Version: 1.0
-Class-Path: comm.jar jaxen-1.1.6.jar commons-lang3-3.6.jar commons-io-
- 2.5.jar dom4j-1.6.1.jar xml-apis-1.0.b2.jar jamod-1.2-SNAPSHOT.jar
-Main-Class: XQBHClient.ClientUI.ClientUIMain
+Class-Path: jakarta-oro-2.0.8
+Main-Class: XQBHClient.Client.ClientMain
 
