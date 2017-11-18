@@ -272,7 +272,7 @@ public class myModel {
             buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
                 if (getSPNum.exec(getName())<=0)
                 {
-                    warmingDialog.show("亲,售罄了,下次来吧~");
+                    warmingDialog.show(warmingDialog.Dialog_SELLOUT,"亲,售罄了,下次来吧~");
                     return;
                 }
                 /*

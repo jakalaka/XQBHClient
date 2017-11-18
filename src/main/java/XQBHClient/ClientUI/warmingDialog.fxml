@@ -29,7 +29,7 @@
          <top>
             <HBox prefHeight="47.0" prefWidth="200.0" styleClass="ordertitleHbox" BorderPane.alignment="CENTER">
                <children>
-                  <Label styleClass="warmingTitle" text="程序被你玩坏了" />
+                  <Label fx:id="warmingTitle" styleClass="warmingTitle" text="程序被玩坏了" />
                </children>
             </HBox>
          </top>

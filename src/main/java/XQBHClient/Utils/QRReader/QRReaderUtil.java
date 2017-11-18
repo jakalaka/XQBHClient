@@ -12,25 +12,25 @@ public class QRReaderUtil implements Runnable {
     static CommPortIdentifier portId;
     static SerialPort serialPort;
     static OutputStream outputStream;
-    String re="";
+    String re = "";
 
     InputStream inputStream;
     Thread readThread;
 
     public void run() {
-        boolean finish=false;
-        int count= QRReader.timeOut/ QRReader.frequency;
-        int i=0;
+        boolean finish = false;
+        int count = QRReader.timeOut / QRReader.frequency;
+        int i = 0;
         while (!finish) {
-            Logger.log("LOG_DEBUG","get");
+            Logger.log("LOG_DEBUG", "get");
             try {
-                byte[] readBuffer = new byte[200];
+                byte[] readBuffer = new byte[128];
 
                 try {
                     while (inputStream.available() > 0) {
                         int numBytes = inputStream.read(readBuffer);
-                        re=new String(readBuffer);
-                        finish=true;
+                        re = new String(readBuffer);
+                        finish = true;
                         break;
                     }
                 } catch (IOException e) {
@@ -41,25 +41,27 @@ public class QRReaderUtil implements Runnable {
                 e.printStackTrace();
             }
             i++;
-            if (i>=count)
+            if (i >= count)
                 break;
         }
+        serialPort.close();
     }
 
 
-    public void initComm(String comName,int baudRate,int dataBits,int stopBits,int parity) throws NoSuchPortException, PortInUseException, IOException, UnsupportedCommOperationException {
+    public void initComm(String comName, int baudRate, int dataBits, int stopBits, int parity) throws NoSuchPortException, PortInUseException, IOException, UnsupportedCommOperationException {
 
-            portId = CommPortIdentifier.getPortIdentifier(comName);
-            if (serialPort==null)
-                serialPort = (SerialPort) portId.open("javaw",3000);
+        portId = CommPortIdentifier.getPortIdentifier(comName);
+//            if (serialPort==null)
+        serialPort = (SerialPort) portId.open("XQBHClient", 3000);
 
-            outputStream = serialPort.getOutputStream();
-            inputStream = serialPort.getInputStream();
 
-            serialPort.setSerialPortParams(baudRate,
-                    dataBits,
-                    stopBits,
-                    parity);
+        outputStream = serialPort.getOutputStream();
+        inputStream = serialPort.getInputStream();
+
+        serialPort.setSerialPortParams(baudRate,
+                dataBits,
+                stopBits,
+                parity);
 
 
     }

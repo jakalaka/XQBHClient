@@ -9,8 +9,6 @@ public class Order {
     public static int ADRESS;
 
     public static void Init(){
-        QTLS_U="";
-        QTRQ_U="";
         SPMC_U="";
         JYJE_U=0;
         QRCODE="";

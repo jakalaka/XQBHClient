@@ -31,6 +31,9 @@ public class warmingDialogController {
     public Label warmingInfo;
 
     @FXML
+    public Label warmingTitle;
+
+    @FXML
     public void OK() {
         Logger.log("LOG_DEBUG","OK");
         Event.fireEvent(stage, new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));

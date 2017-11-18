@@ -15,8 +15,12 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class warmingDialog {
-    public static void show(String sMsg){
-        Logger.log("LOG_IO","sMsg");
+    public static final String Dialog_OVER="交易成功";
+    public static final String Dialog_ERR="程序垮掉了";
+    public static final String Dialog_SELLOUT="商品已售罄";
+
+    public static void show(String sTitle,String sMsg){
+        Logger.log("LOG_IO","sMsg="+sMsg);
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(warmingDialogController.class.getResource("warmingDialog.fxml"));
         try {
@@ -39,6 +43,7 @@ public class warmingDialog {
         controller.setScene(scene);
 
         controller.warmingInfo.setText(sMsg);
+        controller.warmingTitle.setText(sTitle);
         stage_dialog.showAndWait();
     }
 }
