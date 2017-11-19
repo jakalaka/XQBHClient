@@ -1,18 +1,12 @@
 package XQBHClient.ClientUI;
 
 
-import XQBHClient.Client.Table.Mapper.DSPXXMapper;
-import XQBHClient.Client.Table.Model.DSPXX;
-import XQBHClient.Client.Table.Model.DSPXXExample;
-import XQBHClient.Client.Table.Model.DSPXXKey;
-import XQBHClient.Client.Table.basic.DBAccess;
 import XQBHClient.ClientAPI.getSPNum;
 import XQBHClient.ClientAPI.initDSPXX;
 import XQBHClient.ClientAPI.warmingDialog;
 import XQBHClient.Utils.Model.modelHelper;
 import XQBHClient.Utils.log.Logger;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,7 +21,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import org.apache.ibatis.session.SqlSession;
 
 import java.io.File;
 import java.io.IOException;
@@ -302,8 +295,8 @@ public class myModel {
                 stage_dialog.initOwner(ClientUIMain.primaryStage);
                 orderDialogController controller = loader.getController();
 
-                controller.setStage(stage_dialog);
-                controller.setScene(scene);
+                controller.setOrderDialogstate(stage_dialog);
+                controller.setOrderDialogsence(scene);
 
                 controller.orderInfo.setText("交易金额:" + Order.JYJE_U + "\n商品名称:" + Order.SPMC_U);
                 stage_dialog.showAndWait();

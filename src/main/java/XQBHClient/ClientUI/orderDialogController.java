@@ -1,6 +1,7 @@
 package XQBHClient.ClientUI;
 
 
+import XQBHClient.ClientAPI.comCartoon;
 import XQBHClient.ClientAPI.updateDSPXX;
 import XQBHClient.ClientAPI.warmingDialog;
 import XQBHClient.ClientTran.PayBill;
@@ -26,13 +27,13 @@ import javax.comm.NoSuchPortException;
 import javax.comm.PortInUseException;
 import javax.comm.UnsupportedCommOperationException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class orderDialogController {
 
-    public Stage stage;
-    private Scene scene;
+    public static Stage orderDialogstate;
+    public static Scene orderDialogsence;
 
 
     @FXML
@@ -41,7 +42,7 @@ public class orderDialogController {
     @FXML
     public void cancel() {
         Logger.log("LOG_DEBUG", "cancel");
-        Event.fireEvent(stage, new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+        Event.fireEvent(orderDialogstate, new WindowEvent(orderDialogstate, WindowEvent.WINDOW_CLOSE_REQUEST));
 
     }
 
@@ -81,15 +82,15 @@ public class orderDialogController {
 
         Parent root = loader.getRoot();
         Scene scene = new Scene(root);
-        Stage stage_dialog;
-        stage_dialog = new Stage(StageStyle.UNDECORATED);
-        stage_dialog.initModality(Modality.WINDOW_MODAL);
-        stage_dialog.setScene(scene);
+        Stage scanningStage;
+        scanningStage = new Stage(StageStyle.UNDECORATED);
+        scanningStage.initModality(Modality.WINDOW_MODAL);
+        scanningStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
-        stage_dialog.initStyle(StageStyle.TRANSPARENT);
-        stage_dialog.initOwner(stage);
-        stage_dialog.show();
-
+        scanningStage.initStyle(StageStyle.TRANSPARENT);
+        scanningStage.initOwner(orderDialogstate);
+        scanningStage.show();
+        comCartoon  cartoon=new comCartoon();
         Task<Void> sleeper = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
@@ -97,39 +98,35 @@ public class orderDialogController {
 
                 Order.QRCODE = qrReader.getQRCode();
 
-//                catch (PortInUseException e)
-//                {
-//                    System.out.println("hey");
-//                    warmingDialog.show("QRReader被霸占了！！！请联系管理员");
-//                }catch (IOException e)
-//                {
-//                    System.out.println("hey");
-//                    warmingDialog.show("QRReader读写错误！！！请联系管理员");
-//                }catch (UnsupportedCommOperationException e)
-//                {
-//                    System.out.println("hey");
-//                    warmingDialog.show("QRReader操作指令错误！！！请联系管理员");
-//                }catch (NoSuchPortException e)
-//                {
-//                    System.out.println("hey");
-//                    warmingDialog.show("QRReader端口miss！！！请联系管理员");
-//                }
                 return null;
             }
         };
         sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
             @Override
             public void handle(WorkerStateEvent event) {
-                stage_dialog.close();
+                scanningStage.close();
                 if ("".equals(Order.QRCODE)) {
                     //啥也没有，donothing
                 } else {
-                    //发起收费动作
-                    if (false==PayBill.exec()) {
-                        warmingDialog.show(warmingDialog.Dialog_ERR,"交易失败，如有疑问请联系管理员");
+
+                    //先过滤一道QRCODE
+                    if (!isNumeric(Order.QRCODE))
+                    {
+                        warmingDialog.show(warmingDialog.Dialog_ERR,"请检查您的二维码是否为支付条码!");
                         return;
                     }
+
+                    cartoon.show();
+                    //发起收费动作
+                    if (false==PayBill.exec()) {
+                        warmingDialog.show(warmingDialog.Dialog_ERR,"交易失败，请检查您的二维码是否正确\n如您账户已扣账，请联系管理员，给您带来不便请您谅解!");
+                        Event.fireEvent(orderDialogstate, new WindowEvent(orderDialogstate, WindowEvent.WINDOW_CLOSE_REQUEST));
+                        return;
+                    }
+                    cartoon.show();
+
                     Logger.log("LOG_DEBUG", "出货了");
+
                     //出货
 //                    try {
 //                        ModbusUtil.writeDigitalOutput(ClientUIMain.relayIP, ClientUIMain.relayPort, 254, Order.ADRESS, 1);
@@ -154,10 +151,19 @@ public class orderDialogController {
 //                        Logger.log("LOG_DEBUG", "执行出货第2步错误");
 //                        return;
 //                    }
+
+//                    try {
+//                        Thread.sleep(5000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+
+
                     updateDSPXX.exec(Order.SPMC_U,-1);
                     warmingDialog.show(warmingDialog.Dialog_OVER,"谢谢您的光临，点击确认返回主界面，如有疑问请联系管理员");
+                    Event.fireEvent(orderDialogstate, new WindowEvent(orderDialogstate, WindowEvent.WINDOW_CLOSE_REQUEST));
                     modelHelper.goHome();
-                    Event.fireEvent(stage, new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+
 
 
                 }
@@ -168,19 +174,27 @@ public class orderDialogController {
 
     }
 
-    public Stage getStage() {
-        return stage;
+    public Stage getOrderDialogstate() {
+        return orderDialogstate;
     }
 
-    public void setStage(Stage stage) {
-        this.stage = stage;
+    public void setOrderDialogstate(Stage orderDialogstate) {
+        this.orderDialogstate = orderDialogstate;
     }
 
-    public Scene getScene() {
-        return scene;
+    public Scene getOrderDialogsence() {
+        return orderDialogsence;
     }
 
-    public void setScene(Scene scene) {
-        this.scene = scene;
+    public void setOrderDialogsence(Scene orderDialogsence) {
+        this.orderDialogsence = orderDialogsence;
+    }
+    public boolean isNumeric(String str){
+        Pattern pattern = Pattern.compile("[0-9]*");
+        Matcher isNum = pattern.matcher(str);
+        if( !isNum.matches() ){
+            return false;
+        }
+        return true;
     }
 }

@@ -24,7 +24,8 @@ public class ClientMain {
         /*
         签到
          */
-        ZDLogin.exec();
+        if (!ZDLogin.exec())
+            return;
         /*
         启动界面
          */

@@ -33,9 +33,15 @@ public class ComCall {
         String XMLIn= XmlUtils.map2XML(XMLMapIn);
         Logger.log("LOG_DEBUG","XMLIn="+XMLIn);
         CommonTran commonTran;
-        commonTran = new CommonTranService().getCommonTranPort();
+        try {
+            commonTran = new CommonTranService().getCommonTranPort();
+        }catch (Exception e)
+        {
+            Logger.log("LOG_ERR","服务器连接失败");
+            return false;
+        }
         String XMLOut=commonTran.comtran(XMLIn);
-        Map XMLMapOut=(Map) XmlUtils.XML2map(XMLOut);
+        Map XMLMapOut= XmlUtils.XML2map(XMLOut);
         Logger.log("LOG_DEBUG","XMLOut="+XMLOut);
 
         if (false ==minusInfo(XMLMapOut,TranMapOut))

@@ -7,11 +7,13 @@ public class Order {
     public static double JYJE_U;
     public static String QRCODE;
     public static int ADRESS;
+    public static boolean finalOut;
 
     public static void Init(){
         SPMC_U="";
         JYJE_U=0;
         QRCODE="";
         ADRESS=9999;
+        finalOut=false;
     }
 }
