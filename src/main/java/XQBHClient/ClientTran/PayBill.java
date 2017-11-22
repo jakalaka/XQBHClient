@@ -3,7 +3,6 @@ package XQBHClient.ClientTran;
 
 import XQBHClient.Client.Com;
 import XQBHClient.Client.ComCall;
-import XQBHClient.ClientAPI.updateDSPXX;
 import XQBHClient.ClientUI.Order;
 import XQBHClient.Utils.log.Logger;
 
