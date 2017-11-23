@@ -32,7 +32,7 @@ public class Logger {
 
     java.util.logging.Logger log = java.util.logging.Logger.getLogger("myLogger");
         log.setUseParentHandlers(false);
-        log.setLevel(Level.FINEST);  //æ€»é˜€é—¨
+        log.setLevel(Level.FINEST);  //×Ü·§ÃÅ
 
         String pathtmp = getLogPath(Msg);
         if(!path.equals(pathtmp))
@@ -71,7 +71,7 @@ public class Logger {
         log.addHandler(fileHandler);
 
 
-        LogRecord lr;//logçš„ç­‰çº§
+        LogRecord lr;//logµÄµÈ¼¶
         if("LOG_SYS".equals(LogLV))
           lr = new LogRecord(Level.SEVERE, Msg);
         else if("LOG_ERR".equals(LogLV))
@@ -89,8 +89,8 @@ public class Logger {
                 Thread.currentThread().getStackTrace()[2].getLineNumber(),
                 LogLV
         });
-        //consoleHandler.setLevel(Level.WARNING);//consoleé˜€é—¨ éœ€å®æ—¶è°ƒæ•´
-        consoleHandler.setLevel(Level.CONFIG);//æš‚æ—¶è°ƒæˆDEBUG
+        //consoleHandler.setLevel(Level.WARNING);//console·§ÃÅ ĞèÊµÊ±µ÷Õû
+        consoleHandler.setLevel(Level.CONFIG);//ÔİÊ±µ÷³ÉDEBUG
         consoleHandler.setFormatter(myLogHander);
         log.addHandler(consoleHandler);
 

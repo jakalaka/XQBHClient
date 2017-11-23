@@ -25,13 +25,13 @@ public class PropertiesReader {
         try{
             inputFile = new FileInputStream(file);
             propertie.load(inputFile);
-//            propertie.loadFromXML(inputFile);//璇诲彇XML鏂囦欢
+//            propertie.loadFromXML(inputFile);//读取XML文件
             inputFile.close();
         } catch (FileNotFoundException ex){
-            Logger.log("LOG_ERR","鏂囦欢鏃犳硶鎵惧埌");
+            Logger.log("LOG_ERR","文件无法找到");
             ex.printStackTrace();
         } catch (IOException ex) {
-            Logger.log("LOG_ERR","璇诲彇鏂囦欢澶辫触");
+            Logger.log("LOG_ERR","读取文件失败");
             ex.printStackTrace();
         }
         return propertie.getProperty(Key);

@@ -1,10 +1,10 @@
 package XQBHClient.ClientUI;
 
 
-import XQBHClient.ClientAPI.comCartoon;
-import XQBHClient.ClientAPI.updateDSPXX;
-import XQBHClient.ClientAPI.warmingDialog;
+import XQBHClient.Client.Com;
+import XQBHClient.ClientAPI.*;
 import XQBHClient.ClientTran.PayBill;
+import XQBHClient.Utils.Modbus.ModbusUtil;
 import XQBHClient.Utils.Model.modelHelper;
 import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
@@ -17,10 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 import javax.comm.NoSuchPortException;
@@ -30,9 +27,9 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class orderDialogController {
+public class OrderDialogController {
 
-    public static Stage orderDialogstate;
+    public static Stage orderDialogstage;
     public static Scene orderDialogsence;
 
 
@@ -42,7 +39,7 @@ public class orderDialogController {
     @FXML
     public void cancel() {
         Logger.log("LOG_DEBUG", "cancel");
-        Event.fireEvent(orderDialogstate, new WindowEvent(orderDialogstate, WindowEvent.WINDOW_CLOSE_REQUEST));
+        Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
 
     }
 
@@ -50,136 +47,150 @@ public class orderDialogController {
     public void continueTran() {
 
 
-        QRReader qrReader = new QRReader(ClientUIMain.comName, 9600, 8, 1, 0);
+        QRReader qrReader = new QRReader(Com.QRReaderComName, 9600, 8, 1, 0);
         boolean initOK = false;
         try {
             initOK = qrReader.Init();
-        }  catch (PortInUseException e) {
-            warmingDialog.show(warmingDialog.Dialog_ERR,"QRReaderè¢«éœ¸å äº†ï¼ï¼ï¼è¯·è”ç³»ç®¡ç†å‘˜");
+        } catch (PortInUseException e) {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader±»°ÔÕ¼ÁË£¡£¡£¡ÇëÁªÏµ¹ÜÀíÔ±");
             e.printStackTrace();
         } catch (IOException e) {
-            warmingDialog.show(warmingDialog.Dialog_ERR,"QRReaderè¯»å†™é”™è¯¯ï¼ï¼ï¼è¯·è”ç³»ç®¡ç†å‘˜");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader¶ÁĞ´´íÎó£¡£¡£¡ÇëÁªÏµ¹ÜÀíÔ±");
             e.printStackTrace();
         } catch (UnsupportedCommOperationException e) {
-            warmingDialog.show(warmingDialog.Dialog_ERR,"QRReaderæ“ä½œæŒ‡ä»¤é”™è¯¯ï¼ï¼ï¼è¯·è”ç³»ç®¡ç†å‘˜");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader²Ù×÷Ö¸Áî´íÎó£¡£¡£¡ÇëÁªÏµ¹ÜÀíÔ±");
             e.printStackTrace();
         } catch (NoSuchPortException e) {
-            warmingDialog.show(warmingDialog.Dialog_ERR,"QRReaderç«¯å£missï¼ï¼ï¼è¯·è”ç³»ç®¡ç†å‘˜");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader¶Ë¿Úmiss£¡£¡£¡ÇëÁªÏµ¹ÜÀíÔ±");
             e.printStackTrace();
         }
         if (!initOK)
             return;
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("scanning.fxml"));
+        loader.setLocation(getClass().getResource("Scanning.fxml"));
 
         try {
-            loader.load(); //åŠ è½½äºŒç»´ç æ‰«æç•Œé¢
+            loader.load(); //¼ÓÔØ¶şÎ¬ÂëÉ¨Ãè½çÃæ
         } catch (IOException e1) {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
 
-        Parent root = loader.getRoot();
-        Scene scene = new Scene(root);
-        Stage scanningStage;
-        scanningStage = new Stage(StageStyle.UNDECORATED);
-        scanningStage.initModality(Modality.WINDOW_MODAL);
-        scanningStage.setScene(scene);
-        scene.setFill(Color.TRANSPARENT);
-        scanningStage.initStyle(StageStyle.TRANSPARENT);
-        scanningStage.initOwner(orderDialogstate);
-        scanningStage.show();
-        comCartoon  cartoon=new comCartoon();
-        Task<Void> sleeper = new Task<Void>() {
+
+
+        ScannerCartoon scannerCartoon = new ScannerCartoon();
+        scannerCartoon.show();
+        Task<Void> scanTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Logger.log("LOG_DEBUG", ClientUIMain.comName);
+                Logger.log("LOG_DEBUG", Com.QRReaderComName);
 
                 Order.QRCODE = qrReader.getQRCode();
-
                 return null;
             }
         };
-        sleeper.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+        scanTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
             @Override
             public void handle(WorkerStateEvent event) {
-                scanningStage.close();
+                scannerCartoon.close();
                 if ("".equals(Order.QRCODE)) {
-                    //å•¥ä¹Ÿæ²¡æœ‰ï¼Œdonothing
+                    //É¶Ò²Ã»ÓĞ£¬donothing
                 } else {
-
-                    //å…ˆè¿‡æ»¤ä¸€é“QRCODE
-                    if (!isNumeric(Order.QRCODE))
-                    {
-                        warmingDialog.show(warmingDialog.Dialog_ERR,"è¯·æ£€æŸ¥æ‚¨çš„äºŒç»´ç æ˜¯å¦ä¸ºæ”¯ä»˜æ¡ç !");
+                    //ÏÈ¹ıÂËÒ»µÀQRCODE
+                    if (!isNumeric(Order.QRCODE)) {
+                        WarmingDialog.show(WarmingDialog.Dialog_ERR, "Çë¼ì²éÄúµÄ¶şÎ¬ÂëÊÇ·ñÎªÖ§¸¶ÌõÂë!");
                         return;
                     }
+                    ComCartoon comCartoon = new ComCartoon();
+                    comCartoon.show();
 
-                    cartoon.show();
-                    //å‘èµ·æ”¶è´¹åŠ¨ä½œ
-                    if (false==PayBill.exec()) {
-                        warmingDialog.show(warmingDialog.Dialog_ERR,"äº¤æ˜“å¤±è´¥ï¼Œè¯·æ£€æŸ¥æ‚¨çš„äºŒç»´ç æ˜¯å¦æ­£ç¡®\nå¦‚æ‚¨è´¦æˆ·å·²æ‰£è´¦ï¼Œè¯·è”ç³»ç®¡ç†å‘˜ï¼Œç»™æ‚¨å¸¦æ¥ä¸ä¾¿è¯·æ‚¨è°…è§£!");
-                        Event.fireEvent(orderDialogstate, new WindowEvent(orderDialogstate, WindowEvent.WINDOW_CLOSE_REQUEST));
-                        return;
-                    }
-                    cartoon.show();
+                    Task<Void> comTask = new Task<Void>() {
+                        @Override
+                        public Void call() throws Exception {
+                            //·¢ÆğÊÕ·Ñ¶¯×÷
+                            if (false == PayBill.exec()) {
+                                Order.callFail = true;
+                            } else {
+                                Order.callFail = false;
+                            }
+                            return null;
+                        }
+                    };
+                    comTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+                                               @Override
+                                               public void handle(WorkerStateEvent event) {
+                                                   comCartoon.close();
+                                                   if (Order.callFail) {
+                                                       WarmingDialog.show(WarmingDialog.Dialog_ERR, "½»Ò×Ê§°Ü£¬Çë¼ì²éÄúµÄ¶şÎ¬ÂëÊÇ·ñÕıÈ·\nÈçÄúÕË»§ÒÑ¿ÛÕË£¬ÇëÁªÏµ¹ÜÀíÔ±£¬¸øÄú´øÀ´²»±ãÇëÄúÁÂ½â!");
+                                                       return;
+                                                   }
+                                                   Order.finalOut=false;
+                                                   ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon();
+                                                   thingsOutCartoon.show();
+                                                   Task<Void> thingsOutTask = new Task<Void>() {
+                                                       @Override
+                                                       public Void call() throws Exception {
+                                                           Order.outFail=false;
+                                                           try {
+                                                               ModbusUtil.doThingsOut(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
+                                                           } catch (Exception e) {
+                                                               e.printStackTrace();
+                                                               Logger.log("LOG_ERR", "Ö´ĞĞ³ö»õ´íÎó");
+                                                               Logger.log("LOG_ERR", e.toString());
+                                                               Order.outFail=true;
+                                                               return null;
+                                                           }
+                                                           int time=0;
+                                                           while (!Order.finalOut)
+                                                           {
+                                                               Thread.sleep(1000);
+                                                               time++;
+                                                               if (time>30) {
+                                                                   Com.ZDZT_U="ERR_ERR_OutNull";
+                                                                   break;
+                                                               }
+                                                           }
 
-                    Logger.log("LOG_DEBUG", "å‡ºè´§äº†");
+                                                           return null;
+                                                       }
+                                                   };
+                                                   thingsOutTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+                                                       @Override
+                                                       public void handle(WorkerStateEvent event) {
+                                                           if (Order.outFail)
+                                                           {
+                                                               WarmingDialog.show(WarmingDialog.Dialog_OVER, "·Ç³£±§Ç¸£¬µêÄÚÉè±¸Òì³££¬ÇëÁªÏµ¹ÜÀíÔ±£¡£¡£¡");
+                                                               thingsOutCartoon.close();
+                                                           }else {
+                                                               UpdateDSPXX.exec(Order.SPMC_U, -1);
+                                                               thingsOutCartoon.close();
+                                                               WarmingDialog.show(WarmingDialog.Dialog_OVER, "Ğ»Ğ»ÄúµÄ¹âÁÙ£¬µã»÷È·ÈÏ·µ»ØÖ÷½çÃæ£¬ÈçÓĞÒÉÎÊÇëÁªÏµ¹ÜÀíÔ±");
+                                                               Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
+                                                               modelHelper.goHome();
+                                                           }
 
-                    //å‡ºè´§
-//                    try {
-//                        ModbusUtil.writeDigitalOutput(ClientUIMain.relayIP, ClientUIMain.relayPort, 254, Order.ADRESS, 1);
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                        Logger.log("LOG_ERR", "æ‰§è¡Œå‡ºè´§ç¬¬1æ­¥é”™è¯¯");
-//                        return;
-//                    }
-//                    try {
-//                        Thread.sleep(1000);
-//                    } catch (InterruptedException e) {
-//                        // TODO Auto-generated catch block
-//                        e.printStackTrace();
-//                        return;
-//                    }
-//
-//
-//                    try {
-//                        ModbusUtil.writeDigitalOutput(ClientUIMain.relayIP, ClientUIMain.relayPort, 254, Order.ADRESS, 0);
-//                    } catch (Exception e) {
-//                        e.printStackTrace();
-//                        Logger.log("LOG_DEBUG", "æ‰§è¡Œå‡ºè´§ç¬¬2æ­¥é”™è¯¯");
-//                        return;
-//                    }
-
-//                    try {
-//                        Thread.sleep(5000);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-
-
-                    updateDSPXX.exec(Order.SPMC_U,-1);
-                    warmingDialog.show(warmingDialog.Dialog_OVER,"è°¢è°¢æ‚¨çš„å…‰ä¸´ï¼Œç‚¹å‡»ç¡®è®¤è¿”å›ä¸»ç•Œé¢ï¼Œå¦‚æœ‰ç–‘é—®è¯·è”ç³»ç®¡ç†å‘˜");
-                    Event.fireEvent(orderDialogstate, new WindowEvent(orderDialogstate, WindowEvent.WINDOW_CLOSE_REQUEST));
-                    modelHelper.goHome();
-
-
-
+                                                       }
+                                                   });
+                                                   new Thread(thingsOutTask).start();
+                                               }
+                                           }
+                    );
+                    new Thread(comTask).start();
                 }
             }
         });
-        new Thread(sleeper).start();
+        new Thread(scanTask).start();
 
 
     }
 
     public Stage getOrderDialogstate() {
-        return orderDialogstate;
+        return orderDialogstage;
     }
 
     public void setOrderDialogstate(Stage orderDialogstate) {
-        this.orderDialogstate = orderDialogstate;
+        this.orderDialogstage = orderDialogstate;
     }
 
     public Scene getOrderDialogsence() {
@@ -189,10 +200,11 @@ public class orderDialogController {
     public void setOrderDialogsence(Scene orderDialogsence) {
         this.orderDialogsence = orderDialogsence;
     }
-    public boolean isNumeric(String str){
+
+    public boolean isNumeric(String str) {
         Pattern pattern = Pattern.compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
-        if( !isNum.matches() ){
+        if (!isNum.matches()) {
             return false;
         }
         return true;

@@ -18,10 +18,10 @@ public class test {
         body.put("JNWBZ_",0);
         List list=new ArrayList();
         Map map1=new HashMap();
-        map1.put("goosName","æˆ‘æ“¦");
+        map1.put("goosName","ÎÒ²Á");
         map1.put("goosID",1);
         Map map2=new HashMap();
-        map2.put("goosName","xxxæ˜¯");
+        map2.put("goosName","xxxÊÇ");
         map2.put("goosID","2222");
         list.add(map1);
         list.add(map2);

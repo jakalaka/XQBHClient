@@ -1,11 +1,7 @@
 package XQBHClient.ClientUI;
 
 
-import XQBHClient.Client.Table.Mapper.DSPXXMapper;
-import XQBHClient.Client.Table.Model.DSPXX;
-import XQBHClient.Client.Table.Model.DSPXXExample;
-import XQBHClient.Client.Table.basic.DBAccess;
-import XQBHClient.ClientAPI.initDSPXX;
+import XQBHClient.ClientAPI.InitDSPXX;
 import XQBHClient.Utils.Model.modelHelper;
 import XQBHClient.Utils.log.Logger;
 import javafx.fxml.FXML;
@@ -18,15 +14,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import org.apache.ibatis.session.SqlSession;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
-    public static myModel model;
+    public static MyModel model;
 
     @FXML
     private AnchorPane viewPane;
@@ -42,18 +36,18 @@ public class Controller implements Initializable {
 
 
     /*
-    åˆå§‹åŒ–
+    ³õÊ¼»¯
      */
     public void initialize(URL location, ResourceBundle resources) {
-        //æ›´æ–°å•†å“æ•°æ®åº“è®°å½•çŠ¶æ€
-        if (true!= initDSPXX.initTable()) {
-            Logger.log("LOG_SYS","åˆå§‹åŒ–æ•°æ®åº“å¤±è´¥ï¼Œè¯·è”ç³»ç®¡ç†å‘˜");
+        //¸üĞÂÉÌÆ·Êı¾İ¿â¼ÇÂ¼×´Ì¬
+        if (true!= InitDSPXX.initTable()) {
+            Logger.log("LOG_SYS","³õÊ¼»¯Êı¾İ¿âÊ§°Ü£¬ÇëÁªÏµ¹ÜÀíÔ±");
             return;
         }
 
-        //ç”Ÿæˆæ¨¡å‹
+        //Éú³ÉÄ£ĞÍ
         String rootPath = "resources/Model";
-        model=new myModel(rootPath,viewPane);
+        model=new MyModel(rootPath,viewPane);
 
         ClientUIMain.controller=this;
 
@@ -92,7 +86,7 @@ public class Controller implements Initializable {
 
     }
 
-    @FXML//æ„Ÿè§‰æš‚æ—¶æ²¡ç”¨
+    @FXML//¸Ğ¾õÔİÊ±Ã»ÓÃ
     public void  buttonPress(TouchEvent event){
         //Logger.log("LOG_DEBUG",event);
 

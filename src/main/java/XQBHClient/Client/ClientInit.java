@@ -1,9 +1,18 @@
 package XQBHClient.Client;
 
 
+import XQBHClient.Client.Table.Mapper.CXTCSMapper;
+import XQBHClient.Client.Table.Model.CXTCS;
+import XQBHClient.Client.Table.Model.CXTCSKey;
+import XQBHClient.Client.Table.basic.DBAccess;
+import XQBHClient.ClientUI.ClientUIMain;
+import XQBHClient.Utils.FinishComListener.FinishComListener;
+import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
+import org.apache.ibatis.session.SqlSession;
 
 import java.io.File;
+import java.io.IOException;
 
 import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
 
@@ -13,10 +22,33 @@ import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML
 public class ClientInit {
     public static boolean Init(){
         Logger.log("LOG_IO", Com.getIn);
-        /*
-        ‰ªéuserInfo‰∏≠Ëé∑ÂèñÁõ∏ÂÖ≥ÈÖçÁΩÆ‰ø°ÊÅØ
-         */
+        /*ªÒ»°…˙≤˙≤‚ ‘±Í÷æ*/
+        DBAccess dbAccess=new DBAccess();
+        SqlSession sqlSession;
+        try {
+            sqlSession = dbAccess.getSqlSession();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Logger.log("LOG_SYS","ªÒ»°…˙≤˙≤‚ ‘±Í÷æ¥ÌŒÛ");
+            return false;
+        }
+        CXTCSMapper cxtcsMapper=sqlSession.getMapper(CXTCSMapper.class);
+        CXTCSKey cxtcsKey=new CXTCSKey();
+        cxtcsKey.setKEY_UU("CSBZ");
+        cxtcsKey.setFRDM_U("9999");
+        CXTCS cxtcs=cxtcsMapper.selectByPrimaryKey(cxtcsKey);
+        if (null==cxtcs)
+        {
+            Logger.log("LOG_SYS","’“≤ªµΩ…˙≤˙≤‚ ‘±Í÷æ");
+            return false;
+        }
+        Com.CSBZ_U=cxtcs.getVALUE_();
 
+
+
+        /*
+        ¥”userInfo÷–ªÒ»°œ‡πÿ≈‰÷√–≈œ¢
+         */
         String ZDJYM_=readKeyFromXML(new File("resources/Info/userInfo.properties"),"ZDJYM_");
         if (!"".equals(ZDJYM_)&&ZDJYM_!=null)
             Com.ZDJYM_=ZDJYM_;
@@ -29,7 +61,74 @@ public class ClientInit {
         if (!"".equals(LogLV)&&LogLV!=null)
             Com.LogLV =LogLV;
 
+        /*
+        ¥”sysInfo÷–ªÒ»°œ‡πÿ≈‰÷√
+         */
+        String sysinfo = "resources/Info/sysInfo.properties";
+        File sysprop = new File(sysinfo);
+        QRReader.timeOut = Integer.parseInt(readKeyFromXML(sysprop, "timeOut"));
+        if (0 == QRReader.timeOut ) {
+            Logger.log("LOG_ERR", "∂¡»°timeOut¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "timeOut=" + QRReader.timeOut);
+        }
+        QRReader.frequency = Integer.parseInt(readKeyFromXML(sysprop, "frequency"));
+        if (0 == QRReader.frequency ) {
+            Logger.log("LOG_ERR", "∂¡»°frequency¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "frequency=" +QRReader.frequency );
+        }
 
+        Com.PowerControlRelayIP = readKeyFromXML(sysprop, "PowerControlRelayIP");
+        if (null == Com.PowerControlRelayIP || "".equals(Com.PowerControlRelayIP)) {
+            Logger.log("LOG_ERR", "∂¡»°PowerControlRelayIP¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "PowerControlRelayIP=" + Com.PowerControlRelayIP);
+        }
+
+        Com.PowerControlPort = Integer.parseInt(readKeyFromXML(sysprop, "PowerControlPort"));
+        if (0 == Com.PowerControlPort) {
+            Logger.log("LOG_ERR", "∂¡»°PowerControlPort¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "PowerControlPort=" + Com.PowerControlPort);
+        }
+        Com.PowerControlAdress = Integer.parseInt(readKeyFromXML(sysprop, "PowerControlAdress"));
+        if (0 == Com.PowerControlAdress) {
+            Logger.log("LOG_ERR", "∂¡»°PowerControlAdress¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "PowerControlAdress=" + Com.PowerControlAdress);
+        }
+
+        Com.QRReaderComName = readKeyFromXML(sysprop, "QRReaderComName");
+        if (null == Com.QRReaderComName || "".equals(Com.QRReaderComName)) {
+            Logger.log("LOG_ERR", "∂¡»°QRReaderComName¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "QRReaderComName=" + Com.QRReaderComName);
+        }
+
+        Com.FinishScannerComName = readKeyFromXML(sysprop, "FinishScannerComName");
+        if (null == Com.FinishScannerComName || "".equals(Com.FinishScannerComName)) {
+            Logger.log("LOG_ERR", "∂¡»°FinishScannerComName¥ÌŒÛ");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "FinishScannerComName=" + Com.FinishScannerComName);
+        }
+
+        /*
+        ≥ˆªı…®√Ë∆˜≥ı ºªØ
+         */
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                FinishComListener.start();
+            }
+        }).start();
 
         Logger.log("LOG_IO", Com.getOut);
 

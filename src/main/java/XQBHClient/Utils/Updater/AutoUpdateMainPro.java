@@ -13,7 +13,7 @@ public class AutoUpdateMainPro {
 	private void execute(boolean flg) {
 
 		ftpClient.FTPClientRun(flg);
-		// é‡Šæ”¾ç¨‹åºå ç”¨çš„èµ„æº
+		// ÊÍ·Å³ÌĞòÕ¼ÓÃµÄ×ÊÔ´
 		freeResource();
 
 	}

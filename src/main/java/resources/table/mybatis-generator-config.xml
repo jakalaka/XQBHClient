@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="GBK" ?>
 <!DOCTYPE generatorConfiguration PUBLIC
         "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
@@ -10,7 +10,7 @@
 
     <context id="context"  targetRuntime="MyBatis3">
 
-        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="javaFileEncoding" value="GBK"/>
         <commentGenerator>
             <property name="suppressAllComments" value="true"/>
             <property name="suppressDate" value="false"/>

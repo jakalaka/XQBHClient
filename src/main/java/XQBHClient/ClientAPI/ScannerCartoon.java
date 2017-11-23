@@ -15,14 +15,13 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
+public class ScannerCartoon {
+    public Stage stage;
 
-public class ComCartoon {
-    public Stage comCartoonStage;
 
-
-    public ComCartoon() {
+    public ScannerCartoon() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ComCartoonController.class.getResource("ComCartoon.fxml"));
+        loader.setLocation(ComCartoonController.class.getResource("Scanning.fxml"));
 
         try {
             loader.load(); //加载二维码扫描界面
@@ -34,24 +33,23 @@ public class ComCartoon {
         Parent root = loader.getRoot();
         Scene scene = new Scene(root);
 
-        comCartoonStage = new Stage(StageStyle.UNDECORATED);
-        comCartoonStage.initModality(Modality.WINDOW_MODAL);
-        comCartoonStage.setScene(scene);
+        stage = new Stage(StageStyle.UNDECORATED);
+        stage.initModality(Modality.WINDOW_MODAL);
+        stage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
-        comCartoonStage.initStyle(StageStyle.TRANSPARENT);
-        comCartoonStage.initOwner(OrderDialogController.orderDialogstage);
-        comCartoonStage.setAlwaysOnTop(true);
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initOwner(OrderDialogController.orderDialogstage);
+        stage.setAlwaysOnTop(true);
 
     }
 
     public void show() {
-
-        comCartoonStage.show();
-        Logger.log("LOG_DEBUG", "ComCartoon show");
+        stage.show();
+        Logger.log("LOG_DEBUG","Scanning show");
     }
 
     public void close() {
-        Event.fireEvent(comCartoonStage, new WindowEvent(comCartoonStage, WindowEvent.WINDOW_CLOSE_REQUEST));
-        Logger.log("LOG_DEBUG", "ComCartoon close");
+        stage.close();
+        Logger.log("LOG_DEBUG","Scanning close");
     }
 }

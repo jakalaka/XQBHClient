@@ -15,7 +15,7 @@ import java.util.*;
 public class XmlUtils {
 
     /**
-     * 鏍规嵁Map缁勮xml娑堟伅浣擄紝鍊煎璞′粎鏀寔鍩烘湰鏁版嵁绫诲瀷銆丼tring銆丅igInteger銆丅igDecimal锛屼互鍙婂寘鍚厓绱犱负涓婅堪鏀寔鏁版嵁绫诲瀷鐨凪ap
+     * 根据Map组装xml消息体，值对象仅支持基本数据类型、String、BigInteger、BigDecimal，以及包含元素为上述支持数据类型的Map
      *
 
      * @return
@@ -26,7 +26,7 @@ public class XmlUtils {
     }
 
     /**
-     * 鏍规嵁xml娑堟伅浣撹浆鍖栦负Map
+     * 根据xml消息体转化为Map
      *
      * @param xml
      * @return

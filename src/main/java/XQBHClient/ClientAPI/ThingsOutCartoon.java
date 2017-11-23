@@ -1,7 +1,7 @@
 package XQBHClient.ClientAPI;
 
-import XQBHClient.ClientUI.ComCartoonController;
 import XQBHClient.ClientUI.OrderDialogController;
+import XQBHClient.ClientUI.ThingsOutCartoonController;
 import XQBHClient.Utils.log.Logger;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -16,13 +16,13 @@ import javafx.stage.WindowEvent;
 import java.io.IOException;
 
 
-public class ComCartoon {
+public class ThingsOutCartoon {
     public Stage comCartoonStage;
 
 
-    public ComCartoon() {
+    public ThingsOutCartoon() {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(ComCartoonController.class.getResource("ComCartoon.fxml"));
+        loader.setLocation(ThingsOutCartoonController.class.getResource("ThingsOutCartoon.fxml"));
 
         try {
             loader.load(); //加载二维码扫描界面
@@ -47,11 +47,13 @@ public class ComCartoon {
     public void show() {
 
         comCartoonStage.show();
-        Logger.log("LOG_DEBUG", "ComCartoon show");
+
+
+        Logger.log("LOG_DEBUG","ThingsOutCartoon show");
     }
 
     public void close() {
         Event.fireEvent(comCartoonStage, new WindowEvent(comCartoonStage, WindowEvent.WINDOW_CLOSE_REQUEST));
-        Logger.log("LOG_DEBUG", "ComCartoon close");
+        Logger.log("LOG_DEBUG","ThingsOutCartoon close");
     }
 }

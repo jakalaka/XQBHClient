@@ -1,6 +1,5 @@
 package XQBHClient.Utils.QRReader;
 
-import XQBHClient.ClientAPI.warmingDialog;
 import XQBHClient.Utils.log.Logger;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -15,12 +14,12 @@ import java.io.OutputStream;
 
 public class QRReader {
     public String comName;
-    public int baudRate;  //æ³¢ç‰¹ç‡
+    public int baudRate;  //²¨ÌØÂÊ
 
-    public int dataBits;  //æ•°æ®ä½
-    public int stopBits;  //åœæ­¢ä½
-    public int parity;    //æ ¡éªŒä½
-    public static int timeOut = 9000;  //è¶…æ—¶æ—¶é—´
+    public int dataBits;  //Êı¾İÎ»
+    public int stopBits;  //Í£Ö¹Î»
+    public int parity;    //Ğ£ÑéÎ»
+    public static int timeOut = 9000;  //³¬Ê±Ê±¼ä
     public static int frequency = 500;
     QRReaderUtil reader;
 
@@ -78,7 +77,7 @@ public class QRReader {
         }
         reader.re=reader.re.trim();
         int iLength=reader.re.length();
-        if (iLength>0&&iLength%2==0)//é»˜è®¤QRCODEå¤§äº0ä½
+        if (iLength>0&&iLength%2==0)//Ä¬ÈÏQRCODE´óÓÚ0Î»
         {
             int iTemp=iLength/2;
             if (reader.re.substring(0,iTemp).equals(reader.re.substring(iTemp,iLength)))

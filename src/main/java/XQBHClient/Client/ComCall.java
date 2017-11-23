@@ -17,16 +17,16 @@ import java.util.Map;
  */
 public class ComCall {
     /**
-     * clientäº¤æ˜“å±‚é€šç”¨è°ƒç”¨
+     * client½»Ò×²ãÍ¨ÓÃµ÷ÓÃ
      * @param TranMapIn
      * @param TranMapOut
      * @return
      */
     public static boolean Call(String QTJYM_,String HTJYM_,Map TranMapIn,Map TranMapOut){
-        Map XMLMapIn=new HashMap();//å†™æ–¹æ³•ï¼Œå°†TranMapInæ·»åŠ æŠ¥æ–‡å¤´ä¿¡æ¯ï¼Œå˜ä¸ºXMLMapIn
+        Map XMLMapIn=new HashMap();//Ğ´·½·¨£¬½«TranMapInÌí¼Ó±¨ÎÄÍ·ĞÅÏ¢£¬±äÎªXMLMapIn
         if(false==addInfo(QTJYM_,HTJYM_,TranMapIn,XMLMapIn))
         {
-            Logger.log("LOG_ERR","ç»„ç»‡æŠ¥æ–‡å¤´ä¿¡æ¯å¤±è´¥");
+            Logger.log("LOG_ERR","×éÖ¯±¨ÎÄÍ·ĞÅÏ¢Ê§°Ü");
             return false;
         }
 
@@ -37,7 +37,7 @@ public class ComCall {
             commonTran = new CommonTranService().getCommonTranPort();
         }catch (Exception e)
         {
-            Logger.log("LOG_ERR","æœåŠ¡å™¨è¿æ¥å¤±è´¥");
+            Logger.log("LOG_ERR","·şÎñÆ÷Á¬½ÓÊ§°Ü");
             return false;
         }
         String XMLOut=commonTran.comtran(XMLIn);
@@ -52,7 +52,7 @@ public class ComCall {
     }
 
     /**
-     * æ£€æŸ¥åˆæ³•æ€§å¹¶æ·»åŠ æŠ¥æ–‡å¤´
+     * ¼ì²éºÏ·¨ĞÔ²¢Ìí¼Ó±¨ÎÄÍ·
      * @param TranMapIn
      * @param XMLMapIn
      * @return
@@ -60,29 +60,30 @@ public class ComCall {
     public static boolean addInfo(String QTJYM_,String HTJYM_,Map TranMapIn,Map XMLMapIn){
         Map head=new HashMap();
         String []date=Com.getDate().split("-");
-        head.put("QTRQ_U",date[0]); //å‰å°æ—¥æœŸ
-        head.put("QTSJ_U",date[1]); //å‰å°æ—¶é—´
-        head.put("QTLS_U",Com.getQTLS()); //å‰å°æµæ°´
+        head.put("QTRQ_U",date[0]); //Ç°Ì¨ÈÕÆÚ
+        head.put("QTSJ_U",date[1]); //Ç°Ì¨Ê±¼ä
+        head.put("QTLS_U",Com.getQTLS()); //Ç°Ì¨Á÷Ë®
 
-        head.put("ZDBH_U", Com.ZDBH_U); //ç»ˆç«¯ç¼–å·
-        head.put("QTJYM_",QTJYM_); //äº¤æ˜“ç 
-        head.put("HTJYM_",HTJYM_); //åå°äº¤æ˜“ç 
-        head.put("ZDJYM_", Com.ZDJYM_); //ç»ˆç«¯æ ¡éªŒç 
-        head.put("IP_UUU", Com.getIP()); //ipåœ°å€
+        head.put("ZDBH_U", Com.ZDBH_U); //ÖÕ¶Ë±àºÅ
+        head.put("QTJYM_",QTJYM_); //½»Ò×Âë
+        head.put("HTJYM_",HTJYM_); //ºóÌ¨½»Ò×Âë
+        head.put("ZDJYM_", Com.ZDJYM_); //ÖÕ¶ËĞ£ÑéÂë
+        head.put("IP_UUU", Com.getIP()); //ipµØÖ·
+        head.put("CSBZ_U", Com.CSBZ_U); //ipµØÖ·
         XMLMapIn.put("head",head);
         XMLMapIn.put("body",TranMapIn);
         return true;
     }
 
     /**
-     * æ£€æŸ¥åˆæ³•æ€§å¹¶å»æ‰æŠ¥æ–‡å¤´
+     * ¼ì²éºÏ·¨ĞÔ²¢È¥µô±¨ÎÄÍ·
      * @param XMLMapOut
      * @param TranMapOut
      * @return
      */
     public  static boolean minusInfo(Map XMLMapOut,Map TranMapOut){
         /*
-        Clienté€šè®¯åçš„åˆæ³•æ€§æ£€æŸ¥ï¼Œä¹Ÿä¸çŸ¥é“å†™ä»€ä¹ˆå¥½ï¼Œä»¥ååŠ å§
+        ClientÍ¨Ñ¶ºóµÄºÏ·¨ĞÔ¼ì²é£¬Ò²²»ÖªµÀĞ´Ê²Ã´ºÃ£¬ÒÔºó¼Ó°É
          */
         String CWDM_U=(String) ((Map)XMLMapOut.get("head")).get("CWDM_U");
         String CWXX_U=(String) ((Map)XMLMapOut.get("head")).get("CWXX_U");
@@ -90,10 +91,10 @@ public class ComCall {
 
         if (!"AAAAAA".equals(CWDM_U)) {
             /*
-            è¿™é‡Œåšå¤±è´¥å¤„ç†
+            ÕâÀï×öÊ§°Ü´¦Àí
              */
             TranMapOut.clear();
-            Logger.log("LOG_ERR","è°ƒç”¨å¤±è´¥");
+            Logger.log("LOG_ERR","µ÷ÓÃÊ§°Ü");
             Logger.log("LOG_ERR","CWDM_U="+CWDM_U);
             return false;
         }else Logger.log("LOG_IO","CWDM_U="+CWDM_U);

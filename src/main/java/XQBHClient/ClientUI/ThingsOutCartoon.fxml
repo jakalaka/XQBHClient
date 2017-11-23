@@ -7,7 +7,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="231.0" prefWidth="458.0" styleClass="orderAnchorpane" stylesheets="@../../resources/CSS/stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="XQBHClient.ClientUI.ComCartoonController">
+<AnchorPane prefHeight="231.0" prefWidth="458.0" styleClass="orderAnchorpane" stylesheets="@../../resources/CSS/stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="XQBHClient.ClientUI.ThingsOutCartoonController">
    <children>
       <BorderPane prefHeight="400.0" prefWidth="600.0" styleClass="orderBorderpane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -29,9 +29,9 @@
          <center>
             <FlowPane BorderPane.alignment="CENTER">
                <children>
-                  <Label text="努力通讯中">
+                  <Label text="商品向你跑来">
                      <font>
-                        <Font size="87.0" />
+                        <Font size="71.0" />
                      </font>
                   </Label>
                </children></FlowPane>

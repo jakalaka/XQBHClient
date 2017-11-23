@@ -22,33 +22,50 @@ import java.util.Enumeration;
 public class Com {
 
     /**
-     * æ—¥å¿—ç­‰çº§
+     * ÈÕÖ¾µÈ¼¶
      */
     public static String LogLV = "";
     /**
-     * ç»ˆç«¯ç¼–å·
+     * ÖÕ¶Ë±àºÅ
      */
     static String ZDBH_U = "";
 
     /**
-     * ç»ˆç«¯æ ¡éªŒç 
+     * ÖÕ¶ËĞ£ÑéÂë
      */
     static String ZDJYM_ = "";
 
+
+    /**
+     * ÖÕ¶ËĞ£ÑéÂë
+     */
+    public static String CSBZ_U = "";
+
+    /**
+     * ÖÕ¶Ë×´Ì¬£¬ÓÃÓÚ¿ØÖÆÒì³£Çé¿ö
+     */
+    public  static String ZDZT_U = "OK";
+
+
+    public static String PowerControlRelayIP;
+    public static int PowerControlPort;
+    public static int PowerControlAdress;
+    public static String QRReaderComName;
+    public static String FinishScannerComName;
 
     public static final String getIn = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 
     public static final String getOut = "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
 
     /**
-     * è·å–å‰å°æµæ°´=10ä½ç»ˆç«¯ç¼–å·+6ä½äº¤æ˜“æ—¶é—´
+     * »ñÈ¡Ç°Ì¨Á÷Ë®=10Î»ÖÕ¶Ë±àºÅ+6Î»½»Ò×Ê±¼ä
      *
      * @return
      */
     public static String getQTLS() {
         String sQTLS_U = "";
 
-        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//è®¾ç½®æ—¥æœŸæ ¼å¼
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd");//ÉèÖÃÈÕÆÚ¸ñÊ½
         String sGYLSGZ = "";
         String sDate = df.format(new Date());
         int XH = 0;
@@ -57,7 +74,7 @@ public class Com {
         try {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
-            Logger.log("LOG_SYS", "å–æµæ°´å·æ—¶æŸ¥è¯¢æ•°æ®åº“å‡ºé”™!!!");
+            Logger.log("LOG_SYS", "È¡Á÷Ë®ºÅÊ±²éÑ¯Êı¾İ¿â³ö´í!!!");
             e.printStackTrace();
         }
         CXTCSMapper cxtcsMapper = sqlSession.getMapper(CXTCSMapper.class);
@@ -66,7 +83,7 @@ public class Com {
         cxtcsKey.setKEY_UU("GYLSGZ");
         CXTCS cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
         if (null == cxtcs) {
-            //æ— æ•°æ®ï¼Œæ’å…¥
+            //ÎŞÊı¾İ£¬²åÈë
             cxtcs = new CXTCS();
             cxtcs.setFRDM_U("9999");
             cxtcs.setKEY_UU("GYLSGZ");
@@ -90,33 +107,33 @@ public class Com {
         sqlSession.close();
 
         sQTLS_U = "C" + ZDBH_U + String.format("%05d", XH);
-        Logger.log("LOG_DEBUG", "å‰å°æµæ°´:" + sQTLS_U);
+        Logger.log("LOG_DEBUG", "Ç°Ì¨Á÷Ë®:" + sQTLS_U);
 
         return sQTLS_U;
     }
 
     /**
-     * è·å–å‰å°æœºå™¨æ—¥æœŸ
+     * »ñÈ¡Ç°Ì¨»úÆ÷ÈÕÆÚ
      *
      * @return
      */
     public static String getDate() {
         String date = "";
-        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd-HHmmss");//è®¾ç½®æ—¥æœŸæ ¼å¼
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd-HHmmss");//ÉèÖÃÈÕÆÚ¸ñÊ½
         date = df.format(new Date());
         return date;
     }
 
 
     /**
-     * è·å–å‰å°æœºå™¨IP
+     * »ñÈ¡Ç°Ì¨»úÆ÷IP
      *
      * @return
      */
     public static String getIP() {
         String IPAdress = "";
-        String localip = null;// æœ¬åœ°IPï¼Œå¦‚æœæ²¡æœ‰é…ç½®å¤–ç½‘IPåˆ™è¿”å›å®ƒ
-        String netip = null;// å¤–ç½‘IP
+        String localip = null;// ±¾µØIP£¬Èç¹ûÃ»ÓĞÅäÖÃÍâÍøIPÔò·µ»ØËü
+        String netip = null;// ÍâÍøIP
 
         Enumeration<NetworkInterface> netInterfaces =
                 null;
@@ -126,7 +143,7 @@ public class Com {
             e.printStackTrace();
         }
         InetAddress ip = null;
-        boolean finded = false;// æ˜¯å¦æ‰¾åˆ°å¤–ç½‘IP
+        boolean finded = false;// ÊÇ·ñÕÒµ½ÍâÍøIP
         while (netInterfaces.hasMoreElements() && !finded) {
             NetworkInterface ni = netInterfaces.nextElement();
             Enumeration<InetAddress> address = ni.getInetAddresses();
@@ -134,13 +151,13 @@ public class Com {
                 ip = address.nextElement();
                 if (!ip.isSiteLocalAddress()
                         && !ip.isLoopbackAddress()
-                        && ip.getHostAddress().indexOf(":") == -1) {// å¤–ç½‘IP
+                        && ip.getHostAddress().indexOf(":") == -1) {// ÍâÍøIP
                     netip = ip.getHostAddress();
                     finded = true;
                     break;
                 } else if (ip.isSiteLocalAddress()
                         && !ip.isLoopbackAddress()
-                        && ip.getHostAddress().indexOf(":") == -1) {// å†…ç½‘IP
+                        && ip.getHostAddress().indexOf(":") == -1) {// ÄÚÍøIP
                     localip = ip.getHostAddress();
                 }
             }

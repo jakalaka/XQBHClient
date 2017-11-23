@@ -43,35 +43,35 @@ public class FTPClientUtil {
             ftp.connect(hostName, port);
             ftp.login(user, pwd);
             ftp.setFileType(FTP.BINARY_FILE_TYPE);
-            ftp.setControlEncoding("UTF-8");
+            ftp.setControlEncoding("GBK");
             FTPClientConfig config = new FTPClientConfig(FTPClientConfig.SYST_NT);
             config.setServerLanguageCode("en");
 
         } catch (IOException ex) {
-            Logger.log("LOG_SYS","è¿æ¥ä¸»æœº:" + hostName + "å¤±è´¥!");
+            Logger.log("LOG_SYS","Á¬½ÓÖ÷»ú:" + hostName + "Ê§°Ü!");
         } catch (SecurityException ex) {
-            Logger.log("LOG_SYS","ç”¨æˆ·æˆ–è€…å¯†ç å¯èƒ½ä¸å¯¹ï¼Œæ— æƒé™ä¸ä¸»æœº:" + hostName + "è¿æ¥!");
+            Logger.log("LOG_SYS","ÓÃ»§»òÕßÃÜÂë¿ÉÄÜ²»¶Ô£¬ÎŞÈ¨ÏŞÓëÖ÷»ú:" + hostName + "Á¬½Ó!");
         }
         return ftp;
     }
 
-    // éå†ftpç«™ç‚¹èµ„æºä¿¡æ¯,è·å–FTPæœåŠ¡å™¨ä¸Šåˆ¶å®šç›®å½•çš„åº”ç”¨ç¨‹åº
+    // ±éÀúftpÕ¾µã×ÊÔ´ĞÅÏ¢,»ñÈ¡FTP·şÎñÆ÷ÉÏÖÆ¶¨Ä¿Â¼µÄÓ¦ÓÃ³ÌĞò
     public void traverse(String host, FTPClient client, String path, boolean flg) {
         String prefix = "";
         try {
-            Logger.log("LOG_SYS","å½“å‰ç›®å½•:"+path);
+            Logger.log("LOG_SYS","µ±Ç°Ä¿Â¼:"+path);
             client.changeWorkingDirectory(path);
             client.enterLocalPassiveMode();
             FTPFile[] files = client.listFiles(path);
             for (int i = 0; i < files.length; i++) {
-                // å¦‚æœæ˜¯æ–‡ä»¶å¤¹å°±é€’å½’æ–¹æ³•ç»§ç»­éå†
+                // Èç¹ûÊÇÎÄ¼ş¼Ğ¾Íµİ¹é·½·¨¼ÌĞø±éÀú
 
                 if (files[i].isDirectory()) {
 
 					/*
-                     * åˆ›å»ºæ–°ç›®å½•æ—¶ä¼šè‡ªåŠ¨åˆ›å»ºä¸¤ä¸ªæ–‡ä»¶å: . å’Œ .. ç‚¹æŒ‡å½“å‰ç›®å½• ç‚¹ç‚¹æŒ‡çˆ¶ç›®å½•
+                     * ´´½¨ĞÂÄ¿Â¼Ê±»á×Ô¶¯´´½¨Á½¸öÎÄ¼şÃû: . ºÍ .. µãÖ¸µ±Ç°Ä¿Â¼ µãµãÖ¸¸¸Ä¿Â¼
 					 */
-                    // æ³¨æ„è¿™é‡Œçš„åˆ¤æ–­ï¼Œå¦åˆ™ä¼šå‡ºç°æ­»å¾ªç¯
+                    // ×¢ÒâÕâÀïµÄÅĞ¶Ï£¬·ñÔò»á³öÏÖËÀÑ­»·
                     if (!files[i].getName().equals(".") && !files[i].getName().equals("..")) {
                         String tempDir = client.printWorkingDirectory() + "/" + files[i].getName();
                         File localFile = new File(localRootPath + tempDir.replace(remoteRootPath, "/"));
@@ -79,18 +79,18 @@ public class FTPClientUtil {
                             localFile.mkdirs();
                         }
                         client.changeWorkingDirectory(tempDir);
-                        // æ˜¯æ–‡ä»¶å¤¹å°±é€’å½’è°ƒç”¨
+                        // ÊÇÎÄ¼ş¼Ğ¾Íµİ¹éµ÷ÓÃ
                         traverse(host, client, tempDir, flg);
                         prefix += client.printWorkingDirectory();
                         client.changeToParentDirectory();
                     }
-                    // å¦‚æœæ˜¯æ–‡ä»¶å°±æ‰«æä¿¡æ¯
+                    // Èç¹ûÊÇÎÄ¼ş¾ÍÉ¨ÃèĞÅÏ¢
                 } else {
                     if (!flg && files[i].getName().equals("version.txt")) {
                         String temp = client.printWorkingDirectory();
                         String RemFileName = files[i].getName();
                         String tempPath = temp.replaceAll(remoteRootPath, "") + "/" + files[i].getName();
-                        Logger.log("LOG_SYS","å¼€å§‹ä¸‹è½½ ï¼š" + tempPath);
+                        Logger.log("LOG_SYS","¿ªÊ¼ÏÂÔØ £º" + tempPath);
                         File dir = new File(localRootPath + temp.replaceAll(remoteRootPath, ""));
                         if (!dir.exists())
                             dir.mkdir();
@@ -98,7 +98,7 @@ public class FTPClientUtil {
                         try {
                             File localFile = new File(filepath);
 
-                            Logger.log("LOG_SYS","åˆ°:"+localFile.toString());
+                            Logger.log("LOG_SYS","µ½:"+localFile.toString());
                             if (!localFile.exists()) {
                                 localFile.createNewFile();
                             }
@@ -113,12 +113,12 @@ public class FTPClientUtil {
                         String temp = client.printWorkingDirectory();
                         String RemFileName = files[i].getName();
                         String tempPath = temp.replaceAll(remoteRootPath, "") + "/" + files[i].getName();
-                        Logger.log("LOG_SYS","å¼€å§‹ä¸‹è½½ ï¼š" + tempPath);
+                        Logger.log("LOG_SYS","¿ªÊ¼ÏÂÔØ £º" + tempPath);
                         String filepath = localRootPath + tempPath;
 
                         try {
                             File localFile = new File(filepath);
-                            Logger.log("LOG_SYS","åˆ°:"+localFile.toString());
+                            Logger.log("LOG_SYS","µ½:"+localFile.toString());
                             if (!localFile.exists()) {
                                 localFile.createNewFile();
                             }

@@ -1,20 +1,21 @@
 package XQBHClient.ClientUI;
 
+
+import XQBHClient.Utils.log.Logger;
+import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
-import java.net.URL;
-import java.util.ResourceBundle;
+public class ComCartoonController {
 
-public class ScanningController {
-    public static Stage stage;
+    public Stage stage;
     private Scene scene;
 
-    @FXML
-    public   Label mainText;
+
+
     public Stage getStage() {
         return stage;
     }
@@ -29,10 +30,6 @@ public class ScanningController {
 
     public void setScene(Scene scene) {
         this.scene = scene;
-    }
-
-    public void setMainText(String string){
-        this.mainText.setText("xxxxxx");
     }
 
 }

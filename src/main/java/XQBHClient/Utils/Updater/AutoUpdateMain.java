@@ -22,7 +22,7 @@ public class AutoUpdateMain {
             DataInputStream dIn = new DataInputStream(in);
 
             while (dIn.read(b) > 0) {
-                String res = new String(b, "UTF-8");
+                String res = new String(b, "GBK");
                 version = res;
             }
             dIn.close();
@@ -37,14 +37,14 @@ public class AutoUpdateMain {
     }
 
     public static void exec(String[] args) {
-        Logger.log("LOG_SYS","è‡ªåŠ¨å‡çº§ç¨‹åºå¯åŠ¨...");
-        // å…³é—­æ­£åœ¨è¿è¡Œçš„Javaåº”ç”¨ç¨‹åº
+        Logger.log("LOG_SYS","×Ô¶¯Éı¼¶³ÌĞòÆô¶¯...");
+        // ¹Ø±ÕÕıÔÚÔËĞĞµÄJavaÓ¦ÓÃ³ÌĞò
         String oldVersion = getVersionByFile(Const.oldversionPath);
-        Logger.log("LOG_SYS","æœç´¢FTPä¸Šç‰ˆæœ¬æ§åˆ¶æ–‡ä»¶:");
+        Logger.log("LOG_SYS","ËÑË÷FTPÉÏ°æ±¾¿ØÖÆÎÄ¼ş:");
         new AutoUpdateMainPro(Const.hostName, Const.port, Const.user, Const.pwd, Const.RemoteVersion, Const.LocalVersion, false);
         String newVersion = getVersionByFile(Const.newversionPath);
         try {
-            Logger.log("LOG_SYS","æ­£åœ¨è¿›è¡Œç‰ˆæœ¬æ–‡ä»¶æ¯”è¾ƒ...");
+            Logger.log("LOG_SYS","ÕıÔÚ½øĞĞ°æ±¾ÎÄ¼ş±È½Ï...");
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -54,10 +54,10 @@ public class AutoUpdateMain {
 
         if (oldVersion != null && newVersion != null) {
             if (!newVersion.equals(oldVersion)) {
-                //é€šè¿‡æŒ‡ä»¥COMPLETE+æ—¥æœŸä¸ºæŒ‡å®šå‘½ä»¤ï¼Œæ¥æ›´æ–°å…¨éƒ¨ç¨‹åº
-                    Logger.log("LOG_SYS","æ£€æµ‹åˆ°æ•°æ®é‡‡é›†ç¨‹åºç‰ˆæœ¬æœ‰æ›´æ–°ï¼Œå¯åŠ¨è‡ªåŠ¨å‡çº§ç¨‹åº");
+                //Í¨¹ıÖ¸ÒÔCOMPLETE+ÈÕÆÚÎªÖ¸¶¨ÃüÁî£¬À´¸üĞÂÈ«²¿³ÌĞò
+                    Logger.log("LOG_SYS","¼ì²âµ½Êı¾İ²É¼¯³ÌĞò°æ±¾ÓĞ¸üĞÂ£¬Æô¶¯×Ô¶¯Éı¼¶³ÌĞò");
                     try {
-                        Logger.log("LOG_SYS","æ­£åœ¨è¿›è¡Œç‰ˆæœ¬æ–‡ä»¶æ¯”è¾ƒ...");
+                        Logger.log("LOG_SYS","ÕıÔÚ½øĞĞ°æ±¾ÎÄ¼ş±È½Ï...");
                         Thread.sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -72,12 +72,12 @@ public class AutoUpdateMain {
                     Logger.log("LOG_SYS","update over");
 
             } else {
-                Logger.log("LOG_SYS","æ•°æ®é‡‡é›†ç¨‹åºç‰ˆæœ¬æ²¡æœ‰æ›´æ–°å˜åŠ¨");
+                Logger.log("LOG_SYS","Êı¾İ²É¼¯³ÌĞò°æ±¾Ã»ÓĞ¸üĞÂ±ä¶¯");
                 return;
             }
         } else {
-            //ç‰ˆæœ¬æ§åˆ¶æ–‡ä»¶è¢«ç ´åï¼Œè‡ªåŠ¨æ›´æ–°ç¨‹åºä¸‹è½½æœ€æ–°ç¨‹åºï¼Œå¹¶ä¿®å¤ç‰ˆæœ¬æ§åˆ¶æ–‡ä»¶
-            Logger.log("LOG_SYS","æœ¬åœ°æ•°æ®é‡‡é›†ç¨‹åºè¢«ç ´åï¼Œè‡ªåŠ¨ä¸‹è½½æœ€æ–°ç¨‹åºï¼Œå¹¶ä¿®å¤æŸåçš„ç¨‹åºæ–‡ä»¶");
+            //°æ±¾¿ØÖÆÎÄ¼ş±»ÆÆ»µ£¬×Ô¶¯¸üĞÂ³ÌĞòÏÂÔØ×îĞÂ³ÌĞò£¬²¢ĞŞ¸´°æ±¾¿ØÖÆÎÄ¼ş
+            Logger.log("LOG_SYS","±¾µØÊı¾İ²É¼¯³ÌĞò±»ÆÆ»µ£¬×Ô¶¯ÏÂÔØ×îĞÂ³ÌĞò£¬²¢ĞŞ¸´Ëğ»µµÄ³ÌĞòÎÄ¼ş");
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -93,10 +93,10 @@ public class AutoUpdateMain {
             Logger.log("LOG_SYS","update over");
         }
         try {
-            Logger.log("LOG_SYS","æ›´æ–°è¿è¡Œå®Œæ¯•ï¼å¯åŠ¨æ•°æ®é‡‡é›†ç¨‹åºé€€å‡º...");
+            Logger.log("LOG_SYS","¸üĞÂÔËĞĞÍê±Ï£¡Æô¶¯Êı¾İ²É¼¯³ÌĞòÍË³ö...");
             Thread.sleep(3000);
-            // å¯åŠ¨å…³é—­çš„Javaåº”ç”¨ç¨‹åº
-            Logger.log("LOG_SYS","å¯åŠ¨å…³é—­çš„Javaåº”ç”¨ç¨‹åº");
+            // Æô¶¯¹Ø±ÕµÄJavaÓ¦ÓÃ³ÌĞò
+            Logger.log("LOG_SYS","Æô¶¯¹Ø±ÕµÄJavaÓ¦ÓÃ³ÌĞò");
             runbat();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -107,7 +107,7 @@ public class AutoUpdateMain {
 
     public static void runbat() {
         File file = new File(Const.LocalVersion + "/run.bat");
-        Logger.log("LOG_SYS","å‡†å¤‡æ‰§è¡Œæ›´æ–°æ–‡ä»¶:"+file.getAbsolutePath());
+        Logger.log("LOG_SYS","×¼±¸Ö´ĞĞ¸üĞÂÎÄ¼ş:"+file.getAbsolutePath());
         String cmd = "cmd /c start " + file.getAbsolutePath();// pass
         try {
             Process ps = Runtime.getRuntime().exec(cmd);
@@ -118,6 +118,6 @@ public class AutoUpdateMain {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        Logger.log("LOG_SYS","å‡†å¤‡é‡æ–°å¯åŠ¨...");
+        Logger.log("LOG_SYS","×¼±¸ÖØĞÂÆô¶¯...");
     }
 }

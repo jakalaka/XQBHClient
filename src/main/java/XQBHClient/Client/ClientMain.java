@@ -18,16 +18,17 @@ public class ClientMain {
             return;
 
         /*
-        æ£€æŸ¥æ›´æ–°
+        ¼ì²é¸üĞÂ
          */
         AutoUpdateMain.exec(args);
         /*
-        ç­¾åˆ°
+        Ç©µ½
          */
         if (!ZDLogin.exec())
             return;
+
         /*
-        å¯åŠ¨ç•Œé¢
+        Æô¶¯½çÃæ
          */
         ClientUIMain.main(args);
 
