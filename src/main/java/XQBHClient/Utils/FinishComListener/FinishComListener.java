@@ -12,10 +12,10 @@ import java.io.OutputStream;
 import java.util.TooManyListenersException;
 
 /**
- * Com21EventListener类使用“事件监听模式”监听串口COM21，
+ * Com21EventListener类使用“事件监听模式”监听串口COM21,
  * 并通过COM21的输入流对象来获取该端口接收到的数据（在本文中数据来自串口COM11）。
- * 使用“事件监听模式”监听串口，必须字定义一个事件监听类，该类实现SerialPortEventListener
- * 接口并重写serialEvent方法，在serialEvent方法中编写监听逻辑。
+ * 使用“事件监听模式”监听串口,必须字定义一个事件监听类,该类实现SerialPortEventListener
+ * 接口并重写serialEvent方法,在serialEvent方法中编写监听逻辑。
  */
 public class FinishComListener implements SerialPortEventListener {
 
@@ -28,8 +28,7 @@ public class FinishComListener implements SerialPortEventListener {
 
     //2.构造函数：
     //实现初始化动作：获取串口COM21、打开串口、获取串口输入流对象、为串口添加事件监听对象
-    public FinishComListener(){
-        try {
+    public FinishComListener() throws Exception {
             //获取串口、打开窗串口、获取串口的输入流。
             com21 = CommPortIdentifier.getPortIdentifier(Com.FinishScannerComName);
             serialComPort = (SerialPort) com21.open("FinishComListener", 1000);
@@ -37,17 +36,9 @@ public class FinishComListener implements SerialPortEventListener {
 
             //向串口添加事件监听对象。
             serialComPort.addEventListener(this);
-            //设置当端口有可用数据时触发事件，此设置必不可少。
+            //设置当端口有可用数据时触发事件,此设置必不可少。
             serialComPort.notifyOnDataAvailable(true);
-        } catch (NoSuchPortException e) {
-            e.printStackTrace();
-        } catch (PortInUseException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (TooManyListenersException e) {
-            e.printStackTrace();
-        }
+
     }
 
     //重写继承的监听器方法
@@ -57,8 +48,7 @@ public class FinishComListener implements SerialPortEventListener {
         byte[] cache = new byte[1024];
         //记录已经到达串口COM21且未被读取的数据的字节（Byte）数。
         int availableBytes = 0;
-
-        //如果是数据可用的时间发送，则进行数据的读写
+        //如果是数据可用的时间发送,则进行数据的读写
         if(event.getEventType() == SerialPortEvent.DATA_AVAILABLE){
             if (!isClose) {
                 isClose=true;
@@ -70,44 +60,38 @@ public class FinishComListener implements SerialPortEventListener {
 
     //在main方法中创建类的实例
     public static void start() {
-        new FinishComListener();
+        try {
+            new FinishComListener();
+        } catch (Exception e) {
+            Logger.log("LOG_ERR",e.toString());
+            return;
+        }
 //        wirte();
         Closer closer=new Closer();
         Thread t=new Thread(closer);
         t.start();
-        while (true) {
-            wirte();
-            try {
-                Thread.sleep(20);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
+        Com.FinishScannerState="N";
+
     }
     public static void wirte(){
-        CommPortIdentifier com11 = null;//用于记录本地串口
-        SerialPort serialCom11 = null;//用于标识打开的串口
 
         try {
-            //2.获取COM11口
-
-            //3.打开COM11
-            serialCom11 = serialComPort;
 
             //4.往串口写数据（使用串口对应的输出流对象）
             //4.1.获取串口的输出流对象
-            OutputStream outputStream = serialCom11.getOutputStream();
+            OutputStream outputStream = serialComPort.getOutputStream();
 
             //4.2.通过串口的输出流向串口写数据“Hello World!”：
-            //使用输出流往串口写数据的时候必须将数据转换为byte数组格式或int格式，
-            //当另一个串口接收到数据之后再根据双方约定的规则，对数据进行解码。
-            outputStream.write(new byte[]{'H','e','l','l','o',
-                    ' ','W','o','r','l','d','!'});
+            //使用输出流往串口写数据的时候必须将数据转换为byte数组格式或int格式,
+            //当另一个串口接收到数据之后再根据双方约定的规则,对数据进行解码。
+
+            outputStream.write(new byte[]{'H'});
 
 
-        }  catch (IOException e) {
-            //如果获取输出流失败，则抛出该异常
-            e.printStackTrace();
+        }  catch (Exception e) {
+            //如果获取输出流失败,则抛出该异常
+
+            Logger.log("LOG_ERR",e.toString());
         }
     }
 
@@ -135,8 +119,8 @@ class Closer implements  Runnable{
             FinishComListener.subIsClose=false;
             try {
                 Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                Logger.log("LOG_ERR",e.toString());
             }
         }
     }

@@ -45,14 +45,22 @@ public class OrderDialogController {
 
     @FXML
     public void continueTran() {
+        /*出货设备的初始化检查*/
+        try {
+            ModbusUtil.doCheck(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
+        } catch (Exception e) {
+            Logger.log("LOG_ERR",e.toString());
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "设备异常,请联系管理员！！！");
+            return;
+        }
 
-
+        /*扫描设备的初始化检查*/
         QRReader qrReader = new QRReader(Com.QRReaderComName, 9600, 8, 1, 0);
         boolean initOK = false;
         try {
             initOK = qrReader.Init();
         } catch (PortInUseException e) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader被霸占了！！！请联系管理员");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader异常,请联系管理员！！！");
             e.printStackTrace();
         } catch (IOException e) {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader读写错误！！！请联系管理员");
@@ -95,7 +103,7 @@ public class OrderDialogController {
             public void handle(WorkerStateEvent event) {
                 scannerCartoon.close();
                 if ("".equals(Order.QRCODE)) {
-                    //啥也没有，donothing
+                    //啥也没有,donothing
                 } else {
                     //先过滤一道QRCODE
                     if (!isNumeric(Order.QRCODE)) {
@@ -122,7 +130,7 @@ public class OrderDialogController {
                                                public void handle(WorkerStateEvent event) {
                                                    comCartoon.close();
                                                    if (Order.callFail) {
-                                                       WarmingDialog.show(WarmingDialog.Dialog_ERR, "交易失败，请检查您的二维码是否正确\n如您账户已扣账，请联系管理员，给您带来不便请您谅解!");
+                                                       WarmingDialog.show(WarmingDialog.Dialog_ERR, "交易失败,请检查您的二维码是否正确\n如您账户已扣账,请联系管理员,给您带来不便请您谅解!");
                                                        return;
                                                    }
                                                    Order.finalOut=false;
@@ -139,6 +147,7 @@ public class OrderDialogController {
                                                                Logger.log("LOG_ERR", "执行出货错误");
                                                                Logger.log("LOG_ERR", e.toString());
                                                                Order.outFail=true;
+
                                                                return null;
                                                            }
                                                            int time=0;
@@ -160,12 +169,13 @@ public class OrderDialogController {
                                                        public void handle(WorkerStateEvent event) {
                                                            if (Order.outFail)
                                                            {
-                                                               WarmingDialog.show(WarmingDialog.Dialog_OVER, "非常抱歉，店内设备异常，请联系管理员！！！");
                                                                thingsOutCartoon.close();
+                                                               WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员！！！");
+
                                                            }else {
                                                                UpdateDSPXX.exec(Order.SPMC_U, -1);
                                                                thingsOutCartoon.close();
-                                                               WarmingDialog.show(WarmingDialog.Dialog_OVER, "谢谢您的光临，点击确认返回主界面，如有疑问请联系管理员");
+                                                               WarmingDialog.show(WarmingDialog.Dialog_OVER, "谢谢您的光临,点击确认返回主界面,如有疑问请联系管理员");
                                                                Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
                                                                modelHelper.goHome();
                                                            }

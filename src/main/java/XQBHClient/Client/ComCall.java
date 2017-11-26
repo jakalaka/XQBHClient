@@ -23,7 +23,7 @@ public class ComCall {
      * @return
      */
     public static boolean Call(String QTJYM_,String HTJYM_,Map TranMapIn,Map TranMapOut){
-        Map XMLMapIn=new HashMap();//写方法，将TranMapIn添加报文头信息，变为XMLMapIn
+        Map XMLMapIn=new HashMap();//写方法,将TranMapIn添加报文头信息,变为XMLMapIn
         if(false==addInfo(QTJYM_,HTJYM_,TranMapIn,XMLMapIn))
         {
             Logger.log("LOG_ERR","组织报文头信息失败");
@@ -83,7 +83,7 @@ public class ComCall {
      */
     public  static boolean minusInfo(Map XMLMapOut,Map TranMapOut){
         /*
-        Client通讯后的合法性检查，也不知道写什么好，以后加吧
+        Client通讯后的合法性检查,也不知道写什么好,以后加吧
          */
         String CWDM_U=(String) ((Map)XMLMapOut.get("head")).get("CWDM_U");
         String CWXX_U=(String) ((Map)XMLMapOut.get("head")).get("CWXX_U");

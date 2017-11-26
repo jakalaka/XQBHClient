@@ -15,7 +15,7 @@ import java.util.*;
 public class XmlUtils {
 
     /**
-     * 根据Map组装xml消息体，值对象仅支持基本数据类型、String、BigInteger、BigDecimal，以及包含元素为上述支持数据类型的Map
+     * 根据Map组装xml消息体,值对象仅支持基本数据类型、String、BigInteger、BigDecimal,以及包含元素为上述支持数据类型的Map
      *
 
      * @return

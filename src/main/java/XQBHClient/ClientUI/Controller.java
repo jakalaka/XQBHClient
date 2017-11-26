@@ -41,7 +41,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         //更新商品数据库记录状态
         if (true!= InitDSPXX.initTable()) {
-            Logger.log("LOG_SYS","初始化数据库失败，请联系管理员");
+            Logger.log("LOG_SYS","初始化数据库失败,请联系管理员");
             return;
         }
 

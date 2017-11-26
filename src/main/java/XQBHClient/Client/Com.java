@@ -42,7 +42,7 @@ public class Com {
     public static String CSBZ_U = "";
 
     /**
-     * 终端状态，用于控制异常情况
+     * 终端状态,用于控制异常情况
      */
     public  static String ZDZT_U = "OK";
 
@@ -52,6 +52,7 @@ public class Com {
     public static int PowerControlAdress;
     public static String QRReaderComName;
     public static String FinishScannerComName;
+    public static String FinishScannerState="E";
 
     public static final String getIn = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 
@@ -83,7 +84,7 @@ public class Com {
         cxtcsKey.setKEY_UU("GYLSGZ");
         CXTCS cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
         if (null == cxtcs) {
-            //无数据，插入
+            //无数据,插入
             cxtcs = new CXTCS();
             cxtcs.setFRDM_U("9999");
             cxtcs.setKEY_UU("GYLSGZ");
@@ -132,7 +133,7 @@ public class Com {
      */
     public static String getIP() {
         String IPAdress = "";
-        String localip = null;// 本地IP，如果没有配置外网IP则返回它
+        String localip = null;// 本地IP,如果没有配置外网IP则返回它
         String netip = null;// 外网IP
 
         Enumeration<NetworkInterface> netInterfaces =

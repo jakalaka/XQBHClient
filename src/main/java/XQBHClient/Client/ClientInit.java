@@ -129,7 +129,15 @@ public class ClientInit {
                 FinishComListener.start();
             }
         }).start();
-
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (!Com.FinishScannerState.equals("N")) {
+            Logger.log("LOG_ERR", "FinishScannerState Æô½ø³ÌÊ§°Ü");
+            return false;
+        }
         Logger.log("LOG_IO", Com.getOut);
 
         return true;

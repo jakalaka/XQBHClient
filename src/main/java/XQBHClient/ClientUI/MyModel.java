@@ -55,7 +55,7 @@ public class MyModel {
             return;
 
         /*
-        读取配置文件，生成树对象
+        读取配置文件,生成树对象
          */
         File prop = new File(path + "/model.properties");
         setModelType(readKeyFromXML(prop, "modelType"));
@@ -275,7 +275,7 @@ public class MyModel {
             buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
                 if (!"OK".equals(Com.ZDZT_U))
                 {
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR,"系统故障，为了您的资金安全，暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
+                    WarmingDialog.show(WarmingDialog.Dialog_ERR,"系统故障,为了您的资金安全,暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
                     return;
                 }
                 if (GetSPNum.exec(getName())<=0)
