@@ -1,5 +1,6 @@
 package XQBHClient.Utils.Updater;
 
+import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.Utils.log.Logger;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
@@ -11,8 +12,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FTPClientUtil {
-    private static String localRootPath = null;
-    private static String remoteRootPath = null;
+    private static String localPath = null;
+    private static String localFileName = null;
+
+    private static String remotePath = null;
+    private static String remoteFileName = null;
     private static String hostName = null;
     private static int port = 21;
     private static String user = null;
@@ -20,27 +24,29 @@ public class FTPClientUtil {
     private static FTPClient ftp = null;
 
     public static void main(String[] args) {
-        FTPClientUtil ftpClient = new FTPClientUtil("119.23.250.79", 21, "ftpreader", "ftp", "Update", "Update/new");
+        FTPClientUtil ftpClient = new FTPClientUtil("119.23.250.79", 21, "ftpreader", "ftp", "Update", "version.txt", "Update/new", "version.txt");
         try {
-            ftpClient.FTPClientRun(false);
+            ftpClient.FTPClientRun();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public FTPClientUtil(String hostName, int port, String user, String pwd, String remoteRootPath, String localRootPath) {
-        this.localRootPath = localRootPath;
-        this.remoteRootPath = remoteRootPath;
+    public FTPClientUtil(String hostName, int port, String user, String pwd, String remotePath, String remoteFile, String localPath, String localFile) {
+        this.remotePath = remotePath;
+        this.remoteFileName = remoteFile;
+
+        this.localPath = localPath;
+        this.localFileName = localFile;
         this.hostName = hostName;
         this.port = port;
         this.user = user;
         this.pwd = pwd;
     }
 
-    public void FTPClientRun(boolean flg) throws Exception {
+    public void FTPClientRun() throws Exception {
         getInstance();
-        String path = remoteRootPath;
-        traverse( ftp, path, flg);
+        traverse();
     }
 
     public FTPClient getInstance() {
@@ -57,107 +63,26 @@ public class FTPClientUtil {
             config.setServerLanguageCode("en");
 
         } catch (IOException ex) {
-            Logger.log("LOG_SYS", "连接主机:" + hostName + "失败!");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "连接主机:" + hostName + "失败!");
+
         } catch (SecurityException ex) {
-            Logger.log("LOG_SYS", "用户或者密码可能不对,无权限与主机:" + hostName + "连接!");
-        }
-        try {
-            System.out.println(ftp.listFiles().length);
-        } catch (IOException e) {
-            e.printStackTrace();
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "用户或者密码可能不对,无权限与主机:" + hostName + "连接!");
         }
 
         return ftp;
     }
 
     // 遍历ftp站点资源信息,获取FTP服务器上制定目录的应用程序
-    public void traverse( FTPClient client, String path, boolean flg) throws Exception {
-        String prefix = "";
+    public void traverse() throws Exception {
 
-        Logger.log("LOG_SYS", "当前目录:" + path);
-        client.changeWorkingDirectory(path);
-        Logger.log("LOG_SYS", "1111111");
-
-        //client.enterLocalPassiveMode();
-        Logger.log("LOG_SYS", "222222");
-
-        System.out.println(client.listFiles().length);
-        FTPFile[] files = client.listFiles();
-        System.out.println(files.length);
-        Logger.log("LOG_SYS", "333333");
-
-        for (int i = 0; i < files.length; i++) {
-            // 如果是文件夹就递归方法继续遍历
-            System.out.println(files[i].getName());
-            if (files[i].isDirectory()) {
-
-					/*
-                     * 创建新目录时会自动创建两个文件名: . 和 .. 点指当前目录 点点指父目录
-					 */
-                // 注意这里的判断,否则会出现死循环
-                if (!files[i].getName().equals(".") && !files[i].getName().equals("..")) {
-                    String tempDir = client.printWorkingDirectory() + "/" + files[i].getName();
-                    File localFile = new File(localRootPath + tempDir.replace(remoteRootPath, "/"));
-                    if (!localFile.exists()) {
-                        localFile.mkdirs();
-                    }
-                    client.changeWorkingDirectory(tempDir);
-                    // 是文件夹就递归调用
-                    traverse( client, tempDir, flg);
-                    prefix += client.printWorkingDirectory();
-                    client.changeToParentDirectory();
-                }
-                // 如果是文件就扫描信息
-            } else {
-                if (!flg && files[i].getName().equals("version.txt")) {
-                    String temp = client.printWorkingDirectory();
-                    String RemFileName = files[i].getName();
-                    String tempPath = temp.replaceAll(remoteRootPath, "") + "/" + files[i].getName();
-                    Logger.log("LOG_SYS", "开始下载 ：" + tempPath);
-                    File dir = new File(localRootPath + temp.replaceAll(remoteRootPath, ""));
-                    if (!dir.exists())
-                        dir.mkdir();
-                    String filepath = localRootPath + tempPath;
-                    try {
-                        File localFile = new File(filepath);
-
-                        Logger.log("LOG_SYS", "到:" + localFile.toString());
-                        if (!localFile.exists()) {
-                            localFile.createNewFile();
-                        }
-                        FileOutputStream out = new FileOutputStream(localFile);
-                        client.retrieveFile(files[i].getName(), out);
-                        out.flush();
-                        out.close();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                } else if (flg && (files[i].getName().equals(Const.programName) || files[i].getName().equals("run.bat"))) {
-                    String temp = client.printWorkingDirectory();
-                    String RemFileName = files[i].getName();
-                    String tempPath = temp.replaceAll(remoteRootPath, "") + "/" + files[i].getName();
-                    Logger.log("LOG_SYS", "开始下载 ：" + tempPath);
-                    String filepath = localRootPath + tempPath;
-
-                    try {
-                        File localFile = new File(filepath);
-                        Logger.log("LOG_SYS", "到:" + localFile.toString());
-                        if (!localFile.exists()) {
-                            localFile.createNewFile();
-                        }
-                        FileOutputStream out = new FileOutputStream(localFile);
-                        client.retrieveFile(files[i].getName(), out);
-                        out.flush();
-                        out.close();
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                    }
-                } else {
-
-                }
-            }
+        File localFile = new File(localPath );
+        if (!localFile.exists()) {
+            localFile.mkdirs();
         }
-
+        FileOutputStream out = new FileOutputStream(localPath+"/"+localFileName);
+        ftp.retrieveFile(remotePath+"/"+remoteFileName, out);
+        out.flush();
+        out.close();
     }
 
     public void freeFTPClient() {

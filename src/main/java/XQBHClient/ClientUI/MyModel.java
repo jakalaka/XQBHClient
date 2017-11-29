@@ -46,7 +46,7 @@ public class MyModel {
     private int controllerPort;
     public Vector<MyModel> position;
     public Button buy;
-    public Label restNumLable=null;
+    public Label restNumLable = null;
 
     public MyModel(String path, AnchorPane viewPane) {
         setElements(new HashMap<String, MyModel>());
@@ -69,7 +69,7 @@ public class MyModel {
         setIntroduction(readKeyFromXML(prop, "introduction"));
         setImgs(readKeyFromXML(prop, "Img").split(";"));
 
-        setControllerIP( readKeyFromXML(prop, "controllerIP"));
+        setControllerIP(readKeyFromXML(prop, "controllerIP"));
 
         String port = readKeyFromXML(prop, "controllerPort");
         if (null == port || "".equals(port))
@@ -179,11 +179,11 @@ public class MyModel {
 
 
         } else if ("things".equals(getModelType()) || "bookThings".equals(getModelType())) {
-            int restNum=0;
+            int restNum = 0;
             GridPane gridPane = new GridPane();
             //创建数据库数据
             InitDSPXX.createData(getName());
-            restNum= GetSPNum.exec(getName());
+
 
             /*
             开始生成图片区域
@@ -250,7 +250,7 @@ public class MyModel {
                 buy = new Button("预定");
             } else {
                 buy = new Button("购买");
-                restNumLable= new Label("剩余库存："+restNum);
+                restNumLable = new Label("剩余库存：" + restNum);
                 restNumLable.setWrapText(true);
                 restNumLable.getStyleClass().add("restNumLable");
                 hbrestNum.getChildren().add(restNumLable);
@@ -273,14 +273,21 @@ public class MyModel {
             添加购买点击事件
              */
             buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
-                if (!"OK".equals(Com.ZDZT_U))
-                {
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR,"系统故障,为了您的资金安全,暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
+                if (!"OK".equals(Com.ZDZT_U)) {
+                    Logger.log("LOG_ERR","未检测到购买即出货！！！需确认设备正常后重启！！！");
+                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "系统故障,为了您的资金安全,暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
                     return;
                 }
-                if (GetSPNum.exec(getName())<=0)
+                try {
+                    if (GetSPNum.exec(getName()) <= 0) {
+                        WarmingDialog.show(WarmingDialog.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
+                        return;
+                    }
+                }catch (Exception ee)
                 {
-                    WarmingDialog.show(WarmingDialog.Dialog_SELLOUT,"亲,售罄了,下次来吧~");
+                    Logger.log("LOG_ERR",ee.toString());
+                    Logger.log("LOG_ERR","查询数据库失败");
+                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "系统故障,为了您的资金安全,暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
                     return;
                 }
 
@@ -290,9 +297,9 @@ public class MyModel {
                 Order.Init();
                 Order.JYJE_U = getPrice();
                 Order.SPMC_U = getName();
-                Order.controllerAdress=getControllerAdress();
-                Order.controllerIP=getControllerIP();
-                Order.controllerPort=getControllerPort();
+                Order.controllerAdress = getControllerAdress();
+                Order.controllerIP = getControllerIP();
+                Order.controllerPort = getControllerPort();
 
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("OrderDialog.fxml"));
@@ -324,7 +331,7 @@ public class MyModel {
                 buy.setText("已售罄");
                 buy.getStyleClass().add("buyButton_over");
 
-            }else {
+            } else {
                 buy.getStyleClass().add("buyButton");
             }
 
@@ -360,7 +367,6 @@ public class MyModel {
             AnchorPane.setLeftAnchor(gridPane, 0.0);
             AnchorPane.setRightAnchor(gridPane, 0.0);
             ap.getChildren().add(gridPane);
-
 
 
         } else {

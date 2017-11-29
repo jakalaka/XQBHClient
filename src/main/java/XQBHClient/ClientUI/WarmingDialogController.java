@@ -1,6 +1,7 @@
 package XQBHClient.ClientUI;
 
 
+import XQBHClient.Client.Com;
 import XQBHClient.Utils.Modbus.ModbusUtil;
 import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
@@ -35,10 +36,14 @@ public class WarmingDialogController {
 
     @FXML
     public void OK() {
-        Logger.log("LOG_DEBUG","OK");
-        Event.fireEvent(stage, new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+        Logger.log("LOG_DEBUG", "OK");
+        if (Com.UIFinish)
+            Event.fireEvent(stage, new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
+        else
+            System.exit(0);
 
     }
+
     public Stage getStage() {
         return stage;
     }

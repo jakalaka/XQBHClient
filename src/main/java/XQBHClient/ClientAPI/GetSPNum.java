@@ -24,7 +24,11 @@ public class GetSPNum {
         DSPXXKey dspxxKey=new DSPXXKey();
         dspxxKey.setFRDM_U("9999");
         dspxxKey.setSPMC_U(thingsName);
-        DSPXX dspxx=dspxxMapper.selectByPrimaryKey(dspxxKey);
+        DSPXX dspxx=null;
+
+        dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
+
+
         return dspxx.getSL_UUU();
     }
 }

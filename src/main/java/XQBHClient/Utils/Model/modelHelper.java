@@ -3,9 +3,11 @@ package XQBHClient.Utils.Model;
 
 
 import XQBHClient.ClientAPI.GetSPNum;
+import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Controller;
 import XQBHClient.ClientUI.MyModel;
+import XQBHClient.Utils.log.Logger;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 
@@ -26,7 +28,16 @@ public class modelHelper {
 
         if (model.getModelType().equals("things"))
         {
-            int irestNum= GetSPNum.exec(model.getName());
+            int irestNum=0;
+
+            try {
+                irestNum = GetSPNum.exec(model.getName());
+            }catch (Exception e)
+            {
+                Logger.log("LOG_ERR",e.toString());
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, "查询数量时数据库出错");
+                return;
+            }
             model.restNumLable.setText("剩余库存："+irestNum);
             if (irestNum<=0)
             {

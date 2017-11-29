@@ -1,5 +1,6 @@
 package XQBHClient.ClientUI;
 
+import XQBHClient.Client.Com;
 import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
 import javafx.application.Application;
@@ -29,6 +30,7 @@ public class ClientUIMain extends Application {
         primaryStage.setMaximized(true);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        Com.UIFinish=true;
         primaryStage.show();
 
     }

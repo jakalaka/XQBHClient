@@ -24,7 +24,8 @@ public class UpdateDSPXX {
         DSPXXKey dspxxKey=new DSPXXKey();
         dspxxKey.setFRDM_U("9999");
         dspxxKey.setSPMC_U(thingsName);
-        DSPXX dspxx=dspxxMapper.selectByPrimaryKey(dspxxKey);
+        DSPXX dspxx;
+        dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
         if (null==dspxx)
         {
             Logger.log("LOG_ERR","更新商品库存时查询数据库无记录");

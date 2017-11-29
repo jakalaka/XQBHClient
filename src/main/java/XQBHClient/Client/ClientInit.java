@@ -5,10 +5,12 @@ import XQBHClient.Client.Table.Mapper.CXTCSMapper;
 import XQBHClient.Client.Table.Model.CXTCS;
 import XQBHClient.Client.Table.Model.CXTCSKey;
 import XQBHClient.Client.Table.basic.DBAccess;
+import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.Utils.FinishComListener.FinishComListener;
 import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.File;
@@ -21,6 +23,7 @@ import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML
  */
 public class ClientInit {
     public static boolean Init(){
+
         Logger.log("LOG_IO", Com.getIn);
         /*获取生产测试标志*/
         DBAccess dbAccess=new DBAccess();
@@ -29,17 +32,24 @@ public class ClientInit {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             e.printStackTrace();
-            Logger.log("LOG_SYS","获取生产测试标志错误");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取生产测试标志错误");
             return false;
         }
         CXTCSMapper cxtcsMapper=sqlSession.getMapper(CXTCSMapper.class);
         CXTCSKey cxtcsKey=new CXTCSKey();
         cxtcsKey.setKEY_UU("CSBZ");
         cxtcsKey.setFRDM_U("9999");
-        CXTCS cxtcs=cxtcsMapper.selectByPrimaryKey(cxtcsKey);
+        CXTCS cxtcs = null;
+        try {
+            cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
+        }catch (PersistenceException e)
+        {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "数据库异常");
+            return false;
+        }
         if (null==cxtcs)
         {
-            Logger.log("LOG_SYS","找不到生产测试标志");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "找不到生产测试标志");
             return false;
         }
         Com.CSBZ_U=cxtcs.getVALUE_();
@@ -120,24 +130,7 @@ public class ClientInit {
             Logger.log("LOG_DEBUG", "FinishScannerComName=" + Com.FinishScannerComName);
         }
 
-        /*
-        出货扫描器初始化
-         */
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                FinishComListener.start();
-            }
-        }).start();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        if (!Com.FinishScannerState.equals("N")) {
-            Logger.log("LOG_ERR", "FinishScannerState 启进程失败");
-            return false;
-        }
+
         Logger.log("LOG_IO", Com.getOut);
 
         return true;
