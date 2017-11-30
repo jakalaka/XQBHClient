@@ -17,8 +17,8 @@ public class GetSPNum {
         try {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
-            e.printStackTrace();
-            Logger.log("LOG_ERR",e.toString());
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取数据库会话失败!");
         }
         DSPXXMapper dspxxMapper=sqlSession.getMapper(DSPXXMapper.class);
         DSPXXKey dspxxKey=new DSPXXKey();

@@ -16,8 +16,8 @@ public class UpdateDSPXX {
         try {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
-            e.printStackTrace();
-            Logger.log("LOG_ERR",e.toString());
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取数据库会话失败!");
         }
 
         DSPXXMapper dspxxMapper=sqlSession.getMapper(DSPXXMapper.class);
@@ -28,7 +28,7 @@ public class UpdateDSPXX {
         dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
         if (null==dspxx)
         {
-            Logger.log("LOG_ERR","更新商品库存时查询数据库无记录");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "更新商品库存时查询数据库无记录!");
             return false;
         }
         dspxx.setSL_UUU(dspxx.getSL_UUU()+iNum);

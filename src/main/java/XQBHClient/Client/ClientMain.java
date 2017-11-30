@@ -55,8 +55,7 @@ public class ClientMain {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
-            Logger.log("LOG_SYS",e.toString());
+            Logger.logException("LOG_ERR",e);
         }
         if (!Com.FinishScannerState.equals("N")) {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "FinishScannerState Æô½ø³ÌÊ§°Ü");

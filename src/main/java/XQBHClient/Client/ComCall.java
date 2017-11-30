@@ -1,4 +1,5 @@
 package XQBHClient.Client;
+import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.CommonTran.*;
 
 
@@ -26,7 +27,8 @@ public class ComCall {
         Map XMLMapIn=new HashMap();//写方法,将TranMapIn添加报文头信息,变为XMLMapIn
         if(false==addInfo(QTJYM_,HTJYM_,TranMapIn,XMLMapIn))
         {
-            Logger.log("LOG_ERR","组织报文头信息失败");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "组织报文头信息失败!");
+
             return false;
         }
 
@@ -37,7 +39,7 @@ public class ComCall {
             commonTran = new CommonTranService().getCommonTranPort();
         }catch (Exception e)
         {
-            Logger.log("LOG_ERR","服务器连接失败");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器连接失败!");
             return false;
         }
         String XMLOut=commonTran.comtran(XMLIn);

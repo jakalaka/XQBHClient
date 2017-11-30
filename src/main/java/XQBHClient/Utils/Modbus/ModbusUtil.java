@@ -5,66 +5,82 @@ import net.wimpi.modbus.io.ModbusTCPTransaction;
 import net.wimpi.modbus.msg.*;
 import net.wimpi.modbus.net.TCPMasterConnection;
 
-import java.io.DataInput;
-import java.io.DataOutput;
-import java.io.IOException;
+import java.io.*;
 import java.net.InetAddress;
 
 public class ModbusUtil {
+
     public static int adress;
 
     /**
      * 执行出货
      *
      * @param ip
-     * @param port
-    \     * @param address
+     * @param port \     * @param address
      */
     public static void doThingsOut(String ip, int port,
                                    int address) throws Exception {
 
-        ModbusUtil.adress=address;
+        String host = ip;
+        int timeOut = 3000;
+        boolean status = InetAddress.getByName(host).isReachable(timeOut);
+        if (!status)
+            throw new Exception();
+
+        ModbusUtil.adress = address;
         InetAddress addr = InetAddress.getByName(ip);
 
         TCPMasterConnection connection = new TCPMasterConnection(addr);
         connection.setPort(port);
         connection.connect();
         ModbusTCPTransaction trans = new ModbusTCPTransaction(connection);
-        MyModbusThingsOutRequest myModbusThingsOutRequest =new MyModbusThingsOutRequest();
-        Logger.log("LOG_DEBUG",myModbusThingsOutRequest.getHexMessage());
+        MyModbusThingsOutRequest myModbusThingsOutRequest = new MyModbusThingsOutRequest();
+        Logger.log("LOG_DEBUG", myModbusThingsOutRequest.getHexMessage());
         trans.setRequest(myModbusThingsOutRequest);
         trans.execute();
         connection.close();
-        ModbusUtil.adress=-1;
+        ModbusUtil.adress = -1;
 
 
     }
+
     /**
      * 检查对应出货装置是否联通
      *
      * @param ip
-     * @param port
-    \     * @param address
+     * @param port \     * @param address
      */
     public static void doCheck(String ip, int port,
-                                   int address) throws Exception {
+                               int address) throws Exception {
 
-        ModbusUtil.adress=address;
+        String host = ip;
+        int timeOut = 3000; //超时应该在3钞以上
+        boolean status = InetAddress.getByName(host).isReachable(timeOut);
+        if (!status)
+            throw new Exception();
+
+
+        ModbusUtil.adress = address;
         InetAddress addr = InetAddress.getByName(ip);
 
         TCPMasterConnection connection = new TCPMasterConnection(addr);
         connection.setPort(port);
+
+
         connection.connect();
+        System.out.println("1111");
+
         ModbusTCPTransaction trans = new ModbusTCPTransaction(connection);
-        MyModbusCheckRequest myMyModbusCheckRequest =new MyModbusCheckRequest();
-        Logger.log("LOG_DEBUG",myMyModbusCheckRequest.getHexMessage());
+        MyModbusCheckRequest myMyModbusCheckRequest = new MyModbusCheckRequest();
+        Logger.log("LOG_DEBUG", myMyModbusCheckRequest.getHexMessage());
         trans.setRequest(myMyModbusCheckRequest);
         trans.execute();
         connection.close();
-        ModbusUtil.adress=-1;
+        ModbusUtil.adress = -1;
 
 
     }
+
     public static void main(String[] args) {
 //        try {
 //            ModbusUtil.doThingsOut("192.168.31.177",8080,3);
@@ -73,19 +89,21 @@ public class ModbusUtil {
 //        }
 
         try {
-            ModbusUtil.doCheck("192.168.31.177",8080,3);
+            ModbusUtil.doCheck("192.168.31.177", 8080, 3);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
 }
+
 class MyModbusThingsOutRequest extends ModbusRequest {
     public MyModbusThingsOutRequest() {
         this.setFunctionCode(16);
         this.setDataLength(9);
         this.setUnitID(254);
     }
+
     @Override
     public ModbusResponse createResponse() {
         return null;
@@ -94,7 +112,7 @@ class MyModbusThingsOutRequest extends ModbusRequest {
     @Override
     public void writeData(DataOutput dataOutput) throws IOException {
 //        dataOutput.write(00);//地址 00
-        dataOutput.writeShort(ModbusUtil.adress*5);
+        dataOutput.writeShort(ModbusUtil.adress * 5);
 
         dataOutput.write(00);//命令个数
         dataOutput.write(02);
@@ -126,6 +144,7 @@ class MyModbusCheckRequest extends ModbusRequest {
         this.setDataLength(4);
         this.setUnitID(254);
     }
+
     @Override
     public ModbusResponse createResponse() {
         return null;

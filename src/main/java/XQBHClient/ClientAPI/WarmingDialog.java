@@ -26,8 +26,13 @@ public class WarmingDialog extends Application {
 
     public static void show(String sTitle, String sMsg) {
 
-        if (sTitle.equals(Dialog_ERR))
-            Logger.log("LOG_ERR", sMsg);
+        if (sTitle.equals(Dialog_ERR)) {
+
+            Logger.log("LOG_ERR", sMsg,new Object[]{Thread.currentThread().getStackTrace()[2].getClassName(),
+                    Thread.currentThread().getStackTrace()[2].getMethodName(),
+                    Thread.currentThread().getStackTrace()[2].getLineNumber()
+            });
+        }
         else
             Logger.log("LOG_IO", sMsg);
         if (Com.UIFinish) {

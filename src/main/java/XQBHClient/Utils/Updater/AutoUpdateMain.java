@@ -91,7 +91,7 @@ public class AutoUpdateMain {
         try {
             exe_down.execute();
         } catch (Exception e) {
-            Logger.log("LOG_DEBUG", e.toString());
+            Logger.logException("LOG_ERR",e);
             Logger.log("LOG_DEBUG", "下载文件、程序失败");
             return false;
         }
@@ -104,7 +104,7 @@ public class AutoUpdateMain {
         try {
             bat_down.execute();
         } catch (Exception e) {
-            Logger.log("LOG_DEBUG", e.toString());
+            Logger.logException("LOG_ERR",e);
             Logger.log("LOG_DEBUG", "下载文件、程序失败");
             return false;
         }
@@ -121,7 +121,7 @@ public class AutoUpdateMain {
 
         Logger.log("LOG_SYS", "begin restart...");
         try {
-            Logger.log("LOG_SYS", "更新运行完毕！启动数据采集程序退出...");
+            Logger.log("LOG_SYS", "更新运行完毕!启动数据采集程序退出...");
             Thread.sleep(3000);
             // 启动关闭的Java应用程序
             Logger.log("LOG_SYS", "启动关闭的Java应用程序");

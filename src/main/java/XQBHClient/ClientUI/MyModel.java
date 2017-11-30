@@ -274,8 +274,8 @@ public class MyModel {
              */
             buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
                 if (!"OK".equals(Com.ZDZT_U)) {
-                    Logger.log("LOG_ERR","未检测到购买即出货！！！需确认设备正常后重启！！！");
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "系统故障,为了您的资金安全,暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
+                    Logger.log("LOG_ERR","未检测到购买即出货!!!需确认设备正常后重启!!!");
+                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "探测器异常,为了您的资金安全,暂时关闭交易功能!\n给您带来的不便我们深表歉意!!!");
                     return;
                 }
                 try {
@@ -285,9 +285,8 @@ public class MyModel {
                     }
                 }catch (Exception ee)
                 {
-                    Logger.log("LOG_ERR",ee.toString());
-                    Logger.log("LOG_ERR","查询数据库失败");
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "系统故障,为了您的资金安全,暂时关闭交易功能！\n给您带来的不便我们深表歉意!!!");
+                    Logger.logException("LOG_ERR",ee);
+                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "查询数据库失败,为了您的资金安全,暂时关闭交易功能!\n给您带来的不便我们深表歉意!!!");
                     return;
                 }
 

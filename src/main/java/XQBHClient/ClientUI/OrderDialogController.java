@@ -24,6 +24,8 @@ import javax.comm.NoSuchPortException;
 import javax.comm.PortInUseException;
 import javax.comm.UnsupportedCommOperationException;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,8 +51,8 @@ public class OrderDialogController {
         try {
             ModbusUtil.doCheck(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
         } catch (Exception e) {
-            Logger.log("LOG_ERR",e.toString());
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "设备异常,请联系管理员！！！");
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "集控设备异常,请联系管理员!!!");
             return;
         }
 
@@ -60,16 +62,16 @@ public class OrderDialogController {
         try {
             initOK = qrReader.Init();
         } catch (PortInUseException e) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader异常,请联系管理员！！！");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader异常,请联系管理员!!!");
             e.printStackTrace();
         } catch (IOException e) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader读写错误！！！请联系管理员");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader读写错误!!!请联系管理员");
             e.printStackTrace();
         } catch (UnsupportedCommOperationException e) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader操作指令错误！！！请联系管理员");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader操作指令错误!!!请联系管理员");
             e.printStackTrace();
         } catch (NoSuchPortException e) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader端口miss！！！请联系管理员");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "QRReader端口miss!!!请联系管理员");
             e.printStackTrace();
         }
         if (!initOK)
@@ -144,8 +146,8 @@ public class OrderDialogController {
                                                                ModbusUtil.doThingsOut(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
                                                            } catch (Exception e) {
                                                                e.printStackTrace();
-                                                               Logger.log("LOG_ERR", "执行出货错误");
-                                                               Logger.log("LOG_ERR", e.toString());
+                                                               Logger.logException("LOG_ERR",e);
+                                                               WarmingDialog.show(WarmingDialog.Dialog_ERR, "执行出货错误!");
                                                                Order.outFail=true;
 
                                                                return null;
@@ -170,7 +172,7 @@ public class OrderDialogController {
                                                            if (Order.outFail)
                                                            {
                                                                thingsOutCartoon.close();
-                                                               WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员！！！");
+                                                               WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员!!\n给您带来不便请您谅解!");
 
                                                            }else {
                                                                UpdateDSPXX.exec(Order.SPMC_U, -1);
@@ -186,6 +188,15 @@ public class OrderDialogController {
                                                }
                                            }
                     );
+                    comTask.setOnFailed(new EventHandler<WorkerStateEvent>()
+                    {
+
+                        @Override
+                        public void handle(WorkerStateEvent event) {
+                            comCartoon.close();
+                            WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,本终端与服务器通讯失败,如有疑问请联系管理员!!!");
+                        }
+                    });
                     new Thread(comTask).start();
                 }
             }

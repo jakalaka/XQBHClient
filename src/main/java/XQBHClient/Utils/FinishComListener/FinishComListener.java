@@ -1,6 +1,7 @@
 package XQBHClient.Utils.FinishComListener;
 
 import XQBHClient.Client.Com;
+import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Order;
 import XQBHClient.Utils.log.Logger;
@@ -63,7 +64,8 @@ public class FinishComListener implements SerialPortEventListener {
         try {
             new FinishComListener();
         } catch (Exception e) {
-            Logger.log("LOG_ERR",e.toString());
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "未检测到完成扫描器!");
             return;
         }
 //        wirte();
@@ -73,27 +75,7 @@ public class FinishComListener implements SerialPortEventListener {
         Com.FinishScannerState="N";
 
     }
-    public static void wirte(){
 
-        try {
-
-            //4.往串口写数据（使用串口对应的输出流对象）
-            //4.1.获取串口的输出流对象
-            OutputStream outputStream = serialComPort.getOutputStream();
-
-            //4.2.通过串口的输出流向串口写数据“Hello World!”：
-            //使用输出流往串口写数据的时候必须将数据转换为byte数组格式或int格式,
-            //当另一个串口接收到数据之后再根据双方约定的规则,对数据进行解码。
-
-            outputStream.write(new byte[]{'H'});
-
-
-        }  catch (Exception e) {
-            //如果获取输出流失败,则抛出该异常
-
-            Logger.log("LOG_ERR",e.toString());
-        }
-    }
 
 }
 
@@ -108,7 +90,7 @@ class Closer implements  Runnable{
                         Logger.log("LOG_DEBUG", "已出货");
                         Order.finalOut = true;
                     }else {
-                        Logger.log("LOG_ERR", "未检测到购买即出货！！！");
+                        Logger.log("LOG_ERR", "未检测到购买即出货!!!");
                         Com.ZDZT_U="ERR_OutAgain";
                         /*这里需要立即断开传送带的电源*/
 
@@ -120,7 +102,8 @@ class Closer implements  Runnable{
             try {
                 Thread.sleep(100);
             } catch (Exception e) {
-                Logger.log("LOG_ERR",e.toString());
+                Logger.logException("LOG_ERR",e);
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, "启FinishComListener进程异常!");
             }
         }
     }

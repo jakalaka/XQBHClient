@@ -16,7 +16,7 @@ public class AutoUpdateMainPro {
 		try {
 			ftpClient.FTPClientRun();
 		} catch (Exception e) {
-			Logger.log("LOG_DEBUG",e.toString());
+			Logger.logException("LOG_ERR",e);
 			return false;
 		}
 //		finally {

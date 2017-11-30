@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CommonTranService", targetNamespace = "http://ServerTran.XQBHServer/", wsdlLocation = "http://newfangledstore.com:9000/CommonTran?wsdl")
+@WebServiceClient(name = "CommonTranService", targetNamespace = "http://ServerTran.XQBHServer/", wsdlLocation = "http://192.168.31.62:9000/CommonTran?wsdl")
 public class CommonTranService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CommonTranService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://newfangledstore.com:9000/CommonTran?wsdl");
+            url = new URL("http://192.168.31.62:9000/CommonTran?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

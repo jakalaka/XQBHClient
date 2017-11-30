@@ -34,8 +34,8 @@ public class modelHelper {
                 irestNum = GetSPNum.exec(model.getName());
             }catch (Exception e)
             {
-                Logger.log("LOG_ERR",e.toString());
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, "查询数量时数据库出错");
+                Logger.logException("LOG_ERR",e);
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, "查询数量时数据库出错,请联系管理员!!!\n给您带来的不便我们深表歉意!");
                 return;
             }
             model.restNumLable.setText("剩余库存："+irestNum);

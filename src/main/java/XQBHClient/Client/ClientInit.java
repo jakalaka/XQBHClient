@@ -78,14 +78,15 @@ public class ClientInit {
         File sysprop = new File(sysinfo);
         QRReader.timeOut = Integer.parseInt(readKeyFromXML(sysprop, "timeOut"));
         if (0 == QRReader.timeOut ) {
-            Logger.log("LOG_ERR", "∂¡»°timeOut¥ÌŒÛ");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°timeOut¥ÌŒÛ!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "timeOut=" + QRReader.timeOut);
         }
         QRReader.frequency = Integer.parseInt(readKeyFromXML(sysprop, "frequency"));
         if (0 == QRReader.frequency ) {
-            Logger.log("LOG_ERR", "∂¡»°frequency¥ÌŒÛ");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°frequency¥ÌŒÛ!");
+
             return false;
         } else {
             Logger.log("LOG_DEBUG", "frequency=" +QRReader.frequency );
@@ -93,7 +94,8 @@ public class ClientInit {
 
         Com.PowerControlRelayIP = readKeyFromXML(sysprop, "PowerControlRelayIP");
         if (null == Com.PowerControlRelayIP || "".equals(Com.PowerControlRelayIP)) {
-            Logger.log("LOG_ERR", "∂¡»°PowerControlRelayIP¥ÌŒÛ");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°PowerControlRelayIP¥ÌŒÛ!");
+
             return false;
         } else {
             Logger.log("LOG_DEBUG", "PowerControlRelayIP=" + Com.PowerControlRelayIP);
@@ -101,7 +103,8 @@ public class ClientInit {
 
         Com.PowerControlPort = Integer.parseInt(readKeyFromXML(sysprop, "PowerControlPort"));
         if (0 == Com.PowerControlPort) {
-            Logger.log("LOG_ERR", "∂¡»°PowerControlPort¥ÌŒÛ");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°PowerControlPort¥ÌŒÛ!");
+
             return false;
         } else {
             Logger.log("LOG_DEBUG", "PowerControlPort=" + Com.PowerControlPort);
@@ -116,7 +119,7 @@ public class ClientInit {
 
         Com.QRReaderComName = readKeyFromXML(sysprop, "QRReaderComName");
         if (null == Com.QRReaderComName || "".equals(Com.QRReaderComName)) {
-            Logger.log("LOG_ERR", "∂¡»°QRReaderComName¥ÌŒÛ");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°QRReaderComName¥ÌŒÛ!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "QRReaderComName=" + Com.QRReaderComName);
@@ -124,7 +127,8 @@ public class ClientInit {
 
         Com.FinishScannerComName = readKeyFromXML(sysprop, "FinishScannerComName");
         if (null == Com.FinishScannerComName || "".equals(Com.FinishScannerComName)) {
-            Logger.log("LOG_ERR", "∂¡»°FinishScannerComName¥ÌŒÛ");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°FinishScannerComName¥ÌŒÛ!");
+
             return false;
         } else {
             Logger.log("LOG_DEBUG", "FinishScannerComName=" + Com.FinishScannerComName);
