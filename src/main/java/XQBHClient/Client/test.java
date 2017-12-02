@@ -6,8 +6,11 @@ public class test {
     public static void main(String[] args) {
         if (false == ClientInit.Init())
             return;
-//        for (int i=0;i<1000;i++) {
+        int i = 0;
+        while (true) {
             ZDLogin.exec();
-//        }
+            i++;
+            System.out.println("i= " +i);
+        }
     }
 }

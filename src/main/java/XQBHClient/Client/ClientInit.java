@@ -31,8 +31,8 @@ public class ClientInit {
         try {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
-            e.printStackTrace();
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取生产测试标志错误");
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
             return false;
         }
         CXTCSMapper cxtcsMapper=sqlSession.getMapper(CXTCSMapper.class);
@@ -44,7 +44,8 @@ public class ClientInit {
             cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
         }catch (PersistenceException e)
         {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "数据库异常");
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
             return false;
         }
         if (null==cxtcs)

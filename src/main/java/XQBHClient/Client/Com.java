@@ -45,7 +45,7 @@ public class Com {
     /**
      * 终端状态,用于控制异常情况
      */
-    public  static String ZDZT_U = "OK";
+    public static String ZDZT_U = "OK";
 
 
     public static String PowerControlRelayIP;
@@ -53,14 +53,20 @@ public class Com {
     public static int PowerControlAdress;
     public static String QRReaderComName;
     public static String FinishScannerComName;
-    public static String FinishScannerState="E";
+    public static String FinishScannerState = "E";
 
     public static final String getIn = ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
 
     public static final String getOut = "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<";
 
-    public static boolean UIFinish=false;
+    public static boolean UIFinish = false;
 
+
+    public  static final String SQLERR_SELECT="查询数据库失败!!!";
+    public  static final String SQLERR_UPDATE="更新数据库失败!!!";
+    public  static final String SQLERR_DELETE="删除数据库失败!!!";
+    public  static final String SQLERR_INSERT="插入数据库失败!!!";
+    public  static final String SQLERR_SESSION="获取sqlsession失败!!!";
     /**
      * 获取前台流水=10位终端编号+6位交易时间
      *
@@ -78,19 +84,21 @@ public class Com {
         try {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "取流水号时查询数据库出错!!!");
-            e.printStackTrace();
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            return "";
         }
         CXTCSMapper cxtcsMapper = sqlSession.getMapper(CXTCSMapper.class);
         CXTCSKey cxtcsKey = new CXTCSKey();
         cxtcsKey.setFRDM_U("9999");
         cxtcsKey.setKEY_UU("GYLSGZ");
-        CXTCS cxtcs=null;
+        CXTCS cxtcs = null;
         try {
             cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
-        }catch (Exception e)
-        {
-            ///???
+        } catch (Exception e) {
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
+            return "";
         }
         if (null == cxtcs) {
             //无数据,插入
@@ -99,7 +107,13 @@ public class Com {
             cxtcs.setKEY_UU("GYLSGZ");
             cxtcs.setVALUE_(sDate + "-" + 2);
             cxtcs.setJLZT_U("0");
-            cxtcsMapper.insert(cxtcs);
+            try {
+                cxtcsMapper.insert(cxtcs);
+            } catch (Exception e) {
+                Logger.logException("LOG_ERR",e);
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_INSERT);
+                return "";
+            }
             XH = 1;
         } else {
             sGYLSGZ = cxtcs.getVALUE_();
@@ -110,13 +124,20 @@ public class Com {
                 XH = 1;
             }
             cxtcs.setVALUE_(sDate + "-" + (XH + 1));
-            cxtcsMapper.updateByPrimaryKey(cxtcs);
+            try {
+                cxtcsMapper.updateByPrimaryKey(cxtcs);
+            } catch (Exception e) {
+                Logger.logException("LOG_ERR",e);
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_DELETE);
+                return "";
+            }
         }
 
         sqlSession.commit();
         sqlSession.close();
 
-        sQTLS_U = "C" + ZDBH_U + String.format("%05d", XH);
+        //C+8位终端号+7位流水序号
+        sQTLS_U = "C" + ZDBH_U + String.format("%07d", XH);
         Logger.log("LOG_DEBUG", "前台流水:" + sQTLS_U);
 
         return sQTLS_U;

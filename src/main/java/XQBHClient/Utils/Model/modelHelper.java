@@ -28,16 +28,8 @@ public class modelHelper {
 
         if (model.getModelType().equals("things"))
         {
-            int irestNum=0;
-
-            try {
-                irestNum = GetSPNum.exec(model.getName());
-            }catch (Exception e)
-            {
-                Logger.logException("LOG_ERR",e);
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, "查询数量时数据库出错,请联系管理员!!!\n给您带来的不便我们深表歉意!");
-                return;
-            }
+            int irestNum;
+            irestNum= GetSPNum.exec(model.getName());
             model.restNumLable.setText("剩余库存："+irestNum);
             if (irestNum<=0)
             {

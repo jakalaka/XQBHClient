@@ -27,8 +27,6 @@ public class ZDLogin {
 //        list.add(map2);
 //        In.put("FZDLoin1",list);
 
-
-
         if (false == ComCall.Call("ZDLogin", "ZDLogin", In, Out)) {
             return false;
         } else

@@ -1,5 +1,6 @@
 package XQBHClient.ClientAPI;
 
+import XQBHClient.Client.Com;
 import XQBHClient.Client.Table.Mapper.DSPXXMapper;
 import XQBHClient.Client.Table.Model.DSPXX;
 import XQBHClient.Client.Table.Model.DSPXXKey;
@@ -17,7 +18,8 @@ public class UpdateDSPXX {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取数据库会话失败!");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            return false;
         }
 
         DSPXXMapper dspxxMapper=sqlSession.getMapper(DSPXXMapper.class);
@@ -25,14 +27,29 @@ public class UpdateDSPXX {
         dspxxKey.setFRDM_U("9999");
         dspxxKey.setSPMC_U(thingsName);
         DSPXX dspxx;
-        dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
+        try {
+            dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
+        }catch (Exception e)
+        {
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
+            return false;
+        }
         if (null==dspxx)
         {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "更新商品库存时查询数据库无记录!");
             return false;
         }
         dspxx.setSL_UUU(dspxx.getSL_UUU()+iNum);
-        dspxxMapper.updateByPrimaryKey(dspxx);
+        try {
+            dspxxMapper.updateByPrimaryKey(dspxx);
+
+        }catch (Exception e)
+        {
+            Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_UPDATE);
+            return false;
+        }
 
         sqlSession.commit();
         sqlSession.close();

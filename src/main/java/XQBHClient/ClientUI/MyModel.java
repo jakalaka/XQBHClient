@@ -22,6 +22,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
+import sun.rmi.runtime.Log;
 
 import java.io.File;
 import java.io.IOException;
@@ -182,7 +183,11 @@ public class MyModel {
             int restNum = 0;
             GridPane gridPane = new GridPane();
             //创建数据库数据
-            InitDSPXX.createData(getName());
+            if (true!=InitDSPXX.createData(getName()))
+            {
+                Logger.log("LOG_ERR","商品信息初始化失败");
+                return;
+            }
 
 
             /*
@@ -274,21 +279,17 @@ public class MyModel {
              */
             buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
                 if (!"OK".equals(Com.ZDZT_U)) {
-                    Logger.log("LOG_ERR","未检测到购买即出货!!!需确认设备正常后重启!!!");
+                    Logger.log("LOG_ERR", "未检测到购买即出货!!!需确认设备正常后重启!!!");
                     WarmingDialog.show(WarmingDialog.Dialog_ERR, "探测器异常,为了您的资金安全,暂时关闭交易功能!\n给您带来的不便我们深表歉意!!!");
                     return;
                 }
-                try {
-                    if (GetSPNum.exec(getName()) <= 0) {
-                        WarmingDialog.show(WarmingDialog.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
-                        return;
-                    }
-                }catch (Exception ee)
-                {
-                    Logger.logException("LOG_ERR",ee);
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "查询数据库失败,为了您的资金安全,暂时关闭交易功能!\n给您带来的不便我们深表歉意!!!");
+                Integer iNum = 0;
+                iNum= GetSPNum.exec(getName());
+                if (iNum <= 0) {
+                    WarmingDialog.show(WarmingDialog.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
                     return;
                 }
+
 
                 /*
                 创建订单

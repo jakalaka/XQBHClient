@@ -39,7 +39,7 @@ public class ClientMain {
          */
         if (!ZDLogin.exec())
         {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "终端状态异常，请联系维护人员");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "终端签到失败，请联系维护人员");
             return;
         }
 

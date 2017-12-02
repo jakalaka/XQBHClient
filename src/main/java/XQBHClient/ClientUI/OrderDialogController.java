@@ -175,7 +175,7 @@ public class OrderDialogController {
                                                                WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员!!\n给您带来不便请您谅解!");
 
                                                            }else {
-                                                               UpdateDSPXX.exec(Order.SPMC_U, -1);
+                                                               UpdateDSPXX.exec(Order.SPMC_U, -1);//不管成功失败都更新
                                                                thingsOutCartoon.close();
                                                                WarmingDialog.show(WarmingDialog.Dialog_OVER, "谢谢您的光临,点击确认返回主界面,如有疑问请联系管理员");
                                                                Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
