@@ -7,10 +7,10 @@ public class test {
         if (false == ClientInit.Init())
             return;
         int i = 0;
-        while (true) {
+//        while (true) {
             ZDLogin.exec();
             i++;
             System.out.println("i= " +i);
-        }
+//        }
     }
 }

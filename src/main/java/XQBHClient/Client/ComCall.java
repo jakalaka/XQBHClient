@@ -4,11 +4,10 @@ import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.CommonTran.*;
 
 
+import XQBHClient.Utils.RSA.RSASignature;
 import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +31,12 @@ public class ComCall {
         }
 
         String XMLIn = XmlUtils.map2XML(XMLMapIn);
+        /*
+        加签名
+         */
+        String signstr= RSASignature.sign(XMLIn,Com.upPrivateKey);
+        XMLIn=XMLIn+"sign="+signstr;
+
         Logger.log("LOG_DEBUG", "XMLIn=" + XMLIn);
         CommonTran commonTran;
         try {
@@ -50,8 +55,33 @@ public class ComCall {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器故障!");
             return false;
         }
-        Map XMLMapOut = XmlUtils.XML2map(XMLOut);
         Logger.log("LOG_DEBUG", "XMLOut=" + XMLOut);
+
+        /*
+        解签名
+         */
+        String []str=XMLOut.split("sign=");
+        try {
+            if (true!=RSASignature.doCheck(str[0], str[1], Com.rePublicKey))
+            {
+                Logger.log("LOG_ERR",XMLOut);
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, "解密通讯可能被篡改，交易失败");
+                return false;
+            }else {
+                XMLOut=str[0];
+            }
+        }catch (Exception e)
+        {
+            Logger.log("LOG_ERR",XMLOut);
+            Logger.logException("LOG_ERR",e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "解密通讯报文失败");
+            return false;
+        }
+
+
+
+
+        Map XMLMapOut = XmlUtils.XML2map(XMLOut);
 
         if (false == minusInfo(XMLMapOut, TranMapOut)) {
             return false;
@@ -76,7 +106,7 @@ public class ComCall {
             Logger.log("LOG_ERR", "流水获取失败");
             return false;
         }
-        head.put("QTLS_U", Com.getQTLS()); //前台流水
+        head.put("QTLS_U",sQTLS); //前台流水
 
         head.put("ZDBH_U", Com.ZDBH_U); //终端编号
         head.put("QTJYM_", QTJYM_); //交易码
@@ -97,18 +127,22 @@ public class ComCall {
      * @return
      */
     public static boolean minusInfo(Map XMLMapOut, Map TranMapOut) {
+        TranMapOut.clear();
+
+
         /*
         Client通讯后的合法性检查,也不知道写什么好,以后加吧
          */
         String CWDM_U = (String) ((Map) XMLMapOut.get("head")).get("CWDM_U");
         String CWXX_U = (String) ((Map) XMLMapOut.get("head")).get("CWXX_U");
-
+        //加响应要素
+        TranMapOut.put("CWDM_U",CWDM_U);
+        TranMapOut.put("CWXX_U",CWXX_U);
 
         if (!"AAAAAA".equals(CWDM_U)) {
             /*
             这里做失败处理
              */
-            TranMapOut.clear();
             Logger.log("LOG_ERR", "调用失败");
             Logger.log("LOG_ERR", "CWDM_U=" + CWDM_U);
             return false;
