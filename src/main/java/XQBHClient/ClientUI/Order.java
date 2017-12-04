@@ -7,7 +7,7 @@ public class Order {
     public static double JYJE_U;
     public static String QRCODE;
     public static boolean finalOut=true;
-    public static boolean callFail;
+    public static String callStatus;
     public static boolean outFail;
 
     public static String controllerIP;
@@ -18,7 +18,7 @@ public class Order {
         JYJE_U=0;
         QRCODE="";
         finalOut=true;
-        callFail=false;
+        callStatus ="FAIL";
         outFail=false;
         controllerIP="";
         controllerPort=9999;

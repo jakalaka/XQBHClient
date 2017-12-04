@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PayBill {
-    public static boolean exec() {
+    public static String exec() {
         Logger.log("LOG_IO", Com.getIn);
         Map In = new HashMap();
         Map Out = new HashMap();
@@ -27,15 +27,9 @@ public class PayBill {
 
         if (false == ComCall.Call("PayBill", "PayBill", In, Out)) {
             if ("ZFWAIT".equals(Out.get("CWDM_U"))) {
-                LoopWaitQuery loopWaitQuery=new LoopWaitQuery();
-                if (loopWaitQuery.exec())
-                {
-                    //支付成功
-                }else {
-                    //关闭订单
-                }
+                return "ZFWAIT";
             } else {
-                return false;
+                return "FAIL";
             }
         } else
             Logger.log("LOG_DEBUG", "re=" + Out.get("re"));
@@ -44,18 +38,10 @@ public class PayBill {
 
 
 
-        //tmp begin
-        LoopWaitQuery loopWaitQuery=new LoopWaitQuery();
-        if (loopWaitQuery.exec())
-        {
-            //支付成功
-        }else {
-            //关闭订单
-        }
-        //tmp end
+
 
 
         Logger.log("LOG_IO", Com.getOut);
-        return true;
+        return "SUCCESS";
     }
 }
