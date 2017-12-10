@@ -108,8 +108,7 @@ public class ComCall {
         head.put("QTJYM_", QTJYM_); //交易码
         head.put("HTJYM_", HTJYM_); //后台交易码
         head.put("ZDJYM_", Com.ZDJYM_); //终端校验码
-        head.put("IP_UUU", Com.getIP()); //ip地址
-        head.put("CSBZ_U", Com.CSBZ_U); //ip地址
+        head.put("IP_UUU", Com.ClientIP); //ip地址
         XMLMapIn.put("head", head);
         XMLMapIn.put("body", TranMapIn);
         return true;

@@ -25,7 +25,7 @@ public class AliPayBill {
         Logger.log("LOG_DEBUG", "QRCODE=" + Order.QRCODE);
 
 
-        if (false == ComCall.Call("AliPayBill", "AliPayBill", In, Out)) {
+        if (false == ComCall.Call("AliPayBill", "AlipayPay", In, Out)) {
             if ("ZFWAIT".equals(Out.get("CWDM_U"))) {
                 Order.HTLS_U =  Out.get("HTLS_U").toString();
                 Order.HTRQ_U =  Out.get("HTRQ_U").toString();

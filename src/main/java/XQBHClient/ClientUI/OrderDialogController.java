@@ -45,6 +45,13 @@ public class OrderDialogController {
 
     @FXML
     public void continueTran() {
+        /*暂停销售的检查*/
+        if(Com.pauseFLG)
+        {
+            WarmingDialog.show("服务暂停", "该设备在近5分钟内会更新重启!!!\n在此期间暂停服务，请您稍后!!!");
+            return;
+        }
+
         /*出货设备的初始化检查*/
         try {
             ModbusUtil.doCheck(Order.controllerIP, Order.controllerPort, Order.controllerAdress);

@@ -36,12 +36,6 @@ public class Com {
      */
     static String ZDJYM_ = "";
 
-
-    /**
-     * 终端校验码
-     */
-    public static String CSBZ_U = "";
-
     /**
      * 终端状态,用于控制异常情况
      */
@@ -71,6 +65,12 @@ public class Com {
     public  static final String SQLERR_DELETE="删除数据库失败!!!";
     public  static final String SQLERR_INSERT="插入数据库失败!!!";
     public  static final String SQLERR_SESSION="获取sqlsession失败!!!";
+
+
+    public static String ClientIP = "";
+
+    public static boolean pauseFLG = false;
+
     /**
      * 获取前台流水=10位终端编号+6位交易时间
      *
@@ -160,54 +160,7 @@ public class Com {
     }
 
 
-    /**
-     * 获取前台机器IP
-     *
-     * @return
-     */
-    public static String getIP() {
-        String IPAdress = "";
-        String localip = null;// 本地IP,如果没有配置外网IP则返回它
-        String netip = null;// 外网IP
-
-        Enumeration<NetworkInterface> netInterfaces =
-                null;
-        try {
-            netInterfaces = NetworkInterface.getNetworkInterfaces();
-        } catch (SocketException e) {
-            e.printStackTrace();
-        }
-        InetAddress ip = null;
-        boolean finded = false;// 是否找到外网IP
-        while (netInterfaces.hasMoreElements() && !finded) {
-            NetworkInterface ni = netInterfaces.nextElement();
-            Enumeration<InetAddress> address = ni.getInetAddresses();
-            while (address.hasMoreElements()) {
-                ip = address.nextElement();
-                if (!ip.isSiteLocalAddress()
-                        && !ip.isLoopbackAddress()
-                        && ip.getHostAddress().indexOf(":") == -1) {// 外网IP
-                    netip = ip.getHostAddress();
-                    finded = true;
-                    break;
-                } else if (ip.isSiteLocalAddress()
-                        && !ip.isLoopbackAddress()
-                        && ip.getHostAddress().indexOf(":") == -1) {// 内网IP
-                    localip = ip.getHostAddress();
-                }
-            }
-        }
-
-        if (netip != null && !"".equals(netip)) {
-            IPAdress = netip;
-        } else {
-            IPAdress = localip;
-        }
-
-        return IPAdress;
-    }
 
     public static void main(String[] args) {
-        Logger.log("LOG_DEBUG", getIP());
     }
 }

@@ -9,12 +9,18 @@ import XQBHClient.ClientAPI.WarmingDialog;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.Utils.FinishComListener.FinishComListener;
 import XQBHClient.Utils.QRReader.QRReader;
+import XQBHClient.Utils.Updater.AutoUpdateMain;
+import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 
 import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
 
@@ -22,55 +28,27 @@ import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML
  * Created by Administrator on 2017/7/1 0001.
  */
 public class ClientInit {
-    public static boolean Init(){
+    public static boolean Init() {
+
 
         Logger.log("LOG_IO", Com.getIn);
-        /*获取生产测试标志*/
-        DBAccess dbAccess=new DBAccess();
-        SqlSession sqlSession;
-        try {
-            sqlSession = dbAccess.getSqlSession();
-        } catch (IOException e) {
-            Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
-            return false;
-        }
-        CXTCSMapper cxtcsMapper=sqlSession.getMapper(CXTCSMapper.class);
-        CXTCSKey cxtcsKey=new CXTCSKey();
-        cxtcsKey.setKEY_UU("CSBZ");
-        cxtcsKey.setFRDM_U("9999");
-        CXTCS cxtcs = null;
-        try {
-            cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
-        }catch (PersistenceException e)
-        {
-            Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
-            return false;
-        }
-        if (null==cxtcs)
-        {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "找不到生产测试标志");
-            return false;
-        }
-        Com.CSBZ_U=cxtcs.getVALUE_();
 
 
 
         /*
         从userInfo中获取相关配置信息
          */
-        String ZDJYM_=readKeyFromXML(new File("resources/Info/userInfo.properties"),"ZDJYM_");
-        if (!"".equals(ZDJYM_)&&ZDJYM_!=null)
-            Com.ZDJYM_=ZDJYM_;
+        String ZDJYM_ = readKeyFromXML(new File("resources/Info/userInfo.properties"), "ZDJYM_");
+        if (!"".equals(ZDJYM_) && ZDJYM_ != null)
+            Com.ZDJYM_ = ZDJYM_;
 
-        String ZDBH_U=readKeyFromXML(new File("resources/Info/userInfo.properties"),"ZDBH_U");
-        if (!"".equals(ZDBH_U)&&ZDBH_U!=null)
-            Com.ZDBH_U=ZDBH_U;
+        String ZDBH_U = readKeyFromXML(new File("resources/Info/userInfo.properties"), "ZDBH_U");
+        if (!"".equals(ZDBH_U) && ZDBH_U != null)
+            Com.ZDBH_U = ZDBH_U;
 
-        String LogLV=readKeyFromXML(new File("resources/Info/userInfo.properties"),"LogLV");
-        if (!"".equals(LogLV)&&LogLV!=null)
-            Com.LogLV =LogLV;
+        String LogLV = readKeyFromXML(new File("resources/Info/userInfo.properties"), "LogLV");
+        if (!"".equals(LogLV) && LogLV != null)
+            Com.LogLV = LogLV;
 
         /*
         从sysInfo中获取相关配置
@@ -78,19 +56,19 @@ public class ClientInit {
         String sysinfo = "resources/Info/sysInfo.properties";
         File sysprop = new File(sysinfo);
         QRReader.timeOut = Integer.parseInt(readKeyFromXML(sysprop, "timeOut"));
-        if (0 == QRReader.timeOut ) {
+        if (0 == QRReader.timeOut) {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取timeOut错误!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "timeOut=" + QRReader.timeOut);
         }
         QRReader.frequency = Integer.parseInt(readKeyFromXML(sysprop, "frequency"));
-        if (0 == QRReader.frequency ) {
+        if (0 == QRReader.frequency) {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取frequency错误!");
 
             return false;
         } else {
-            Logger.log("LOG_DEBUG", "frequency=" +QRReader.frequency );
+            Logger.log("LOG_DEBUG", "frequency=" + QRReader.frequency);
         }
 
         Com.PowerControlRelayIP = readKeyFromXML(sysprop, "PowerControlRelayIP");
@@ -135,6 +113,102 @@ public class ClientInit {
             Logger.log("LOG_DEBUG", "FinishScannerComName=" + Com.FinishScannerComName);
         }
 
+        //启一个socket
+        Com.ClientIP = readKeyFromXML(sysprop, "OrayIP");
+        if (null == Com.ClientIP || "".equals(Com.ClientIP)) {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取ClientIP错误!");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "ClientIP=" + Com.ClientIP);
+        }
+
+
+        int timeOut = 3000; //超时应该在3钞以上
+        boolean status = false;
+        try {
+            status = InetAddress.getByName(Com.ClientIP).isReachable(timeOut);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (!status) {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "本机未配置花生壳或配置错误，请检查");
+            return false;
+        }
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        //1、创建一个服务器端Socket，即ServerSocket，指定绑定的端口，并监听此端口
+                        boolean execFlg=true;
+                        boolean restatFlg=false;
+                        ServerSocket serverSocket = null;//1024-65535的某个端口
+
+                        serverSocket = new ServerSocket(9001);
+
+                        //2、调用accept()方法开始监听，等待客户端的连接
+                        Socket socket = null;
+                        socket = serverSocket.accept();
+
+                        //3、获取输入流，并读取客户端信息
+                        InputStream is = null;
+                        is = socket.getInputStream();
+
+                        InputStreamReader isr = new InputStreamReader(is);
+                        BufferedReader br = new BufferedReader(isr);
+                        String info = null;
+                        info = br.readLine();
+                        Logger.log("LOG_DEBUG", "Get Server massage " + info);
+                        Map xmlMapIn = XmlUtils.XML2map(info);
+                        if ("pause".equals(xmlMapIn.get("FUNCTION"))) {//暂定营业
+                            Logger.log("LOG_DEBUG", "begin to pause");
+                            Com.pauseFLG=true;
+                        } else if ("restart".equals(xmlMapIn.get("FUNCTION"))) {//重启
+                            restatFlg=true;
+                        }else{
+                            Logger.log("LOG_ERR","FUNCTION ERR");
+                            execFlg=false;
+                        }
+
+
+                        socket.shutdownInput();//关闭输入流
+
+                        //4、获取输出流，响应客户端的请求
+                        OutputStream os = null;
+                        os = socket.getOutputStream();
+                        PrintWriter pw = new PrintWriter(os);
+
+                        if (execFlg) {
+                            Map xmlMapOut = new HashMap();
+                            xmlMapOut.put("CLIENT", Com.ClientIP);
+                            xmlMapOut.put("CWDM_U", "AAAAAA");
+                            String sXmlOut = XmlUtils.map2XML(xmlMapOut);
+                            pw.write(sXmlOut);
+                            pw.flush();
+                        }
+
+
+                        //5、关闭资源
+                        pw.close();
+                        os.close();
+                        br.close();
+                        isr.close();
+                        is.close();
+                        socket.close();
+                        serverSocket.close();
+                        if (restatFlg){
+                            Logger.log("LOG_DEBUG", "begin to restart");
+                            AutoUpdateMain.runbat();
+                            System.exit(0);
+                        }
+
+                    } catch (IOException e) {
+                        Logger.logException("LOG_ERR", e);
+                    }
+                }
+            }
+        });
+        thread.start();
 
         Logger.log("LOG_IO", Com.getOut);
 
