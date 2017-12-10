@@ -3,8 +3,8 @@ package XQBHClient.ClientUI;
 
 import XQBHClient.Client.Com;
 import XQBHClient.ClientAPI.*;
-import XQBHClient.ClientTran.LoopWaitQuery;
-import XQBHClient.ClientTran.PayBill;
+import XQBHClient.ClientTran.AliPayBill;
+import XQBHClient.ClientTran.AlipayZFWAITQuery;
 import XQBHClient.Utils.Modbus.ModbusUtil;
 import XQBHClient.Utils.Model.modelHelper;
 import XQBHClient.Utils.QRReader.QRReader;
@@ -116,18 +116,7 @@ public class OrderDialogController {
                         @Override
                         public Void call() throws Exception {
                             //发起收费动作
-                            Order.callStatus = PayBill.exec();
-
-
-                            //tmp begin
-                            LoopWaitQuery loopWaitQuery = new LoopWaitQuery();
-                            if (loopWaitQuery.exec()) {
-                                //支付成功
-                            } else {
-                                //关闭订单
-                            }
-                            //tmp end
-
+                            Order.callStatus = AliPayBill.exec();
                             return null;
                         }
                     };
@@ -143,27 +132,7 @@ public class OrderDialogController {
                                                        Task<Void> thingsOutTask = new Task<Void>() {
                                                            @Override
                                                            public Void call() throws Exception {
-                                                               Order.outFail = false;
-                                                               try {
-                                                                   ModbusUtil.doThingsOut(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
-                                                               } catch (Exception e) {
-                                                                   e.printStackTrace();
-                                                                   Logger.logException("LOG_ERR", e);
-                                                                   WarmingDialog.show(WarmingDialog.Dialog_ERR, "执行出货错误!");
-                                                                   Order.outFail = true;
-
-                                                                   return null;
-                                                               }
-                                                               int time = 0;
-                                                               while (!Order.finalOut) {
-                                                                   Thread.sleep(1000);
-                                                                   time++;
-                                                                   if (time > 30) {
-                                                                       Com.ZDZT_U = "ERR_ERR_OutNull";
-                                                                       break;
-                                                                   }
-                                                               }
-
+                                                               ThingOut.exec();
                                                                return null;
                                                            }
                                                        };
@@ -173,7 +142,8 @@ public class OrderDialogController {
                                                                if (Order.outFail) {
                                                                    thingsOutCartoon.close();
                                                                    WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员!!\n给您带来不便请您谅解!");
-
+                                                                   Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
+                                                                   modelHelper.goHome();
                                                                } else {
                                                                    UpdateDSPXX.exec(Order.SPMC_U, -1);//不管成功失败都更新
                                                                    thingsOutCartoon.close();
@@ -189,6 +159,8 @@ public class OrderDialogController {
                                                            public void handle(WorkerStateEvent event) {
                                                                thingsOutCartoon.close();
                                                                WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员!!\n给您带来不便请您谅解!");
+                                                               Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
+                                                               modelHelper.goHome();
                                                            }
                                                        });
                                                        new Thread(thingsOutTask).start();
@@ -200,15 +172,84 @@ public class OrderDialogController {
                                                        Task<Void> thingsOutTask = new Task<Void>() {
                                                            @Override
                                                            public Void call() throws Exception {
-                                                               Thread.sleep(5000);
+
+                                                               int i = 0;
+                                                               while (true) {
+                                                                   Order.callStatus = AlipayZFWAITQuery.exec();
+                                                                   if ("SUCCESS".equals(Order.callStatus))
+                                                                       break;
+                                                                   else if ("REQUERY".equals(Order.callStatus)) {
+                                                                       i++;
+                                                                       if (i > 2)//3次失败
+                                                                           break;
+                                                                   }else if("FAIL".equals(Order.callStatus)){
+                                                                       break;
+                                                                   }
+                                                                   try {
+                                                                       Thread.sleep(5000);
+                                                                   } catch (InterruptedException e) {
+                                                                       Logger.logException("LOG_ERR", e);
+                                                                   }
+                                                               }
+
                                                                return null;
                                                            }
                                                        };
                                                        thingsOutTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
                                                            @Override
                                                            public void handle(WorkerStateEvent event) {
+                                                               zfwaitCartoon.close();
 
-                                                                //执行出货~~~
+                                                               if ("SUCCESS".equals(Order.callStatus)) {
+
+                                                                   //执行出货~~~
+
+                                                                   Order.finalOut = false;
+                                                                   ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon();
+                                                                   thingsOutCartoon.show();
+                                                                   Task<Void> thingsOutTask = new Task<Void>() {
+                                                                       @Override
+                                                                       public Void call() throws Exception {
+                                                                           ThingOut.exec();
+                                                                           return null;
+                                                                       }
+                                                                   };
+                                                                   thingsOutTask.setOnSucceeded(new EventHandler<WorkerStateEvent>() {
+                                                                       @Override
+                                                                       public void handle(WorkerStateEvent event) {
+                                                                           if (Order.outFail) {
+                                                                               thingsOutCartoon.close();
+                                                                               WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员!!\n给您带来不便请您谅解!");
+                                                                               Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
+                                                                               modelHelper.goHome();
+                                                                           } else {
+                                                                               UpdateDSPXX.exec(Order.SPMC_U, -1);//不管成功失败都更新
+                                                                               thingsOutCartoon.close();
+                                                                               WarmingDialog.show(WarmingDialog.Dialog_OVER, "谢谢您的光临,点击确认返回主界面,如有疑问请联系管理员");
+                                                                               Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
+                                                                               modelHelper.goHome();
+                                                                           }
+
+                                                                       }
+                                                                   });
+                                                                   thingsOutTask.setOnFailed(new EventHandler<WorkerStateEvent>() {
+                                                                       @Override
+                                                                       public void handle(WorkerStateEvent event) {
+                                                                           thingsOutCartoon.close();
+                                                                           WarmingDialog.show(WarmingDialog.Dialog_ERR, "非常抱歉,店内设备异常,请联系管理员!!\n给您带来不便请您谅解!");
+                                                                           Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
+                                                                           modelHelper.goHome();
+                                                                       }
+                                                                   });
+                                                                   new Thread(thingsOutTask).start();
+                                                               } else {
+                                                                   //ZFWAIT最后支付失败
+                                                                   Logger.log("LOG_DEBUG", "ZFWAIT最后支付失败");
+                                                                   WarmingDialog.show(WarmingDialog.Dialog_ERR, "交易失败!!!\n如您账户已扣账,请联系管理员,给您带来不便请您谅解!");
+                                                                   return;
+                                                               }
+
+
                                                            }
                                                        });
                                                        thingsOutTask.setOnFailed(new EventHandler<WorkerStateEvent>() {
