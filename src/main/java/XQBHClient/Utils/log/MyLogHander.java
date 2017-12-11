@@ -7,7 +7,7 @@ import java.util.logging.Formatter;
 import java.util.logging.LogRecord;
 
 class MyLogHander extends Formatter {
-    private static final DateFormat df = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss.SSS");
+    private static final DateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
 //    public static int Line;
 //    public static String APIName;
     public String format(LogRecord record) {
