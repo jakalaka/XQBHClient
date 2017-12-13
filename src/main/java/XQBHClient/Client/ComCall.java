@@ -1,13 +1,15 @@
 package XQBHClient.Client;
 
 import XQBHClient.ClientAPI.WarmingDialog;
-import XQBHClient.CommonTran.*;
 
 
 import XQBHClient.Utils.RSA.RSASignature;
 import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
 
+import java.io.*;
+import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,23 +40,65 @@ public class ComCall {
         XMLIn = XMLIn + "sign=" + signstr;
 
         Logger.log("LOG_DEBUG", "XMLIn=" + XMLIn);
-        CommonTran commonTran;
-        try {
-            commonTran = new CommonTranService().getCommonTranPort();
-        } catch (Exception e) {
-            Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器连接失败!");
-            return false;
-        }
-        String XMLOut;
-        try {
-            XMLOut = commonTran.comtran(XMLIn);
 
+
+//
+//        CommonTran commonTran;
+//        try {
+//            commonTran = new CommonTranService().getCommonTranPort();
+//        } catch (Exception e) {
+//            Logger.logException("LOG_ERR", e);
+//            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器连接失败!");
+//            return false;
+//        }
+//        String XMLOut;
+//        try {
+//            XMLOut = commonTran.comtran(XMLIn);
+//
+//        } catch (Exception e) {
+//            Logger.logException("LOG_ERR", e);
+//            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器故障!");
+//            return false;
+//        }
+//        String IP = "192.168.31.62";
+        String IP="newfangledstore.com";
+
+        int port = 9000;
+        String XMLOut = "";
+        try {
+
+
+            Socket socket = new Socket();
+            socket.connect(new InetSocketAddress(IP, port), 3000);//设置连接请求超时时间10 s
+            socket.setSoTimeout(15000);//设置读操作超时时间30 s
+//2、获取输出流，向服务器端发送信息
+            OutputStream os = socket.getOutputStream();//字节输出流
+            PrintWriter pw = new PrintWriter(os);//将输出流包装成打印流
+
+            pw.write(XMLIn);
+            pw.flush();
+            socket.shutdownOutput();
+//3、获取输入流，并读取服务器端的响应信息
+            InputStream is = socket.getInputStream();
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            String info = null;
+            StringBuilder stringBuilder = new StringBuilder();
+
+            while ((info = br.readLine()) != null) {
+                stringBuilder.append(info);
+            }
+            XMLOut = stringBuilder.toString();
+            //4、关闭资源
+            br.close();
+            is.close();
+            pw.close();
+            os.close();
+            socket.close();
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器故障!");
-            return false;
         }
+
+
         Logger.log("LOG_DEBUG", "XMLOut=" + XMLOut);
 
         /*

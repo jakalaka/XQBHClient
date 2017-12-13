@@ -176,27 +176,31 @@ public class OrderDialogController {
 
                                                        ZFWAITCartoon zfwaitCartoon = new ZFWAITCartoon();
                                                        zfwaitCartoon.show();
+
                                                        Task<Void> thingsOutTask = new Task<Void>() {
                                                            @Override
                                                            public Void call() throws Exception {
 
                                                                int i = 0;
                                                                while (true) {
+//                                                                   try {
+//                                                                       Thread.sleep(5000);
+//                                                                   } catch (InterruptedException e) {
+//                                                                       Logger.logException("LOG_ERR", e);
+//                                                                   }
+//                                                                   Thread.yield();
+
                                                                    Order.callStatus = AlipayZFWAITQuery.exec();
                                                                    if ("SUCCESS".equals(Order.callStatus))
                                                                        break;
                                                                    else if ("REQUERY".equals(Order.callStatus)) {
                                                                        i++;
-                                                                       if (i > 2)//3次失败
+                                                                       if (i > 2)//系统异常3次失败
                                                                            break;
                                                                    }else if("FAIL".equals(Order.callStatus)){
                                                                        break;
                                                                    }
-                                                                   try {
-                                                                       Thread.sleep(5000);
-                                                                   } catch (InterruptedException e) {
-                                                                       Logger.logException("LOG_ERR", e);
-                                                                   }
+
                                                                }
 
                                                                return null;
