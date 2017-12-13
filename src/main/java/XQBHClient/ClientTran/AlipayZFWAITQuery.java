@@ -21,6 +21,8 @@ public class AlipayZFWAITQuery {
         In.put("YHTLS_", Order.HTLS_U);
         In.put("YHTRQ_", Order.HTRQ_U);
 
+
+
         if (false == ComCall.Call("AlipayQuery", "AlipayQuery", In, Out)) {
             if ("ZFWAIT".equals(Out.get("CWDM_U"))) {
                 return "ZFWAIT";
@@ -33,6 +35,9 @@ public class AlipayZFWAITQuery {
             }
         } else
             Logger.log("LOG_DEBUG", "re=" + Out.get("re"));
+
+
+
         long endTime = System.currentTimeMillis();
         Logger.log("LOG_DEBUG", "spand " + (endTime - startTime) + "ms");
 

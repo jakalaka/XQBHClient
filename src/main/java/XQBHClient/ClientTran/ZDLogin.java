@@ -31,9 +31,13 @@ public class ZDLogin {
             return false;
         } else
             Logger.log("LOG_DEBUG", "re="+Out.get("re") );
+
         long endTime = System.currentTimeMillis();
         Logger.log("LOG_DEBUG", "spand " + (endTime - startTime) + "ms");
         Logger.log("LOG_IO", Com.getOut);
+
+
+
         return true;
     }
 }
