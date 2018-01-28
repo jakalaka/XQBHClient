@@ -11,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.io.IOException;
 
 public class UpdateDSPXX {
-    public static boolean  exec(String thingsName,int iNum) {
+    public static boolean  exec(String position,int iNum) {
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
         try {
@@ -25,7 +25,7 @@ public class UpdateDSPXX {
         DSPXXMapper dspxxMapper=sqlSession.getMapper(DSPXXMapper.class);
         DSPXXKey dspxxKey=new DSPXXKey();
         dspxxKey.setFRDM_U("9999");
-        dspxxKey.setSPMC_U(thingsName);
+        dspxxKey.setSPLJ_U(position);
         DSPXX dspxx;
         try {
             dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);

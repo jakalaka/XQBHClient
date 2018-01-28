@@ -174,6 +174,76 @@ public class DSPXXExample {
             return (Criteria) this;
         }
 
+        public Criteria andSPLJ_UIsNull() {
+            addCriterion("SPLJ_U is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UIsNotNull() {
+            addCriterion("SPLJ_U is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UEqualTo(String value) {
+            addCriterion("SPLJ_U =", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UNotEqualTo(String value) {
+            addCriterion("SPLJ_U <>", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UGreaterThan(String value) {
+            addCriterion("SPLJ_U >", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UGreaterThanOrEqualTo(String value) {
+            addCriterion("SPLJ_U >=", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_ULessThan(String value) {
+            addCriterion("SPLJ_U <", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_ULessThanOrEqualTo(String value) {
+            addCriterion("SPLJ_U <=", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_ULike(String value) {
+            addCriterion("SPLJ_U like", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UNotLike(String value) {
+            addCriterion("SPLJ_U not like", value, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UIn(List<String> values) {
+            addCriterion("SPLJ_U in", values, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UNotIn(List<String> values) {
+            addCriterion("SPLJ_U not in", values, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UBetween(String value1, String value2) {
+            addCriterion("SPLJ_U between", value1, value2, "SPLJ_U");
+            return (Criteria) this;
+        }
+
+        public Criteria andSPLJ_UNotBetween(String value1, String value2) {
+            addCriterion("SPLJ_U not between", value1, value2, "SPLJ_U");
+            return (Criteria) this;
+        }
+
         public Criteria andSPMC_UIsNull() {
             addCriterion("SPMC_U is null");
             return (Criteria) this;

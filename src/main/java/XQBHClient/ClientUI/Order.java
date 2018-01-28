@@ -13,11 +13,13 @@ public class Order {
     public static String controllerIP;
     public static int controllerPort;
     public static int controllerAdress;
+    public static String position;
 
 
 
     public static void Init(){
         SPMC_U="";
+        position="";
         JYJE_U=0;
         QRCODE="";
         finalOut=true;

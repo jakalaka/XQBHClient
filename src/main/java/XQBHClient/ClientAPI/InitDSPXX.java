@@ -6,13 +6,14 @@ import XQBHClient.Client.Table.Model.DSPXX;
 import XQBHClient.Client.Table.Model.DSPXXExample;
 import XQBHClient.Client.Table.Model.DSPXXKey;
 import XQBHClient.Client.Table.basic.DBAccess;
+import XQBHClient.Utils.Model.DataModel;
 import XQBHClient.Utils.log.Logger;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.IOException;
 
 public class InitDSPXX {
-    public static boolean createData(String thingsName) {
+    public static boolean createData(DataModel dataModel) {
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
         try {
@@ -26,7 +27,7 @@ public class InitDSPXX {
         DSPXXMapper dspxxMapper = sqlSession.getMapper(DSPXXMapper.class);
         DSPXXKey dspxxKey = new DSPXXKey();
         dspxxKey.setFRDM_U("9999");
-        dspxxKey.setSPMC_U(thingsName);
+        dspxxKey.setSPLJ_U(dataModel.getPosition());
         DSPXX dspxx;
         try {
             dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
@@ -38,9 +39,10 @@ public class InitDSPXX {
         if (null == dspxx) {
             dspxx = new DSPXX();
             dspxx.setFRDM_U("9999");
+            dspxx.setSPLJ_U(dataModel.getPosition());
             dspxx.setJLZT_U("0");
             dspxx.setSL_UUU(0);
-            dspxx.setSPMC_U(thingsName);
+            dspxx.setSPMC_U(dataModel.getModelName());
             try {
                 dspxxMapper.insert(dspxx);
 

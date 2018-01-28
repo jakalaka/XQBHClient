@@ -71,6 +71,10 @@ public class Com {
 
     public static boolean pauseFLG = false;
 
+    public static String modelFile="resources/主页";
+
+    public static String modelZipFile="resources/主页.zip";
+
     /**
      * 获取前台流水=10位终端编号+6位交易时间
      *

@@ -14,10 +14,10 @@
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/ClientUI/ClientUIMain.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/ClientUI/Controller.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/ClientUI/MyCanvas.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/ClientUI/MyModel.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/ClientUI/OrderDialogController.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/ClientUI/Unit/OrderDialogController.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/Utils/FinishComListener/FinishComListener.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/Utils/Modbus/ModbusUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/Utils/Model/MyModel.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/Utils/Model/modelHelper.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/Utils/PropertiesHandler/PropertiesReader.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java/XQBHClient/Utils/QRReader/QRReader.java" charset="GBK" />

@@ -1,7 +1,7 @@
 package XQBHClient.ClientAPI;
 
-import XQBHClient.ClientUI.ComCartoonController;
-import XQBHClient.ClientUI.OrderDialogController;
+import XQBHClient.ClientUI.Unit.ComCartoonController;
+import XQBHClient.ClientUI.Unit.OrderDialogController;
 import XQBHClient.Utils.log.Logger;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;

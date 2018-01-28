@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="GBK" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="XQBHClient.Client.Table.Mapper.DSPXXMapper" >
   <resultMap id="BaseResultMap" type="XQBHClient.Client.Table.Model.DSPXX" >
     <id column="FRDM_U" property="FRDM_U" jdbcType="VARCHAR" />
-    <id column="SPMC_U" property="SPMC_U" jdbcType="VARCHAR" />
+    <id column="SPLJ_U" property="SPLJ_U" jdbcType="VARCHAR" />
+    <result column="SPMC_U" property="SPMC_U" jdbcType="VARCHAR" />
     <result column="SL_UUU" property="SL_UUU" jdbcType="INTEGER" />
     <result column="JLZT_U" property="JLZT_U" jdbcType="VARCHAR" />
   </resultMap>
@@ -66,7 +67,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    FRDM_U, SPMC_U, SL_UUU, JLZT_U
+    FRDM_U, SPLJ_U, SPMC_U, SL_UUU, JLZT_U
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="XQBHClient.Client.Table.Model.DSPXXExample" >
     select
@@ -87,12 +88,12 @@
     <include refid="Base_Column_List" />
     from dspxx
     where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
-      and SPMC_U = #{SPMC_U,jdbcType=VARCHAR}
+      and SPLJ_U = #{SPLJ_U,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="XQBHClient.Client.Table.Model.DSPXXKey" >
     delete from dspxx
     where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
-      and SPMC_U = #{SPMC_U,jdbcType=VARCHAR}
+      and SPLJ_U = #{SPLJ_U,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="XQBHClient.Client.Table.Model.DSPXXExample" >
     delete from dspxx
@@ -101,16 +102,19 @@
     </if>
   </delete>
   <insert id="insert" parameterType="XQBHClient.Client.Table.Model.DSPXX" >
-    insert into dspxx (FRDM_U, SPMC_U, SL_UUU, 
-      JLZT_U)
-    values (#{FRDM_U,jdbcType=VARCHAR}, #{SPMC_U,jdbcType=VARCHAR}, #{SL_UUU,jdbcType=INTEGER}, 
-      #{JLZT_U,jdbcType=VARCHAR})
+    insert into dspxx (FRDM_U, SPLJ_U, SPMC_U, 
+      SL_UUU, JLZT_U)
+    values (#{FRDM_U,jdbcType=VARCHAR}, #{SPLJ_U,jdbcType=VARCHAR}, #{SPMC_U,jdbcType=VARCHAR}, 
+      #{SL_UUU,jdbcType=INTEGER}, #{JLZT_U,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="XQBHClient.Client.Table.Model.DSPXX" >
     insert into dspxx
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="FRDM_U != null" >
         FRDM_U,
+      </if>
+      <if test="SPLJ_U != null" >
+        SPLJ_U,
       </if>
       <if test="SPMC_U != null" >
         SPMC_U,
@@ -125,6 +129,9 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="FRDM_U != null" >
         #{FRDM_U,jdbcType=VARCHAR},
+      </if>
+      <if test="SPLJ_U != null" >
+        #{SPLJ_U,jdbcType=VARCHAR},
       </if>
       <if test="SPMC_U != null" >
         #{SPMC_U,jdbcType=VARCHAR},
@@ -149,6 +156,9 @@
       <if test="record.FRDM_U != null" >
         FRDM_U = #{record.FRDM_U,jdbcType=VARCHAR},
       </if>
+      <if test="record.SPLJ_U != null" >
+        SPLJ_U = #{record.SPLJ_U,jdbcType=VARCHAR},
+      </if>
       <if test="record.SPMC_U != null" >
         SPMC_U = #{record.SPMC_U,jdbcType=VARCHAR},
       </if>
@@ -166,6 +176,7 @@
   <update id="updateByExample" parameterType="map" >
     update dspxx
     set FRDM_U = #{record.FRDM_U,jdbcType=VARCHAR},
+      SPLJ_U = #{record.SPLJ_U,jdbcType=VARCHAR},
       SPMC_U = #{record.SPMC_U,jdbcType=VARCHAR},
       SL_UUU = #{record.SL_UUU,jdbcType=INTEGER},
       JLZT_U = #{record.JLZT_U,jdbcType=VARCHAR}
@@ -176,6 +187,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="XQBHClient.Client.Table.Model.DSPXX" >
     update dspxx
     <set >
+      <if test="SPMC_U != null" >
+        SPMC_U = #{SPMC_U,jdbcType=VARCHAR},
+      </if>
       <if test="SL_UUU != null" >
         SL_UUU = #{SL_UUU,jdbcType=INTEGER},
       </if>
@@ -184,13 +198,14 @@
       </if>
     </set>
     where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
-      and SPMC_U = #{SPMC_U,jdbcType=VARCHAR}
+      and SPLJ_U = #{SPLJ_U,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="XQBHClient.Client.Table.Model.DSPXX" >
     update dspxx
-    set SL_UUU = #{SL_UUU,jdbcType=INTEGER},
+    set SPMC_U = #{SPMC_U,jdbcType=VARCHAR},
+      SL_UUU = #{SL_UUU,jdbcType=INTEGER},
       JLZT_U = #{JLZT_U,jdbcType=VARCHAR}
     where FRDM_U = #{FRDM_U,jdbcType=VARCHAR}
-      and SPMC_U = #{SPMC_U,jdbcType=VARCHAR}
+      and SPLJ_U = #{SPLJ_U,jdbcType=VARCHAR}
   </update>
 </mapper>

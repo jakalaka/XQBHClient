@@ -68,7 +68,7 @@ public class ModbusUtil {
 
 
         connection.connect();
-        System.out.println("1111");
+        Logger.log("LOG_DEBUG","connected");
 
         ModbusTCPTransaction trans = new ModbusTCPTransaction(connection);
         MyModbusCheckRequest myMyModbusCheckRequest = new MyModbusCheckRequest();

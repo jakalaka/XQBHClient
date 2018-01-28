@@ -1,9 +1,19 @@
 package XQBHClient.Client.Table.Model;
 
 public class DSPXX extends DSPXXKey {
+    private String SPMC_U;
+
     private Integer SL_UUU;
 
     private String JLZT_U;
+
+    public String getSPMC_U() {
+        return SPMC_U;
+    }
+
+    public void setSPMC_U(String SPMC_U) {
+        this.SPMC_U = SPMC_U;
+    }
 
     public Integer getSL_UUU() {
         return SL_UUU;
