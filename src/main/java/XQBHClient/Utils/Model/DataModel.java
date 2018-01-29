@@ -8,7 +8,6 @@ import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML
 
 public class DataModel {
 
-
     private Map<String, DataModel> Elements;
     private String modelType;
     private double unitPrice;
@@ -28,12 +27,8 @@ public class DataModel {
         File file = new File(resourcePath);
         if (!file.exists())
             return;
-        position = resourcePath;
-
-        position = position.substring(position.indexOf("ึ๗าณ"));
-
-
-
+        String tmpPath=resourcePath.substring(resourcePath.indexOf("ึ๗าณ"));
+        position = tmpPath;
 
 
         /*
@@ -53,7 +48,7 @@ public class DataModel {
         introduction = readKeyFromXML(prop, "introduction");
         imgs = readKeyFromXML(prop, "imgs").split(";");
         for (int i = 0; i < imgs.length; i++) {
-            imgs[i] = resourcePath + "/" + imgs[i];
+            imgs[i] = tmpPath + "/" + imgs[i];
         }
 
         controllerIP = readKeyFromXML(prop, "controllerIP");

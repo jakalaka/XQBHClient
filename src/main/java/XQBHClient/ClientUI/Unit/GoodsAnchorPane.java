@@ -32,7 +32,8 @@ public class GoodsAnchorPane extends AnchorPane {
     public GoodsAnchorPane(DataModel dataModel) {
 
         int restNum = 0;
-        restNum = GetSPNum.exec(dataModel.getPosition());
+        if ("goods".equals(dataModel.getModelType()))
+            restNum = GetSPNum.exec(dataModel.getPosition());
         GridPane gridPane = new GridPane();
 
 
@@ -47,7 +48,7 @@ public class GoodsAnchorPane extends AnchorPane {
             public Node call(Integer param) {
                 AnchorPane anchorPane = new AnchorPane();
 
-                String images = ("file:/" + (new File(dataModel.getImgs()[param])).getAbsolutePath()).replaceAll("\\\\", "/").replaceAll(" ", "%20");
+                String images = ("file:/" + (new File("resources/" + dataModel.getImgs()[param])).getAbsolutePath()).replaceAll("\\\\", "/").replaceAll(" ", "%20");
                 anchorPane.setStyle("-fx-background-image: url('" + images + "'); " +
                         "-fx-background-position: center; " +
                         "-fx-background-repeat: no-repeat;" +
@@ -99,6 +100,8 @@ public class GoodsAnchorPane extends AnchorPane {
         price.getStyleClass().add("thingsPrice");
         if ("bookGoods".equals(dataModel.getModelType())) {
             buy = new Button("预定");
+            buy.getStyleClass().add("buyButton");
+
         } else {
             buy = new Button("购买");
             Label restNumLable = new Label("剩余库存：" + restNum);
@@ -106,6 +109,12 @@ public class GoodsAnchorPane extends AnchorPane {
             restNumLable.setWrapText(true);
             restNumLable.getStyleClass().add("restNumLable");
             hbrestNum.getChildren().add(restNumLable);
+            if (restNum <= 0) {
+                buy.setText("已售罄");
+                buy.getStyleClass().add("buyButton_over");
+            } else {
+                buy.getStyleClass().add("buyButton");
+            }
 
         }
         hbPrice.getChildren().add(price);
@@ -131,9 +140,14 @@ public class GoodsAnchorPane extends AnchorPane {
                 return;
             }
             Integer iNum = 0;
-            iNum = GetSPNum.exec(dataModel.getPosition());
-            if (iNum <= 0) {
-                WarmingDialog.show(WarmingDialog.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
+            if ("goods".equals(dataModel.getModelType())) {
+                iNum = GetSPNum.exec(dataModel.getPosition());
+                if (iNum <= 0) {
+                    WarmingDialog.show(WarmingDialog.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
+                    return;
+                }
+            }else {
+                WarmingDialog.show(WarmingDialog.Dialog_ERR, "暂不支持预定功能~");
                 return;
             }
 
@@ -176,13 +190,13 @@ public class GoodsAnchorPane extends AnchorPane {
             stage_dialog.showAndWait();
         });
 
-        if (restNum <= 0) {
-            buy.setText("已售罄");
-            buy.getStyleClass().add("buyButton_over");
-
-        } else {
-            buy.getStyleClass().add("buyButton");
-        }
+//        if (restNum <= 0) {
+//            buy.setText("已售罄");
+//            buy.getStyleClass().add("buyButton_over");
+//
+//        } else {
+//            buy.getStyleClass().add("buyButton");
+//        }
 
 
         AnchorPane.setTopAnchor(infoArea, 0.0);
