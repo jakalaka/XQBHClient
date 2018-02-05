@@ -2,19 +2,27 @@ package XQBHClient.ClientUI;
 
 
 import XQBHClient.Client.Com;
-import XQBHClient.ClientAPI.InitDSPXX;
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.*;
 import XQBHClient.ClientUI.Unit.GoodsAnchorPane;
 import XQBHClient.ClientUI.Unit.GuideButton;
 import XQBHClient.ClientUI.Unit.NormalAnchorPane;
 import XQBHClient.ClientUI.Unit.RootAnchorPane;
 import XQBHClient.Utils.Model.*;
+import XQBHClient.Utils.Updater.AutoUpdateMain;
+import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
+import com.google.gson.Gson;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
+import javafx.concurrent.WorkerStateEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -23,8 +31,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 
+import java.io.*;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 
@@ -33,6 +46,7 @@ public class Controller implements Initializable {
 
     public static DataModel dataModel;
 
+    public static  ThingsOutCartoon thingsOutCartoon;
 
     @FXML
     private BorderPane viewPane;
@@ -52,6 +66,7 @@ public class Controller implements Initializable {
      */
     public void initialize(URL location, ResourceBundle resources) {
 
+
         //生成模型
         String rootPath = Com.modelFile;
         dataModel = new DataModel(rootPath);
@@ -61,8 +76,8 @@ public class Controller implements Initializable {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "初始化数据库失败,请联系管理员");
             System.exit(0);
         }
-        if (false==updateDSPXX(dataModel)) {
-            Logger.log("LOG_DEBUG","更新商品信息失败，退出");
+        if (false == updateDSPXX(dataModel)) {
+            Logger.log("LOG_DEBUG", "更新商品信息失败，退出");
             System.exit(0);
         }
 
@@ -70,6 +85,64 @@ public class Controller implements Initializable {
         goHome();
 
         ClientUIMain.controller = this;
+
+
+
+
+//
+//
+//                ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon();
+//                thingsOutCartoon.show();
+//                Order.Init();
+//                Order.finalOut = false;
+//                Order.controllerIP = "192.168.31.177";
+//                Order.controllerPort = 8080;
+//                Order.controllerAdress = 0;
+//
+//                Task<Void> thingsOutTask = new Task<Void>() {
+//                    @Override
+//                    public Void call() throws Exception {
+//                        ThingOut.exec();
+//                        return null;
+//                    }
+//                };
+//                thingsOutTask.setOnSucceeded(new EventHandler<WorkerStateEvent>(){
+//
+//                    @Override
+//                    public void handle(WorkerStateEvent event) {
+//                        thingsOutCartoon.close();
+//                    }
+//                });
+//
+//                new Thread(thingsOutTask).start();
+//
+//
+//
+//            }
+//        });
+
+
+
+    }
+
+    public static void  thingsOutPauseShow() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                thingsOutCartoon = new ThingsOutCartoon(ClientUIMain.primaryStage);
+                thingsOutCartoon.show();
+            }
+        });
+
+    }
+
+    public static void  thingsOutPauseClose() {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                thingsOutCartoon.close();
+            }
+        });
 
     }
 

@@ -18,7 +18,6 @@ public class AliPayBill {
         In.put("SPMC_U", Order.SPMC_U);
         In.put("JYJE_U", Order.JYJE_U);
         In.put("QRCODE", Order.QRCODE);
-        In.put("ZFZHLX", "z");
 
         Logger.log("LOG_DEBUG", "SPMC_U=" + Order.SPMC_U);
         Logger.log("LOG_DEBUG", "JYJE_U=" + Order.JYJE_U);

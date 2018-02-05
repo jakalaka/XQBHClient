@@ -142,7 +142,7 @@ public class ComCall {
         head.put("QTRQ_U", date[0]); //前台日期
         head.put("QTSJ_U", date[1]); //前台时间
         String sQTLS = Com.getQTLS();
-        if (sQTLS.length() != 16) {
+        if (sQTLS.length() != 20) {
             Logger.log("LOG_ERR", "流水获取失败");
             return false;
         }

@@ -136,7 +136,7 @@ public class OrderDialogController {
                                                    if ("SUCCESS".equals(Order.callStatus)) {
                                                        Logger.log("LOG_DEBUG", "支付SUCCESS状态");
                                                        Order.finalOut = false;
-                                                       ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon();
+                                                       ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon(OrderDialogController.orderDialogstage);
                                                        thingsOutCartoon.show();
                                                        Task<Void> thingsOutTask = new Task<Void>() {
                                                            @Override
@@ -154,7 +154,7 @@ public class OrderDialogController {
                                                                    Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
                                                                    ClientUIMain.controller.goHome();
                                                                } else {
-                                                                   UpdateDSPXX.exec(Order.SPMC_U, -1);//不管成功失败都更新
+                                                                   UpdateDSPXX.exec(Order.position, -1);//不管成功失败都更新
                                                                    thingsOutCartoon.close();
                                                                    WarmingDialog.show(WarmingDialog.Dialog_OVER, "谢谢您的光临,点击确认返回主界面,如有疑问请联系管理员");
                                                                    Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
@@ -212,7 +212,7 @@ public class OrderDialogController {
                                                                    //执行出货~~~
 
                                                                    Order.finalOut = false;
-                                                                   ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon();
+                                                                   ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon(OrderDialogController.orderDialogstage);
                                                                    thingsOutCartoon.show();
                                                                    Task<Void> thingsOutTask = new Task<Void>() {
                                                                        @Override
@@ -230,7 +230,7 @@ public class OrderDialogController {
                                                                                Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
                                                                                ClientUIMain.controller.goHome();
                                                                            } else {
-                                                                               UpdateDSPXX.exec(Order.SPMC_U, -1);//不管成功失败都更新
+                                                                               UpdateDSPXX.exec(Order.position, -1);//不管成功失败都更新
                                                                                thingsOutCartoon.close();
                                                                                WarmingDialog.show(WarmingDialog.Dialog_OVER, "谢谢您的光临,点击确认返回主界面,如有疑问请联系管理员");
                                                                                Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));

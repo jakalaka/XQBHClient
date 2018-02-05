@@ -60,6 +60,7 @@ public class WarmingDialog extends Application {
 
             controller.warmingInfo.setText(sMsg);
             controller.warmingTitle.setText(sTitle);
+            stage_dialog.setAlwaysOnTop(true);
             stage_dialog.showAndWait();
         } else {
             WarmingDialog.sTitle = sTitle;//给未初始化的信息做铺垫

@@ -1,5 +1,6 @@
 package XQBHClient.ClientAPI;
 
+import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Unit.OrderDialogController;
 import XQBHClient.ClientUI.Unit.ThingsOutCartoonController;
 import XQBHClient.Utils.log.Logger;
@@ -20,7 +21,7 @@ public class ThingsOutCartoon {
     public Stage comCartoonStage;
 
 
-    public ThingsOutCartoon() {
+    public ThingsOutCartoon(Stage parentStage) {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ThingsOutCartoonController.class.getResource("ThingsOutCartoon.fxml"));
 
@@ -39,7 +40,9 @@ public class ThingsOutCartoon {
         comCartoonStage.setScene(scene);
         scene.setFill(Color.TRANSPARENT);
         comCartoonStage.initStyle(StageStyle.TRANSPARENT);
-        comCartoonStage.initOwner(OrderDialogController.orderDialogstage);
+        comCartoonStage.initOwner(parentStage);
+
+
         comCartoonStage.setAlwaysOnTop(true);
 
     }
