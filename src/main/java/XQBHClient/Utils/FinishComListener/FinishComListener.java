@@ -2,15 +2,15 @@ package XQBHClient.Utils.FinishComListener;
 
 import XQBHClient.Client.Com;
 import XQBHClient.ClientAPI.WarmingDialog;
-import XQBHClient.ClientUI.ClientUIMain;
+
 import XQBHClient.ClientUI.Order;
 import XQBHClient.Utils.log.Logger;
 
-import javax.comm.*;
-import java.io.IOException;
+import javax.comm.CommPortIdentifier;
+import javax.comm.SerialPort;
+import javax.comm.SerialPortEvent;
+import javax.comm.SerialPortEventListener;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.TooManyListenersException;
 
 /**
  * Com21EventListener类使用“事件监听模式”监听串口COM21,
@@ -24,21 +24,22 @@ public class FinishComListener implements SerialPortEventListener {
     CommPortIdentifier com21 = null;//未打卡的端口
     static SerialPort serialComPort = null;//打开的端口
     InputStream inputStream = null;//输入流
-    public  static boolean isClose;
-    public  static boolean subIsClose;
+    public static boolean isClose;
+    public static boolean subIsClose;
 
     //2.构造函数：
     //实现初始化动作：获取串口COM21、打开串口、获取串口输入流对象、为串口添加事件监听对象
     public FinishComListener() throws Exception {
-            //获取串口、打开窗串口、获取串口的输入流。
-            com21 = CommPortIdentifier.getPortIdentifier(Com.FinishScannerComName);
-            serialComPort = (SerialPort) com21.open("FinishComListener", 1000);
-            inputStream = serialComPort.getInputStream();
+        //获取串口、打开窗串口、获取串口的输入流。
+        Logger.log("LOG_DEBUG", "Com.FinishScannerComName=" + Com.FinishScannerComName);
+        com21 = CommPortIdentifier.getPortIdentifier(Com.FinishScannerComName);
+        serialComPort = (SerialPort) com21.open("FinishComListener", 1000);
+        inputStream = serialComPort.getInputStream();
 
-            //向串口添加事件监听对象。
-            serialComPort.addEventListener(this);
-            //设置当端口有可用数据时触发事件,此设置必不可少。
-            serialComPort.notifyOnDataAvailable(true);
+        //向串口添加事件监听对象。
+        serialComPort.addEventListener(this);
+        //设置当端口有可用数据时触发事件,此设置必不可少。
+        serialComPort.notifyOnDataAvailable(true);
 
     }
 
@@ -50,11 +51,11 @@ public class FinishComListener implements SerialPortEventListener {
         //记录已经到达串口COM21且未被读取的数据的字节（Byte）数。
         int availableBytes = 0;
         //如果是数据可用的时间发送,则进行数据的读写
-        if(event.getEventType() == SerialPortEvent.DATA_AVAILABLE){
+        if (event.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
             if (!isClose) {
-                isClose=true;
+                isClose = true;
             }
-            subIsClose=true;
+            subIsClose = true;
 
         }
     }
@@ -64,45 +65,44 @@ public class FinishComListener implements SerialPortEventListener {
         try {
             new FinishComListener();
         } catch (Exception e) {
-            Logger.logException("LOG_ERR",e);
+            Logger.logException("LOG_ERR", e);
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "未检测到完成扫描器!");
             return;
         }
 //        wirte();
-        Closer closer=new Closer();
-        Thread t=new Thread(closer);
+        Closer closer = new Closer();
+        Thread t = new Thread(closer);
         t.start();
-        Com.FinishScannerState="N";
+        Com.FinishScannerState = "N";
 
     }
 
 
 }
 
-class Closer implements  Runnable{
+class Closer implements Runnable {
     @Override
     public void run() {
-        while (true)
-        {
-            if(FinishComListener.subIsClose==false) {
-                if(FinishComListener.isClose == true) {
+        while (true) {
+            if (FinishComListener.subIsClose == false) {
+                if (FinishComListener.isClose == true) {
                     if (!Order.finalOut) {
                         Logger.log("LOG_DEBUG", "已出货");
                         Order.finalOut = true;
-                    }else {
+                    } else {
                         Logger.log("LOG_ERR", "未检测到购买即出货!!!");
-                        Com.ZDZT_U="ERR_OutAgain";
+                        Com.ZDZT_U = "ERR_OutAgain";
                         /*这里需要立即断开传送带的电源*/
 
                     }
                 }
                 FinishComListener.isClose = false;
             }
-            FinishComListener.subIsClose=false;
+            FinishComListener.subIsClose = false;
             try {
                 Thread.sleep(100);
             } catch (Exception e) {
-                Logger.logException("LOG_ERR",e);
+                Logger.logException("LOG_ERR", e);
                 WarmingDialog.show(WarmingDialog.Dialog_ERR, "启FinishComListener进程异常!");
             }
         }

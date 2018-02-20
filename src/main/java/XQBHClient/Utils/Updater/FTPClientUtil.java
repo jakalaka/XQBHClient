@@ -24,7 +24,7 @@ public class FTPClientUtil {
     private static FTPClient ftp = null;
 
     public static void main(String[] args) {
-        FTPClientUtil ftpClient = new FTPClientUtil("119.23.250.79", 21, "ftpreader", "ftp", "Update", "version.txt", "Update/new", "version.txt");
+        FTPClientUtil ftpClient = new FTPClientUtil("newfangledstore.com", 21, "ftpreader", "ftp", "Update", "version.txt", "Update/new", "version.txt");
         try {
             ftpClient.FTPClientRun();
         } catch (Exception e) {

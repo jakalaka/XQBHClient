@@ -14,6 +14,9 @@ public class ZipModel {
 
 
         FileOutputStream fos1 = new FileOutputStream(new File(Com.modelZipFile));
+        Logger.log("LOG_DEBUG","target zip="+new File(Com.modelZipFile).getAbsolutePath());
+        Logger.log("LOG_DEBUG","source ="+new File(Com.modelFile).getAbsolutePath());
+
         toZip(Com.modelFile, fos1,true);
     }
     public static void toZip(String srcDir, OutputStream out, boolean KeepDirStructure)
