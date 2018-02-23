@@ -111,19 +111,25 @@ public class ClientMain {
         new Thread(new Runnable() {
             @Override
             public void run() {
-
+                ServerSocket serverSocket = null;//1024-65535的某个端口
+                try {
+                    serverSocket = new ServerSocket(9001);
+                } catch (Exception e) {
+                    Logger.logException("LOG_ERR",e);
+                    WarmingDialog.show(WarmingDialog.Dialog_ERR,"启动系统监听服务时出错，请联系管理员!!!");
+                    System.exit(0);
+                }
                 while (true) {
                     try {
                         //1、创建一个服务器端Socket，即ServerSocket，指定绑定的端口，并监听此端口
                         boolean execFlg = true;
                         boolean restatFlg = false;
                         String sXmlOut = "";
-                        ServerSocket serverSocket = null;//1024-65535的某个端口
 
-                        serverSocket = new ServerSocket(9001);
+
+                        Socket socket = null;
 
                         //2、调用accept()方法开始监听，等待客户端的连接
-                        Socket socket = null;
                         socket = serverSocket.accept();
 
                         //3、获取输入流，并读取客户端信息
@@ -283,8 +289,7 @@ public class ClientMain {
                         }
 
                     } catch (Exception e) {
-                        Logger.logException("LOG_ERR", e);
-                        break;
+                        Logger.logException("LOG_ERR",e);
                     }
 
                 }
