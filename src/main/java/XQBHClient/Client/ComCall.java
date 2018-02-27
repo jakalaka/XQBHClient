@@ -3,13 +3,15 @@ package XQBHClient.Client;
 import XQBHClient.ClientAPI.WarmingDialog;
 
 
-import XQBHClient.Utils.RSA.RSASignature;
+import XQBHClient.Utils.RSA.RSAHandler;
 import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
 
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +35,32 @@ public class ComCall {
         }
 
         String XMLIn = XmlUtils.map2XML(XMLMapIn);
-        /*
-        加签名
-         */
-        String signstr = RSASignature.sign(XMLIn, Com.upPrivateKey);
-        XMLIn = XMLIn + "sign=" + signstr;
-
         Logger.log("LOG_DEBUG", "XMLIn=" + XMLIn);
+
+        /*
+        加密
+         */
+        PrivateKey upprivatekey = null;
+        try {
+            upprivatekey = RSAHandler.getPrivateKey(Com.upPrivateKey);
+        } catch (Exception e) {
+            Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取私钥失败!");
+            return false;
+        }
+
+        byte[] encrypt = null;
+        try {
+            encrypt = RSAHandler.encrypt(XMLIn.getBytes(), upprivatekey);
+        } catch (Exception e) {
+            Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "加密上送报文失败!");
+            return false;
+        }
+        XMLIn = new String(encrypt);
+        Logger.log("LOG_DEBUG", "after encrypt XMLIn=[" + XMLIn + "]");
+        Logger.log("LOG_DEBUG", "after encrypt XMLIn.length=[" + XMLIn.length() + "]");
+        Logger.log("LOG_DEBUG", "Com.upPrivateKey=[" + Com.upPrivateKey + "]");
 
 
 //
@@ -60,8 +81,8 @@ public class ComCall {
 //            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器故障!");
 //            return false;
 //        }
-//        String IP = "192.168.2.101";
-        String IP="newfangledstore.com";
+        String IP = "192.168.31.62";
+//        String IP="newfangledstore.com";
 
         int port = 9000;
         String XMLOut = "";
@@ -102,26 +123,29 @@ public class ComCall {
         Logger.log("LOG_DEBUG", "XMLOut=" + XMLOut);
 
         /*
-        解签名
+        解密
          */
-        String[] str = XMLOut.split("sign=");
+
+        Logger.log("LOG_ERR", XMLOut);
+        PublicKey republicKey = null;
         try {
-            if (true != RSASignature.doCheck(str[0], str[1], Com.rePublicKey)) {
-                Logger.log("LOG_ERR", XMLOut);
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, "解密通讯可能被篡改，交易失败");
-                return false;
-            } else {
-                XMLOut = str[0];
-            }
+            republicKey = RSAHandler.getPublicKey(Com.rePublicKey);
         } catch (Exception e) {
-            Logger.log("LOG_ERR", XMLOut);
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "解密通讯报文失败");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取公钥失败!");
+            return false;
+        }
+        byte[] decrypt = null;
+        try {
+            decrypt = RSAHandler.decrypt(XMLOut.getBytes(), republicKey);
+        } catch (Exception e) {
+            Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "解密返回报文失败!");
             return false;
         }
 
 
-        Map XMLMapOut = XmlUtils.XML2map(XMLOut);
+        Map XMLMapOut = XmlUtils.XML2map(new String(decrypt));
 
         if (false == minusInfo(XMLMapOut, TranMapOut)) {
             return false;

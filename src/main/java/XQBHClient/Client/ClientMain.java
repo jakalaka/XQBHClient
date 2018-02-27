@@ -119,13 +119,16 @@ public class ClientMain {
                     WarmingDialog.show(WarmingDialog.Dialog_ERR,"启动系统监听服务时出错，请联系管理员!!!");
                     System.exit(0);
                 }
+
+
                 while (true) {
                     try {
+
+
                         //1、创建一个服务器端Socket，即ServerSocket，指定绑定的端口，并监听此端口
                         boolean execFlg = true;
                         boolean restatFlg = false;
                         String sXmlOut = "";
-
 
                         Socket socket = null;
 
@@ -281,7 +284,6 @@ public class ClientMain {
                         isr.close();
                         is.close();
                         socket.close();
-                        serverSocket.close();
                         if (restatFlg) {
                             Logger.log("LOG_DEBUG", "begin to restart");
                             AutoUpdateMain.runbat();
@@ -293,6 +295,8 @@ public class ClientMain {
                     }
 
                 }
+
+
             }
         }).start();
 

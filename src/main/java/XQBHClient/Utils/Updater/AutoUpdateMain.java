@@ -66,9 +66,10 @@ public class AutoUpdateMain {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Logger.log("LOG_SYS", "oldVersion=" + oldVersion);
-        Logger.log("LOG_SYS", "newVersion=" + newVersion);
-        if (null != newVersion && newVersion.equals(oldVersion)) {
+        Logger.log("LOG_SYS", "oldVersion=" + oldVersion.trim());
+        Logger.log("LOG_SYS", "newVersion=" + newVersion.trim());
+        Logger.log("LOG_SYS", "Const.version=" + Const.version);
+        if (null != newVersion && newVersion.trim().equals(Const.version)) {
             Logger.log("LOG_SYS", "数据采集程序版本没有更新变动");
             return true;
         }
