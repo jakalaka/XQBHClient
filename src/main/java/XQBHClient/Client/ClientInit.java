@@ -15,6 +15,7 @@ import XQBHClient.Utils.log.Logger;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 
+import java.awt.*;
 import java.io.*;
 import java.net.InetAddress;
 import java.net.ServerSocket;
@@ -33,6 +34,9 @@ public class ClientInit {
 
         Logger.log("LOG_IO", Com.getIn);
 
+        Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
+        Com.ScreenWidth = screensize.width;
+        Com.ScreenHeight = screensize.height;
 
 
         /*

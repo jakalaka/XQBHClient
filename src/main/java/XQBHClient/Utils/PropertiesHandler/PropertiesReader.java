@@ -14,6 +14,7 @@ import java.util.Properties;
  */
 public class PropertiesReader {
     public static String readKeyFromXML(File file,String Key){
+        String resoult="";
         Properties propertie;
         FileInputStream inputFile;
         if (!file.exists())
@@ -21,7 +22,7 @@ public class PropertiesReader {
             Logger.log("LOG_ERR","file"+file.getAbsolutePath()+" not found");
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取"+file.getAbsolutePath()+"错误!");
 
-            return  null;
+            return  resoult;
         }
 
         propertie = new Properties();
@@ -38,7 +39,10 @@ public class PropertiesReader {
             Logger.log("LOG_ERR",ex.toString());
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取文件"+file.getAbsolutePath()+"失败!");
         }
-        return propertie.getProperty(Key);
+        resoult=propertie.getProperty(Key);
+        if (resoult==null)
+            resoult="";
+        return resoult;
     }
 //
 //    public static void main(String[] args) {

@@ -23,7 +23,7 @@ public class RootAnchorPane extends AnchorPane {
             button.getStyleClass().add("rootButton");
             button.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
 //                    UnitedModel.position.add(entry.getKey());
-                ClientUIMain.controller.go(entry.getValue().getPosition());
+                ClientUIMain.controller.go(entry.getValue());
             });
             ColumnConstraints colConstraints = new ColumnConstraints();
             colConstraints.setPercentWidth(100 / num);

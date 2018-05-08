@@ -24,7 +24,7 @@ public class NormalAnchorPane extends AnchorPane{
             button.getStyleClass().add("rootButton");
             button.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
 //                        UnitedModel.position.add(entry_.getKey());
-                ClientUIMain.controller.go(entry_.getValue().getPosition());
+                ClientUIMain.controller.go(entry_.getValue());
             });
             HBox hBox = new HBox();
             hBox.getChildren().add(button);

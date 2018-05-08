@@ -23,6 +23,12 @@
           <RowConstraints maxHeight="170.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="searchHbox" GridPane.columnIndex="1">
+               <children>
+                  <TextField fx:id="searchField" editable="false" onMouseClicked="#onSearchTouch" styleClass="searchField" />
+                  <Button focusTraversable="false" mnemonicParsing="false" onAction="#onSearchTouch" styleClass="searchButton" text="查询" textFill="#28240a" />
+               </children>
+            </HBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
@@ -42,7 +48,7 @@
                 <RowConstraints vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <FlowPane fx:id="guidePane" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2">
+                  <FlowPane fx:id="guidePane" prefHeight="200.0" prefWidth="200.0" style="-fx-padding: 0px 0px 0px 5px;" GridPane.columnSpan="2">
                      <children>
                         <Button mnemonicParsing="false" onAction="#xxx" styleClass="guideText" text="主页" />
                      </children>

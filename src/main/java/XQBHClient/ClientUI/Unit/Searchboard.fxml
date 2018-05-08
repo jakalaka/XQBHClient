@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseExited="#onMouseOut" styleClass="searchGrid" stylesheets="@../../../resources/CSS/stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="XQBHClient.ClientUI.Unit.Searchboard">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="60.0" minWidth="50.0" prefWidth="50.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="30.0" prefHeight="35.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="A" GridPane.rowIndex="2" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="B" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="C" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="D" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="E" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="F" GridPane.rowIndex="3" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="G" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="H" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="I" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="J" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="K" GridPane.rowIndex="4" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="L" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="M" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="N" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="O" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="P" GridPane.rowIndex="5" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="Q" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="R" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="S" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="T" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="U" GridPane.rowIndex="6" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="V" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="W" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="X" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="Y" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="Z" GridPane.rowIndex="7" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="2" GridPane.columnIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="3" GridPane.columnIndex="2" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="4" GridPane.columnIndex="3" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="5" GridPane.columnIndex="4" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="6" GridPane.rowIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="7" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="8" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="9" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="搜索" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="7" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="回删" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+      <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAction" styleClass="searchkeyboard" text="清空" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+   </children>
+</GridPane>

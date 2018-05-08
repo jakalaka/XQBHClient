@@ -52,15 +52,10 @@ public class ClientUIMain extends Application {
     }
 
     public static boolean Init() {
-
-
-
         File prop=new File(System.getProperty("java.home")+"/lib/");
         Logger.log("LOG_DEBUG","target propfile="+prop.getAbsolutePath());
 
         //∂¡»°≈‰÷√Œƒº˛
-
-
         return true;
     }
 

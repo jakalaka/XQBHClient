@@ -3,14 +3,14 @@ package XQBHClient.Client;
 import XQBHClient.ClientAPI.WarmingDialog;
 
 
-import XQBHClient.Utils.RSA.RSAHandler;
+import XQBHClient.Utils.RSA.HashUtil;
+import XQBHClient.Utils.RSA.RSAUtil;
 import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
 
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,27 +40,35 @@ public class ComCall {
         /*
         加密
          */
-        PrivateKey upprivatekey = null;
+        byte[] buffout = XMLIn.getBytes();
         try {
-            upprivatekey = RSAHandler.getPrivateKey(Com.upPrivateKey);
-        } catch (Exception e) {
-            Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取私钥失败!");
-            return false;
-        }
-
-        byte[] encrypt = null;
-        try {
-            encrypt = RSAHandler.encrypt(XMLIn.getBytes(), upprivatekey);
+            buffout = HashUtil
+                    .encryptBASE64byte(RSAUtil.encryptByPrivateKey(buffout, Com.clientEncryptPrivateKey));
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "加密上送报文失败!");
             return false;
         }
-        XMLIn = new String(encrypt);
+        /*
+        加签
+         */
+
+        String signstr = null;
+        try {
+            signstr = RSAUtil.sign(XMLIn.getBytes(Com.charset), Com.clientSignPrivateKey);
+        } catch (Exception e) {
+            Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "加签上送报文失败!");
+            return false;
+        }
+        byte[] splitbyte = {'7', '7', '7', '7', '7', '7', '7'};
+        buffout = addBytes(buffout, splitbyte, splitbyte.length);
+        byte[] signbyteout = signstr.getBytes();
+        buffout = addBytes(buffout, signbyteout, signbyteout.length);
+
+        XMLIn = new String(buffout);
         Logger.log("LOG_DEBUG", "after encrypt XMLIn=[" + XMLIn + "]");
         Logger.log("LOG_DEBUG", "after encrypt XMLIn.length=[" + XMLIn.length() + "]");
-        Logger.log("LOG_DEBUG", "Com.upPrivateKey=[" + Com.upPrivateKey + "]");
 
 
 //
@@ -81,11 +89,14 @@ public class ComCall {
 //            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器故障!");
 //            return false;
 //        }
-        String IP = "192.168.31.62";
-//        String IP="newfangledstore.com";
+//        String IP = "192.168.31.62";
+        String IP="newfangledstore.com";
 
         int port = 9000;
         String XMLOut = "";
+        byte[] buff = new byte[1024];
+        byte[] buffIn = new byte[0];
+        int t = 0;
         try {
 
 
@@ -94,58 +105,109 @@ public class ComCall {
             socket.setSoTimeout(15000);//设置读操作超时时间30 s
 //2、获取输出流，向服务器端发送信息
             OutputStream os = socket.getOutputStream();//字节输出流
-            PrintWriter pw = new PrintWriter(os);//将输出流包装成打印流
+//            PrintWriter pw = new PrintWriter(os);//将输出流包装成打印流
 
-            pw.write(XMLIn);
-            pw.flush();
+//            pw.write(XMLIn);
+//            pw.flush();
+            os.write(buffout);
+
             socket.shutdownOutput();
 //3、获取输入流，并读取服务器端的响应信息
             InputStream is = socket.getInputStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+//            BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String info = null;
-            StringBuilder stringBuilder = new StringBuilder();
+//            StringBuilder stringBuilder = new StringBuilder();
 
-            while ((info = br.readLine()) != null) {
-                stringBuilder.append(info);
+//            while ((info = br.readLine()) != null) {
+//                stringBuilder.append(info);
+//            }
+
+            while ((t = is.read(buff)) != -1) {
+                buffIn = addBytes(buffIn, buff, t);
             }
-            XMLOut = stringBuilder.toString();
+
+//            XMLOut = stringBuilder.toString();
             //4、关闭资源
-            br.close();
+//            br.close();
             is.close();
-            pw.close();
+//            pw.close();
             os.close();
             socket.close();
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "通讯异常!");
+            return false;
         }
 
 
-        Logger.log("LOG_DEBUG", "XMLOut=" + XMLOut);
+        Logger.log("LOG_DEBUG", "XMLOut=" + new String(buffIn));
+
+        //获取签名分割位置
+        int iPos = 0;
+        boolean foundSplit = false;
+        for (int i = 0; i < buffIn.length - 7; i++) {
+
+            for (int j = 0; j < 7; j++) {
+                if (buffIn[i + j] == '7') {
+                    foundSplit = true;
+                    continue;
+                } else {
+                    foundSplit = false;
+                    break;
+                }
+            }
+            if (foundSplit) {
+                iPos = i;
+                break;
+            }
+        }
+        if (!foundSplit)//未找到分割符
+        {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR,"验签失败!!!请联系管理员");
+            return false;
+        }
+        byte[] encrybyte = new byte[iPos];
+        System.arraycopy(buffIn, 0, encrybyte, 0, iPos);
+
+        /*
+        验签
+         */
+        int signbytelength=buffIn.length - iPos - 7;
+        Logger.log("LOG_DEBUG", "buffIn.length =[" + buffIn.length + "]");
+        Logger.log("LOG_DEBUG", "iPos=[" + iPos+ "]");
+        Logger.log("LOG_DEBUG", "signbytelength=[" + signbytelength+ "]");
+        byte[] signbyte = new byte[signbytelength];
+        System.arraycopy(buffIn, iPos + 7, signbyte, 0, signbyte.length);
+        boolean verPass = false;
+        try {
+            verPass = RSAUtil.verify(encrybyte, Com.serverSignPublicbKey, new String(signbyte));
+        } catch (Exception e) {
+            Logger.logException("LOG_ERR", e);
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "与服务器通讯验签失败!");
+            return false;
+        }
+        if (!verPass) {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "验签错误!");
+            return false;
+        }
+
 
         /*
         解密
          */
 
-        Logger.log("LOG_ERR", XMLOut);
-        PublicKey republicKey = null;
+        byte[] datebyte = new byte[0];
         try {
-            republicKey = RSAHandler.getPublicKey(Com.rePublicKey);
+            datebyte = RSAUtil.decryptByPrivateKey(HashUtil.decryptBASE64(encrybyte), Com.clientEncryptPrivateKey);
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取公钥失败!");
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "与服务器通讯解密失败!");
             return false;
         }
-        byte[] decrypt = null;
-        try {
-            decrypt = RSAHandler.decrypt(XMLOut.getBytes(), republicKey);
-        } catch (Exception e) {
-            Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "解密返回报文失败!");
-            return false;
-        }
+        XMLOut = new String(datebyte);
 
-
-        Map XMLMapOut = XmlUtils.XML2map(new String(decrypt));
+        Logger.log("LOG_DEBUG", "after decrypt XMLOut="+XMLOut);
+        Map XMLMapOut = XmlUtils.XML2map(XMLOut);
 
         if (false == minusInfo(XMLMapOut, TranMapOut)) {
             return false;
@@ -217,6 +279,14 @@ public class ComCall {
         } else Logger.log("LOG_IO", "CWDM_U=" + CWDM_U);
 
         return true;
+    }
+
+    public static byte[] addBytes(byte[] data1, byte[] data2, int size) {
+        byte[] data3 = new byte[data1.length + size];
+        System.arraycopy(data1, 0, data3, 0, data1.length);
+        System.arraycopy(data2, 0, data3, data1.length, size);
+        return data3;
+
     }
 
 }

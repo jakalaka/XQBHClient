@@ -204,3 +204,30 @@
     -fx-font-weight: 800;
     -fx-background-radius: 10px;
 }
+.searchHbox {
+    -fx-alignment: top-right;
+    -fx-padding: 20px 20px 0px 0px;
+}
+.searchField {
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-radius: 5px 0px 0px 5px;
+    -fx-text-fill: white;
+}
+.searchButton {
+    -fx-background-color: moccasin;
+    -fx-border-radius: 0px 5px 5px 0px ;
+    -fx-background-radius: 0px 5px 5px 0px ;
+}
+.searchGrid {
+    -fx-border-radius: 2px ;
+    -fx-background-radius: 2px;
+    -fx-border-color: black;
+}
+.searchkeyboard {
+    -fx-border-radius: 2px ;
+    -fx-background-radius: 2px;
+    -fx-background-color: linear-gradient(#dfe1d6,#fdfff4,#dcded3);
+    -fx-border-color: #6b6c67;
+    -fx-focus-traversable: false;
+}

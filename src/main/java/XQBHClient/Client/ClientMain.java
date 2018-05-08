@@ -52,7 +52,7 @@ public class ClientMain {
 
             return;
         }
-aa
+
         /*
         初始化程序
          */
@@ -71,6 +71,7 @@ aa
         /*
         出货扫描器初始化
          */
+        /*deletetmp
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -86,6 +87,7 @@ aa
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "FinishScannerState 启进程失败");
             return;
         }
+        */
 
 
 //        int timeOut = 3000; //超时应该在3钞以上

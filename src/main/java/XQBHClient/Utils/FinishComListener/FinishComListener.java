@@ -61,6 +61,7 @@ public class FinishComListener implements SerialPortEventListener {
     }
 
     //在main方法中创建类的实例
+    /*deletetmp
     public static void start() {
         try {
             new FinishComListener();
@@ -69,13 +70,12 @@ public class FinishComListener implements SerialPortEventListener {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "未检测到完成扫描器!");
             return;
         }
-//        wirte();
         Closer closer = new Closer();
         Thread t = new Thread(closer);
         t.start();
         Com.FinishScannerState = "N";
 
-    }
+    }*/
 
 
 }

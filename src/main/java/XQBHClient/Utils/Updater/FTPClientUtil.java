@@ -54,7 +54,6 @@ public class FTPClientUtil {
         ftp = new FTPClient();
         try {
             ftp = new FTPClient();
-
             ftp.connect(hostName, port);
             ftp.login(user, pwd);
             ftp.setFileType(FTP.BINARY_FILE_TYPE);
@@ -79,6 +78,7 @@ public class FTPClientUtil {
         if (!localFile.exists()) {
             localFile.mkdirs();
         }
+        ftp.enterLocalPassiveMode();
         FileOutputStream out = new FileOutputStream(localPath+"/"+localFileName);
         ftp.retrieveFile(remotePath+"/"+remoteFileName, out);
         out.flush();
