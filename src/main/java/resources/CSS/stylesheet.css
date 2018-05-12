@@ -65,9 +65,10 @@
     -fx-border-radius: 20px;
     -fx-background-radius: 23px;
     -fx-font-size: 30px;
-    -fx-background-color: linear-gradient( to top left,oldlace,blanchedalmond,cornsilk);
+    -fx-background-color: linear-gradient(to top left, oldlace, blanchedalmond, cornsilk);
     -fx-border-color: #485735;
     -fx-border-width: 2px;
+    -fx-border-insets: -1px;
 }
 
 .hbox_CENTER {
@@ -81,16 +82,19 @@
     -fx-padding: 10px 10px 10px 10px;
 
 }
+
 .hbox_Price {
     -fx-alignment: bottom-left;
     -fx-padding: 10px 10px 10px 10px;
 
 }
+
 .hbox_restNum {
     -fx-alignment: bottom-left;
     -fx-padding: 10px 10px -35px 10px;
 
 }
+
 .thingsImg {
     -fx-background-image: url("../img/mainbg0.jpg");
     -fx-background-size: 100% 100%;
@@ -105,6 +109,7 @@
     -fx-font-size: 17px;
     -fx-text-fill: black;
 }
+
 .buyButton_over {
     -fx-background-radius: 10px;
     -fx-border-radius: 10px;
@@ -138,12 +143,14 @@
     -fx-font-weight: 900;
     -fx-padding: 5px 5px 5px 5px;
 }
+
 .restNumLable {
     -fx-font-size: 17px;
     -fx-text-fill: black;
     -fx-font-weight: 900;
     -fx-padding: 5px 5px 5px 5px;
 }
+
 .normalPane {
     -fx-background-color: transparent;
 
@@ -184,14 +191,18 @@
 
     -fx-border-color: black;
     -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
+    -fx-background-radius: 13px;
     -fx-border-width: 5px;
 }
 
-.ordertitleHbox{
+.ordertitleHbox {
     -fx-alignment: center;
+    -fx-border-color: black;
+    -fx-border-width: 0px 0px 1px 0px;
+
 }
-.orderInfo{
+
+.orderInfo {
     -fx-font-size: 17px;
     -fx-font-weight: 500;
 }
@@ -200,6 +211,7 @@
     -fx-font-size: 37px;
     -fx-font-weight: 500;
 }
+
 .warmingCancel {
     -fx-pref-height: 70px;
     -fx-pref-width: 150px;
@@ -207,39 +219,60 @@
     -fx-font-weight: 800;
     -fx-background-radius: 10px;
 }
+
 .searchHbox {
     -fx-alignment: top-right;
     -fx-padding: 20px 20px 0px 0px;
 }
+
 .searchField {
     -fx-background-color: transparent;
     -fx-border-color: white;
     -fx-border-radius: 5px 0px 0px 5px;
     -fx-text-fill: white;
 }
+
 .searchButton {
     -fx-background-color: moccasin;
-    -fx-border-radius: 0px 5px 5px 0px ;
-    -fx-background-radius: 0px 5px 5px 0px ;
+    -fx-border-radius: 0px 5px 5px 0px;
+    -fx-background-radius: 0px 5px 5px 0px;
 }
+
 .searchGrid {
-    -fx-border-radius: 2px ;
+    -fx-border-radius: 2px;
     -fx-background-radius: 2px;
     -fx-border-color: black;
 }
+
 .searchkeyboard {
-    -fx-border-radius: 2px ;
+    -fx-border-radius: 2px;
     -fx-background-radius: 2px;
-    -fx-background-color: linear-gradient(#dfe1d6,#fdfff4,#dcded3);
+    -fx-background-color: linear-gradient(#dfe1d6, #fdfff4, #dcded3);
     -fx-border-color: #6b6c67;
     -fx-focus-traversable: false;
 }
-.goodsGridBackground{
+
+.goodsGridBackground {
     -fx-background-color: black;
     -fx-opacity: 0.2;
 }
-.goodsShowLabel{
+
+.goodsShowLabel {
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-font-size: 13px;
+}
+
+.alipayButton {
+    -fx-background-image: url("../img/alipay.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+.wechatpayButton {
+
+    -fx-background-image: url("../img/wecharpay.png");
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+
 }

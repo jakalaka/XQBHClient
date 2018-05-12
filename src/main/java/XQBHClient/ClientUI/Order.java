@@ -14,6 +14,8 @@ public class Order {
     public static int controllerPort;
     public static int controllerAdress;
     public static String position;
+    public static String ZFFS_U;
+
 
 
 
@@ -28,6 +30,7 @@ public class Order {
         controllerIP="";
         controllerPort=9999;
         controllerAdress=9999;
+        ZFFS_U="";
 
     }
 }

@@ -186,7 +186,7 @@ public class GoodsAnchorPane extends AnchorPane {
             controller.setOrderDialogstate(stage_dialog);
             controller.setOrderDialogsence(scene);
 
-            controller.orderInfo.setText("交易金额:" + Order.JYJE_U + "\n商品名称:" + Order.SPMC_U);
+            controller.orderInfo.setText("商品单价:￥" + Order.JYJE_U + "\n商品名称:" + Order.SPMC_U + "\n数量:1" + "\n总价:￥"+ Order.JYJE_U);
             stage_dialog.showAndWait();
         });
 

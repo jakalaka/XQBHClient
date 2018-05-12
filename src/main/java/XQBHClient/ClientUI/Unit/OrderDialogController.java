@@ -17,7 +17,9 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -38,6 +40,16 @@ public class OrderDialogController {
     public Label orderInfo;
 
     @FXML
+    public RadioButton AliPayRadio;
+    @FXML
+    public RadioButton WechatPayRadio;
+    @FXML
+    public Button AliPayButton;
+    @FXML
+    public Button WechatPayButton;
+
+
+    @FXML
     public void cancel() {
         Logger.log("LOG_DEBUG", "cancel");
         Event.fireEvent(orderDialogstage, new WindowEvent(orderDialogstage, WindowEvent.WINDOW_CLOSE_REQUEST));
@@ -52,6 +64,13 @@ public class OrderDialogController {
             WarmingDialog.show("服务暂停", "该设备在近5分钟内会更新重启!!!\n在此期间暂停服务，请您稍后!!!");
             return;
         }
+
+        if (AliPayRadio.isSelected())
+            Order.ZFFS_U="z";
+        else if(WechatPayRadio.isSelected())
+            Order.ZFFS_U="w";
+        else
+            WarmingDialog.show(WarmingDialog.Dialog_ERR,"未选中支付方式或支付方式非法!");
 
         /*出货设备的初始化检查*/
         try {
@@ -125,7 +144,16 @@ public class OrderDialogController {
                         @Override
                         public Void call() throws Exception {
                             //发起收费动作
-                            Order.callStatus = AliPayBill.exec();
+                            Logger.log("LOG_DEBUG","ZFFS_U=["+Order.ZFFS_U+"]");
+                            if("z".equals(Order.ZFFS_U)) {
+                                Order.callStatus = AliPayBill.exec();
+                            }
+                            else if("w".equals(Order.ZFFS_U))
+                            {
+                                //微信支付待添加
+                            }
+
+
                             return null;
                         }
                     };
@@ -318,5 +346,24 @@ public class OrderDialogController {
             return false;
         }
         return true;
+    }
+    public void singleSelect(javafx.event.ActionEvent actionEvent){
+        String radioId="";
+        if (actionEvent.getSource() instanceof RadioButton)
+        {
+            radioId=((RadioButton) actionEvent.getSource()).getId();
+        }else if(actionEvent.getSource() instanceof Button)
+        {
+            radioId=((Button) actionEvent.getSource()).getId();
+        }
+        if ("AliPayRadio".equals(radioId)||"AliPayButton".equals(radioId))
+        {
+            AliPayRadio.setSelected(true);
+            WechatPayRadio.setSelected(false);
+        }else if ("WechatPayRadio".equals(radioId)||"WechatPayButton".equals(radioId))
+        {
+            WechatPayRadio.setSelected(true);
+            AliPayRadio.setSelected(false);
+        }
     }
 }
