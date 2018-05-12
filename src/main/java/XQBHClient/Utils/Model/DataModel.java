@@ -4,9 +4,7 @@ import XQBHClient.Utils.Language.ChineseToEnglish2;
 import XQBHClient.Utils.log.Logger;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Vector;
+import java.util.*;
 
 import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
 
@@ -28,8 +26,8 @@ public class DataModel {
 
     public DataModel() {
         Elements = new HashMap<String, DataModel>();
-        position="搜索结果";
-        modelType="normal";
+        position = "搜索结果";
+        modelType = "normal";
     }
 
     public DataModel(String resourcePath) {
@@ -37,7 +35,7 @@ public class DataModel {
         File file = new File(resourcePath);
         if (!file.exists())
             return;
-        String tmpPath=resourcePath.substring(resourcePath.indexOf("主页"));
+        String tmpPath = resourcePath.substring(resourcePath.indexOf("主页"));
         position = tmpPath;
         /*
         读取配置文件,生成树对象
@@ -71,9 +69,7 @@ public class DataModel {
             adress = "9999";
         controllerAdress = Integer.parseInt(adress);
 
-        searchCondition =position+" "+readKeyFromXML(prop, "searchCondition");
-
-
+        searchCondition = position + " " + readKeyFromXML(prop, "searchCondition");
 
 
         File[] files = file.listFiles();
@@ -167,31 +163,72 @@ public class DataModel {
      * @return
      */
     public static DataModel getMatchSearchDataModel(DataModel rootDataModel, String sKeyWords) {
-        DataModel resoultData=new DataModel();
-        String searchCondition=ChineseToEnglish2.getFirstSpell(rootDataModel.searchCondition);
-        if ("goods".equals(rootDataModel.getModelType())&&isContainIgnoreCase(searchCondition,sKeyWords)) {
-            Logger.log("LOG_DEBUG","searchCondition=["+searchCondition+"]");
-            Logger.log("LOG_DEBUG","sKeyWords=["+sKeyWords+"]");
-            resoultData.getElements().put(rootDataModel.getModelName(),rootDataModel);
+        DataModel resoultData = new DataModel();
+        String searchCondition = ChineseToEnglish2.getFirstSpell(rootDataModel.searchCondition);
+        if ("goods".equals(rootDataModel.getModelType()) && isContainIgnoreCase(searchCondition, sKeyWords)) {
+            Logger.log("LOG_DEBUG", "searchCondition=[" + searchCondition + "]");
+            Logger.log("LOG_DEBUG", "sKeyWords=[" + sKeyWords + "]");
+            resoultData.getElements().put(rootDataModel.getModelName(), rootDataModel);
         } else {
             for (Map.Entry<String, DataModel> entry :
                     rootDataModel.getElements().entrySet()) {
-                resoultData.getElements().putAll(getMatchSearchDataModel(entry.getValue(),sKeyWords).getElements());
+                resoultData.getElements().putAll(getMatchSearchDataModel(entry.getValue(), sKeyWords).getElements());
             }
         }
-        return  resoultData;
+        return resoultData;
     }
-    public static boolean isContainIgnoreCase(String sourceSrting,String sKeyWords){
-        sourceSrting=sourceSrting.toLowerCase();
-        sKeyWords=sKeyWords.toLowerCase();
-        for (int i=0;i<sKeyWords.length();i++)
-        {
-            String schar=(sKeyWords.charAt(i)+"");
+
+    public static boolean isContainIgnoreCase(String sourceSrting, String sKeyWords) {
+        sourceSrting = sourceSrting.toLowerCase();
+        sKeyWords = sKeyWords.toLowerCase();
+        for (int i = 0; i < sKeyWords.length(); i++) {
+            String schar = (sKeyWords.charAt(i) + "");
             if (!sourceSrting.contains(schar)) {
                 return false;
             }
-            sourceSrting=sourceSrting.replaceFirst(schar,"");
+            sourceSrting = sourceSrting.replaceFirst(schar, "");
         }
         return true;
+    }
+
+    /**
+     * @param dataModel
+     * @return
+     * @apiNote 获取指定datamodel的所有商品列表
+     */
+    public static List<String> getAllGoodsList(DataModel dataModel) {
+        List<String> goodsList = new ArrayList<>();
+
+        for (Map.Entry<String, DataModel> entry :
+                dataModel.getElements().entrySet()) {
+            if ("goods".equals(entry.getValue().getModelType()))
+            {
+                goodsList.add(entry.getValue().getPosition());
+                Logger.log("LOG_DEBUG","add  " + entry.getValue().getPosition());
+            }else {
+                goodsList.addAll(getAllGoodsList(entry.getValue()));
+            }
+        }
+
+        return goodsList;
+    }
+
+    /**
+     * @param dataModel
+     * @return
+     * @apiNote 只获取指定datamodel的表层商品列表
+     */
+    public static List<String> getGoodsList(DataModel dataModel) {
+        List<String> goodsList = new ArrayList<>();
+
+        for (Map.Entry<String, DataModel> entry :
+                dataModel.getElements().entrySet()) {
+            if (entry.getValue().getModelType().equals("goods")) {
+                goodsList.add(entry.getValue().getPosition());
+                Logger.log("LOG_DEBUG","add  " + entry.getValue().getPosition());
+            }
+        }
+
+        return goodsList;
     }
 }

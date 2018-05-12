@@ -199,7 +199,7 @@ public class ClientMain {
                             xmlMapOut.put("CLIENT", Com.ClientIP);
                             xmlMapOut.put("CWDM_U", "AAAAAA");
                             Logger.log("LOG_DEBUG", "begin to SetGoodsAccountToModel");
-                            SetGoodsAccountToModel.exec(ClientUIMain.controller.dataModel);
+                            SetGoodsAccountToModel.execAll(ClientUIMain.controller.dataModel);
                             Logger.log("LOG_DEBUG", "SetGoodsAccountToModel over");
 
                             Gson gson = new Gson();

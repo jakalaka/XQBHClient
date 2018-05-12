@@ -287,6 +287,13 @@ public class Controller implements Initializable {
 //    }
 
     public void go(DataModel dataModel) {
+        try {
+            SetGoodsAccountToModel.exec(dataModel);
+        } catch (IOException e) {
+            Logger.log("LOG_ERR","获取商品信息出错");
+            Logger.logException("LOG_ERR",e);
+            return;
+        }
         cleanFlow();
         String Key = dataModel.getPosition();
         String[] strings = Key.split("\\\\");

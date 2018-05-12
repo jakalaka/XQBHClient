@@ -63,8 +63,11 @@
     -fx-pref-height: 130px;
     -fx-pref-width: 270px;
     -fx-border-radius: 20px;
-    -fx-background-radius: 20px;
+    -fx-background-radius: 23px;
     -fx-font-size: 30px;
+    -fx-background-color: linear-gradient( to top left,oldlace,blanchedalmond,cornsilk);
+    -fx-border-color: #485735;
+    -fx-border-width: 2px;
 }
 
 .hbox_CENTER {
@@ -230,4 +233,13 @@
     -fx-background-color: linear-gradient(#dfe1d6,#fdfff4,#dcded3);
     -fx-border-color: #6b6c67;
     -fx-focus-traversable: false;
+}
+.goodsGridBackground{
+    -fx-background-color: black;
+    -fx-opacity: 0.2;
+}
+.goodsShowLabel{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
 }
