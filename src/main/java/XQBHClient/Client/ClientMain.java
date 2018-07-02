@@ -224,9 +224,13 @@ public class ClientMain {
                                 Order.Init();
                                 Order.finalOut = false;
                                 DataModel dataModel = DataModel.getDataModelByKey(ClientUIMain.controller.dataModel, position);
-                                Order.controllerIP = dataModel.getControllerIP();
+                                /*Order.controllerIP = dataModel.getControllerIP();
                                 Order.controllerPort = dataModel.getControllerPort();
                                 Order.controllerAdress = dataModel.getControllerAdress();
+                                */
+
+                                Order.positionX=dataModel.getpositionX();
+                                Order.positionY=dataModel.getpositionY();
 
                                 //º”»Î∂Øª≠
                                 Controller.thingsOutPauseShow();

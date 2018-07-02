@@ -72,6 +72,9 @@ public class Com {
 
 
     public static String ClientIP = "";
+    public static String ControllerCOMName = "";
+
+
 
     public static boolean pauseFLG = false;
 

@@ -160,9 +160,9 @@ public class GoodsAnchorPane extends AnchorPane {
             Order.SPMC_U = dataModel.getModelName();
             Order.position = dataModel.getPosition();
 
-            Order.controllerAdress = dataModel.getControllerAdress();
-            Order.controllerIP = dataModel.getControllerIP();
-            Order.controllerPort = dataModel.getControllerPort();
+            Order.controllerCOMName = Com.ControllerCOMName;
+            Order.positionX = dataModel.getpositionX();
+            Order.positionY = dataModel.getpositionY();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("OrderDialog.fxml"));

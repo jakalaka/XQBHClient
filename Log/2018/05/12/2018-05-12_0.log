@@ -1,0 +1,1168 @@
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:33:53.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:33:53.547-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:33:54.204-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:33:56.204-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:33:56.204-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:33:56.204-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:33:56.204-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:33:56.204-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:33:56.250-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:33:56.250-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:33:56.250-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:33:56.250-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:33:56.250-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:33:56.250-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:33:56.266-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:33:56.266-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:33:56.266-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:33:56.266-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:33:56.688-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000006
+2018/05/12 13:33:56.735-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000006","ZDJYM_":"1234567890","QTSJ_U":"133356","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:33:57.063-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[cXWISxuye5Jnue7w/OIBQXHc8fO/7ob6AuTTjd9kL6s67ZNwKq5SXE5pJ79FP5jf8kgKLZgqsWGZgQWTh7PxZI1DuNxqHbYiAyFPTNZ8Nz0z4s/tDCZFW9VTV1NJswOGhVXveO2BUoiwZLkfCocYo63Bqm6n+jBxh3ypoqeGX3Z8zYF+ZoLzJLIwzrNbLMPJWdP/dw0GAAkLax+wYo6SbwUdkHFVak3bKlLHFO+Xw/83efMlBfW+FImiUlUUc/m9upe6p4YUqPHjDspdy2muWIXCRbGS1Jl0Es5m3JdBEzCAnq/V+rcsXlh8vvMNYidmYlLm3Pm6sYQSK417lQRtUg==7777777YvnkoXBsD05OAFBmE4FuBhXURto194wyWYB4iGmsMqzi2d5S/mRbFLkNR84Q5Zzqy/KoNJCMUCLx0pCkfB9kk9GLAwldcpgZ5lXPaOpD7NS+I/CkaCm/R2aWh9PHN/vzmozd27ClsQnE4nfgfGB3cn5D/cE/91vCPD3VWCTRnSQ+ITwnqng7r3nHCiX8N4OUcLQ2bPB9rIB3gvK/iOcn52gpu6F8BHq8BTVH+g9w4a/8M5OAU/BPQ7IOa2LE5sfXTTIIrkwZGwRDp23huQ1IBgmC5hqgDTNt6eUuHF7yjELl7KkIxfJPB2Dfs5GX+nclJdCrhnrGyU6iOWQtbeRdBg==]
+2018/05/12 13:33:57.063-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:33:57.469-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=NVKdst/L39xC43fULfhn3kQaVOR+NTMFvgRIMFr5Kv1ol3ddc8MCVPsBV/9BoVYHUcRT8uECaHwdTL/7cZd90VdFi+61DicUiPu6heHWydCq1UjFj7PN6W8cpnJTlIjAtylp1oxJbZd1Aey3fj6shv7nlz0He7UH+vYtLzwW9dwRy2x3yACU2Lzw2SQ7IP3Szb6VxqLX7Ci/KTvc3f/7xVkXpO2I1bckz2gkMsRoiP13T16eT3eomQn3/1KgyTBNPHHweEKBsYLG+WMlzA8Ocm/mxca8mIoOQMX0z2W03/ji/YAZAD7vwF7U0FJW8KnWOlaGgW4hACQCAxoua2UScCkxRE96iv4Eg/t/918T09zV2v8OKvmFUyiawXDQeUkl0QEVDZdvCnXINEFLMXlOUIT2ZDtVdYBgv9R7qKN8Qczeqeh/es0CGT3nIdn43m88PIsfjzn5nO4ij9ThWH7IH3X/XGAVIhz8I3wp8hAYLJpJqwvHGfRsuhBac2672UYJW7j84Fr0K3q4P0xDxMuS+pfnzN7/bGaNTb8RQng/yjSEtCCGG+Gu1QoOYZAEilKDa0sKfJtxDPJlnDSZO8PnAY9tHSw83HBhN597P+EPnbpWKr+ZJfGsDgnu4xh60+nGZyfNHO46pMWV7F2lj/S2VAwOkWYumCnC8vQ31A2m1fg=7777777eIQkI+4sOWu8GO0Te6yDy1t1HapCQzK0yTJ9lPzhHESfhuU7r7tAoTNe8FERyVHFRaWPqqOLtrVQNPbmvPk6bM9RWikmok3CnpievyhCJToGl/ReaVQuQTP8L7XA01VLE/HJIs1F2f4RmnToKgQH3ggbQ2irnnqpMFb4/s84rCE=
+2018/05/12 13:33:57.469-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:33:57.469-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:33:57.469-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:33:57.516-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"133356","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000006","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:33:57.532-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:33:57.532-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:33:57.547-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1266ms
+2018/05/12 13:33:57.547-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:33:57.547-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:33:58.235-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:33:59.821-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:34:00.165-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:34:00.165-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:34:00.395-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:34:00.578-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:34:00.615-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:34:05.336-[XQBHClient.ClientUI.Unit.OrderDialogController.continueTran:60]-[LOG_ERR]-java.lang.Exception
+	at XQBHClient.Utils.ModbusRelay.ModbusUtil.doCheck(ModbusUtil.java:60)
+	at XQBHClient.ClientUI.Unit.OrderDialogController.continueTran(OrderDialogController.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._enterNestedEventLoopImpl(Native Method)
+	at com.sun.glass.ui.win.WinApplication._enterNestedEventLoop(WinApplication.java:218)
+	at com.sun.glass.ui.Application.enterNestedEventLoop(Application.java:511)
+	at com.sun.glass.ui.EventLoop.enter(EventLoop.java:107)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.enterNestedEventLoop(QuantumToolkit.java:583)
+	at javafx.stage.Stage.showAndWait(Stage.java:474)
+	at XQBHClient.ClientUI.Unit.GoodsAnchorPane.lambda$new$0(GoodsAnchorPane.java:190)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/12 13:34:05.339-[XQBHClient.ClientUI.Unit.OrderDialogController.continueTran:61]-[LOG_ERR]-集控设备异常,请联系管理员!!!
+2018/05/12 13:34:06.396-[XQBHClient.ClientUI.Unit.WarmingDialogController.OK:39]-[LOG_DEBUG]-OK
+2018/05/12 13:39:05.882-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:39:05.884-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:39:05.885-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:39:05.885-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:39:05.886-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:39:05.887-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:39:05.888-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:39:05.888-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:39:06.534-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:39:08.535-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:39:08.536-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:39:08.536-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:39:08.537-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:39:08.538-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:39:08.592-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:39:08.593-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:39:08.593-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:39:08.594-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:39:08.595-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:39:08.595-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:39:08.596-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:39:08.596-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:39:08.597-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:39:08.597-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:39:08.986-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000007
+2018/05/12 13:39:09.034-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000007","ZDJYM_":"1234567890","QTSJ_U":"133908","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:39:09.355-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[VecLOvJ6aP0JFX6skhIbmXDhveMU5+VoOwUSggQZYIQ4zDpKb7ZkpXIPGnDF1D3wKyZceQdaIuZExoqu0E4H46nZEEgBgT/ISbnyukyhsOR1ptwekT2SnmucXMZZTPGH+KIoMQueBL6e/OOSGWhR6Rc5WVuabn2SEqGg73jLcMA8bKpz3J6GNkM36wcESJ7G9XSqMzaYAeUex/6m8sPLs645GDBUN2nDr2MngouuWoe4Nzj1MkUPHsb1NeBi2oCqGGuQzc2eNA+c0k3BK/dXmFO1iMa4J9A+lOmMDQUillbwe22QeQg7Z/qrP+CJeqeekHUNRt6ltt1o0EK0bkU+dA==7777777HlFmFYfNa97X7mYparTgIjksiBGgnXqr7Ybx4QHOugBZQHBL0ecFetGbRjkEJyt1J717OXT7JIhJrfvozUrifodY6mCMO96fzJUmgr+u9keEf+ZdWNzTRhC8kbDZiZ5EEnjU+3MfW1+mCsIu+4dBJEPZeIdUpFVhiRR4d5e9dmPAVQUVJBW7b+GAjiys9G16VpcuBWiIJK1DkjBxo5UL1NhLzCySaJYjAUcXjJCpWXy5flyXTkcQ4GacSJ12N1I9sPbSUfAokHLqOYQGA4Wb57UZyWJ830NfRuqXo1Js9sMtmJFZV6uSyf8exDN6rgNR66HA6Fi1neG2aRoMzq7Brg==]
+2018/05/12 13:39:09.355-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:39:09.705-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=dg0SDjAYcqfqQHvODJRXm0HS1dWnWNxwSsNFelO/PnyG1lJ/wLXly45mf3fPDt8GoJKmwr63GwTzuxxkEJl6uXpRXTTQUPtOwytbU0vo8CLd179yi/AaOQCwYNtYiaIq68cWENjvHnE42n4sp/LD8+K/+Q6L90T7gty0yw3oeLzBGEGjO2fPZaUVBxALu5wK1l0T1gKny4J6E9c6F6yrJNzMZ5FQm/P1i/5aDT/lg1mcDyYU/st1JQKmOBCU/Oe8joWeCRRetZil9MRlcM1eJOMNLmizU0c9Hg9vEX2eKPw4JzlbaGb06A3qNCpvnrURP+Isu+T4XXNG8D2eL5jKcVTQnlUeF+RE7hi2Xh8qjDpq8e1Cxw8asE/9MIl1GXU0SbDecBSMg4ebXtmfhcp9z18xepC2uHaY1qoIJmtnimVyK626HXYK585iP/gRYpTwWEBq+D/gYR49bqnyInbyFgUyvpSnLyADyQ57qJEmFp833H/hWEGfG+gFizBMdQgS+27Wi/zWn4n5+Fz265qRaWVjzV4bV0Mu/p/+dFPsk6+I3EkSlY4FrOWrZJUr7xsBKbEJtl6h2n6F3u8B8eN7ij5OBSbmXcQvGMVOW+muPRPz3W15nhiP8nnBPxCNw+ML9/Cd5QXCd+W1OTRomlRM5462McyarYQ7mX28i+ncLow=7777777DGg9O6eaPjVNTAwm3j7KeqjVX+b1Af0wysnI1bVze0OGgk9PSwM3dBEDmAheUlv+9aWCvCX0yF0782353wOf+At7EbMRIbsr760Wn5a+hQAxgUJsi1MiapFhrnkfRP8pHvDBLWRZ9dJfdwJF8y5Fq+W0GAvcIP3DwyA2R/Zhnfk=
+2018/05/12 13:39:09.706-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:39:09.706-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:39:09.706-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:39:09.755-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"133908","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000007","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:39:09.784-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:39:09.784-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:39:09.785-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1187ms
+2018/05/12 13:39:09.786-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:39:09.791-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:39:10.426-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:39:11.700-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:39:11.996-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:39:11.997-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:39:12.213-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:39:12.387-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:39:12.428-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:39:19.788-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 13:39:25.013-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:39:25.014-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:39:25.014-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:39:25.015-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:39:25.015-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:39:25.016-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:39:25.016-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:39:25.017-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:39:25.671-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:39:27.673-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:39:27.674-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:39:27.674-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:39:27.675-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:39:27.675-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:39:27.729-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:39:27.730-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:39:27.730-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:39:27.731-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:39:27.731-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:39:27.732-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:39:27.732-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:39:27.733-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:39:27.733-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:39:27.734-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:39:28.122-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000008
+2018/05/12 13:39:28.170-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000008","ZDJYM_":"1234567890","QTSJ_U":"133927","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:39:28.489-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[YbNFlU+WIRZF8UpaSsSnrL8E0WXRf9DvCp8kgQmQaS4g1VlpfbaXCtxcocRe5VtE0UCXQ6kRe6xjRhKM6ZnqqnKpbCeU19ixSwN3ArPQgpYWgEOvbvBDGu+GC9qnxNMZWMrjKGVY6+M0i3hVmD6WYixbz0RMSQF9Tyu4NhIcUBl7ducjUmfOYJX/uXRDUN5Zp22w4+ccJkeNRIacKXG5B9D8jPVBxrt4hTpxMvUNC3C36i9QRPol3VOqt3MUlLJ4CHtUJEwgYsgERshvBXnmHOKBA2kQUNFCNdCRDHZ3cO4BH+FAOBz4I+l9wf6WRcPjnKZPaGCsYiElBWaavb4rmw==7777777B8ixo6aMoPWw4HuztdIq5T2BnxNyAkgkpireBeXp3Bg8keCn+xq5EsZ7pol+5WcsYaHaOh8b/M0RzxZLfS3hd1FieFcko9JndM6MXml6d4RmrvFc2BwcMQjh7x3chSUS+ueDeAVGa7Dj3LNV9RS28AVMGvxUpWpDN1WopUkhL/VVMmdYLI5+AuJnK90GJSkrSFV7+VESKpwjYfAY+7aO0DsilEUK04i6+iVxdHBPeamWcIDLmFCbBy38BPGQrgHODxr0ZaLxDNF6GoHNO3HDIankFtWF00TFB7m++wYC87zu1fPLfqtxJmz98f26+UYm9HtCQxEVMzI+C7uAr69AaA==]
+2018/05/12 13:39:28.490-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:39:28.780-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=TTG+ClOobbntNzhWUkqyQTbE4025VEd/4pFvUj+uY6hVX8q7CQpMIkNqIi0R1IiLlpC6n42Pd7JrowMy79yPJ+BOqvf/0rkbg78n7Fc3Do66Q3JHGPJ71Z231kzPvUQMKu6JiLYsZUnK3H0Pn+ApgIZpEcdM06OMD0Wpux5di0WHqdR2cjT1MaRTC67nGf7klzyjoX9TtCkYdIhhg6OEcuLiaHx+xJdskhFa620RQaCqnP/UadB0QBr5i7uOjx2/Lt66FjDVEcumUGnLx3F/8AiBI/tkdBxjYo+ThhHwwsrAn40+3ZewLw9EkskkQozE1j3+XgVfCadHKAOjrBpgEQ26e+wQfpAnS/xuSScrSLZzxEy0j4cBlCa6XGVaSkG/sOa7Dw7uHbbucPNMwf6VOiS2nZgshvdnxg+y7DMZAqMmsyNf4xefMpkk4Gc4H1v74g+R/FRxWsIbiu+st5vZDOXe4IjiSNhjqZQmzN7YMUJxeY+LSaqq94oLkY/qPaqjgCWGXng7VYU68I6OT+L49YipNAVz+CEjZr/jW5dokNdwa7fPcbPQ+6Bu07QpwthATKbdnmv1a0SL3pX+cEfXKY9v14issPE0Ez3dfVhOWI9sAUvlRPVhcJaoodzjKw/EtBX2CWSVGRaHfR0/dsRkZh6JrrABpE5WUq7Df2Q/O8U=7777777L4dpfXXQnBqm9EmQ+9Uii6rGzKzPf+5eEg7kSIavJerQjx2ME+ESpVaEXVqj19GfTPoaJJeRTwBGYj245ijG2asLgohzWEmgURaH7vXnD0E7+2MNrWY8aGX1neFwCVm3puKxMEpHRCkS9Rc8NFOUhqds4WOjCTTU2LKDcnGkkdc=
+2018/05/12 13:39:28.781-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:39:28.781-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:39:28.782-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:39:28.832-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"133927","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000008","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:39:28.864-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:39:28.865-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:39:28.865-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1131ms
+2018/05/12 13:39:28.866-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:39:28.870-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:39:29.497-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:39:31.556-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:39:32.116-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:39:32.116-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:39:32.336-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:39:32.520-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:39:33.379-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:40:10.644-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 13:44:28.336-[XQBHClient.ClientUI.Unit.OrderDialogController.continueTran:60]-[LOG_ERR]-java.lang.Exception
+	at XQBHClient.Utils.ModbusRelay.ModbusUtil.doCheck(ModbusUtil.java:60)
+	at XQBHClient.ClientUI.Unit.OrderDialogController.continueTran(OrderDialogController.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._enterNestedEventLoopImpl(Native Method)
+	at com.sun.glass.ui.win.WinApplication._enterNestedEventLoop(WinApplication.java:218)
+	at com.sun.glass.ui.Application.enterNestedEventLoop(Application.java:511)
+	at com.sun.glass.ui.EventLoop.enter(EventLoop.java:107)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.enterNestedEventLoop(QuantumToolkit.java:583)
+	at javafx.stage.Stage.showAndWait(Stage.java:474)
+	at XQBHClient.ClientUI.Unit.GoodsAnchorPane.lambda$new$0(GoodsAnchorPane.java:190)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/12 13:44:28.341-[XQBHClient.ClientUI.Unit.OrderDialogController.continueTran:61]-[LOG_ERR]-集控设备异常,请联系管理员!!!
+2018/05/12 13:44:29.387-[XQBHClient.ClientUI.Unit.WarmingDialogController.OK:39]-[LOG_DEBUG]-OK
+2018/05/12 13:56:17.948-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:56:17.949-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:56:17.950-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:56:17.950-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:56:17.951-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:56:17.952-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:56:17.952-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:56:17.953-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:56:18.646-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:56:20.646-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:56:20.647-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:56:20.647-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:56:20.648-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:56:20.649-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:56:20.704-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:56:20.705-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:56:20.705-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:56:20.706-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:56:20.706-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:56:20.707-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:56:20.707-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:56:20.708-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:56:20.708-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:56:20.709-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:56:21.106-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000009
+2018/05/12 13:56:21.160-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000009","ZDJYM_":"1234567890","QTSJ_U":"135620","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:56:21.492-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[V8Q/XB9zyEoxWCkTIstbA7PlmQ+0zaIW5AG4VLZtAWGiNtDjVGCKkQ+4N9T5/mtfWIYUsEfNJyfKG9nS8v+1/IC6kS57mqrI5rYOqtKY/Z/gdCT+LK+cFp4nK/f4myJGfSeeRIzUBrrNCC3khyiQM+wL8DvjWpFbD7BO8L1xO0KWAElcOvM3u2l0mmAJmbBM2o2qskY1h7Z8gr1F/XGZuyJAIji0e+91J/WcvH4JlWUy1EdysElO53H7kyMgMSWl2ntyIl1KHOIbfPFjdDs9oPkoX5OFk/+WFww9ZVl4dD34kNnmijNbYBaRyNpQVDNkUA7mAL9GdTgH6VRFRZc5lQ==7777777zlvebAhIrnleVVEwwbV+dUyRN4MgOiZUNIOaABVjKyL7eupG3evN1AttpDhW4xdwWaIU7ILfafyDq3iDXJmEzG4q9AmmHFYXCWBAeomxx03D+ReegSNyTVbW/7RBzI9bme2RaOW5gV8kzFjcKRzGh0Ow34niq/Y/WP0Jw7uXPhs6inlYCZwqFGSPw++Goa3dGbahfNUMCW5V3MDVEKtBOHn8jqTOe5WJPGWq5IqvWbqv695IZURzgfKCBUFE7cvnfeH6biap9cJiyPST2jI+qBAKidnQiIOsuSlNyxrCgC9spHPE5xJ4CCHgROzfpdp+Gtl/kAcKXpHXJLV7+vTU3g==]
+2018/05/12 13:56:21.493-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:56:21.787-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=XwhnLcpNZ0v2ssCDvb04M13UPLePYZ8oFIDHyhyt7Jx7Tqktw3L91wDaEu1WhBU3bnW8qx0pSDtA1bs/QKvljpKfivn6hFpoHe8CgGiHaw6Vmq09XVGldY5FwmUryH9IC86+cR7wIVjJ5sNjBFuVNBe2dtX1oTr+UVloOQVAjI7TyG+tdPRkw1CfGU9xEaf36GkSkgfuh5Y6FsjK/VcXLhwKt8OCNJ/Z9xbYfHDBqkzBPoBvlV2qVJkg3Yg60vhd8Vpf96wtjvwe0Ybvohm5N9UbsW6XvOEHDjApZ29cehccO+O6/tKuRKa2GmvGCVOEMwZKFSx7dXFDUHlj+rR2Yy1J8BeLbCkI9yICvNQSgOHezBBnVxKuVmTjorOl20L27sf7Hr5nOI5D7cVoTXfBgU9FdAWLP6iBWiFD9z4QWcnYrQO4hMyxC60N0L7eKNXYeMAHM5o6QFrs0QVgm0dkRHjszf/Xzh7Gk8ZlR2vQ3uK+5YFGApl6Op0OJkBzLnN2wPvxm1sTEyeBKjUtgoG2wP/ysgcwxF+jlZrN+UCXXEtpQERZxBYcgnORynTorBygXdXEsMihu32AelP2LPc3p1cAMePr7hJJdb2M0hZPR8gTo0cZCAUPAPdEoLIzLDnFjEpCHVbfzdRJZLEnTXOwd8IzleKM+wD0X9ziS0xCzYc=7777777QO/pBI9buss25Lj7NSDknZk1bCUWsH79XHCjCKKHd1yYM2m1aMrP7P2JTurhvl68JgIdczo+AtUETirl3jZu/36RJebAYwTLYEYGxNYlq5kp5ShGBipUaA+Uq4Jil5OiBGCbQLRRFZI2InfCyuHo56/EF7yefSef7ETnXzzuBik=
+2018/05/12 13:56:21.787-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:56:21.788-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:56:21.788-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:56:21.837-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"135620","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000009","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:56:21.866-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:56:21.866-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:56:21.866-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1157ms
+2018/05/12 13:56:21.867-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:56:21.871-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:56:22.520-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:56:23.635-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:56:24.011-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:56:24.012-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:56:24.239-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:56:24.423-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:56:24.875-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:56:54.869-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 13:57:17.746-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:57:17.747-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:57:17.747-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:57:17.748-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:57:17.748-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:57:17.749-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:57:17.749-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:57:17.750-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:57:18.424-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:57:20.424-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:57:20.425-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:57:20.425-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:57:20.425-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:57:20.426-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:57:20.488-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:57:20.489-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:57:20.490-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:57:20.490-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:57:20.491-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:57:20.491-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:57:20.492-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:57:20.492-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:57:20.493-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:57:20.494-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:57:20.892-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000010
+2018/05/12 13:57:20.942-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000010","ZDJYM_":"1234567890","QTSJ_U":"135720","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:57:21.272-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[bPWEc//mncJBQs9ugiaF7ohYw5tKWqFUB1RncX808GoqD7ckzNZl315oGCE/hoOm0N4WOwbljm0jkuSXAHFi87bW/oo6m4w/qWJEA9O7aVIk8Q8IipIw1M5PbPJrepfq3GrA54pBXnIuy0GHkKcHsqN0+2bQHywiGUbNMmTT17DGZWtqMfVvaEs+HgOOneAvdAxpkdpv5Sc2KDha+U85rXJwKW5ctq710a4PgRQs3BbnrIQe4+22GY39KXVbZQmimvZiIgK8NKwhNKt+S4VbReGKuMLGBZAyLd7ZdBM33uRyux04knjpmoVr2BPch1ZjaAHVj5K+AvOrzS2rvcTJDw==7777777QbYBoybSYSOO3qpJ3P0wtGKHb8Aez72Q4RwfA2OS9jcQdxjLmqfvOevzkY+A4l7HTQGGb18gD81Wu7cKlq0Y7TAokYxwfr25ONX8lVI5dh5XaldARD3K4CY+MQLbb65D59zCOI+MCy891sGafXzVFkW/MAK6uR2zdYBaMJQWKgg/LOP6KJ3dmMUW8J9oc5uV2GUUY+/hcsq7/VZWEqYHp3G6c/BMxpElX1FrF/RQoycbbyl6EbWZTd10w6MEvB/HH3lMtzpH9zcX3C2neKsiGxGPuamMmzKEu0dhuv1ZOKWrVcG/8voC7vaaa+b8DOchAQZfnWZRfDL4coxOQx+LaQ==]
+2018/05/12 13:57:21.272-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:57:21.576-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=JLvEJL+mE89Wa93mG0VQe6GOfE/eQkxO0qPNH6L2lGedWxFvbVtVdNa4e1PlLzmNLG4KBSWqXthcmICRvvY5OZGzlce5Hnm2GyWBys+0Nn9C+hbInioAXFUcUEGQ1rBV6eo9iijy7uBRzupOV+2bZvbhv1Sc5Y8t5p2AjAVQJXoMZkP11UvNnLIQtCWccbUFU8QZuxvKJZc5e1FrE7In9O+zvhD/euDoHNkhfVTcOsumI43bP2s+GuZGU7srVWQ7ZG7K4WHjHEpsoKxrZNHEabTlVBkPK0rM4F5VwoHJ9CZ9GH8gcI+a5fwhttTzJCJl1R+obAtdtiWXY3100slFj2JbctQpCThxGz9qMch+D/Kyd82uxiElqQHA5k0BhqrG5qUgfJKqFcroF4l1f3IJEf1xuKAKq+Stcuk1JSiDlfbv7P2VtitN0maI0kDzvDPgNSF5aEpqoJyYPpSiMXC/9q+Su55toUCdo8L6mbzVXURVagsYfiAQiBvpTGanB5SCGec/4Qxz6iKYwN5HROByjRfLmFbvO5GOmRnss5LB/GGEyRV6KGoqVi5mLBeaKWlnFer+NGsKghga62ioTX4lKvT2wVKI+uRxlbE4wcJvIco+cKYs9LNUDLnEo78PpijuwE6k7e9rIIyvY6vqEmy8/pTAGXBThnEZIYADJ0LvZ2s=7777777RIHjaGunXijx9B2xxNA4z8VAulwTzb+Z9HQvOG5cCIpFIcfi0iQpp1KCwaZFeSos2m1YEwsJmoiq3+3zjTnKgTYFfLmfnSnlN8x5HZ0Q9gZFhDj3OzqiqKDO3U0ahuihKddGkRCIerWboO9EFdWUkZa6UUzwEuM4SoNfLWQj934=
+2018/05/12 13:57:21.577-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:57:21.577-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:57:21.578-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:57:21.629-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"135720","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000010","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:57:21.658-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:57:21.658-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:57:21.659-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1164ms
+2018/05/12 13:57:21.659-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:57:21.664-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:57:22.314-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:57:23.189-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:57:23.491-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:57:23.491-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:57:23.720-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:57:23.904-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:57:23.945-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:57:29.515-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 13:57:56.460-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:57:56.461-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:57:56.462-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:57:56.462-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:57:56.463-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:57:56.463-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:57:56.464-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:57:56.464-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:57:57.086-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:57:59.087-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:57:59.088-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:57:59.088-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:57:59.089-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:57:59.090-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:57:59.145-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:57:59.146-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:57:59.146-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:57:59.147-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:57:59.148-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:57:59.148-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:57:59.149-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:57:59.149-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:57:59.150-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:57:59.151-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:57:59.541-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000011
+2018/05/12 13:57:59.593-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000011","ZDJYM_":"1234567890","QTSJ_U":"135759","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:57:59.917-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[Tb2RomDldTau7NFV8U6777e+W0JPSyhtAMYEINzXJ8bBdQHivjsUtTiXqpJI0aWL4eW0jO0QpCtJ5j2KLWrxj1a9eU8C+ZvmRxARBmL0YXfUQMvDbfFYpuDX7VdIG4UUua2zx95trwq2wuRyt0yQSryHzYYmvcmYWkUZFbx1t71wgvqS6vB0HVAqvTIe5+vVY1OhNnNdp9q6EhFmuXd0K+9JGbGRLY4G6vkYPEnfGlOspgVNlIh4q747KA7papDEm8zRQFCK2P/oyHtZvTuMitnXG5wtQQhoL2n0eCTmNF5/Bj3Xyxb5w6fbdL+eWxYJCJqMGHGf/GYFOQ8xtkfrWQ==7777777vxmeOxG1OpIxUYQx1S7ng6sMriKBCN8VBjN376kL6ZlZxuRmoV8p2DSF3U9WAmZzktic6R7JxxYSkrV6oCA1V+xDVad0ke8tKDA8DPOcRbCuSB/BLsq4ar+fVfOvMZwJN+b+P/IQP+7AhFr4tzgRCywmSZPQcbVxcJrJANq9ueuwuXmGhXZjw0ewK0Z+vlDoYOe3aHoYWROwS4dxSRdE51vPs/nQZiKuFI8MmAG+XR7QPH4WrejleXa9+d/wzgZI9074cXEAHBdgr2VoXuxl7zg4+A7w/2FfOoiJ32SUA3utv/o4OCTQF6y5GTdAZycJlqQn+rYE8t46vma2u6dLgA==]
+2018/05/12 13:57:59.917-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:58:00.306-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=fT3ZbONTBcRfYTuFQVW55tu/6CgCsKGAcuFIOE7kM7ysW7Ak+5jCKzVzYVwwbDJ/6Ok/Fbq/KwDGlcA7H9/U8DAe5irycpFUT7dqtWEYVUaoJjwrLy4Zg7bHsQ/IdxZtn6D95WZHB0ypYvSGOR5iXY6sJNa7Aa8derC+SX2Dyu1nT3gJshUEr+UB4e/wQ+slkBPhJPhgJ1vGMJCRZOvDlHRRoY+m354DVjOvRDbj7qHobBPLWA4A+/353X5UWtJl4e2dTnE6T+cLH+C+lm6l+Rlp70Mrba0m2MbL89W+wdo0EjpVxOD/yuQ8shB9laLH82xb0lpwJFLGu2X9xvP+hC6Rec/JJy5dAOURMmK3m5qE7RPLgN7burXhm1uyesLe+FYm7Ux7Pc2kXh1RAmXlmSO66Gswy9rqr8dANmSdk9qrO9IW1qSgygZukP56dkBHQAeo6SGfCV1BK6yBcolhfgin9Helleb/b36BuveVhkIHvDOdrUUXqoIVzRM+Ki9/ppJ9ffj5Tu25zWecqit2OADUabMJ3Nh5MoLJWHt3AZvH7L4js4JUoM0AHq2UeXJbOX7icZvcclOzHlRZqBPCPNq9NQFdBu5th6lBtdY+0PWAdwuOQvzdqU+iyUaXjn4/hCWEUmwAxFQ4MApgFUxw02e573cBXWxNYkRdBF85XFI=7777777U8NQD7Udd1z3uO3cDOdpN20UbsJwh1b2zBzsEvvVxRONFV0eCqRfocHIEGNA6JyM7F7ODusnJCWbrTkLAJjAWMVR9R6l8SNct7C5gMn/dJpKmdHxW9ebEcho+/DPg1CCnYcjn2CQ6GcAJulLlOjav/AJMv0762lgRhZ99bFZR+8=
+2018/05/12 13:58:00.307-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:58:00.307-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:58:00.308-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:58:00.357-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"135759","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000011","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:58:00.385-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:58:00.386-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:58:00.386-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1235ms
+2018/05/12 13:58:00.386-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:58:00.391-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:58:01.022-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:58:01.931-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:58:02.195-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:58:02.196-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:58:02.417-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:58:02.595-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:58:03.099-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:58:09.514-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 13:58:38.646-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 13:58:38.647-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 13:58:38.647-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 13:58:38.648-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 13:58:38.648-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 13:58:38.649-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 13:58:38.649-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 13:58:38.650-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 13:58:39.286-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 13:58:41.287-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 13:58:41.288-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 13:58:41.289-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 13:58:41.289-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 13:58:41.290-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:58:41.347-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 13:58:41.347-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 13:58:41.348-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 13:58:41.348-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 13:58:41.349-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 13:58:41.350-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 13:58:41.350-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 13:58:41.351-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 13:58:41.351-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:58:41.352-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 13:58:41.747-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000012
+2018/05/12 13:58:41.796-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000012","ZDJYM_":"1234567890","QTSJ_U":"135841","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 13:58:42.123-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[f5vPiIkLgfvy1pPwS5ouPAstHveqzFpAyVTzvIzW3G0sUOPjUfiRBHPtKrhwAZgRitz93AX4A/lokvVjw0RoaGRZc63UrFItdE4kWCyuCmhPEm3Zy5zG3qG+mq+rkYunhVOyG1EC94dwLavWVYwGnJRdYgN1MUDh5yF79JRhX42bEbjBpN4ClZmsV3N3Ih4kTA8ow3VYAejTsDNd39eDWstONnxianjoLepgcjWU0APBMuQhUluywaMWV/UwSZ0kh82MsolByUkxc8OqRJDGidkhtNgvVQwRBN6HGAqZ2dwOlkNDu9L5NN/UyfU4XlQSnKE0/fM1u93BR+wk1b8bUA==7777777vTE2C0XcGx32Tpm9qi9igF8/Hy4EpBlTzApCjOPgqTUg0LxZ41xbzLjC8XszaNO5CJuy9XcP6T7b8mv1CcHCWbEgvjzxwcu6Hml/aU8fOMga3IaNE/1CDkoG132nMvzjAlMNDqvERh203KV0nY2wEFLkBOGmqRylYk481isFCYGO9y0M3Ik46gdEwwc4q0NwDRgmNajjKwZzmafNKRmCwxUdHT+xbNw7vbmiXBNpoU4RSEWMnshj5IOOO3D+k5YcOR9GRrTpy05nknsLLHYkZJgAjrFXPNplvv9JsGHyxZ8zPT3zJMVnW0jCYiyKPuDj5obp23CAaYwE1/QxhhQsIQ==]
+2018/05/12 13:58:42.123-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 13:58:42.478-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=cCS4DCDw1d+OfkSlDjWqvELDBpAA//lg/VSSQSMzacm6Uwmv2CdGNQp1xMjv04ReQk6pytLgibBxD11ZhwmRJmZG1jLnpKst3XPdx5F6zbNTrSPAuWhW+rR06shj4S0md+lQMgmAnKZdyj4GLrpx3SEtyx9ov6m4T3YMMMtZtF7COuk+Mj3wRhJLKH8FgzfmFSEGsBcc2JnKburTGpDoysfJp5oWoEm+K3AxJTvl+WVMfgeorspnTygwAzGY2F72u/rFvoqNoUvQEpgRD75TK8tu6OBMkbcuW9/de8Fuv/AR4EvDkjeDBaQRddWw/WwA1+H+CLIm8aU5hHuJtiNLcBtxtKSCHg+7gnNqFF5uRE5szY+O2Y7vglwG0nL+1FffqWzkoxGMM9jsLH7C8A/+CxmOrGx+OCd4V6Uruayt+K+EIbn8AXKg/Anrfvk4LfIBFH0arNFnuFuPFRmUKH2s8CZSRsxzWDFuVV6CSXtjEqD/UtnBv411peo+/+l9WJ6VK7wo+2mZV/j6fKjRA9q/6KCg3pxBaiybO9UoX28W2mcQb6sMI6UWr8veRNy/MnaWDw0oE72AiQD6GXlqIKnpymQYzasAZ0d9nMJ5bYnEgIM4Z05XwREfNqNnlYFdxjSCDAaGtaSl8Od6cPClH+pZ6sOjwngztDixPEKKhCoj53U=7777777gzFBCIAjTDU25jmafIp7ZhyIgB9i4j4VrxpAf2N0U+NcYI2ZAwLanGuQv+JW5BlKyZ+si9Vwbw4HKfHXPNulk1ZlYzz7b5YwDhXBOJqsWS/5f4EJuPjlVtoxB+dwkvDaHH0s5y+oIU9AVNN2LGDG5/0jhciYKvxxi6h0pDxgFMM=
+2018/05/12 13:58:42.479-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 13:58:42.479-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 13:58:42.479-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 13:58:42.529-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"135841","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000012","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 13:58:42.557-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 13:58:42.558-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 13:58:42.558-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1206ms
+2018/05/12 13:58:42.559-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 13:58:42.563-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 13:58:43.195-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:58:44.387-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:58:45.419-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 13:58:45.419-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 13:58:45.646-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 13:58:45.826-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 13:58:46.506-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 13:58:53.336-[XQBHClient.ClientUI.Unit.OrderDialogController.continueTran:60]-[LOG_ERR]-java.lang.Exception
+	at XQBHClient.Utils.ModbusRelay.ModbusUtil.doCheck(ModbusUtil.java:60)
+	at XQBHClient.ClientUI.Unit.OrderDialogController.continueTran(OrderDialogController.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.Trampoline.invoke(MethodUtil.java:71)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at sun.reflect.misc.MethodUtil.invoke(MethodUtil.java:275)
+	at javafx.fxml.FXMLLoader$MethodHandler.invoke(FXMLLoader.java:1771)
+	at javafx.fxml.FXMLLoader$ControllerMethodEventHandler.handle(FXMLLoader.java:1657)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Node.fireEvent(Node.java:8413)
+	at javafx.scene.control.Button.fire(Button.java:185)
+	at com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:182)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:96)
+	at com.sun.javafx.scene.control.skin.BehaviorSkinBase$1.handle(BehaviorSkinBase.java:89)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3757)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._enterNestedEventLoopImpl(Native Method)
+	at com.sun.glass.ui.win.WinApplication._enterNestedEventLoop(WinApplication.java:218)
+	at com.sun.glass.ui.Application.enterNestedEventLoop(Application.java:511)
+	at com.sun.glass.ui.EventLoop.enter(EventLoop.java:107)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.enterNestedEventLoop(QuantumToolkit.java:583)
+	at javafx.stage.Stage.showAndWait(Stage.java:474)
+	at XQBHClient.ClientUI.Unit.GoodsAnchorPane.lambda$new$0(GoodsAnchorPane.java:190)
+	at com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:218)
+	at com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:238)
+	at com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:191)
+	at com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.event.Event.fireEvent(Event.java:198)
+	at javafx.scene.Scene$ClickGenerator.postProcess(Scene.java:3470)
+	at javafx.scene.Scene$ClickGenerator.access$8100(Scene.java:3398)
+	at javafx.scene.Scene$MouseHandler.process(Scene.java:3766)
+	at javafx.scene.Scene$MouseHandler.access$1500(Scene.java:3485)
+	at javafx.scene.Scene.impl_processMouseEvent(Scene.java:1762)
+	at javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2494)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:381)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.run(GlassViewEventHandler.java:295)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.lambda$handleMouseEvent$354(GlassViewEventHandler.java:417)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:389)
+	at com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:416)
+	at com.sun.glass.ui.View.handleMouseEvent(View.java:555)
+	at com.sun.glass.ui.View.notifyMouse(View.java:937)
+	at com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at com.sun.glass.ui.win.WinApplication.lambda$null$148(WinApplication.java:191)
+	at java.lang.Thread.run(Thread.java:748)
+
+2018/05/12 13:58:53.340-[XQBHClient.ClientUI.Unit.OrderDialogController.continueTran:61]-[LOG_ERR]-集控设备异常,请联系管理员!!!
+2018/05/12 13:58:54.066-[XQBHClient.ClientUI.Unit.WarmingDialogController.OK:39]-[LOG_DEBUG]-OK
+2018/05/12 13:58:54.850-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 13:59:03.466-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 14:00:49.095-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 14:00:49.096-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 14:00:49.097-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 14:00:49.097-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 14:00:49.098-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 14:00:49.098-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 14:00:49.099-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 14:00:49.099-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 14:00:49.722-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 14:00:51.722-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 14:00:51.723-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 14:00:51.723-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 14:00:51.724-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 14:00:51.725-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:00:51.781-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 14:00:51.782-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 14:00:51.782-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 14:00:51.783-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 14:00:51.783-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 14:00:51.784-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 14:00:51.785-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 14:00:51.785-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 14:00:51.786-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:00:51.786-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:00:52.201-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000013
+2018/05/12 14:00:52.255-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000013","ZDJYM_":"1234567890","QTSJ_U":"140051","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 14:00:52.594-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[DmcrbERYnKAtWn6e9w+t0OMoaW/kEXuWeLhVXcadHn6ycUHFU+oAQapgyLiDDRBS0cEjl0ACHm7Ux18+YyyeZYmsKIpSsE/Q/VOERuTXwz+BAQ5pKrsA1REbheTja4iDoCqmYn/ybgegkAhzxp+ypwDBcggfKHrEh9BjKqorlhbDv78TJQRirP6dT8342rrqVbaqa4df/oqDUyD5LLV65aRQXl2CsGnoAoxKYtGac6dJrDay8+wKe4Y3n6wBfKM76e3jC6M0ufY/4Th4vMh/C68MACnl4z+5alj6vh2q5Otdm76Z8c+9Jdan9f71CWgbYIH47Zet/vdUnT8PV5ZQxw==7777777nXlYqJ9jwfe7xrcZYADquGmMZG6Ho8YUBTFw+p3e/75nv2WND17soQohqpDFEMWnGDjpXHsDf0zrFQKKcKKAt5nO4ei7yQE4MUC68a3QEGKPlUgHXeKF6ibWSd1qRwkAVN5CHBSE79mEVcICSIv+KzDvhB6+anviDKbry65dspkjku5KPD1UNO34zpSxjxq8X9ejSMqDc+jZlo8VXRSKa/x4+EUjz8FZDAMetZoaCwxHiAKghpeKs3AXVnehPr8cyiWWwgd6Ja5UDsmCHC+K7uKGcotPkm3jKXn71sUq2abnq1f38FhDHj9igT9qUAY1AJSARpDqa4UhHtgtgMhY1w==]
+2018/05/12 14:00:52.594-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 14:00:52.914-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=KZhapOf1r4MCmJ/6cuoZmq2ZXGiI4UZwFSTwq5H2n93nsgsFZy5ffh0UZHodeQ4bAKQlPhnn726ZsnfV4RP8y6pq2Ry0Lqt5zEUVV1ZSX2yGbirWvW6jX87q0HK+S3SuF8hz2y+WgblaGmRgNQjwww1K2BzQ0hzIQ55FLR/EiMCBpfkFWf3gCkDJ5K38xipiMg7z7+bc7U4X4CkG/E9Bsba1waJUSFdYG9G8yBdAk/bm2zFIBmTeSvLSMw8oeeuN77wVIWIHBNqEbswqgbghd/FLbczvQqNtPPnjZWBA+DM/v9w9kZOc9fMGGP/W/6C39iJ4y6ZqZDi0CFrw3l3/HRPDoTlNrSL4GU/CjEj/HCh4S4l+snd2x5YXsgt2q1IIvCgfdZizFMGeNdS6eA/XJbPJDwhujD3eEPIlZjTAGH/d/FSUxP04Ca8Z9vOXuGmLpDJtOi/47R4eEP3tJSuU6HgqWwBw+82OJ2sxKjR1kRt7j/nw948x29CJ3yrOUa3kOdupOZqb+O7+bawl9X7WDUwNYtJ6TNM4yFfRjy0GcgE+X1lzOFG2g4XiGv2iImsRlb8kKZUQryIN0iVuZDAxHWoQzskAEamky5lhpuYl5UnhC6fePw0JKepUe3aVWjdml4VIrmj9sfJ47wITgrc+MKAwYxg2ZzbVspZp5VHeBog=7777777LPIZDW18RvkCDuj0GnLYFJWu7xbkWnvPQijaSKfIxrZ8AoWL3nQcIcwm4OCXwOphJrOIl0yxaPbqOfz4r6fr/MuzU49wo3hUom2DBG6vdiIVJ0BmECCF4pHVuEWc6qVuD4QjiTRTXaZ1bw/C9cVqOxsbEB6d+FMSzsYIM70gWuo=
+2018/05/12 14:00:52.914-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 14:00:52.915-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 14:00:52.915-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 14:00:52.965-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"140051","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000013","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 14:00:52.994-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 14:00:52.994-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 14:00:52.995-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1208ms
+2018/05/12 14:00:52.995-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:00:53.000-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 14:00:53.623-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:00:54.475-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:00:54.859-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 14:00:54.860-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 14:00:55.095-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 14:00:55.268-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 14:00:55.858-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:01:01.203-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 14:10:19.364-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 14:10:19.365-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 14:10:19.366-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 14:10:19.366-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 14:10:19.367-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 14:10:19.367-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 14:10:19.368-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 14:10:19.368-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 14:10:20.016-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 14:10:22.017-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 14:10:22.018-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 14:10:22.018-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 14:10:22.019-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 14:10:22.020-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:10:22.076-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 14:10:22.076-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 14:10:22.077-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 14:10:22.078-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 14:10:22.078-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 14:10:22.079-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 14:10:22.079-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 14:10:22.080-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 14:10:22.080-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:10:22.081-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:10:22.469-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000014
+2018/05/12 14:10:22.520-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000014","ZDJYM_":"1234567890","QTSJ_U":"141022","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 14:10:22.851-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[FJZ+RdhvYay+MaA8q5KhcUocSG+jAOSjk9esARX5jm2jYA5MS7qhmR7H98tV5AVcoY0+YOHdvdG6EK/Gq2PIAjnhqDjq804OOjWukyA6zz58smyUdZSR0+1B1ZpSgZ9U80JqW015jX+JDUwCFR7qPwj4j6Cvpj3W3IZDqMPZRm3L0UqWxIBro4LycqFEoXWQ2k1k/ZZLK/zN5Uf1n+q3BgXdTUTVO/out4ato72vl13lj2oJCWhTJ5RuKbm9TCEfMSaxJ2AbgRl3/sVu9QFrca7XrsVqhJ4e16P/clC9icjsHaJg7Ekvh2g1od5ehlX+AWK/QW8sYDGcipQIScg6eA==7777777Z5Ndwof9ke522UxxYsGmIMrREJdgNz7Te4DSf/TejnsNnpe+FV2xo9vtpfraYWXajztYIxHULSJbDg0j3UMpBrl+JV0UGftvSsSjr3G7jMv6z5BWad1A5wBaT1hskRUxU2frdqXfVt3ngiCuCs6PueD5B4oYo//vzLjDAsrtDXUbCu0Tg0geGoqOpaN6JvqX2ynFgmGFOU8E5sKkwicRn4VNKwL9ioVXMj0fnekkTwpYlPxe/LpKcb/hcrb5MZZJSXHr9vsJDjW4PyLXKMEDDQZ/ae034rfJLiSaRu1eB2Xref0T7cd3T4yN/JQmIz3/Sjz+F68RjYG9xRc7vIQ6CA==]
+2018/05/12 14:10:22.852-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 14:10:23.268-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=aTcgjDatj2tcmczOmW7AQjht/0yROpSlxwWj6NFMdyHrpHvkr/30eAEF83eNDCdkgfl9qtmiVmowfocu4CdMJjeLgoBS8ZYwWP637wQon8/euBSFm3veRM2/d/NjfxLZoepB2PP8aGIxWsCLQ8buUe0XaUogP380T9algE13b1pdAjZWu/4oc9mOuwJREwbxcIkeuxv064Q5vJDTRt/oq+T73FLNywnVA6SJ26AkHfe3BskS1w+a5Z2yCSVFHxveJUVMWs/4YBAfvZsWjDhWTVrEN2fVy55lBJf0wDVdP3lV+18KczfUW3iqHWlTQQz2ksoF8qcGXAMx2xv0cBssfSkw5cTrUnmiNeMYY2wZ3A3NwvJupkJqqorAcIZUQ16pApJbYUbYZcsmxmvLDt+VjT9jWfh/qZGrVZzo19emnm8RyfBrwyCVN15pUK/20xr0N0eZbNfHJJKteRVIbeua/zHndwP5xjAWhmoutFKqlJE7wWw/VAJftq/RCLI240kJBEa+q1fjbKTSu/ZWs2suSdTK7vbKlaKQ7EQTCeetpyFKSNA/r1WlLq4QCDHHlnwhg6eHaBk/jXhts/n3JV2FCtxnhTcuxiHvN6NNgH3z+U8nqhK4t382bTO1MhrpoQgPS/Fq+F5Lee9rolpzEXbv1hcepQT5/QbG9x7ZUgBhL/k=7777777ZMLHz9hiAjQpZG2oFRdriKqJxNLoXo1uopHHqrc6NqI+h7nB6Du1QErcGrNi9FqhI10teHdxmAEeY1mVZjq4nUDRj1mB+YeJXls1pGd1h+6+qo7kFMXyqH+eUxATWEH0n5ZzJpiJ4QBRB8tCPdxd+FDv21cnB/0J8tQkTUy+iSM=
+2018/05/12 14:10:23.268-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 14:10:23.269-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 14:10:23.269-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 14:10:23.319-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"141022","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000014","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 14:10:23.348-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 14:10:23.349-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 14:10:23.349-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1268ms
+2018/05/12 14:10:23.350-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:10:23.355-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 14:10:23.996-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:10:25.281-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:10:25.690-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 14:10:25.691-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 14:10:25.925-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 14:10:26.099-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 14:10:27.082-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:11:30.687-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 14:20:08.995-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 14:20:08.996-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 14:20:08.997-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 14:20:08.997-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 14:20:08.998-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 14:20:08.998-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 14:20:08.998-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 14:20:08.999-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 14:20:09.649-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 14:20:11.650-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 14:20:11.651-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 14:20:11.652-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 14:20:11.652-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 14:20:11.654-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:20:11.715-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 14:20:11.715-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 14:20:11.716-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 14:20:11.717-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 14:20:11.717-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 14:20:11.718-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 14:20:11.718-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 14:20:11.719-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 14:20:11.719-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:20:11.720-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:20:12.137-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000015
+2018/05/12 14:20:12.189-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000015","ZDJYM_":"1234567890","QTSJ_U":"142011","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 14:20:12.522-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[JBUMIZjmSTfJtwWhOqE28jF7qsu+FdL7KejZVU2NVXIMJGN3ueStAkVBOvHomPqmBJG711mj+WS/uIvVTe+mTiEL2gSag7dm/cC8F0OCZ8bZ5TaRv0ae76ZFJGf7EdrhP4Zxw+1W4i49mVDyAYVhDf2yuVMP4t3alDRidp1KR5Xwt8Ib6UUnPz2sCD4Cn8ZKsBBxwxinHijIElJE5y4qBugGzHzHEatlC6gPK6sqsEAbRORxz8QiI1AxG28ThiQrxxF9awjLdK1kIqfRn6eoOllp60EXty/T1GoQMJCGQC7Pr7eebD03EilASLqcR6ZHtn/UZN3HWDZhLIVCiOQ0Xg==7777777OuCwS5CZxitS59jJcrqf6GpYrtkYkzA4cHlCcGT7iGThcpk5GR0yaXfg8S/5wCTftm3NvxH/GQ4wHjSWSa62GYZhbvTKh9h/2Jlq3U6Q3uguDnSMtt1tcB8ujLD14XI+I5t2VaX1fBtrnQBopgPLT3e/nyIuwMLFI8uPsUCdhx0WkT/aEvuY1ynhuiAjh2dem3oP6QB/10qPoQBqv1GOHnF8DKAqpn20EiRnsAqh2asGgUv9ijbc6zN8psHiDqGLG5iCtIADeOheEm+3DLo6V7/jLwv1hdy+dTB3XcRpZU0TcwgqTCo6IdT3UA1oJYzoawnuKarqygWKfF3Yvik9Ng==]
+2018/05/12 14:20:12.522-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 14:20:12.833-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=fPe23DTMzRBMDG5WV/izIuOfcJ8Xl2nENvmnQXBMhKbNKAQ4O62WQE8Its1mpduhcFG4/SQA56ge4KAagmo/rw1zk7RGtKifZQPznlWL+ll7ZYKk/o/Ex/vsc/iBBWl5bHl9cPjY26N9jlfK0LGwPn/Fwm3XDjt5Kc5NNvAeuZpC8Y0BhAxTM6O2bprNRuN9ZOtoxXJNI4N1Ib0jdcNhBlpL9tYWCHQRYrdBXKnpSU78LKExOxjwkbEsezqQoK+6Q1OxtXVRb2vx+2Cwqg0dzBSatG8orzLJoHkdiM1eBVh0OCUW3rjli1cOUjogK5fFN/hgLEORuKnt3rXqMAbFdxGc5MRYiI/2ftvUGCZoJ/A2MxcpFxqayCPWqfDt5unhlCjoECrBjsvAE42aw93ZxNSMjWaCFjfnTPO/u1XYVmvQCiXAMR8VzLM6xR+GeXeARRSlg9AtkqkcOS+YeX5BGudyXnkulbdLOHt7vj98kALafiGi28EXmoocJFtB/fzHsUQ/jc2kwyb+VgMGXcFmJqH2cnhO733OKJue1osodWYuT3Yr6AEnxlcwT82dvCS4GfzXJ0/lKzaRzt1hfKAW3sptKHtfY26HvclX6glOvPZbVkNmbJuY4ugLYAclDs69Nm+v2KhrKsjOLwTcHe4jzZOi3zd9ATWydydN89VBsK4=7777777IvvzuZ2M6Nwn01bD2Kvpg3n7YrVqA5YVw+yR7Y7d44KYjgAGlZp632gOBXM8JjafPlQlAVpP6IMGfvwrCsAraPcUJ3h5ANhYVZmTfTofbdNrNZQWaK6Yba4A33BlVoRshnrH+DmTqMiZx/3yvKAQ24LeZYQmBNQcfXk3ya6V1RM=
+2018/05/12 14:20:12.834-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 14:20:12.834-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 14:20:12.835-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 14:20:12.887-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"142011","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000015","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 14:20:12.916-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 14:20:12.917-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 14:20:12.917-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1197ms
+2018/05/12 14:20:12.918-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:20:12.922-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 14:20:13.572-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:20:14.521-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:20:14.849-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 14:20:14.850-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 14:20:15.094-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 14:20:15.285-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 14:20:15.465-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:20:25.163-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:42]-[LOG_DEBUG]-cancel
+2018/05/12 14:36:03.596-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 14:36:03.597-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 14:36:03.597-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 14:36:03.598-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 14:36:03.598-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 14:36:03.599-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 14:36:03.600-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 14:36:03.600-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 14:36:04.282-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 14:36:06.283-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 14:36:06.284-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 14:36:06.284-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 14:36:06.285-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 14:36:06.285-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:36:06.341-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 14:36:06.341-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 14:36:06.342-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 14:36:06.342-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 14:36:06.343-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 14:36:06.344-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 14:36:06.344-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 14:36:06.345-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 14:36:06.345-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:36:06.346-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:36:06.758-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000016
+2018/05/12 14:36:06.806-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000016","ZDJYM_":"1234567890","QTSJ_U":"143606","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 14:36:07.150-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[M0ybq/Jq1zvbEAMFoMJYCV/0GF8kiFHLgvqBJZTRrymcWXFAO6z5Kh3/pYGdsVLDo0Vfs+JQ5MzV0Kacr3fb1v6fn0pycjhAx0VQKukqJVpLkWwvg1D258dxB+GMkm8ppz29OHwKETsn0u9We1IYTdg0n8evuUdLEn4e2uhzMBtYUlm9w8y1DO3VHAaGKopYt17Nin9NSEg/Qb1EpTIIfXOu6TUuob+GFe7xjAH245F8ix+8KlwCBmBcJU4fZKClyi87kwsPFSE8zC5yjU7Qxq62wqQ/Lxxnz+5o/KOXFJ8eYaLCDvVku55Jcw8UNaC8JlOCSWYF87S1tS2w42cI8g==7777777wZ49XWH1dYOod3sfBCIO+Mcp2qhh4DJ8WxxmV1AVaMjm0B9QZDDkb19A+sa+Symi/cm7P/3lG4KMVk9ZAFMNpyjHYTUhwjjIjD8gmx0Oa7eGSFm3sz7MV9QIUqcc5qZpO2pBCvEF9Pc5aIlnJbE4JSRloxFg3i59XVB6K+fk6mV5ywf7zXfAghdB2mZ6NRMGno6mbpYa7tOSMDfhMhri7C1wQlHnKJ3NT/rTom/rWfomULLl4M8+9c21FkP6N+ylb1h4Bx1eYgHYBOWJ9rAdFO9eZPa3aErAcAImidpAojXzNnHXA1P+Ojf2plFkvXy5RScROw785G7Ru9d6hJ+Tpw==]
+2018/05/12 14:36:07.150-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 14:36:07.489-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=XLUYNyPXTuen96yfBIKk2AFs4ilvqVzKzQzYIlnxKHvgw6yhXxcB9wStYs4Le6MUZMPpoAS8TvoSeJ1SAjyRz+LV85YgJ6CfKtSBdtr8Dznk+PmPY7STwYs+oX5QCAoxqn/0KRW2pOs1V+7CmPqUpo7hqdaCTr5gCp4psC2JNb0ASf4YADddbjSGjQIZmpD6EuWUkETTpD9evj5YH64mBNnvqawZu9JO07ASlRqJuZFJP8PPZuQjndHo9sM6tbWAhSwT2PRTlKJAtk49M6i1sBpUKJ9/SZDE9qU8CgYsuDdRE0oSwG1nP46w2dVV250X7VBrMCGt6EICKpHe9JC601SqFll+ChzzyOtITTMGI0RLf8soME43JXt6wBrPTHNsT51nmP4xU26zO8lTZxqTMHqfNUSfe1F3srpf2aeuRehEoJPyS3CKRsiqmTWBnbZw+ify5mynM3o0Kr3OFbLicx+BDjKY8QJAFNRRX3w2jxjbv4gH0xEwOmAs1zs+hhPL3t/9EWNvnDPfZ9k2s2xhh2B4zyhNWhT55f5ZShEWxCg3aaKyaCAoJq+slPDnbkedvum3Km2q/tAF28U+Qu11cwJsXvlFC8kjOMrxeAQt/Kox0a/VeP75mQ4Grx1CTbdJIOlh8m1OGSQsZirp3iWvaCEm8artf+5mpHKv/4rL6KU=7777777MapcIU7uosMcw+jG8kiiUg9Le/BgfxUk3e9F3QzERO0J4qFmLNdGK6EgeU2LVMmL0W7lar19H+yV1Ln+lM721gGiZVDU7UBAwi4AI7QD/dvY/M4v/3LIAfVoBytklCtsLlbSwRrs2IDCN9Fj3Va+xNNJt/ZVEWc+gl4IU5B0GP4=
+2018/05/12 14:36:07.489-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 14:36:07.490-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 14:36:07.490-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 14:36:07.552-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"143606","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000016","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 14:36:07.581-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 14:36:07.582-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 14:36:07.582-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1236ms
+2018/05/12 14:36:07.582-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:36:07.587-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 14:36:08.229-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:36:09.120-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:36:09.456-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 14:36:09.456-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 14:36:09.687-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 14:36:09.867-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 14:36:10.576-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:36:16.281-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:48]-[LOG_DEBUG]-cancel
+2018/05/12 14:40:59.573-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 14:40:59.574-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 14:40:59.574-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 14:40:59.575-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 14:40:59.576-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 14:40:59.576-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 14:40:59.576-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 14:40:59.577-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 14:41:00.206-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 14:41:02.206-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 14:41:02.207-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 14:41:02.207-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 14:41:02.208-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 14:41:02.209-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:41:02.263-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 14:41:02.264-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 14:41:02.264-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 14:41:02.265-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 14:41:02.265-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 14:41:02.266-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 14:41:02.266-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 14:41:02.267-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 14:41:02.267-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:41:02.268-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 14:41:02.664-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000017
+2018/05/12 14:41:02.715-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000017","ZDJYM_":"1234567890","QTSJ_U":"144102","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 14:41:03.042-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[YeefSIt3DjbbFoBSDe1bwBSqfFgOw8W2Qgbge7z83oM1fqkAasrcrf9kw5A4pYtxfz5jbjMmCTNjsDK0RNeLi474OlBqBVj1uPJakCWTyDeTZLBz1u0YuHq5H61oPF1V+NK/BlKKeljTeNGVR+sQ/H3a1lOV6v2OrHO74TodOWGRsEnMGIVUoLzjedg39sZWWNwdrZJRi7q2lS4rmc4Vr2Gt9KVwwwXmzQuYyiRt+GEYPOYVfiGvKftqWmLHu87UYHp01j3rldeaSrHwgSkrHoYKMUoz9nO3s1XxT8p9S0wdDl/hU+rZVg4xtFp8EADn+AaQ8VU0RyeUv65tJqu3Jw==7777777kdxh18hrZ3u1YuFTQmsGVOYNBdYxIkQHo86sPZcr3HqCWwevZdoSbWkL50zpgQhDt2KwiuvCALH48v0+E1IqSOkTGXh38nEYlYa2U1286eyXQ3KSc8D+GyqVw8aFMvZr5VUJtie5Nx44c7ODQeivhKmgrmKqynRK24ihkA/45q2yZzr9h/VX6w66TMoOwjQKzMb92xYauaRGRzjz39o/WLrY56GpdXZ0h2g3MBqgJ5fp0VKcN4U6IpmIv6y9KRTWgIVf9TVz1GBRH3Enhdp/eKs2N/a8Fx2SCI0TWV8aNt6RqDASemzUEAWDqomfuZ4TtUZIIu43b5vZd0RolgqOlg==]
+2018/05/12 14:41:03.042-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 14:41:03.359-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=ESiPXJOYb2zoaM4pen1hNaD/QaZkMCl7JTiOqkRG/WxfHEZPkf8RCSKw6CKCI9FtFEJpLOX31NNSQN6Fqkl1KyVP+mdpSITTs/4kSiV++aLVMEtMytcx90OUy9bdxXon00QTP7FjtrCPOmm0njGunGHnS6fAHHtNWKGEdj3VFixVT5Xp2G3I/+J4g4tD/OfyanDpYdWMkoFmwbJgu0gG89JrfMSDGGZMn9/Y61oDoGH9qANOq5zZY5mLL+9pyu8uS/6tl/NZPzhaoMV1BD3YO6f3d7KbgNre7Gz9GCR3kFZ6tYzXSMVBPFUOyPEOcSL+tfm1XqpMS8Y2AvjcyMg1P2XqtpO4m4pQIWxTZdtOlWXGMO6LE4QiF7/GNSgsnZ8iHyXmab1ddFox40fsIKXXpup8j5U1J0M8u31i2Za7zNUwc9pJMOM5EVl+AfFQaPVG/UsYj9oSjmRM76mf0Cb6yk4P7IxaiDbFHf0oxnbKfmWbgNsdzlj3Cww3V/eB+wzVdedyhagmbm9Og8OA/tloZPpAIFDKIjCna2h4my4LfP94vEbjYk12EdUj+IaTFopJt69I1UYPeK86diU+u7XKHYSEhiTsvxmujjoWLXlseI9oQv1Q8rPoG++yQerCRNn/R6qqqTDbRR8Umn1PeEYkd8HXt+DuEkYchwQ56Qyh7bM=7777777hhYxdD6ddARXEWD+rCbHR6Swgpckk3g2O6u0jhGOU7w5ojH6xpokUs5D3d2AbiS2lo9Wm0YF0dIkcAKELDz15ZwQsS2mRKttV3+ppU0EpiEbwxcrA9oTbcTMO06T/T7BvV3vIdhfYxp8fFv8WfcBC2oTEZVQ4cz3N3EnWiF3yk4=
+2018/05/12 14:41:03.360-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 14:41:03.360-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 14:41:03.360-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 14:41:03.424-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"144102","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000017","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 14:41:03.463-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 14:41:03.464-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 14:41:03.464-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1196ms
+2018/05/12 14:41:03.464-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 14:41:03.469-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 14:41:04.114-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:41:05.178-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:41:05.504-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 14:41:05.504-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 14:41:05.737-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 14:41:05.922-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 14:41:06.831-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 14:41:15.552-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:48]-[LOG_DEBUG]-cancel
+2018/05/12 15:01:17.223-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:01:17.225-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:01:17.225-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:01:17.226-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:01:17.226-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:01:17.227-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:01:17.227-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:01:17.228-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:01:17.874-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:01:19.876-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:01:19.877-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:01:19.880-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:01:19.881-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:01:19.883-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:01:19.973-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:01:19.973-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:01:19.974-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:01:19.974-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:01:19.975-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:01:19.976-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:01:19.976-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:01:19.977-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:01:19.977-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:01:19.978-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:01:20.414-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000018
+2018/05/12 15:01:20.463-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000018","ZDJYM_":"1234567890","QTSJ_U":"150119","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:01:20.789-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[a5GSkVaA7hekIUf7mfmnwoZ63RT11wxQUFaMi6+2nkuCPcSGjXn61oFrhtJfTFm8AFzUkqys74kHwR+Xqq4LgY0btjPMwAvNohA+gTzhVOBVCEy14vGRcZkfUm2+nfCbSpnNEOxo9G5gys/3ilzGwDepmLZEMup4LcKozzKamhsvxGSbVmPYSDNZmkPVKS2lQQQvwyD2eblTzJPuo/qc+5FpTC3HkR3JIYvOKwQedJ4iJGfK2DwPODfttA+utR+JF+gEKBQmKUYuNDku4LbIZglFobfqGE2sGknHZrAN7zB8y1LXdFs97BFi5FJO+eilyxei47dtuHBvDwxWNKiV4A==7777777hsgGQ83uo0oZTmzYqahcWNv3f+Bfq263GYlDBk3FLQ62nR5hqbCnieLjnid1FNpEiA2aPAkpH1zL8DGFvndmMrrm0wUvggWmnHojsWVDQFyl0degbyuQb2jdvPHzqn5QH9UC3kCL9yHqXLV2oEabuQqWNRiM0LpGOVI5NTsa8pw/mb80JtDoVeL9bk8lXvwxbAxfO7VfRLT4MPajMgMudVmQPWAldJkbTTkKvy3n76kT/7cpxukgmJNleybr8KplwrPZshRiv+MU6nmzUx5zdxxcouT0IJYAPduHXnRKKsnGpdbcVXyanVNjmUIiyJvF5UB/XOsMJU9/qMmFBdKsAw==]
+2018/05/12 15:01:20.790-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:01:21.075-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=ZGFK/4a9Uq0LbAzCWaoEYkzgiiHzUWOH0LoMVB9yff4pD3zOk9eEbGK7pcDHRT/ycXIJTZwrWJM2K0ZvlZMBXQUWrYKJ9PSnutazEW78XtXG43v/+p0as6wrC9p91lOtQqZBqenT9zC1ayunD63a0rVrrMAWZ29vHj3t9rc5GWXgy6WaLipbfIqep6U+z5f+opa4JMb5IobJZKNBduRjgn/dJUG0CpDIVFi8LfK0OKfKKX5ZIUzfK7OxEST9mBzHSghebxy0bAvpYPNpzgPNepHGjefKZJO1aAHnP+x7ZFfkNLqYJ5jPPB20maD3u+fXyvY0sOXt4d3l3IoaV6l2Kl5YMW0o61QjeEwG97leOmFNAAsiZ1C4lcjfBPuOzw2F8ZBq0+k/P/LIXvZrfuCGyyPOZpfhxN04ZckNESp1UD6hDnWXLymaUsEZA1NaKseKeMjxMqyK0P6iecUlnbGgCvpMFgu44yqYXKIwQwuCU/bOT+19/eczpvwzVZQhEBv0n9/gaK6EhQLEykF7WRQhtxvf68XCltbOQ6TxkkjxaAZNg8XmNqJsvseIGRbWECddD7fQFGzHVKUMEx5x8WBQf5G0CaE38KKqqAoSDy9yrFFxeGrz76WCIa7SWPyF4zaRTyzstP3eqGHAWlDdwlZIjQmVw43i3KlZGFc3sTyWd48=7777777H9NRl69UvsBQDKQU7fPAuGf7I//EFPAK/mj1/kUYNKWezuRCoyix4CTQfN6BFlCQMgwqduKpC4Gy0Use4v2cXp34w/evBQivVi8C/aAUtW0Xx+fbzmOQ1C//eAB7fUNt2cSO3FZAXSoZZpGkvT2vkTGLrlx6BmqghaYQuq6b7WE=
+2018/05/12 15:01:21.075-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:01:21.076-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:01:21.076-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:01:21.126-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150119","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000018","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:01:21.155-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:01:21.155-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:01:21.156-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1177ms
+2018/05/12 15:01:21.156-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:01:21.161-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:01:21.802-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:01:22.758-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:01:23.086-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 15:01:23.086-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 15:01:23.306-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 15:01:23.481-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 15:01:24.319-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:03:31.532-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:03:31.533-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:03:31.534-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:03:31.534-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:03:31.535-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:03:31.535-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:03:31.536-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:03:31.536-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:03:32.184-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:03:34.184-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:03:34.185-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:03:34.185-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:03:34.186-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:03:34.187-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:03:34.241-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:03:34.242-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:03:34.242-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:03:34.243-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:03:34.244-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:03:34.244-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:03:34.245-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:03:34.245-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:03:34.246-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:03:34.246-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:03:34.641-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000019
+2018/05/12 15:03:34.689-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000019","ZDJYM_":"1234567890","QTSJ_U":"150334","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:03:35.004-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[PQtAjXg2s1NDzvcgkdtXJCzNf5BOnOSjL4etUsOV7nICj7JHtxHTHMECjLwc54kGhs9P5clPfud1yxKiIIcN/EImZ27XC4lx1a5cGzKxU9KbD+RtvnQENKjWjrx2OF99ShtcQDlZu0PQi+tvQKhTCQm2y7eN2IpSBCfGzwApWqr2XmmAu19Xuh+KEOgEkVHs+GsvUjhSZccIgS5ltv7sqbTE2xaQlZuntqKFA1Po85Cq8XJUV4x4v8+SfyOB5t9LxDq8sAW2MLATN/clvFZFbwv/3xdGfRrQBIRGWwRe58BjJyabMdV+tc6JcaQVByg1XMa/61fdhoj6erG5HCmB5A==7777777I0gI+16mfetWJUJmeGlNkuFmMgV/aYeNhop9Y4EafsXUCvvr89TFKxA9bUfVC2+tPlTz2VM6Ck4mU2+ggzc2wrHNZmKilP3U4fi7O89wETd6uRmTXcyjoWc8W2aYz7qoIcBX3zw2jN9yr6wLal7xbblWj1VnbLyZMv3YhQY2jDuyiJxkvoz3m6LE5lCc0bsMzP5OCPKajco/DWbtnUAgx05aHEJ/bfmf3U9IXVNEaBFSxBt7VJWf/c+vCR1+xwm6sd9pyRxEce9EJJU0U5lYLWkNdIscrlyYShkcSVyT1VPfb4CeS7O2qhiZoVjBXKVtuX35oj1KsczYGkPK1Y720Q==]
+2018/05/12 15:03:35.005-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:03:35.333-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=Gzu7Zs8ybt6kCULuakxVVtRTjPNW7qC6SD6WLoqc8m0dQwm0u3p9yOLW0M97fRkA2gBiicqtDxEv2KEfcyIh4Oy/ixhC8CMe/wkRs00mhGB3sh9bt7X6g6BcdF/iMRbQ4NuvL6hXmxbinnc9U/XXWVsENAbI+aV7sHek8ha+9/sFwYO9zocJJnH0G1c5CWCwtGxmI47RuVW7McurBmTZiEsNbk8LH5jSxDaZXODPbWqCr2xJIJbqEIIZw8WfMbR/z272yTCPyvQuwQTLzVqsrI+8vPHrPwfS3Nm6hK2S9xup1Xs4SNrrEQ4bq6G77yUFNxQX9az1vHiPBD6eADEkoD6AlrbFQf5MCwY1dV/mHhAzmhcjA1CCb7Soqo16bzU9KOmGWlRNFLlgubQUyzVm2vXlpd8Rz+TUM/ZdidPD7F7ji2R8P3M9yvTuR+zhmc0P6C3aYyajKr073knpXJ4fx4iUpV7burXiXnIkIrG+48+N/n6DfC6Fr6Vv4cekAdhZr5YcXv7buoq3NoqFQ5dEqxta03YC8MZhjsbPy8UphDKStnp95/RDaDB+2QpmLSVRWNeB810DM+sLI4QuYuv8rp1ISxLqoExFasSDVweN1FqZM31qVDp4pOuG2sbAt1XjwIgq4sE5eLLdKxp+UkuWfBtdQz9UFh8GJXvbvloMm/s=7777777GYOxQczmNss/F0elHhYk9s3EWOba5P4+uEc8JHC0er4eJrgxW1xfwT0HUGG1qZBt5qSqZboCBxTEi2VTi3f6ZRlEL8quY6DBdbUE3lEBXG35bpk8+JXdjOH8YnEnpvPmdAy/nVZ/jkTakARFipGJFfacnvCsdnS7zSl2C4vJW/Y=
+2018/05/12 15:03:35.333-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:03:35.334-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:03:35.334-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:03:35.393-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150334","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000019","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:03:35.422-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:03:35.422-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:03:35.423-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1176ms
+2018/05/12 15:03:35.423-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:03:35.428-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:03:36.050-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:03:36.870-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:03:37.278-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 15:03:37.279-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 15:03:37.506-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 15:03:37.685-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 15:05:01.162-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:05:01.163-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:05:01.163-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:05:01.164-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:05:01.164-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:05:01.165-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:05:01.165-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:05:01.166-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:05:01.809-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:05:03.811-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:05:03.813-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:05:03.815-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:05:03.817-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:05:03.821-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:05:03.913-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:05:03.913-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:05:03.914-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:05:03.915-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:05:03.915-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:05:03.916-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:05:03.916-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:05:03.917-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:05:03.917-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:05:03.918-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:05:04.300-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000020
+2018/05/12 15:05:04.347-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000020","ZDJYM_":"1234567890","QTSJ_U":"150503","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:05:04.632-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[T6Ub+4mGoGaRRjWrIaqgTgPgtDQjPY3x5Iwvz0/H1OsvgF6qYT7iQ6etqh764Sbu9l+vfu4WtYc9ix+CibvdJA0Qhy0r9K38BSq6Df3VK/9iR/g2o77OfFb3pWNorTPI0GyH+67ZFZlpDpnaNDJhyZ6UGU1mkX7W0dGJtQRbCGLdeCsFF5BJQDV4oYpfdoSBhkxSUGxmhIeIAcY6eAvexo9vOEFkIXsUy2U3qCXir6AGFNTiFnx54zk+fT5vTpMSETTKAA5BUOvQ0WLm4IUQevIebrTwWx5FzFxM2LcNM6cZAXvQyGQKCmEAwEDBX5G0UlYD+zbKg74sKNABIh6xTA==7777777OoaCrjFpKNFhmjFwN03hORsah+I/+BhYh2ow5TmwbFs71nxgXd/erb2Ptmteu4JBQe40BntWxe3qbed1Pk3z7Ks/Ov8lwJam1qOlf/ddkVW3+2/yrv60rG4UMqBnJHYBVepdtAQ+WmETQHQ2Ni0EsVHBuqGZNPVWuJlENxY4qh5zoJNWTxPHPXEoCWDrJ5bOBqlhnm11ATBfiFsQYChIlV8Urm6VAWS4OCm2e4d9VExNzDAr4KSSizSbE6T7QtCf41i7OP3dOoR126MGun2gj0Qy4pzCr9XfhRxilU3RldqzdWUH+6lvDimOQls5or4+hWgnlzlpJKDnBEUeJhIo2Q==]
+2018/05/12 15:05:04.632-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:05:04.963-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=OeQotYwAkf0Jc0lPDNERFyEjv23+77a8OHF6p5aqupDxj4GTiXjcs2LEGTWQGy8ThDuxcrKKQVq60dKlf7HI4N3yoktVB1yTeZdYNENLuHe0KDa75ATRZduxDHU2cVUgfbh7g0hElAxPPvcz9KD6knbHTZ3e9sObMcc0TZWhyAXLbJNfUKiYWFMyUYbRsEHbH7+o5zec8Rlw61WaSEOODM5TNkeErmO0Fx7e8anOMh4EMk9YXycjIUgT7HSN1T/KVIzdmuWQR3rmfi072jdczUvWGs9XdDT17EqxftEiN6h1KoYmaEXo+sMAXF1hJh/6elFruWhWB8P+oIKr9wefzgBjKfxDquXQQm+HeSDcP7pCmjyaYEaEauU51YKjgZbQmJ15yBHweuYiJ5KZw4tdfkul2kFaVBzZa9rHNX7q3xHjqRTs92k3+4G/5phoCrVQdQSyaBvVfMas+f5/CEeGPM1BhBU7jLGDfmjqQaUoeXH5VqDdKHs+e+aPyEBFAPbR4s38Qd3ArgiIghf9Oj1BAdmCbDum4QEsaXu3N7y+LMYbqkjkj/011L/BHzAppNcbpgN1uP8zpb6YzvqjPPLLBc8+WS0B/pzVe/bUmdVJFlKOwN2XHsRNxA4zo5+wZehf9BuAps2jaddnyYl+AuMDqm1H0swJwLOma4WOyyoAGAo=7777777J/9qgiCY9kKgDAq9krLMbZTSqtq52qnmyJEo8h/Sj50DJyrsbLVQEM+fRS8qSUjOVZ+Hhnx6y3g3IGdBgIgGVvpQleGRjfi1sEqpdsyU0UxyoxhE4VRlOtkwjaDedYhhRl7NE3WxwY1IOiCjs+1lw2H+T/rEtiVQgctmMb3oE0c=
+2018/05/12 15:05:04.965-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:05:04.967-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:05:04.969-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:05:05.054-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150503","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000020","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:05:05.083-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:05:05.083-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:05:05.084-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1165ms
+2018/05/12 15:05:05.084-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:05:05.089-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:05:05.697-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:05:17.918-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:05:18.774-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 15:05:18.775-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 15:05:18.997-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 15:05:19.172-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 15:05:20.022-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:05:50.415-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:54]-[LOG_DEBUG]-cancel
+2018/05/12 15:07:46.404-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:07:46.405-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:07:46.405-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:07:46.406-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:07:46.406-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:07:46.407-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:07:46.407-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:07:46.408-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:07:47.060-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:07:49.063-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:07:49.065-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:07:49.067-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:07:49.070-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:07:49.074-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:07:49.161-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:07:49.161-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:07:49.162-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:07:49.162-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:07:49.163-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:07:49.164-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:07:49.164-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:07:49.165-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:07:49.165-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:07:49.166-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:07:49.544-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000021
+2018/05/12 15:07:49.593-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000021","ZDJYM_":"1234567890","QTSJ_U":"150749","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:07:49.874-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[XmqVAhEw1hqJ/FQNciFk9Fa8WxEFtv4UR1Ejc4XTppUjIxlL3S1vaNgksCCPknXo98IBJxKIxraaJm2TCsTce2TVjMUYJpjPP8+d94J4jeZAoiuxrxzhINkssKOseO12XMfAjk7xO1jaAtbYD8V4HdOJZjcrLlmE3VDQu4anGV8vbWjTzJeGo+zBr82Iza9doowztqSEepjWRBM//E7tdK+5/nxkzK9OgLHKF7P4Nte+OEOYmNQY9ltKszrLggwsZPu2kEtBztG3ZuUNQbU7AfvE/lZtiZnuDSAyaQHlrGtjzSuyC3HKKINnjdpzkk1imaArMpcPBJg8lfUF2pL2Sw==7777777AhPepQdaCz6cLpY2MLpo8sEEZuu6XFzC/bwoO8WWHe2jVVNfI/GwmmQBu/mQO+yWmkk1RZ1lFCSbbUaStsO5oK52ndPq2q4ZQlQeByhhYf8EIJqeE9tYQRRdrYpNrwsxYlASiIakW9PvHxpqRp1u0Q9Iyzm6b2nUQXeOvzdQm39Nw6R+K8+sxKt+4jqbUZSUlrk2IVyVa8bKy0FK/qog1+n0keuQ5Cbj8G5g0/dNTVIsSIPQ2+p9gvqJbdhiWVd9L2eFWlnywjW4T1O1cq4oDOBCQtGn8XFiorN1EsVj6ragIzUJcU7szpak5csjOEjz5Z40BPPxJxo9EN2wigYgGA==]
+2018/05/12 15:07:49.874-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:07:50.205-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=ZD7DJsy8vqDl9axyWak/l+S1xB1swnH8PCnMmcsiZkP/5VKZSwtvI1OWFq4VIlUXhR50C6qUydjqeHVxrfHKnalP1RIjEsPcvcDvOqcDoxFpnYD3WvfiJ9/QNylnlU03qAt4yVp+VT+DSE8ioYzUxC+UduCt8Qb/9JOPItTz/o42IZ5k4ShtI+8+RwDblrJ2qDImR+dC9Ryw8CO7QxosWe+hloQuOkr3iTBiiL7iZKqvurk2I1BXx4RaurUrKVOtbnCfWuLQMPfmFAe30Tbhk5JvhRX4Kq4I9lV/HfKnHmkI2TBQ1NVJbykAwlrsHSO/s+8gxsYwEKQXRmDYHg4wJjkzAiZfjnVNzRe5w4baNfSd7fRnXZ7pjgm8pt607n5tDET/Fu1tWeC9icbQ4LVXbR2nihRGa1HuKArFvJQro2ArsXr1s3KWBH+fArfGCDIG9W/Boh+luNSCV0r/FdzlVDi7KieH4UZaDGMBpJzs2ZRwhuPQVWFZax4ZaGE2v0ieXJ3jCP6fXgu/pKZwvT+lRD/7IDG2N7YFoUUY2VAL1FVRRK+gZ8Nsp1r0lEceRaley/FMB48hJi+diO7BHunB0yFshmmCPUTcGKmn2HcQRNGVF0kX+1GYaxxCI2+5I+XeAt4KHH93SzjbQuRjU3J1w0ZNdcImnhguNXlHHBrItiw=7777777TBTFju7+mW449z/I1whz1X6dAYpgK6em4C5aTF4rRp5VFY58ajpcoVoKMev054hTeCfmupaePk6Ph4LUxhjeNZge66R27yyeRu1C4i6UsCe7zw/GnLtea8aSHEtn/JRD23ntY/7Kf1zxqwRn+kobGgD82r96HC3+LNzLRbOheFA=
+2018/05/12 15:07:50.207-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:07:50.209-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:07:50.211-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:07:50.290-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150749","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000021","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:07:50.318-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:07:50.319-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:07:50.319-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1153ms
+2018/05/12 15:07:50.320-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:07:50.324-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:07:50.938-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:07:51.758-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:08:29.948-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:08:29.950-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:08:29.950-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:08:29.951-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:08:29.951-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:08:29.952-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:08:29.952-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:08:29.953-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:08:30.570-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:08:32.572-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:08:32.574-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:08:32.576-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:08:32.578-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:08:32.582-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:08:32.674-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:08:32.675-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:08:32.675-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:08:32.676-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:08:32.676-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:08:32.677-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:08:32.677-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:08:32.678-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:08:32.678-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:08:32.679-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:08:33.075-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000022
+2018/05/12 15:08:33.123-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000022","ZDJYM_":"1234567890","QTSJ_U":"150832","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:08:33.401-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[Z2q5Hw/M2juZKhgNupgjS8agijZBOv02y2lVYkKEIY0iICTQfOYaym8rkPwyDcitqC/fA+1UZ0PdtJfCgJRCbPQLES46Nu10oGGFtjNXxwp/ZuBcKYcQ0Uoq1RZRX2meCtLGRMBWdtxH4EK63vPYjfL3eOpWxs4pMEiBeKlXinsLxA3NfaPNFEyoeWQyiHMgKoXnAl8tm7+2YTMHg8XKhHxqaA4DdzE0Eoyf9pvIsal0hLvJaP18l84m/S/w6sWx0sR+8dE68Igkx1uvBfz1JKrEQMxrGZmVPeaoF72FVApJxTogPR+DaGSY+k2nUEwcWcBnHDQKBI+Ha/0+3JmYqQ==7777777AEOmxETzN6NaXswr6/3ZYKl9WGMQ6+/mzIS8Xw+ABw6sQjJt/z+gX2fjWt+CIrXDFMWtM5JVczuKuUtScc2uOZLCM27JT4vNmlN0708xBgPzZvKsCxvewg3Xr8jVrvoVMVTZ9INdZFLndg3LCIdGNXcd3tlE9gnvOfvidELHCLhfdwIcjVvaXNZmodQsScxnyrH0TJAXOEEMhkCVWla5i/3aRHVB/TSgHeurw8a64fmeqY1F53YPRqQYiW4XLFBqpSswlTpZUwurxJ7dw46qHAPEBTYYpHhSpbCmVr2KbXpZ8ogLd+WIFrz9XjXsF+hY+s/KNvLSQakTNTakf2vkMA==]
+2018/05/12 15:08:33.402-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:08:33.732-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=IotPT/+tdert18DTXvhKtiHzEWp+fkndJl6iUBz/gywBZX06FMtugpB9GmrZ6eJbe7a3aap0+4qnmP/4nWOAAMlUMNMhxu/HBgxZoFvxQp6mmEREJfUVdDmf52IHtrhLG79zvViIlqsl45qQ/YtxXeayR7HAqsYkY+iGuS61mr3BRWwRbLQA23vn9VkOmIXn1gKs4bXiN7sM2MoxRLTAg36Z2ppw/Uda2hXY24wSQxO5hv+OrBaSe1cd+3CQzKXWb3rEweQZAqjgkgvkuO+JkByfnaSXBzQbhiGbxhn3B1zHEcq6IIfHaywAoPJPhT5KYICzCM0elRq8th1UHpQWojGM1UT3oKUJ9/QRD5p3SHLKpI0+c6HW6q7YVPv/ZyUhBhao7sO7aLOFVL+Nqk4Ls72y4VkQsDqaip5Ofqc0LUIjVK2nSIq7xHesKq/5Z06TtMwK2qcL4rA0KCIhZWrf5+ZjpmldVMXTMhe/ZDkna6/GEh3MOQeahPcE7NBYyj/clN71RH8xys6DcLQZ2Of8gT498a/gjgSMTMRD+g6npjkqSShszfi+1yRmBkvLQHtJyi8lfQprPx2Ti/X2uzWSIzmUBWl0uoDolvl93GtSZD7y/c7YuEs/ukN1AUu2TF4KSQO121mUgfS0VJpJ7mkRNmY52/JsOw/7F0RawAGyW3E=7777777HwWxoAuRFFYfAIeNiQMEKjmkP8R/8In+g9/lrlyGwO3aQKH1XLyuD02qzTnjZGuDWBF2Qok7KuNCZhogdaDYnerQeJ3Cn1SyahuJewLrBidtBfXY8O54MvxykQMX4wRPiSvQV3TWRc5/fdVfIrSYZGpROmIugk12BokCYbSELD8=
+2018/05/12 15:08:33.734-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:08:33.736-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:08:33.738-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:08:33.816-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150832","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000022","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:08:33.844-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:08:33.845-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:08:33.845-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1166ms
+2018/05/12 15:08:33.845-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:08:33.850-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:08:34.470-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:08:45.545-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:08:45.547-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:08:45.548-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:08:45.549-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:08:45.549-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:08:45.550-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:08:45.551-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:08:45.551-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:08:46.165-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:08:48.168-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:08:48.170-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:08:48.172-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:08:48.175-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:08:48.179-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:08:48.275-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:08:48.276-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:08:48.276-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:08:48.277-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:08:48.277-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:08:48.278-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:08:48.278-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:08:48.279-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:08:48.279-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:08:48.280-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:08:48.677-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000023
+2018/05/12 15:08:48.725-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000023","ZDJYM_":"1234567890","QTSJ_U":"150848","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:08:49.009-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[JGORu+71DzxrqGu3oLzE0vevqzEoZUdldGCTN7VjGBMdEqh8YhRcwsoSNRdPxVZdXTtGjtx8Onibhm3o1o/cqqCEAJfvZ+OZPHP0SBiS1moBZ8dSrtpZG8Q56SdI7VxEGxJONF3swG4cnO+L2y98uiXi2vi2E7YR20C54YxUZbNmPE2te1fwQZ704X3YD/QgtCj3ejsNRrZx9Gjgn2DajAnHKnE8m4FJ/gQvYznGbtiNq7aT0CIHL8PRF59kIiZLdAGNLBzPIim+/PVc/MKJQeLfoNefRea7BRgZRhPm000xBFTWfY9lVuO8X3fxHu0x8IG+r1R/Rk5iDNOR3BY0fg==7777777JcsBaXdI8m6j50/0orilY2q8JASeZE52Sdc9gfnnnWsNkL4jIfsmjGY+qyA3+WEAIFjzHZbBcrISyTitPrHEZVLjQCueg4d+uSxnjBpNQZGCXTlvqvjAfgGDEx/CdNn7E/gsJ3B5q4Hy3/DMBDwTGtPbSUrrUMJGnZ4gt1qSsl7YEniqRMOXRyxsZWnuZBwAHKNIbAIuoIFy4TzMVaE7G3kJ6fNr2i0aforKWTxC2JznqbZZT+K/se+QnszVZIG/AZxZT/jhunTyQ6ps+d+sYBFTcSzWnk72g21odXrxS/XAZSJ9jOaHS9Oolw3IVyEFNjDHyoVFdP5Hb1sPBch8tA==]
+2018/05/12 15:08:49.010-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:08:49.309-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=H5FiJjYnbzM8c9WbDjsrx/hQssJQjG5/4axfHF0Ko9Cy6v7xa9L3GBKOsQ3J2qQbaf3faRvUwbZbGP3IfuNAIs1XXwka5ZRccgtioHswCl8fgGyeeiZl9ohQ4cyn4hWG5IzH5uXFr/ej7shxK50OFVT/twEF9f4eLSRuDniEW0FLe4XsoOmGJCp5AhrNiaLfxv7UlpEmx99fIY7Ak6hiFu1ydhOByfZXWHyCaGJTu5sVViasF6RBc0xnF5bigdjO0hdmr01P69oLqIhdPVUv+S6Xh1qDnrTL72wDTLOfuM0CSLjCoq+Tq+dNhp7PeCMfmlDpZaYrfoquSAQddmB1H3FEqL8crhpcOi7QFIl+cILC3dMYGkSVqM+rAv4KRPo3xP2NT81Ospp89RCd7ua+dGOLUHNfL4GzEdElPQRGqxNO0zINO34EE2CfmGx2LMSXElT4HU/Ea5HmzLouxdPGqXyp6PlWY66rKMBf4oHCKFI/UntbDAQVZ+HXYrpqfYB4SrQF8EWvIUOj8D9Tm8PI/76zHJQspSf1U4tw1r7PlO4V6Pw65AKv1KqpOvTFYBS95BN2jE/uwZ91mWv2Pic3rnJehSnNEv+249y+fcOtwnD0GFVCeMZCBIKIG4ssCd+kPjRw5EdsZ1sGgh7b4uTYhFKzWkrtUHpGdWlwCPLfySo=7777777I801LXLfa4812AycyfsTjiV4tCaPukMOwYBLFSpJr1BwERl+3z2NPQslzXYlGasRbN5gLS8BY4ljQfXE2OzbjsZyx6pDsHXKUtqrDc3mzM6edMdI65PUo9tkGIElpL/QpdRDL+B3mqgjqeYWvpJTp4O0Td7APBq+tt7szWT5D3I=
+2018/05/12 15:08:49.311-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:08:49.313-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:08:49.315-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:08:49.396-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150848","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000023","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:08:49.424-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:08:49.425-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:08:49.425-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1145ms
+2018/05/12 15:08:49.425-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:08:49.430-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:08:50.040-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:00.019-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/05/12 15:09:00.020-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/05/12 15:09:00.021-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/05/12 15:09:00.022-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/05/12 15:09:00.022-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/05/12 15:09:00.023-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/05/12 15:09:00.023-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/05/12 15:09:00.024-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/05/12 15:09:00.642-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/05/12 15:09:02.644-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/05/12 15:09:02.646-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/05/12 15:09:02.648-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/05/12 15:09:02.650-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/05/12 15:09:02.654-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:09:02.753-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/05/12 15:09:02.753-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/05/12 15:09:02.754-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/05/12 15:09:02.754-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/05/12 15:09:02.755-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/05/12 15:09:02.755-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/05/12 15:09:02.756-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/05/12 15:09:02.757-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/05/12 15:09:02.757-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:09:02.758-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/05/12 15:09:03.158-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000024
+2018/05/12 15:09:03.207-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180512","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000024","ZDJYM_":"1234567890","QTSJ_U":"150902","QTJYM_":"ZDLogin"},"body":{}}
+2018/05/12 15:09:03.502-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[RecNvMdwxQny+svMAmHmkN/oPMd/cwSPVZw0VVvqJg+L+Btrq0IEWfrd4LRHpnjL8jExLD3jLrncE6U83CHMLvYjcNMzbIMqQ7GVY6ibpoSnXCmjV+nJR1Mh5WtclhMJ1+PBSa1QcSC+tdHpQLMUnSQv2mN8eHmHAe8wHrrgucl/3oJtEDis6BxreOJ8zs4p1dOofGiwrrASQJJDqldBMSyAduxJtY/NhbeV+A1rUtnjZ5QXalZ74DeXY6CZF62+NejuyEluaoEprjX++Y5rFVZAv3OvGj8NSY7vI0dRXuNS7b0dCjljfaFbqF/0cKpQAz7zjvJqN3p6VkC+RDAxhg==77777770N4VoGohkUNPr9WeLjKusUgpgdIF2liu4xiDnX21FHd4w4tnBVapuD3w0NA1zZu5qfMyMm2Js+ppp/c8zEtLRr793+olSdK9wyOgAs8McMmY0ZHfNcfhT6XBiN2c4U4/CKS4cI/Myk/maRvPJgFNfIDf4i9sIzZRoef7eHGhuptr0vTMRv6n6/0b0+LId9tIOjb307JvvSdpf/8ZzWoR7OCoWqzP/q4RYg9zWHKD06xU5uRz1fYoXX71OQEat78OWMbgTwFdQAFHly0gqp7oji1h3e/Qhdx5m2WJcbSQ7KRCRVrvycHk/4yVciS7DS3raaeOcav6gqOF2ddQ36odVA==]
+2018/05/12 15:09:03.503-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/05/12 15:09:03.809-[XQBHClient.Client.ComCall.Call:143]-[LOG_DEBUG]-XMLOut=DMWXP1i+LAoxCj3gaLC4hn+VPgkTCWe9FXR4LKmuFCWQhXjrulTXxsanfAbNmRAhlpCJgbUILC0V3QdUdB4nhXiiuPBKFyU6iWqV6yynMIIUrzBpH/jm66ysE1Wp3D4d4n9XUSVR/JAZHaaNEqgajKYPTI94OaLmoJYKN1755ioluIbog/73zRejLMfvaH4/dTP6rULLGKvyQV20TuMkByov2amMOIhl/0CHnNFuX9iP2SxHZhi9ezdwW0SXBu/Vj/uCbiitgtfKqr5KSkBHf5aI9+QbBUSQMi0qVq4Cwtz4ZG+1/B6cDjcUbiog8gemdujCIxbSPbGd1DfzMlIyrSOqoNBxm8zCpifx4I3t6urplfzGcgMxElMe/SPzZdVgkghEnWkpt0GpIoFhrs5Wr1uPyu0iP+D+cDy6I+ftsq2m/PydOpP2LzKYtBF/ftoaDPnCEzOz9Xu2WL9574VKm6JnCXK6EzH2bZMau1sehod4zj+SfU0Cma5s+KrGQKvq0J56c9SBzZNVXa4nBnavpQrRd1BnmE2mBRsZhb/DeJQSl33o8LbwKJJcAjUKRq++xkio9A4YPjAvNRxM9RNAoTk0fVsTvcV9sUENhuMF3Fgj5IVZNB9YrtqZtQrf3MJ3X1D5e7ExLgy4XXvsW+6vKHk5QN0UkxfqmBvVmZM5P2c=7777777IgAxCO2afRANhibaovw7JagsREqPaCY4UIYag1Ln8Nrl+qYcuMxyIjK/uhSVFEaWC5mZKEHsegLkDeUmDO+9OATrlMDT1rU7Au/isc8bLrCpfD0JAI8HTIG2Zv+gbuPqNnOPmZ1D6G648ScqHeqEDwjZwGmAhleGRiqmFOYejII=
+2018/05/12 15:09:03.810-[XQBHClient.Client.ComCall.Call:176]-[LOG_DEBUG]-buffIn.length =[863]
+2018/05/12 15:09:03.812-[XQBHClient.Client.ComCall.Call:177]-[LOG_DEBUG]-iPos=[684]
+2018/05/12 15:09:03.813-[XQBHClient.Client.ComCall.Call:178]-[LOG_DEBUG]-signbytelength=[172]
+2018/05/12 15:09:03.899-[XQBHClient.Client.ComCall.Call:209]-[LOG_DEBUG]-after decrypt XMLOut={"head":{"HTRQ_U":"20180512","CWXX_U":"","QTRQ_U":"20180512","SHBH_U":"SH0000000001","KHBH_U":"KH0000000001","HTLS_U":"","CWDM_U":"AAAAAA","QTSJ_U":"150902","HTJYM_":"ZDLogin","QTDX_U":"zd","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000024","ZDJYM_":"1234567890","QTJYM_":"ZDLogin"},"body":{"re":"Jakalaka Technology Co. Ltd"}}
+2018/05/12 15:09:03.928-[XQBHClient.Client.ComCall.minusInfo:279]-[LOG_IO]-CWDM_U=AAAAAA
+2018/05/12 15:09:03.928-[XQBHClient.ClientTran.ZDLogin.exec:33]-[LOG_DEBUG]-re=Jakalaka Technology Co. Ltd
+2018/05/12 15:09:03.929-[XQBHClient.ClientTran.ZDLogin.exec:36]-[LOG_DEBUG]-spand 1171ms
+2018/05/12 15:09:03.929-[XQBHClient.ClientTran.ZDLogin.exec:37]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/05/12 15:09:03.934-[XQBHClient.ClientUI.ClientUIMain.Init:56]-[LOG_DEBUG]-target propfile=D:\ProgramFiles\NormalPrograms\x86\Java\jdk1.8.0_131\jre\lib
+2018/05/12 15:09:04.546-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:05.374-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:06.038-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 15:09:06.038-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 15:09:06.258-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 15:09:06.432-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 15:09:07.581-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:07.870-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:08.526-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:09.048-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:09.084-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/预定/3D打印/皮卡丘模型/pikaqiu.jpg
+2018/05/12 15:09:13.933-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:14.086-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:15.413-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:15.813-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:16.797-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:17.134-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾100抽
+2018/05/12 15:09:17.135-[XQBHClient.Utils.Model.DataModel.getGoodsList:228]-[LOG_DEBUG]-add  主页\购买\生活用品\纸巾200抽
+2018/05/12 15:09:17.315-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾100抽/img0.png
+2018/05/12 15:09:17.506-[XQBHClient.ClientUI.Unit.Obj_Goods_Sell.<init>:43]-[LOG_DEBUG]-file:/E:/Docments/MySource/Github/XQBHClient/resources/主页/购买/生活用品/纸巾200抽/img0.png
+2018/05/12 15:09:18.397-[XQBHClient.ClientAPI.SetGoodsAccountToModel.exec:21]-[LOG_DEBUG]-not search 
+2018/05/12 15:09:55.310-[XQBHClient.ClientUI.Unit.OrderDialogController.cancel:54]-[LOG_DEBUG]-cancel

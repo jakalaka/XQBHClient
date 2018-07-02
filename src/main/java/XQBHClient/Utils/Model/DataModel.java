@@ -18,9 +18,15 @@ public class DataModel {
     private String modelName;
     private boolean buildSuccess = false;
     private String introduction;
+    int positionX;
+    int positionY;
+
+    /*
     private int controllerAdress;
     private String controllerIP;
     private int controllerPort;
+    */
+
     private String position;
     private String searchCondition;
 
@@ -57,17 +63,22 @@ public class DataModel {
             imgs[i] = tmpPath + "/" + imgs[i];
         }
 
-        controllerIP = readKeyFromXML(prop, "controllerIP");
 
-        String port = readKeyFromXML(prop, "controllerPort");
-        if (null == port || "".equals(port))
-            port = "9999";
-        controllerPort = Integer.parseInt(port);
 
-        String adress = readKeyFromXML(prop, "controllerAdress");
-        if (null == adress || "".equals(adress))
-            adress = "9999";
-        controllerAdress = Integer.parseInt(adress);
+
+        String positionXtmp = readKeyFromXML(prop, "positionX");
+        if (null == positionXtmp || "".equals(positionXtmp))
+            positionX = 65535;
+        positionX = Integer.parseInt(positionXtmp);
+
+        String positionYtmp = readKeyFromXML(prop, "positionY");
+        if (null == positionYtmp || "".equals(positionYtmp))
+            positionY = 65535;
+        positionY= Integer.parseInt(positionYtmp);
+
+
+
+
 
         searchCondition = position + " " + readKeyFromXML(prop, "searchCondition");
 
@@ -122,17 +133,15 @@ public class DataModel {
         return introduction;
     }
 
-    public int getControllerAdress() {
-        return controllerAdress;
+    public int getpositionX() {
+        return positionX;
     }
 
-    public String getControllerIP() {
-        return controllerIP;
+    public int getpositionY() {
+        return positionY;
     }
 
-    public int getControllerPort() {
-        return controllerPort;
-    }
+
 
     public double getUnitPrice() {
         return unitPrice;

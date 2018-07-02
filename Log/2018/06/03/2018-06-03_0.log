@@ -1,0 +1,111 @@
+2018/06/03 17:09:31.840-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:46]-[LOG_SYS]-自动升级程序启动...
+2018/06/03 17:09:31.842-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:48]-[LOG_SYS]-搜索FTP上版本控制文件:
+2018/06/03 17:09:31.843-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:49]-[LOG_DEBUG]-Const.hostName=newfangledstore.com
+2018/06/03 17:09:31.844-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:50]-[LOG_DEBUG]-Const.port=21
+2018/06/03 17:09:31.844-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:51]-[LOG_DEBUG]-Const.user=ftpreader
+2018/06/03 17:09:31.845-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:52]-[LOG_DEBUG]-Const.pwd=ftp
+2018/06/03 17:09:31.846-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:53]-[LOG_DEBUG]-Const.RemotePath=Update/XQBHClient
+2018/06/03 17:09:31.847-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:54]-[LOG_DEBUG]-Const.LocalPath=Update/new
+2018/06/03 17:09:32.797-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:64]-[LOG_SYS]-正在进行版本文件比较...
+2018/06/03 17:09:34.798-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:69]-[LOG_SYS]-oldVersion=ver1.0
+2018/06/03 17:09:34.799-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:70]-[LOG_SYS]-newVersion=ver1.0
+2018/06/03 17:09:34.799-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:71]-[LOG_SYS]-Const.version=ver1.0
+2018/06/03 17:09:34.800-[XQBHClient.Utils.Updater.AutoUpdateMain.exec:73]-[LOG_SYS]-数据采集程序版本没有更新变动
+2018/06/03 17:09:34.801-[XQBHClient.Client.ClientInit.Init:35]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/06/03 17:09:34.910-[XQBHClient.Client.ClientInit.Init:67]-[LOG_DEBUG]-timeOut=9000
+2018/06/03 17:09:34.910-[XQBHClient.Client.ClientInit.Init:75]-[LOG_DEBUG]-frequency=500
+2018/06/03 17:09:34.911-[XQBHClient.Client.ClientInit.Init:84]-[LOG_DEBUG]-PowerControlRelayIP=192.168.31.116
+2018/06/03 17:09:34.912-[XQBHClient.Client.ClientInit.Init:93]-[LOG_DEBUG]-PowerControlPort=8080
+2018/06/03 17:09:34.912-[XQBHClient.Client.ClientInit.Init:100]-[LOG_DEBUG]-PowerControlAdress=3
+2018/06/03 17:09:34.913-[XQBHClient.Client.ClientInit.Init:108]-[LOG_DEBUG]-QRReaderComName=COM4
+2018/06/03 17:09:34.914-[XQBHClient.Client.ClientInit.Init:117]-[LOG_DEBUG]-FinishScannerComName=COM3
+2018/06/03 17:09:34.914-[XQBHClient.Client.ClientInit.Init:126]-[LOG_DEBUG]-ClientIP=192.168.211.1:9001
+2018/06/03 17:09:34.915-[XQBHClient.Client.ClientInit.Init:132]-[LOG_IO]-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+2018/06/03 17:09:34.916-[XQBHClient.ClientTran.ZDLogin.exec:15]-[LOG_IO]->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+2018/06/03 17:09:35.856-[XQBHClient.Client.Com.getQTLS:155]-[LOG_DEBUG]-前台流水:CZD00000000010000001
+2018/06/03 17:09:35.910-[XQBHClient.Client.ComCall.Call:38]-[LOG_DEBUG]-XMLIn={"head":{"HTJYM_":"ZDLogin","QTRQ_U":"20180603","ZDBH_U":"ZD0000000001","IP_UUU":"192.168.211.1:9001","QTLS_U":"CZD00000000010000001","ZDJYM_":"1234567890","QTSJ_U":"170934","QTJYM_":"ZDLogin"},"body":{}}
+2018/06/03 17:09:36.330-[XQBHClient.Client.ComCall.Call:70]-[LOG_DEBUG]-after encrypt XMLIn=[ImVn5AM1aTCeXz15kq9Z0TmSxcLuG2XNG2y3/EYJ2bBp48ZHmHqbripHEbbeJOItKg2uF8YKRfq9kabb/UOThArRysJjR+Pz5LQzqEj3hxTUlOlMDa6jQknNsnuQ90YNV1kQ7pIaPredBD9PDvgw1v/9OOW4Rkp+y3UpjdHdrjZhOfOwUuQmXMS8+C8QHLKW99LJ1Sa5WeNMuoJgFza+LTW5fe+jv5scGpafO5wT5vZpNVd4q1+tUrIJxMaENCs13OD1Lg5exxa/d+HAlJMxZHtWoGkM6NDbDzsP+fyhhkElQmHqm6HRTMAryfSwpZ9eP9QiaLizan9tJYjpaWHmUg==7777777l9XomD3RkVavT0PkVMMUb1P2zJHOHk3d2cfAjWvqGgrJpaiiwe8Wy1eEhmvRmyEuErbfi/XZxOznSnnTxbJienDKX6ppBpxJ4JgKs8Xt/edLMopDqj6MXZUjOQiI3Wi+uwC6O8rl373mEiS3lqlSnMGP1SUO/LcNUs/OfgpIOwYB2z5vrf0HrK4Mq1sSsBtqivIufEkH3lnet4jofeN8ruKe7IlXQeMmZoWOpWxzpByfWF3aNYY1dOvXuZ7GFTi+RsebHjQVUtLfqhDigh5lfpAh3Fb0Hg0+uNtOBSiZFFVRaxahJT7ueO9ItW9yZUo3YO9/kjq37VyvO39XzR17lQ==]
+2018/06/03 17:09:36.331-[XQBHClient.Client.ComCall.Call:71]-[LOG_DEBUG]-after encrypt XMLIn.length=[695]
+2018/06/03 17:09:37.333-[XQBHClient.Client.ComCall.Call:137]-[LOG_ERR]-java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at XQBHClient.Client.ComCall.Call(ComCall.java:104)
+	at XQBHClient.ClientTran.ZDLogin.exec(ZDLogin.java:30)
+	at XQBHClient.Client.ClientMain.main(ClientMain.java:66)
+
+2018/06/03 17:09:37.400-[XQBHClient.Client.ComCall.Call:138]-[LOG_ERR]-通讯异常!
+2018/06/03 17:09:39.607-[XQBHClient.ClientUI.Unit.WarmingDialogController.OK:39]-[LOG_DEBUG]-OK
+2018/06/03 21:42:12.015-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.exec:17]-[LOG_DEBUG]-Com.FinishScannerComName=COM4
+2018/06/03 21:42:33.892-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.exec:17]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:51:21.987-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:52:42.736-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:53:16.079-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:54:30.832-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:54:49.853-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:55:25.893-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:55:40.082-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:56:30.355-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:57:10.033-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:57:59.294-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:58:21.748-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:58:32.757-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 21:58:58.031-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:18]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:05:57.432-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:14:50.632-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:19:19.929-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:19:36.120-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:20:27.728-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:20:38.353-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:21:12.499-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:19]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:52:25.691-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:52:50.346-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:54:53.782-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:55:28.316-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:56:08.975-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:58:56.768-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:59:09.292-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 22:59:32.626-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:04:38.538-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:04:58.878-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:05:10.780-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:05:15.991-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:06:35.283-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:06:56.312-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:07:17.150-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:07:35.733-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:07:47.303-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:09:15.749-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:09:23.342-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:10:46.865-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:10:52.394-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:11:27.397-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:12:53.583-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:13:55.228-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:15:13.962-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:16:27.157-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:16:39.587-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:18:32.524-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:19:20.460-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:19:58.620-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:20]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:21:44.114-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:28:28.534-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:29:42.399-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:29:47.355-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:31:02.532-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:32:49.193-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:34:16.386-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:34:49.188-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:35:35.591-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:37:08.534-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:38:13.962-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:39:05.951-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:40:58.837-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:42:37.153-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:44:27.109-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null
+2018/06/03 23:44:35.401-[XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB.<init>:21]-[LOG_DEBUG]-Com.FinishScannerComName=null

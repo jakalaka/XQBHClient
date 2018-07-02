@@ -30,9 +30,8 @@ public class Obj_Goods_Sell {
         DataUtils.setValue(SP, "unitPrice",""+dataModel.getUnitPrice())    ;
 
         DataUtils.setValue(SP, "position", dataModel.getPosition());
-        DataUtils.setValue(SP, "IP_UUU", dataModel.getControllerIP());
-        DataUtils.setValue(SP, "PORT_U", dataModel.getControllerPort()+"");
-        DataUtils.setValue(SP, "ADRESS", dataModel.getControllerAdress()+"");
+        DataUtils.setValue(SP, "positionX", dataModel.getpositionX()+"");
+        DataUtils.setValue(SP, "positionY", dataModel.getpositionY()+"");
 
 
 

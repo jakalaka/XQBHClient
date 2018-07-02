@@ -1,27 +1,12 @@
 package XQBHClient.Client;
 
 
-import XQBHClient.Client.Table.Mapper.CXTCSMapper;
-import XQBHClient.Client.Table.Model.CXTCS;
-import XQBHClient.Client.Table.Model.CXTCSKey;
-import XQBHClient.Client.Table.basic.DBAccess;
 import XQBHClient.ClientAPI.WarmingDialog;
-import XQBHClient.ClientUI.ClientUIMain;
-import XQBHClient.Utils.FinishComListener.FinishComListener;
 import XQBHClient.Utils.QRReader.QRReader;
-import XQBHClient.Utils.Updater.AutoUpdateMain;
-import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
-import org.apache.ibatis.exceptions.PersistenceException;
-import org.apache.ibatis.session.SqlSession;
 
 import java.awt.*;
 import java.io.*;
-import java.net.InetAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.HashMap;
-import java.util.Map;
 
 import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
 
@@ -75,6 +60,7 @@ public class ClientInit {
             Logger.log("LOG_DEBUG", "frequency=" + QRReader.frequency);
         }
 
+        /*
         Com.PowerControlRelayIP = readKeyFromXML(sysprop, "PowerControlRelayIP");
         if (null == Com.PowerControlRelayIP || "".equals(Com.PowerControlRelayIP)) {
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°PowerControlRelayIP¥ÌŒÛ!");
@@ -99,6 +85,17 @@ public class ClientInit {
         } else {
             Logger.log("LOG_DEBUG", "PowerControlAdress=" + Com.PowerControlAdress);
         }
+        */
+
+
+        Com.ControllerCOMName = readKeyFromXML(sysprop, "ControllerComName");
+        if (null == Com.ControllerCOMName || "".equals(Com.ControllerCOMName)) {
+            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°ControllerComName¥ÌŒÛ!");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "controllerCOMName=" + Com.ControllerCOMName);
+        }
+
 
         Com.QRReaderComName = readKeyFromXML(sysprop, "QRReaderComName");
         if (null == Com.QRReaderComName || "".equals(Com.QRReaderComName)) {
@@ -125,6 +122,9 @@ public class ClientInit {
         } else {
             Logger.log("LOG_DEBUG", "ClientIP=" + Com.ClientIP);
         }
+
+
+
 
 
 

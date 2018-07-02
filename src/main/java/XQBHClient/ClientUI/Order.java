@@ -10,9 +10,16 @@ public class Order {
     public static String callStatus;
     public static boolean outFail;
 
+    /*ÆúÓÃ
     public static String controllerIP;
     public static int controllerPort;
     public static int controllerAdress;
+    */
+    public static String controllerCOMName;
+    public static int positionX;
+    public static int positionY;
+
+
     public static String position;
     public static String ZFFS_U;
 
@@ -27,9 +34,11 @@ public class Order {
         finalOut=true;
         callStatus ="FAIL";
         outFail=false;
+        /*ÆúÓÃ
         controllerIP="";
         controllerPort=9999;
         controllerAdress=9999;
+        */
         ZFFS_U="";
 
     }

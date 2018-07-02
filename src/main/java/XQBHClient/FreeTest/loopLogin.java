@@ -7,11 +7,22 @@ public class loopLogin {
     public static void main(String[] args) {
         if (false == ClientInit.Init())
             return;
-        int i = 0;
-        while (true) {
-            ZDLogin.exec();
-            i++;
-            System.out.println("i= " +i);
+
+        for (int i=0;i<1;i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+
+                    int j=0;
+                    while (true) {
+                        ZDLogin.exec();
+                        j++;
+                        System.out.println(" j="+ j);
+                    }
+                }
+            }).start();
         }
+
+
     }
 }

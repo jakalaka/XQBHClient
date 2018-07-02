@@ -7,8 +7,9 @@ import XQBHClient.ClientTran.AliPayBill;
 import XQBHClient.ClientTran.AlipayZFWAITQuery;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Order;
-import XQBHClient.Utils.Modbus.ModbusUtil;
+import XQBHClient.Utils.ModbusRelay.ModbusUtil;
 import XQBHClient.Utils.QRReader.QRReader;
+import XQBHClient.Utils.ThingsOutPCB.ThingsOutPCB;
 import XQBHClient.Utils.log.Logger;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -74,7 +75,9 @@ public class OrderDialogController {
 
         /*出货设备的初始化检查*/
         try {
-            ModbusUtil.doCheck(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
+            //ModbusUtil.doCheck(Order.controllerIP, Order.controllerPort, Order.controllerAdress);
+
+            ThingsOutPCB.doCheck(Com.ControllerCOMName,Order.positionX,Order.positionY);
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
             WarmingDialog.show(WarmingDialog.Dialog_ERR, "集控设备异常,请联系管理员!!!");
