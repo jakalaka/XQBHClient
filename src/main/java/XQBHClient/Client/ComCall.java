@@ -89,7 +89,7 @@ public class ComCall {
 //            WarmingDialog.show(WarmingDialog.Dialog_ERR, "·þÎñÆ÷¹ÊÕÏ!");
 //            return false;
 //        }
-        String IP = "192.168.2.103";
+        String IP = "127.0.0.1";
 //        String IP="newfangledstore.com";
 
         int port = 9000;

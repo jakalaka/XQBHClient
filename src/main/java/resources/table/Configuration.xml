@@ -10,8 +10,8 @@
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/db_xqbhclient"/>
-                <property name="username" value="root"/>
-                <property name="password" value="rootkf"/>
+                <property name="username" value="xqbh"/>
+                <property name="password" value="xqbhkf"/>
             </dataSource>
         </environment>
     </environments>

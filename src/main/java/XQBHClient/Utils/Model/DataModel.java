@@ -18,8 +18,8 @@ public class DataModel {
     private String modelName;
     private boolean buildSuccess = false;
     private String introduction;
-    int positionX;
-    int positionY;
+    int positionX; //商品位置
+    int positionY; //商品位置
 
     /*
     private int controllerAdress;
@@ -27,7 +27,7 @@ public class DataModel {
     private int controllerPort;
     */
 
-    private String position;
+    private String position; //商品树路径
     private String searchCondition;
 
     public DataModel() {
@@ -67,14 +67,16 @@ public class DataModel {
 
 
         String positionXtmp = readKeyFromXML(prop, "positionX");
-        if (null == positionXtmp || "".equals(positionXtmp))
+        if (null == positionXtmp || "".equals(positionXtmp.trim()))
             positionX = 65535;
-        positionX = Integer.parseInt(positionXtmp);
+        else
+            positionX = Integer.parseInt(positionXtmp);
 
         String positionYtmp = readKeyFromXML(prop, "positionY");
-        if (null == positionYtmp || "".equals(positionYtmp))
+        if (null == positionYtmp || "".equals(positionYtmp.trim()))
             positionY = 65535;
-        positionY= Integer.parseInt(positionYtmp);
+        else
+            positionY= Integer.parseInt(positionYtmp);
 
 
 

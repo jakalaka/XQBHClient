@@ -32,6 +32,7 @@ public class ClientUIMain extends Application {
         primaryStage.setMaximized(true);
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.setFullScreen(true);
         Com.UIFinish=true;
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override

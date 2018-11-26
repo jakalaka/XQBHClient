@@ -30,9 +30,11 @@ public class Obj_Goods_Sell {
         DataUtils.setValue(SP, "unitPrice",""+dataModel.getUnitPrice())    ;
 
         DataUtils.setValue(SP, "position", dataModel.getPosition());
-        DataUtils.setValue(SP, "positionX", dataModel.getpositionX()+"");
-        DataUtils.setValue(SP, "positionY", dataModel.getpositionY()+"");
 
+//        if(dataModel.getModelType().equals("goods")) {
+//            DataUtils.setValue(SP, "positionX", dataModel.getpositionX() + "");
+//            DataUtils.setValue(SP, "positionY", dataModel.getpositionY() + "");
+//        }
 
 
         String imagePath = "resources/"+dataModel.getImgs()[0];
