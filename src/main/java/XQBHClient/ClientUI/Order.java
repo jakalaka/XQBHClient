@@ -18,6 +18,7 @@ public class Order {
     public static String controllerCOMName;
     public static int positionX;
     public static int positionY;
+    public static int positionZ;
 
 
     public static String position;
