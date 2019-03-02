@@ -8,21 +8,12 @@ import XQBHClient.ClientUI.Unit.GuideButton;
 import XQBHClient.ClientUI.Unit.NormalAnchorPane;
 import XQBHClient.ClientUI.Unit.RootAnchorPane;
 import XQBHClient.Utils.Model.*;
-import XQBHClient.Utils.Updater.AutoUpdateMain;
-import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
-import com.google.gson.Gson;
-import javafx.application.Application;
 import javafx.application.Platform;
-import javafx.collections.ObservableList;
-import javafx.concurrent.Task;
-import javafx.concurrent.WorkerStateEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -31,12 +22,8 @@ import javafx.scene.input.TouchEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 
-import javax.xml.crypto.Data;
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.net.URL;
 import java.util.*;
 
@@ -44,11 +31,11 @@ import java.util.*;
 public class Controller implements Initializable {
 
 
-    public static Stack<DataModel> pathTracer=new Stack();
+    public static Stack<DataModel> pathTracer = new Stack();
 
     public static DataModel dataModel;
 
-    public static ThingsOutCartoon thingsOutCartoon;
+    public static ThingsOutAction thingsOutCartoon;
 
     @FXML
     private BorderPane viewPane;
@@ -78,7 +65,7 @@ public class Controller implements Initializable {
 
         //更新商品数据库记录状态
         if (true != InitDSPXX.initTable()) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "初始化数据库失败,请联系管理员");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "初始化数据库失败,请联系管理员");
             System.exit(0);
         }
         if (false == updateDSPXX(dataModel)) {
@@ -94,7 +81,7 @@ public class Controller implements Initializable {
 
 //
 //
-//                ThingsOutCartoon thingsOutCartoon = new ThingsOutCartoon();
+//                ThingsOutAction thingsOutCartoon = new ThingsOutAction();
 //                thingsOutCartoon.show();
 //                Order.Init();
 //                Order.finalOut = false;
@@ -131,7 +118,7 @@ public class Controller implements Initializable {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                thingsOutCartoon = new ThingsOutCartoon(ClientUIMain.primaryStage);
+                thingsOutCartoon = new ThingsOutAction(ClientUIMain.primaryStage);
                 thingsOutCartoon.show();
             }
         });
@@ -246,10 +233,10 @@ public class Controller implements Initializable {
 //        if (list.size() <= 1)
 //            return;
 //        DataModel targetDataModel = DataModel.getDataModelByKey(dataModel,((GuideButton) list.get(list.size() - 2)).position);
-        if (pathTracer.size()<=1)
+        if (pathTracer.size() <= 1)
             return;
         pathTracer.pop();
-        DataModel targetDataModel=pathTracer.pop();
+        DataModel targetDataModel = pathTracer.pop();
         go(targetDataModel);
     }
 
@@ -270,7 +257,7 @@ public class Controller implements Initializable {
 //        }
 //        DataModel subDataModel = DataModel.getDataModelByKey(dataModel, Key);
 //        if (subDataModel == null) {
-//            WarmingDialog.show("系统出错", "加载数据\"" + Key + "\"出错，请检查模型或联系管理员!\n给您带来的不便深表歉意!");
+//            WarmingAction.show("系统出错", "加载数据\"" + Key + "\"出错，请检查模型或联系管理员!\n给您带来的不便深表歉意!");
 //            return;
 //        }
 //        if (subDataModel.getModelType().equals("root")) {
@@ -282,34 +269,37 @@ public class Controller implements Initializable {
 //        } else if (subDataModel.getModelType().equals("goods") || subDataModel.getModelType().equals("bookGoods")) {
 //            setViewPaneShowNode(new GoodsAnchorPane(subDataModel));
 //        } else {
-//            WarmingDialog.show("配置错误", "非法的模型类型[" + subDataModel.getModelType() + "]!!!");
+//            WarmingAction.show("配置错误", "非法的模型类型[" + subDataModel.getModelType() + "]!!!");
 //        }
 //    }
 
     public void go(DataModel dataModel) {
+        Com.continue_updateUI=false;
+
+
         try {
             SetGoodsAccountToModel.exec(dataModel);
         } catch (IOException e) {
-            Logger.log("LOG_ERR","获取商品信息出错");
-            Logger.logException("LOG_ERR",e);
+            Logger.log("LOG_ERR", "获取商品信息出错");
+            Logger.logException("LOG_ERR", e);
             return;
         }
         cleanFlow();
         String Key = dataModel.getPosition();
-        String[] strings = Key.split("\\\\");
+        String[] strings = Key.split(File.separator);
         for (int i = 0; i < strings.length; i++) {
             String sub_position = "";
             for (int j = 0; j <= i; j++) {
                 if (j == 0)
                     sub_position += strings[j];
                 else
-                    sub_position += "\\" + strings[j];
+                    sub_position += File.separator + strings[j];
 
             }
             addFlow(new GuideButton(strings[i], sub_position));
         }
         if (dataModel == null) {
-            WarmingDialog.show("系统出错", "指定的界面为空");
+            WarmingAction.show("系统出错", "指定的界面为空");
             return;
         }
 
@@ -322,9 +312,10 @@ public class Controller implements Initializable {
         } else if (dataModel.getModelType().equals("goods") || dataModel.getModelType().equals("bookGoods")) {
             setViewPaneShowNode(new GoodsAnchorPane(dataModel));
         } else {
-            WarmingDialog.show("配置错误", "非法的模型类型[" + dataModel.getModelType() + "]!!!");
+            WarmingAction.show("配置错误", "非法的模型类型[" + dataModel.getModelType() + "]!!!");
         }
         pathTracer.push(dataModel);
+
 
     }
 
@@ -339,7 +330,7 @@ public class Controller implements Initializable {
 
         if ("goods".equals(subModel.getModelType())) {
             if (true != InitDSPXX.createData(subModel)) {
-                WarmingDialog.show("数据库错误", "商品" + subModel.getPosition() + "信息初始化失败");
+                WarmingAction.show("数据库错误", "商品" + subModel.getPosition() + "信息初始化失败");
                 return false;
             }
         }
@@ -356,7 +347,7 @@ public class Controller implements Initializable {
     @FXML
     public void onSearchTouch() {
 
-        SearchBoard.show((int) (searchField.getLayoutY() + searchField.getHeight()));
+        SearchBoardAction.show((int) (searchField.getLayoutY() + searchField.getHeight()));
     }
 
     public void search() {
@@ -366,7 +357,7 @@ public class Controller implements Initializable {
         DataModel tmpDatamodel = DataModel.getMatchSearchDataModel(dataModel, sKeywords);
         if (tmpDatamodel.getElements().size() == 0) {
             Logger.log("LOG_DEBUG", "no match resoult");
-            WarmingDialog.show(WarmingDialog.Dialog_ERR,"无匹配商品");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "无匹配商品");
 
             return;
         }

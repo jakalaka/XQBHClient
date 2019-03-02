@@ -2,13 +2,48 @@
 
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 
-<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-padding: 10px 0px 0px 10px;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="XQBHClient.ClientUI.Unit.Goods_Sell">
+<GridPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-padding: 10px 0px 0px 10px;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="XQBHClient.ClientUI.Unit.Goods_Sell">
+  <children>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" style="" styleClass="goodsGridBackground" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" GridPane.rowSpan="3" />
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnSpan="2">
+      <children>
+        <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0px 1px 0px 1px;" GridPane.rowIndex="1">
+      <children>
+        <Label styleClass="goodsShowLabel" text="剩余库存:">
+          <textFill>
+            <Color blue="0.949" green="0.949" red="0.949" fx:id="x1" />
+          </textFill>
+        </Label>
+        <Label fx:id="goodsNum" styleClass="goodsShowLabel" text="123" textFill="$x1" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0px 1px 0px 0px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <children>
+        <Label styleClass="goodsShowLabel" text="价格:￥" textFill="$x1" />
+        <Label fx:id="unitPrice" styleClass="goodsShowLabel" text="123" textFill="$x1" />
+      </children>
+    </HBox>
+    <HBox alignment="CENTER" style="-fx-border-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="2">
+      <children>
+        <Label id="goodsName" alignment="CENTER_LEFT" text="Label" textFill="$x1" />
+        <TextField fx:id="position" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+        <TextField fx:id="ZDBH_U" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+        <TextField fx:id="IP_UUU" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+        <TextField fx:id="PORT_U" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+        <TextField fx:id="ADRESS" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
+      </children>
+    </HBox>
+  </children>
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="105.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="105.0" />
@@ -18,34 +53,4 @@
     <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
-   <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="goodsGridBackground" GridPane.columnSpan="2" GridPane.rowSpan="3" />
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black;" GridPane.columnSpan="2">
-         <children>
-            <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0px 1px 0px 1px;" GridPane.rowIndex="1">
-         <children>
-            <Label styleClass="goodsShowLabel" text="剩余库存:" textFill="#bfbaba" />
-            <Label fx:id="goodsNum" styleClass="goodsShowLabel" text="123" textFill="#bfbaba" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-color: black; -fx-border-width: 0px 1px 0px 0px;" GridPane.columnIndex="1" GridPane.rowIndex="1">
-         <children>
-            <Label styleClass="goodsShowLabel" text="价格:￥" textFill="#bfbaba" />
-            <Label fx:id="unitPrice" styleClass="goodsShowLabel" text="123" textFill="#bfbaba" />
-         </children>
-      </HBox>
-      <HBox alignment="CENTER" style="-fx-border-color: black;" GridPane.columnSpan="2" GridPane.rowIndex="2">
-         <children>
-            <Label fx:id="goodsName" styleClass="goodsShowLabel" text="XXX商品" textFill="#bfbaba" />
-            <TextField fx:id="position" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
-             <TextField fx:id="ZDBH_U" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
-             <TextField fx:id="IP_UUU" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
-             <TextField fx:id="PORT_U" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
-             <TextField fx:id="ADRESS" maxHeight="0.0" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" visible="false" />
-         </children>
-      </HBox>
-   </children>
 </GridPane>

@@ -1,14 +1,14 @@
 package XQBHClient.Client;
 
 
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
 
 import java.awt.*;
 import java.io.*;
 
-import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
+import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readFromProperties;
 
 /**
  * Created by Administrator on 2017/7/1 0001.
@@ -27,15 +27,15 @@ public class ClientInit {
         /*
         ¥”userInfo÷–ªÒ»°œ‡πÿ≈‰÷√–≈œ¢
          */
-        String ZDJYM_ = readKeyFromXML(new File("resources/Info/userInfo.properties"), "ZDJYM_");
+        String ZDJYM_ = readFromProperties(new File("resources/Info/userInfo.properties"), "ZDJYM_");
         if (!"".equals(ZDJYM_) && ZDJYM_ != null)
             Com.ZDJYM_ = ZDJYM_;
 
-        String ZDBH_U = readKeyFromXML(new File("resources/Info/userInfo.properties"), "ZDBH_U");
+        String ZDBH_U = readFromProperties(new File("resources/Info/userInfo.properties"), "ZDBH_U");
         if (!"".equals(ZDBH_U) && ZDBH_U != null)
             Com.ZDBH_U = ZDBH_U;
 
-        String LogLV = readKeyFromXML(new File("resources/Info/userInfo.properties"), "LogLV");
+        String LogLV = readFromProperties(new File("resources/Info/userInfo.properties"), "LogLV");
         if (!"".equals(LogLV) && LogLV != null)
             Com.LogLV = LogLV;
 
@@ -44,16 +44,16 @@ public class ClientInit {
          */
         String sysinfo = "resources/Info/sysInfo.properties";
         File sysprop = new File(sysinfo);
-        QRReader.timeOut = Integer.parseInt(readKeyFromXML(sysprop, "timeOut"));
+        QRReader.timeOut = Integer.parseInt(readFromProperties(sysprop, "timeOut"));
         if (0 == QRReader.timeOut) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°timeOut¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°timeOut¥ÌŒÛ!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "timeOut=" + QRReader.timeOut);
         }
-        QRReader.frequency = Integer.parseInt(readKeyFromXML(sysprop, "frequency"));
+        QRReader.frequency = Integer.parseInt(readFromProperties(sysprop, "frequency"));
         if (0 == QRReader.frequency) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°frequency¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°frequency¥ÌŒÛ!");
 
             return false;
         } else {
@@ -61,24 +61,24 @@ public class ClientInit {
         }
 
         /*
-        Com.PowerControlRelayIP = readKeyFromXML(sysprop, "PowerControlRelayIP");
+        Com.PowerControlRelayIP = readFromProperties(sysprop, "PowerControlRelayIP");
         if (null == Com.PowerControlRelayIP || "".equals(Com.PowerControlRelayIP)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°PowerControlRelayIP¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°PowerControlRelayIP¥ÌŒÛ!");
 
             return false;
         } else {
             Logger.log("LOG_DEBUG", "PowerControlRelayIP=" + Com.PowerControlRelayIP);
         }
 
-        Com.PowerControlPort = Integer.parseInt(readKeyFromXML(sysprop, "PowerControlPort"));
+        Com.PowerControlPort = Integer.parseInt(readFromProperties(sysprop, "PowerControlPort"));
         if (0 == Com.PowerControlPort) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°PowerControlPort¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°PowerControlPort¥ÌŒÛ!");
 
             return false;
         } else {
             Logger.log("LOG_DEBUG", "PowerControlPort=" + Com.PowerControlPort);
         }
-        Com.PowerControlAdress = Integer.parseInt(readKeyFromXML(sysprop, "PowerControlAdress"));
+        Com.PowerControlAdress = Integer.parseInt(readFromProperties(sysprop, "PowerControlAdress"));
         if (0 == Com.PowerControlAdress) {
             Logger.log("LOG_ERR", "∂¡»°PowerControlAdress¥ÌŒÛ");
             return false;
@@ -88,36 +88,56 @@ public class ClientInit {
         */
 
 
-        Com.ControllerCOMName = readKeyFromXML(sysprop, "ControllerComName");
+        Com.ControllerCOMName = readFromProperties(sysprop, "ControllerComName");
         if (null == Com.ControllerCOMName || "".equals(Com.ControllerCOMName)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°ControllerComName¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°ControllerComName¥ÌŒÛ!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "controllerCOMName=" + Com.ControllerCOMName);
         }
 
 
-        Com.QRReaderComName = readKeyFromXML(sysprop, "QRReaderComName");
+        Com.QRReaderComName = readFromProperties(sysprop, "QRReaderComName");
         if (null == Com.QRReaderComName || "".equals(Com.QRReaderComName)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°QRReaderComName¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°QRReaderComName¥ÌŒÛ!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "QRReaderComName=" + Com.QRReaderComName);
         }
 
-        Com.FinishScannerComName = readKeyFromXML(sysprop, "FinishScannerComName");
+        Com.FinishScannerComName = readFromProperties(sysprop, "FinishScannerComName");
         if (null == Com.FinishScannerComName || "".equals(Com.FinishScannerComName)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°FinishScannerComName¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°FinishScannerComName¥ÌŒÛ!");
 
             return false;
         } else {
             Logger.log("LOG_DEBUG", "FinishScannerComName=" + Com.FinishScannerComName);
         }
 
+
+
+        Com.Robot_IP = readFromProperties(sysprop, "Robot_IP");
+        if (null == Com.Robot_IP || "".equals(Com.Robot_IP)) {
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°Robot_IP¥ÌŒÛ!");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "Robot_IP=" + Com.Robot_IP);
+        }
+
+        Com.Robot_port = Integer.parseInt(readFromProperties(sysprop, "Robot_port"));
+
+        if (0 == Com.Robot_port ) {
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°Robot_port¥ÌŒÛ!");
+            return false;
+        } else {
+            Logger.log("LOG_DEBUG", "Robot_port=" + Com.Robot_port);
+        }
+
+
         //∆Ù“ª∏ˆsocket
-        Com.ClientIP = readKeyFromXML(sysprop, "OrayIP");
+        Com.ClientIP = readFromProperties(sysprop, "OrayIP");
         if (null == Com.ClientIP || "".equals(Com.ClientIP)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "∂¡»°ClientIP¥ÌŒÛ!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "∂¡»°ClientIP¥ÌŒÛ!");
             return false;
         } else {
             Logger.log("LOG_DEBUG", "ClientIP=" + Com.ClientIP);

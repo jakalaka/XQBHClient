@@ -1,6 +1,6 @@
 package XQBHClient.Utils.Data;
 
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 import XQBHClient.Utils.log.Logger;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -56,7 +56,7 @@ public class DataUtils {
     public static void setValue(Node root, String targetName, String valueString) {
         Node targetNode = getTarget(root, targetName);
         if (targetNode == null) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "无" + targetName + "字段,请联系管理员!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "无" + targetName + "字段,请联系管理员!");
             return;
         }
         if (targetNode instanceof TextField) {
@@ -68,7 +68,7 @@ public class DataUtils {
         } else if (targetNode instanceof Label) {
             ((Label) targetNode).setText(valueString);
         } else {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "传入的" + targetName + "类型错误,请联系管理员!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "传入的" + targetName + "类型错误,请联系管理员!");
             return;
         }
 
@@ -79,7 +79,7 @@ public class DataUtils {
     public static void setVisible(Node root, String targetName, boolean flg) {
         Node targetNode = getTarget(root, targetName);
         if (targetNode == null) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "无" + targetName + "字段,请联系管理员!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "无" + targetName + "字段,请联系管理员!");
             return;
         }
         targetNode.setVisible(flg);
@@ -88,13 +88,13 @@ public class DataUtils {
     public static void setEnable(Node node, String targetName, boolean flg) {
         Node targetNode = getTarget(node, targetName);
         if (targetNode == null) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "无" + targetName + "字段,请联系管理员!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "无" + targetName + "字段,请联系管理员!");
             return;
         }
         if (targetNode instanceof TextField) {
             ((TextField) targetNode).setEditable(false);
         } else {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "传入的" + targetName + "类型错误,请联系管理员!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "传入的" + targetName + "类型错误,请联系管理员!");
             return;
         }
 
@@ -136,7 +136,7 @@ public class DataUtils {
     public static String getListMean(String ListName, String Value) {
         File file = new File("src/main/java/resources/list/" + ListName + ".lst");
         if (!file.exists()) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "找不到列表文件" + file.getAbsolutePath());
+            WarmingAction.show(WarmingAction.Dialog_ERR, "找不到列表文件" + file.getAbsolutePath());
             return "";
         }
         BufferedReader reader = null;
@@ -171,7 +171,7 @@ public class DataUtils {
     public static String getListValue(String ListName, String Mean) {
         File file = new File("src/main/java/resources/list/" + ListName + ".lst");
         if (!file.exists()) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "找不到列表文件" + file.getAbsolutePath());
+            WarmingAction.show(WarmingAction.Dialog_ERR, "找不到列表文件" + file.getAbsolutePath());
             return "";
         }
         BufferedReader reader = null;

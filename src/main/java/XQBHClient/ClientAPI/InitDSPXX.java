@@ -20,7 +20,7 @@ public class InitDSPXX {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SESSION);
             return false;
         }
 
@@ -33,7 +33,7 @@ public class InitDSPXX {
             dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SELECT);
             return false;
         }
         if (null == dspxx) {
@@ -48,7 +48,7 @@ public class InitDSPXX {
 
             } catch (Exception e) {
                 Logger.logException("LOG_ERR", e);
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_INSERT);
+                WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_INSERT);
                 return false;
             }
         } else {
@@ -58,7 +58,7 @@ public class InitDSPXX {
                     dspxxMapper.updateByPrimaryKey(dspxx);
                 } catch (Exception e) {
                     Logger.logException("LOG_ERR", e);
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_UPDATE);
+                    WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_UPDATE);
                     return false;
                 }
             } else {
@@ -78,7 +78,7 @@ public class InitDSPXX {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SESSION);
             return false;
         }
 

@@ -1,7 +1,6 @@
 package XQBHClient.ClientUI;
 
 import XQBHClient.Client.Com;
-import XQBHClient.Utils.QRReader.QRReader;
 import XQBHClient.Utils.log.Logger;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -13,8 +12,6 @@ import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 import java.io.File;
-
-import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
 
 public class ClientUIMain extends Application {
 

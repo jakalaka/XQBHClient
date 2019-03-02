@@ -16,9 +16,14 @@ public class Order {
     public static int controllerAdress;
     */
     public static String controllerCOMName;
-    public static int positionX;
+    public static int positionX;//in centymitter
     public static int positionY;
     public static int positionZ;
+    public static int positionZ_max;
+    public static int positionW;
+    public static String  barcode;
+
+
 
 
     public static String position;

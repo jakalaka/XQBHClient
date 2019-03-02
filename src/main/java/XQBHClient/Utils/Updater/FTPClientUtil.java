@@ -1,11 +1,9 @@
 package XQBHClient.Utils.Updater;
 
-import XQBHClient.ClientAPI.WarmingDialog;
-import XQBHClient.Utils.log.Logger;
+import XQBHClient.ClientAPI.WarmingAction;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPClientConfig;
-import org.apache.commons.net.ftp.FTPFile;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -62,10 +60,10 @@ public class FTPClientUtil {
             config.setServerLanguageCode("en");
 
         } catch (IOException ex) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "连接主机:" + hostName + "失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "连接主机:" + hostName + "失败!");
 
         } catch (SecurityException ex) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "用户或者密码可能不对,无权限与主机:" + hostName + "连接!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "用户或者密码可能不对,无权限与主机:" + hostName + "连接!");
         }
 
         return ftp;

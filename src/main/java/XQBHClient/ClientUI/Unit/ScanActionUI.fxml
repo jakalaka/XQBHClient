@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane styleClass="dialogWindow" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="XQBHClient.ClientUI.Unit.ScanActionUIController">
+  <children>
+    <BorderPane blendMode="SRC_OVER" cache="true" cacheHint="DEFAULT" disable="false" mouseTransparent="false" prefHeight="300.0" prefWidth="307.0" style="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <center>
+        <Label fx:id="mainText" text="请将二维码靠近扫描区" BorderPane.alignment="CENTER">
+          <font>
+            <Font size="24.0" />
+          </font>
+        </Label>
+      </center>
+      <top>
+        <Button alignment="CENTER" cancelButton="true" contentDisplay="LEFT" defaultButton="false" disable="false" focusTraversable="false" mnemonicParsing="false" onAction="#cancel" style="" styleClass="topCancelbuttom" text="X" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" underline="false" BorderPane.alignment="CENTER_RIGHT">
+          <font>
+            <Font name="System Bold" size="20.0" />
+          </font>
+
+        </Button>
+      </top>
+    </BorderPane>
+  </children>
+  <stylesheets>
+    <URL value="@../../../resources/CSS/stylesheet.css" />
+  </stylesheets>
+</AnchorPane>

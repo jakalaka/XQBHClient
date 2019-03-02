@@ -19,7 +19,7 @@ public class GetSPNum {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SESSION);
             return 0;
         }
         DSPXXMapper dspxxMapper = sqlSession.getMapper(DSPXXMapper.class);
@@ -31,7 +31,7 @@ public class GetSPNum {
             dspxx = dspxxMapper.selectByPrimaryKey(dspxxKey);
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SELECT);
             return 0;
         }
         return dspxx.getSL_UUU();

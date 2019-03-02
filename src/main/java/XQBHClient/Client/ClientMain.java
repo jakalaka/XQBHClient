@@ -1,39 +1,24 @@
 package XQBHClient.Client;
 
 
-import XQBHClient.Client.Table.Mapper.DSPXXMapper;
-import XQBHClient.Client.Table.Model.DSPXX;
-import XQBHClient.Client.Table.Model.DSPXXExample;
-import XQBHClient.Client.Table.basic.DBAccess;
 import XQBHClient.ClientAPI.*;
-import XQBHClient.ClientTran.AliPayBill;
 import XQBHClient.ClientTran.ZDLogin;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Controller;
 import XQBHClient.ClientUI.Order;
-import XQBHClient.Utils.FinishComListener.FinishComListener;
 import XQBHClient.Utils.Model.DataModel;
 import XQBHClient.Utils.Updater.AutoUpdateMain;
 import XQBHClient.Utils.XML.XmlUtils;
 import XQBHClient.Utils.log.Logger;
 import com.google.gson.Gson;
-import com.sun.org.apache.xpath.internal.operations.Or;
-import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
-import javafx.stage.WindowEvent;
-import org.apache.ibatis.session.SqlSession;
 
 import java.io.*;
-import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,7 +33,7 @@ public class ClientMain {
          */
         AutoUpdateMain autoUpdateMain = new AutoUpdateMain();
         if (true != autoUpdateMain.exec(args)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "获取更新失败，请检查网络是否通畅");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "获取更新失败，请检查网络是否通畅");
 
             return;
         }
@@ -57,14 +42,14 @@ public class ClientMain {
         初始化程序
          */
         if (false == ClientInit.Init()) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "初始化失败，请联系维护人员");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "初始化失败，请联系维护人员");
             return;
         }
         /*
         签到
          */
         if (!ZDLogin.exec()) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "终端签到失败，请联系维护人员");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "终端签到失败，请联系维护人员");
             return;
         }
 
@@ -84,7 +69,7 @@ public class ClientMain {
             Logger.logException("LOG_ERR", e);
         }
         if (!Com.FinishScannerState.equals("N")) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "FinishScannerState 启进程失败");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "FinishScannerState 启进程失败");
             return;
         }
         */
@@ -104,7 +89,7 @@ public class ClientMain {
 //                break;
 //        }
 //        if (!status) {
-//            WarmingDialog.show(WarmingDialog.Dialog_ERR, "本机未配置花生壳或配置错误，请检查");
+//            WarmingAction.show(WarmingAction.Dialog_ERR, "本机未配置花生壳或配置错误，请检查");
 //            return;
 //        }
 
@@ -118,7 +103,7 @@ public class ClientMain {
                     serverSocket = new ServerSocket(9001);
                 } catch (Exception e) {
                     Logger.logException("LOG_ERR",e);
-                    WarmingDialog.show(WarmingDialog.Dialog_ERR,"启动系统监听服务时出错，请联系管理员!!!");
+                    WarmingAction.show(WarmingAction.Dialog_ERR,"启动系统监听服务时出错，请联系管理员!!!");
                     System.exit(0);
                 }
 
@@ -231,13 +216,17 @@ public class ClientMain {
 
                                 Order.positionX=dataModel.getpositionX();
                                 Order.positionY=dataModel.getpositionY();
+                                Order.positionZ=dataModel.getpositionZ();
+                                Order.positionZ_max=dataModel.getPositionZ_max();
+                                Order.positionW=dataModel.getPositionW();
+                                Order.barcode=dataModel.getBarcode();
 
                                 //加入动画
                                 Controller.thingsOutPauseShow();
                                 Task<Void> thingsOutTask = new Task<Void>() {
                                     @Override
                                     public Void call() throws Exception {
-                                        if (!ThingOut.exec() || Order.outFail) {
+                                        if (!ThingsOutAction.exec() || Order.outFail) {
                                             xmlMapOut.put("CWDM_U", "FFFFFF");
                                         } else {
                                             if (UpdateDSPXX.exec(xmlMapIn.get("position").toString(), updateNum)) {

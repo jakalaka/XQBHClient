@@ -1,14 +1,14 @@
 package XQBHClient.FreeTest;
 
 import XQBHClient.Client.ClientInit;
-import XQBHClient.ClientAPI.WarmingDialog;
-import XQBHClient.ClientTran.AlipayZFWAITQuery;
+import XQBHClient.ClientAPI.WarmingAction;
+import XQBHClient.ClientTran.ZFWAITQuery;
 import XQBHClient.ClientUI.Order;
 
 public class querytest {
     public static void main(String[] args) {
         if (false == ClientInit.Init()) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "初始化失败，请联系维护人员");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "初始化失败，请联系维护人员");
             return;
         }
         Order.HTRQ_U = "20171218";
@@ -23,7 +23,7 @@ public class querytest {
 //            }
             System.out.println(2);
 
-                AlipayZFWAITQuery.exec();
+                ZFWAITQuery.exec();
 
 
             System.out.println(3);

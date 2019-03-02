@@ -2,12 +2,13 @@ package XQBHClient.Utils.RSA;
 
 import java.security.MessageDigest;
 
+
+import org.apache.commons.codec.binary.Base64;
+
 import javax.crypto.KeyGenerator;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
-import org.apache.commons.codec.binary.Base64;
 
 /**
  * 基础加密组件

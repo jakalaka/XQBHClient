@@ -6,7 +6,7 @@ import XQBHClient.Utils.log.Logger;
 import java.io.File;
 import java.util.*;
 
-import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readKeyFromXML;
+import static XQBHClient.Utils.PropertiesHandler.PropertiesReader.readFromProperties;
 
 public class DataModel {
 
@@ -18,8 +18,12 @@ public class DataModel {
     private String modelName;
     private boolean buildSuccess = false;
     private String introduction;
-    int positionX; //商品位置
-    int positionY; //商品位置
+    private int positionX; //商品位置
+    private int positionY; //商品位置
+    private int positionZ; //商品位置
+    private int positionZ_max; //商品位置
+    private int positionW;
+    private String barcode;//商品条形码
 
     /*
     private int controllerAdress;
@@ -47,18 +51,18 @@ public class DataModel {
         读取配置文件,生成树对象
          */
         File prop = new File(resourcePath + "/model.properties");
-        modelType = readKeyFromXML(prop, "modelType");
+        modelType = readFromProperties(prop, "modelType");
 
         modelName = file.getName();
 
-        String sPrice = readKeyFromXML(prop, "unitPrice");
+        String sPrice = readFromProperties(prop, "unitPrice");
         if (null == sPrice || "".equals(sPrice)) {
             unitPrice = 0;
         } else {
             unitPrice = Double.parseDouble(sPrice);
         }
-        introduction = readKeyFromXML(prop, "introduction");
-        imgs = readKeyFromXML(prop, "imgs").split(";");
+        introduction = readFromProperties(prop, "introduction");
+        imgs = readFromProperties(prop, "imgs").split(";");
         for (int i = 0; i < imgs.length; i++) {
             imgs[i] = tmpPath + "/" + imgs[i];
         }
@@ -66,23 +70,38 @@ public class DataModel {
 
 
 
-        String positionXtmp = readKeyFromXML(prop, "positionX");
+        String positionXtmp = readFromProperties(prop, "positionX");
         if (null == positionXtmp || "".equals(positionXtmp.trim()))
             positionX = 65535;
         else
             positionX = Integer.parseInt(positionXtmp);
 
-        String positionYtmp = readKeyFromXML(prop, "positionY");
+        String positionYtmp = readFromProperties(prop, "positionY");
         if (null == positionYtmp || "".equals(positionYtmp.trim()))
             positionY = 65535;
         else
             positionY= Integer.parseInt(positionYtmp);
 
 
+        String positionZtmp = readFromProperties(prop, "positionZ");
+        if (null == positionZtmp || "".equals(positionZtmp.trim()))
+            positionZ = 0;
+        else
+            positionZ= Integer.parseInt(positionZtmp);
+
+
+        String positionZ_maxtmp = readFromProperties(prop, "positionZ_max");
+        if (null == positionZ_maxtmp || "".equals(positionZ_maxtmp.trim()))
+            positionZ_max = 1000;
+        else
+            positionZ_max= Integer.parseInt(positionZ_maxtmp);
+
+        barcode = readFromProperties(prop, "barcode");
 
 
 
-        searchCondition = position + " " + readKeyFromXML(prop, "searchCondition");
+
+        searchCondition = position + " " + readFromProperties(prop, "searchCondition");
 
 
         File[] files = file.listFiles();
@@ -142,6 +161,19 @@ public class DataModel {
     public int getpositionY() {
         return positionY;
     }
+    public int getpositionZ() {
+        return positionZ;
+    }
+    public int getPositionZ_max() {
+        return positionZ_max;
+    }
+    public String getBarcode() {
+        return barcode;
+    }
+    public int getPositionW() {
+        return positionW;
+    }
+
 
 
 

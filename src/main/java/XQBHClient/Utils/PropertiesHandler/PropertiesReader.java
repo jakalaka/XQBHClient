@@ -1,6 +1,6 @@
 package XQBHClient.Utils.PropertiesHandler;
 
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 import XQBHClient.Utils.log.Logger;
 
 import java.io.File;
@@ -13,14 +13,14 @@ import java.util.Properties;
  * Created by Administrator on 2017/7/1 0001.
  */
 public class PropertiesReader {
-    public static String readKeyFromXML(File file,String Key){
+    public static String readFromProperties(File file, String Key){
         String resoult="";
         Properties propertie;
         FileInputStream inputFile;
         if (!file.exists())
         {
             Logger.log("LOG_ERR","file"+file.getAbsolutePath()+" not found");
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取"+file.getAbsolutePath()+"错误!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "读取"+file.getAbsolutePath()+"错误!");
 
             return  resoult;
         }
@@ -33,11 +33,11 @@ public class PropertiesReader {
             inputFile.close();
         } catch (FileNotFoundException ex){
             Logger.log("LOG_ERR",ex.toString());
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "文件"+file.getAbsolutePath()+"无法找到!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "文件"+file.getAbsolutePath()+"无法找到!");
 
         } catch (IOException ex) {
             Logger.log("LOG_ERR",ex.toString());
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "读取文件"+file.getAbsolutePath()+"失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "读取文件"+file.getAbsolutePath()+"失败!");
         }
         resoult=propertie.getProperty(Key);
         if (resoult==null)
@@ -46,6 +46,6 @@ public class PropertiesReader {
     }
 //
 //    public static void main(String[] args) {
-//        Logger.log("LOG_DEBUG",readKeyFromXML(new File("resources/userInfo.properties") ,"ZDJYM_"));
+//        Logger.log("LOG_DEBUG",readFromProperties(new File("resources/userInfo.properties") ,"ZDJYM_"));
 //    }
 }

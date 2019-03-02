@@ -1,6 +1,7 @@
 package XQBHClient.Utils.ThingsOutPCB;
 
-import javax.comm.SerialPort;
+
+import gnu.io.SerialPort;
 
 public class Write {
     public static void main(String[] args) {

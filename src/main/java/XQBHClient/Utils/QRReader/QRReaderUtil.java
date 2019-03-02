@@ -1,12 +1,14 @@
 package XQBHClient.Utils.QRReader;
 
 
+import XQBHClient.Client.Com;
 import XQBHClient.Utils.log.Logger;
 
-import javax.comm.*;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import gnu.io.*;
+
+import java.io.*;
+
+import static XQBHClient.Utils.QRReader.QRReader.stop_cmd;
 
 public class QRReaderUtil implements Runnable {
     static CommPortIdentifier portId;
@@ -15,13 +17,13 @@ public class QRReaderUtil implements Runnable {
     String re = "";
 
     InputStream inputStream;
-    Thread readThread;
+
 
     public void run() {
         boolean finish = false;
         int count = QRReader.timeOut / QRReader.frequency;
         int i = 0;
-        while (!finish) {
+        while (!finish && QRReader.continue_read) {
             Logger.log("LOG_DEBUG", "get");
             try {
                 byte[] readBuffer = new byte[128];
@@ -44,12 +46,14 @@ public class QRReaderUtil implements Runnable {
             if (i >= count)
                 break;
         }
+        writeComm(stop_cmd);
         serialPort.close();
     }
 
 
     public void initComm(String comName, int baudRate, int dataBits, int stopBits, int parity) throws NoSuchPortException, PortInUseException, IOException, UnsupportedCommOperationException {
 
+        Logger.log("LOG_DEBUG", comName);
         portId = CommPortIdentifier.getPortIdentifier(comName);
 //            if (serialPort==null)
         serialPort = (SerialPort) portId.open("XQBHClient", 3000);
@@ -57,6 +61,9 @@ public class QRReaderUtil implements Runnable {
 
         outputStream = serialPort.getOutputStream();
         inputStream = serialPort.getInputStream();
+
+
+
 
         serialPort.setSerialPortParams(baudRate,
                 dataBits,
@@ -73,4 +80,6 @@ public class QRReaderUtil implements Runnable {
             e.printStackTrace();
         }
     }
+
+
 }

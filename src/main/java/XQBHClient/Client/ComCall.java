@@ -1,6 +1,6 @@
 package XQBHClient.Client;
 
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 
 
 import XQBHClient.Utils.RSA.HashUtil;
@@ -11,7 +11,6 @@ import XQBHClient.Utils.log.Logger;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,7 +29,7 @@ public class ComCall {
     public static boolean Call(String QTJYM_, String HTJYM_, Map TranMapIn, Map TranMapOut) {
         Map XMLMapIn = new HashMap();//写方法,将TranMapIn添加报文头信息,变为XMLMapIn
         if (true != addInfo(QTJYM_, HTJYM_, TranMapIn, XMLMapIn)) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "组织报文头信息失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "组织报文头信息失败!");
             return false;
         }
 
@@ -46,7 +45,7 @@ public class ComCall {
                     .encryptBASE64byte(RSAUtil.encryptByPrivateKey(buffout, Com.clientEncryptPrivateKey));
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "加密上送报文失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "加密上送报文失败!");
             return false;
         }
         /*
@@ -58,7 +57,7 @@ public class ComCall {
             signstr = RSAUtil.sign(XMLIn.getBytes(Com.charset), Com.clientSignPrivateKey);
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "加签上送报文失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "加签上送报文失败!");
             return false;
         }
         byte[] splitbyte = {'7', '7', '7', '7', '7', '7', '7'};
@@ -77,7 +76,7 @@ public class ComCall {
 //            commonTran = new CommonTranService().getCommonTranPort();
 //        } catch (Exception e) {
 //            Logger.logException("LOG_ERR", e);
-//            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器连接失败!");
+//            WarmingAction.show(WarmingAction.Dialog_ERR, "服务器连接失败!");
 //            return false;
 //        }
 //        String XMLOut;
@@ -86,7 +85,7 @@ public class ComCall {
 //
 //        } catch (Exception e) {
 //            Logger.logException("LOG_ERR", e);
-//            WarmingDialog.show(WarmingDialog.Dialog_ERR, "服务器故障!");
+//            WarmingAction.show(WarmingAction.Dialog_ERR, "服务器故障!");
 //            return false;
 //        }
         String IP = "127.0.0.1";
@@ -101,7 +100,7 @@ public class ComCall {
 
 
             Socket socket = new Socket();
-            socket.connect(new InetSocketAddress(IP, port), 3000);//设置连接请求超时时间10 s
+            socket.connect(new InetSocketAddress(IP, port), 10000);//设置连接请求超时时间10 s
             socket.setSoTimeout(15000);//设置读操作超时时间30 s
 //2、获取输出流，向服务器端发送信息
             OutputStream os = socket.getOutputStream();//字节输出流
@@ -135,7 +134,7 @@ public class ComCall {
             socket.close();
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "通讯异常!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "通讯异常!");
             return false;
         }
 
@@ -163,7 +162,7 @@ public class ComCall {
         }
         if (!foundSplit)//未找到分割符
         {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR,"验签失败!!!请联系管理员");
+            WarmingAction.show(WarmingAction.Dialog_ERR,"验签失败!!!请联系管理员");
             return false;
         }
         byte[] encrybyte = new byte[iPos];
@@ -183,11 +182,11 @@ public class ComCall {
             verPass = RSAUtil.verify(encrybyte, Com.serverSignPublicbKey, new String(signbyte));
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "与服务器通讯验签失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "与服务器通讯验签失败!");
             return false;
         }
         if (!verPass) {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "验签错误!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "验签错误!");
             return false;
         }
 
@@ -201,7 +200,7 @@ public class ComCall {
             datebyte = RSAUtil.decryptByPrivateKey(HashUtil.decryptBASE64(encrybyte), Com.clientEncryptPrivateKey);
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "与服务器通讯解密失败!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "与服务器通讯解密失败!");
             return false;
         }
         XMLOut = new String(datebyte);

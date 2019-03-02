@@ -67,7 +67,18 @@
     -fx-font-size: 30px;
     -fx-background-color: linear-gradient(to top left, oldlace, blanchedalmond, cornsilk);
     -fx-border-color: #485735;
-    -fx-border-width: 2px;
+    -fx-border-width: 3px;
+    -fx-border-insets: -1px;
+}
+.rootButton:pressed{
+    -fx-pref-height: 130px;
+    -fx-pref-width: 270px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 23px;
+    -fx-font-size: 30px;
+    -fx-background-color: linear-gradient(to top left, #ddd5c6, #b6a592, #d0c9b4);
+    -fx-border-color: #485735;
+    -fx-border-width: 3px;
     -fx-border-insets: -1px;
 }
 
@@ -106,6 +117,15 @@
     -fx-pref-width: 170px;
     -fx-pref-height: 70px;
     -fx-background-color: linear-gradient(to bottom, #fff722, #ff8f05);
+    -fx-font-size: 17px;
+    -fx-text-fill: black;
+}
+.buyButton:pressed{
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-pref-width: 170px;
+    -fx-pref-height: 70px;
+    -fx-background-color: linear-gradient(to bottom, #e1da1e, #e27f04);
     -fx-font-size: 17px;
     -fx-text-fill: black;
 }
@@ -253,8 +273,7 @@
 }
 
 .goodsGridBackground {
-    -fx-background-color: black;
-    -fx-opacity: 0.2;
+    -fx-background-color: rgba(150, 150, 150, 0.3);
 }
 
 .goodsShowLabel {
@@ -274,5 +293,34 @@
     -fx-background-image: url("../img/wecharpay.png");
     -fx-background-size: contain;
     -fx-background-repeat: no-repeat;
+
+}
+
+.dialogWindow{
+    -fx-border-color: black; -fx-border-width: 3px; -fx-background-radius: 10px; -fx-border-radius: 10px;
+
+}
+.topCancelbuttom{
+    -fx-background-color: #ff5c70;
+    -fx-border-radius: 0 3 0 3;
+    -fx-background-radius: 0 3 0 3;
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    -fx-font-style: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+
+
+}
+.topCancelbuttom:pressed{
+    -fx-background-color: #d84e5f;
+    -fx-border-radius: 0 3 0 3;
+    -fx-background-radius: 0 3 0 3;
+    -fx-font-size: 20px;
+    -fx-text-fill: white;
+    -fx-font-style: bold;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+
 
 }

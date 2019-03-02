@@ -1,15 +1,15 @@
 package XQBHClient.Utils.FinishComListener;
 
 import XQBHClient.Client.Com;
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 
 import XQBHClient.ClientUI.Order;
 import XQBHClient.Utils.log.Logger;
+import gnu.io.CommPortIdentifier;
+import gnu.io.SerialPort;
+import gnu.io.SerialPortEvent;
+import gnu.io.SerialPortEventListener;
 
-import javax.comm.CommPortIdentifier;
-import javax.comm.SerialPort;
-import javax.comm.SerialPortEvent;
-import javax.comm.SerialPortEventListener;
 import java.io.InputStream;
 
 /**
@@ -67,7 +67,7 @@ public class FinishComListener implements SerialPortEventListener {
             new FinishComListener();
         } catch (Exception e) {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "未检测到完成扫描器!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "未检测到完成扫描器!");
             return;
         }
         Closer closer = new Closer();
@@ -103,7 +103,7 @@ class Closer implements Runnable {
                 Thread.sleep(100);
             } catch (Exception e) {
                 Logger.logException("LOG_ERR", e);
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, "启FinishComListener进程异常!");
+                WarmingAction.show(WarmingAction.Dialog_ERR, "启FinishComListener进程异常!");
             }
         }
     }

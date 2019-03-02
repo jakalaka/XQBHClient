@@ -2,7 +2,7 @@ package XQBHClient.ClientUI.Unit;
 
 import XQBHClient.Client.Com;
 import XQBHClient.ClientAPI.GetSPNum;
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 import XQBHClient.ClientUI.ClientUIMain;
 import XQBHClient.ClientUI.Order;
 import XQBHClient.Utils.Model.DataModel;
@@ -14,6 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Pagination;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -48,7 +49,7 @@ public class GoodsAnchorPane extends AnchorPane {
             public Node call(Integer param) {
                 AnchorPane anchorPane = new AnchorPane();
 
-                String images = ("file:/" + (new File("resources/" + dataModel.getImgs()[param])).getAbsolutePath()).replaceAll("\\\\", "/").replaceAll(" ", "%20");
+                String images = ("file:" + (new File("resources/" + dataModel.getImgs()[param])).getAbsolutePath()).replaceAll("\\\\", "/").replaceAll(" ", "%20");
                 anchorPane.setStyle("-fx-background-image: url('" + images + "'); " +
                         "-fx-background-position: center; " +
                         "-fx-background-repeat: no-repeat;" +
@@ -114,7 +115,9 @@ public class GoodsAnchorPane extends AnchorPane {
                 buy.getStyleClass().add("buyButton_over");
             } else {
                 buy.getStyleClass().add("buyButton");
+
             }
+            buy.setEffect(new DropShadow(3,Color.BLACK));
 
         }
         hbPrice.getChildren().add(price);
@@ -136,18 +139,18 @@ public class GoodsAnchorPane extends AnchorPane {
         buy.addEventHandler(MouseEvent.MOUSE_CLICKED, (MouseEvent e) -> {
             if (!"OK".equals(Com.ZDZT_U)) {
                 Logger.log("LOG_ERR", "未检测到购买即出货!!!需确认设备正常后重启!!!");
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, "探测器异常,为了您的资金安全,暂时关闭交易功能!\n给您带来的不便我们深表歉意!!!");
+                WarmingAction.show(WarmingAction.Dialog_ERR, "探测器异常,为了您的资金安全,暂时关闭交易功能!\n给您带来的不便我们深表歉意!!!");
                 return;
             }
             Integer iNum = 0;
             if ("goods".equals(dataModel.getModelType())) {
                 iNum = GetSPNum.exec(dataModel.getPosition());
                 if (iNum <= 0) {
-                    WarmingDialog.show(WarmingDialog.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
+                    WarmingAction.show(WarmingAction.Dialog_SELLOUT, "亲,售罄了,下次来吧~");
                     return;
                 }
             }else {
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, "暂不支持预定功能~");
+                WarmingAction.show(WarmingAction.Dialog_ERR, "暂不支持预定功能~");
                 return;
             }
 
@@ -163,6 +166,10 @@ public class GoodsAnchorPane extends AnchorPane {
             Order.controllerCOMName = Com.ControllerCOMName;
             Order.positionX = dataModel.getpositionX();
             Order.positionY = dataModel.getpositionY();
+            Order.positionZ = dataModel.getpositionZ();
+            Order.positionZ_max = dataModel.getPositionZ_max();
+            Order.positionW = dataModel.getPositionW();
+            Order.barcode = dataModel.getBarcode();
 
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("OrderDialog.fxml"));

@@ -18,7 +18,7 @@ public class UpdateDSPXX {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SESSION);
             return false;
         }
 
@@ -32,12 +32,12 @@ public class UpdateDSPXX {
         }catch (Exception e)
         {
             Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SELECT);
             return false;
         }
         if (null==dspxx)
         {
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, "更新商品库存时查询数据库无记录!");
+            WarmingAction.show(WarmingAction.Dialog_ERR, "更新商品库存时查询数据库无记录!");
             return false;
         }
         dspxx.setSL_UUU(dspxx.getSL_UUU()+iNum);
@@ -47,7 +47,7 @@ public class UpdateDSPXX {
         }catch (Exception e)
         {
             Logger.logException("LOG_ERR", e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_UPDATE);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_UPDATE);
             return false;
         }
 

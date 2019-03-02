@@ -4,18 +4,13 @@ import XQBHClient.Client.Table.Mapper.CXTCSMapper;
 import XQBHClient.Client.Table.Model.CXTCS;
 import XQBHClient.Client.Table.Model.CXTCSKey;
 import XQBHClient.Client.Table.basic.DBAccess;
-import XQBHClient.ClientAPI.WarmingDialog;
+import XQBHClient.ClientAPI.WarmingAction;
 import XQBHClient.Utils.log.Logger;
 import org.apache.ibatis.session.SqlSession;
 
 import java.io.IOException;
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Enumeration;
 
 /**
  * Created by Administrator on 2017/7/1 0001.
@@ -84,6 +79,9 @@ public class Com {
 
     public static int ScreenWidth;
     public static int ScreenHeight;
+    public static  String Robot_IP;
+    public static  int Robot_port;
+    public static boolean continue_updateUI;
     /**
      * 获取前台流水=10位终端编号+6位交易时间
      *
@@ -102,7 +100,7 @@ public class Com {
             sqlSession = dbAccess.getSqlSession();
         } catch (IOException e) {
             Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SESSION);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SESSION);
             return "";
         }
         CXTCSMapper cxtcsMapper = sqlSession.getMapper(CXTCSMapper.class);
@@ -114,7 +112,7 @@ public class Com {
             cxtcs = cxtcsMapper.selectByPrimaryKey(cxtcsKey);
         } catch (Exception e) {
             Logger.logException("LOG_ERR",e);
-            WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_SELECT);
+            WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_SELECT);
             return "";
         }
         if (null == cxtcs) {
@@ -128,7 +126,7 @@ public class Com {
                 cxtcsMapper.insert(cxtcs);
             } catch (Exception e) {
                 Logger.logException("LOG_ERR",e);
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_INSERT);
+                WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_INSERT);
                 return "";
             }
             XH = 1;
@@ -145,7 +143,7 @@ public class Com {
                 cxtcsMapper.updateByPrimaryKey(cxtcs);
             } catch (Exception e) {
                 Logger.logException("LOG_ERR",e);
-                WarmingDialog.show(WarmingDialog.Dialog_ERR, Com.SQLERR_DELETE);
+                WarmingAction.show(WarmingAction.Dialog_ERR, Com.SQLERR_DELETE);
                 return "";
             }
         }
